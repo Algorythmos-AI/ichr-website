@@ -86,3 +86,7 @@ jobs:
         env:
           DATABASE_URL: postgresql://build:build@localhost:5432/build
           DATABASE_URL_UNPOOLED: postgresql://build:build@localhost:5432/build
+      # Vercel's function loader cannot require() an ES module, although plain Node can; this
+      # catches the failure that a local build and every unit test miss.
+      - name: Server bundle loads without require(esm)
+        run: node scripts/ci/check-server-bundle.mjs
