@@ -46,5 +46,13 @@ export default defineConfig({
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
+    ssr: {
+      // Bundle sanitize-html (and the htmlparser2 it requires) into the server build instead of loading it from node_modules at
+      // runtime. It is CommonJS and require()s htmlparser2 12, which is ESM-only; Vercel's
+      // function loader rejects require() of an ES module (ERR_REQUIRE_ESM), which took down
+      // every article page on the Astro 7 preview. Bundling converts it at build time, which
+      // is what Astro 5 did implicitly. scripts/ci/check-server-bundle.mjs (CI `build` job) guards this.
+      noExternal: ['sanitize-html', 'htmlparser2'],
+    },
   },
 });

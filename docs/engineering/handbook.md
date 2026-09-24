@@ -277,6 +277,13 @@ Variables"** staying on; the symptom if it is turned off is a preview `/sitemap.
 
 ## Deploys
 
+**Vercel cannot `require()` an ES module**, although local Node 22+ can. A CommonJS dependency
+that `require()`s an ESM-only package therefore passes every local build and test and fails in
+production with `ERR_REQUIRE_ESM` → HTTP 500. That happened to every article page during the
+Astro 7 upgrade (`sanitize-html` → `htmlparser2` 12). The fix is to bundle the package through
+`vite.ssr.noExternal` in `astro.config.mjs`; `scripts/ci/check-server-bundle.mjs`, run after
+every CI build, loads each traced dependency the way Vercel does and fails the build first.
+
 Vercel deploys `main` to production and every other branch to a preview. The Vercel Git
 integration is the only deploy path.
 
