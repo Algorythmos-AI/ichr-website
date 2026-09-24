@@ -56,7 +56,9 @@ export const POST: APIRoute = async ({ request }) => {
   const key = `uploads/${Date.now()}-${Math.round(Math.random() * 1e9)}.${ext}`;
 
   try {
-    const blob = await put(key, file, { access: 'public', contentType: file.type });
+    // addRandomSuffix: explicit since @vercel/blob 1.0 turned it off by default. It keeps upload
+    // URLs unguessable and makes a key collision impossible (put() refuses to overwrite).
+    const blob = await put(key, file, { access: 'public', contentType: file.type, addRandomSuffix: true });
     return json({ url: blob.url });
   } catch (e) {
     console.error(e);
