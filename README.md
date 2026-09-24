@@ -1,116 +1,134 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# International Coalition for Human Rights — website
 
-# The International Coalition for Human Rights (ICHR)
+The official website of the **International Coalition for Human Rights (ICHR)**, a Geneva-based
+NGO: an institutional site with a trilingual newsroom of press releases, statements and field
+updates, managed from a browser-based CMS.
 
-The official website of ICHR — an institutional Geneva-NGO site with a **Newsroom** (press releases & statements) managed from a browser-based admin CMS. Articles are server-rendered for SEO and social link previews. Deployed on **Vercel**.
+**Live:** <https://www.ichr-international.org> · English, **العربية** (right-to-left) and Français
 
-## Tech Stack
+Engineered and operated by **[Algorythmos](https://github.com/Algorythmos-AI)**.
 
-- **Framework:** [Astro 5](https://astro.build) (SSR via `@astrojs/vercel`) + TypeScript + Tailwind CSS v4
-- **Interactive islands:** React 19 (admin dashboard, Leaflet world map)
-- **Database:** PostgreSQL (Neon) via **Prisma**
-- **API:** Astro API endpoints under `src/pages/api/**` (same origin)
-- **Image uploads:** Vercel Blob · **Markdown:** `marked` + `sanitize-html` (server) / `DOMPurify` (admin preview)
+---
 
-The newsroom (`/news`, `/news/:slug`) is **server-rendered on demand**, so each article ships real HTML with per-post `<title>`, Open Graph / Twitter, canonical, and JSON-LD `NewsArticle` — links unfurl on social and are crawlable with no client JS. Marketing pages are statically prerendered. The admin (`/admin`) is a `noindex` React island.
+## Highlights
+
+- **Trilingual by construction.** English at the root, Arabic under `/ar` (RTL), French under
+  `/fr`. One page body per page, shared by all three locales; a missing translation key is a
+  compile error.
+- **A newsroom built for sharing and search.** Articles are server-rendered on demand with real
+  HTML, per-article Open Graph and Twitter cards, canonical URLs, `hreflang` alternates, escaped
+  JSON-LD `NewsArticle` data, and a sitemap grouped by story.
+- **Publishing without deploys.** Editors write, preview and publish from `/admin`; articles are
+  live the moment they are saved.
+- **Light on the wire.** Static marketing pages, responsive image variants for every article
+  image, and a click-to-load video facade that makes zero third-party requests until play.
+- **Defensive by default.** Sanitized Markdown, escaped structured data, authenticated and
+  validated uploads, clamped query parameters, and a database outage that degrades to a
+  localized 404 instead of an error page.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  reader([Reader]) -->|HTTPS| edge[Vercel edge]
+  editor([Editor]) -->|/admin| edge
+  edge --> static[Prerendered pages<br/>home · about · locations · …]
+  edge --> ssr[Astro SSR functions<br/>/news · /news/:slug · sitemap]
+  edge --> api[API routes<br/>auth · posts · uploads]
+  ssr --> db[(Neon Postgres<br/>via Prisma)]
+  api --> db
+  api --> blob[(Vercel Blob<br/>admin uploads)]
+  edge --> assets[/Static assets<br/>/blog · /media/]
+```
+
+| Layer | Technology |
+|---|---|
+| Framework | [Astro 5](https://astro.build) (SSR, `@astrojs/vercel`) · TypeScript · Tailwind CSS v4 |
+| Interactive islands | React 19 — admin dashboard, Leaflet world map |
+| Data | PostgreSQL on Neon, via Prisma 5 |
+| Content | Markdown — `marked` + `sanitize-html` on the server, `DOMPurify` in the admin preview |
+| Media | Vercel Blob for uploads; pre-generated responsive JPEGs for article artwork |
+| Hosting | Vercel |
+
+## Getting started
+
+**Requirements:** Node.js **22.6+** (production runs Node 24) and a PostgreSQL database — a
+free [Neon](https://neon.tech) project works.
+
+```bash
+npm install
+cp .env.example .env.local                  # fill in DATABASE_URL, DATABASE_URL_UNPOOLED, JWT_SECRET, ADMIN_*
+npm run db:push                             # apply the schema — there are no migrations to deploy
+node --env-file=.env.local prisma/seed.mjs  # create the admin user (create-only)
+npm run dev                                 # http://localhost:4321 — pages and API on one origin
+```
+
+Sign in at <http://localhost:4321/admin>. Local image uploads need `BLOB_READ_WRITE_TOKEN`;
+seeded articles use static images and work without it.
+
+> **There is no `prisma/migrations/` directory** — `prisma migrate deploy` would silently do
+> nothing. If your network blocks Postgres on port 5432, apply schema changes over Neon's HTTPS
+> driver instead; see the [engineering handbook](docs/engineering/handbook.md#gotcha-1-the-database-workflow-is-not-what-the-prisma-docs-imply).
+
+## Scripts
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Astro dev server (pages + API) |
+| `npm run build` | `prisma generate` + production build |
+| `npm run check` | `astro check` |
+| `npm test` | unit tests (Node's built-in runner) |
+| `npm run db:push` | apply `schema.prisma` |
+| `npm run db:seed` | create the admin user (create-only, guarded) |
+| `node scripts/gen-press-cover.mjs <statement>` | render branded, overflow-checked cover cards (EN/AR/FR) |
+| `node scripts/gen-image-variants.mjs [slug]` | write responsive image variants and the srcset manifest |
+| `node scripts/add-video.mjs <url> [slug]` | add a YouTube video to `/media` |
 
 ## Project layout
 
 ```
-astro.config.mjs            # SSR + @astrojs/vercel adapter + i18n (en/ar/fr)
-docs/engineering/handbook.md                   # architecture, DB workflow, gotchas — read this first
-prisma/
-  schema.prisma             # User, Post (locale + translationKey), GalleryImage
-  seed.mjs                  # admin user ONLY (create-only, guarded)
-  migrate-i18n.mjs          # idempotent schema change over Neon's HTTPS driver
-  seed-*.mjs                # one per press release; mirror of the DB content
-scripts/
-  gen-statement-cover.mjs   # renders the branded cover cards (en/ar/fr)
 src/
-  pages/
-    *.astro                 # English routes — thin wrappers over components/pages
-    ar/** · fr/**           # Arabic (RTL) and French route trees
-    api/**                  # API endpoints (auth/login, content/posts CRUD, upload)
-    sitemap.xml.ts          # SSR sitemap with per-story hreflang alternates
-  components/pages/         # the actual page bodies, shared by all three locales
-  i18n/                     # locale helpers + strings/{en,ar,fr}.ts dictionaries
-  server/                   # server-only: db (Prisma), auth (JWT), posts (zod/queries)
-  components/               # .astro UI (Header, Footer, NewsCard, LanguageSwitcher …)
-  components/react/         # client islands: AdminDashboard, WorldMap, apiClient
-  lib/                      # api (SSR reads), markdown, jsonld, assets, locations
-  styles/index.css          # design system (navy + restrained gold)
-public/blog/<slug>/         # static article images and cover cards
+  pages/                  route files — thin wrappers; ar/** and fr/** mirror the English tree
+    api/                  auth, content CRUD, uploads, CSP reports
+  components/pages/       the page bodies, shared by all three locales
+  components/react/       client islands (admin dashboard, world map)
+  i18n/                   locale helpers and the en/ar/fr dictionaries
+  server/                 server-only code: database, auth, post queries and validation
+  lib/                    rendering, SEO, assets, pagination — and their tests
+  data/                   version-controlled data (videos, locations)
+prisma/
+  schema.prisma           User, Post (locale + translationKey), GalleryImage
+  lib/press-statement.mjs the publishing engine: validation, atomic upsert, read-back
+  seed-*.mjs              one file per published statement — the git record of its content
+scripts/                  cover cards, image variants, attachments, videos
+public/blog/<slug>/       article artwork and its responsive variants
+docs/                     handbook, runbooks, press log
 ```
 
-**Article text lives in the database, not in git** — `git grep` won't find it. The `prisma/seed-*.mjs` files are a mirror kept as the source-of-record. See [docs/engineering/handbook.md](./docs/engineering/handbook.md).
+## How changes reach production
 
-## Run locally
-
-**Prerequisites:** **Node.js 22.6+** (the seeds use `--env-file`, the tests use `--experimental-strip-types`) and a PostgreSQL database (a free [Neon](https://neon.tech) project works great).
-
-```bash
-npm install
-cp .env.example .env.local    # DATABASE_URL + DATABASE_URL_UNPOOLED + JWT_SECRET + ADMIN_*
-npm run db:push               # apply the schema — there are NO migrations to deploy
-node --env-file=.env.local prisma/seed.mjs   # create the admin user
-npm run dev                   # http://localhost:4321
-```
-
-> **There is no `prisma/migrations/` directory.** `prisma migrate deploy` would silently create nothing, so use `npm run db:push`. If your network blocks Postgres on port 5432 (`P1001`), apply schema changes with an idempotent script over Neon's HTTPS driver instead — see `prisma/migrate-i18n.mjs`. Database scripts read **`.env.local`**.
-
-`astro dev` serves the pages **and** the API endpoints on one origin — no separate backend process.
-
-**Admin:** open http://localhost:4321/admin and sign in with the `ADMIN_USERNAME` / `ADMIN_PASSWORD` you set. Create a post, upload a cover + gallery images, watch the live Markdown preview, **Save draft** (hidden from `/news`) or **Publish**. Publishing is live immediately, no redeploy. (Local image uploads need `BLOB_READ_WRITE_TOKEN`; seeded posts use static images, so they work without it.)
-
-## Deploy on Vercel
-
-1. **Import the repo** into Vercel (framework auto-detected as Astro).
-2. **Storage → Create:** add **Neon Postgres** and **Blob** to the project (Vercel injects `DATABASE_URL` and `BLOB_READ_WRITE_TOKEN` automatically).
-3. **Environment variables** (Project → Settings → Environment Variables):
-   - `JWT_SECRET` — a long random string
-   - `ADMIN_USERNAME`, `ADMIN_PASSWORD` — admin login
-   - `PUBLIC_SITE_URL` — your production URL (for canonical/OG)
-4. **Build command** is `npm run build` (runs `prisma generate` then `astro build`). After the first deploy, apply the schema and create the admin user against the production DB — put the production `DATABASE_URL` in `.env.local` and run:
-   ```bash
-   npx prisma db push                            # NOT `migrate deploy` — no migrations exist
-   node --env-file=.env.local prisma/seed.mjs    # create-only; never rotates an existing password
-   ```
-   To rotate the admin password later: `RESET_ADMIN_PASSWORD=1 node --env-file=.env.local prisma/seed.mjs`.
-
-Publishing from `/admin` is live immediately — no redeploy per post.
-
-> **Seed scripts overwrite their own slug.** Re-running `prisma/seed-<post>.mjs` reverts any edit made to that post through `/admin` and rebuilds its gallery. They all guard on a `neon.tech` target and support `DRY_RUN=1`.
-
-## Environment variables
-
-| var | purpose |
+| Branch | Role |
 |---|---|
-| `DATABASE_URL` | Neon Postgres **pooled** connection string (required) |
-| `DATABASE_URL_UNPOOLED` | Neon **direct** connection; required by `schema.prisma` `directUrl` |
-| `JWT_SECRET` | signs admin login tokens (required; the app throws without it) |
-| `ADMIN_USERNAME` / `ADMIN_PASSWORD` | seeded admin credentials — use a strong password, the login is not rate-limited |
-| `PUBLIC_SITE_URL` | canonical/OG absolute base (your domain) |
-| `PUBLIC_API_URL` | optional origin override for the admin client; empty = same-origin |
-| `BLOB_READ_WRITE_TOKEN` | Vercel Blob (admin uploads); auto-set on Vercel |
+| `integration` | Default branch and trunk. Every change arrives by pull request, squash-merged, after the checks pass. |
+| `main` | Production. Receives `integration` only, through a release pull request merged with a merge commit. |
 
-`.env` and `.env.local` are gitignored and must never be committed.
+Vercel deploys `main` to <https://www.ichr-international.org> and every other branch to a
+preview URL. Article *text* is not deployed at all — it lives in the database and is live as
+soon as it is published. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-## How images are served
+## Documentation
 
-- **Admin uploads** → Vercel Blob, served from its CDN (absolute `https://…blob.vercel-storage.com/…` URL stored in the DB).
-- **Bundled article assets** (e.g. the seed post) → `public/blog/<slug>/*.jpg`, served by Vercel as static files.
+| Document | For |
+|---|---|
+| [Engineering handbook](docs/engineering/handbook.md) | architecture, the database workflow, i18n, security invariants |
+| [Publishing runbook](docs/runbooks/publishing.md) | publishing a press statement in three languages |
+| [Press log](docs/press-log-2026.md) | the record of every published statement |
+| [Contributing](CONTRIBUTING.md) | branches, commits and pull requests |
 
-## Scripts
+## Security
 
-- `npm run dev` — Astro dev (pages + API)
-- `npm run build` — `prisma generate` + `astro build`
-- `npm run check` — `astro check`
-- `npm test` — unit tests (Node's built-in runner)
-- `npm run db:push` — apply `schema.prisma` (there are no migrations)
-- `npm run db:seed` — create the admin user (create-only, guarded)
-- `node scripts/gen-statement-cover.mjs [locale]` — render the branded cover cards
+Please report vulnerabilities privately through GitHub's **Report a vulnerability** button on
+the Security tab, not in a public issue.
 
 ## License
 

@@ -1,0 +1,15 @@
+# gitleaks configuration — the default ruleset, plus one narrow allowlist.
+#
+# Every statement seed declares `TRANSLATION_KEY = '<uuid>'`: a random UUID that binds a
+# story's three locales together. It is public by design (it is sent to every browser in
+# the page data) and is not a credential, but the generic-api-key rule flags it. The
+# allowlist matches that exact assignment shape only, so a real key pasted into a seed
+# would still be caught.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Seed translation keys are public UUIDs, not secrets"
+paths = ['''^prisma/seed-[a-z0-9-]+\.mjs$''']
+regexTarget = "line"
+regexes = ['''TRANSLATION_KEY = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}';''']
