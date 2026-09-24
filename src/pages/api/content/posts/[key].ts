@@ -1,5 +1,11 @@
 import type { APIRoute } from 'astro';
-import { getPublishedBySlug, updatePost, deletePost, updatePostSchema, isUniqueViolation } from '@/server/posts';
+import {
+  getPublishedBySlug,
+  updatePost,
+  deletePost,
+  updatePostSchema,
+  isUniqueViolation,
+} from '@/server/posts';
 import { verifyRequest, json, unauthorized } from '@/server/auth';
 import { errorResponse } from '@/server/http';
 

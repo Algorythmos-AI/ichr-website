@@ -21,7 +21,10 @@ const allowed = new Map(allowlist.advisories.map((a) => [a.id, a]));
 
 let raw;
 try {
-  raw = execFileSync('npm', ['audit', '--omit=dev', '--json'], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  raw = execFileSync('npm', ['audit', '--omit=dev', '--json'], {
+    encoding: 'utf8',
+    maxBuffer: 64 * 1024 * 1024,
+  });
 } catch (err) {
   // npm audit exits non-zero whenever it finds anything; the JSON is still on stdout.
   raw = err.stdout;
@@ -43,7 +46,9 @@ for (const [pkg, vuln] of Object.entries(report.vulnerabilities ?? {})) {
 
 const stale = [...allowed.keys()].filter((id) => !seen.has(id));
 if (stale.length) {
-  console.log(`::notice::${stale.length} allowlisted advisories no longer apply — remove them from .audit-allowlist.json: ${stale.join(', ')}`);
+  console.log(
+    `::notice::${stale.length} allowlisted advisories no longer apply — remove them from .audit-allowlist.json: ${stale.join(', ')}`,
+  );
 }
 
 console.log(`${seen.size} high/critical advisories found; ${seen.size - blocking.length} allowlisted.`);

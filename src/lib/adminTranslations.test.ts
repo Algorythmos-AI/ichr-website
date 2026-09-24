@@ -28,8 +28,20 @@ function post(over: Partial<Post> = {}): Post {
 
 // 1) same translationKey → one story; title prefers EN; byLocale has both
 {
-  const en = post({ id: '1', locale: 'en', translationKey: 'k1', title: 'EN', updatedAt: '2026-06-02T00:00:00.000Z' });
-  const ar = post({ id: '2', locale: 'ar', translationKey: 'k1', title: 'AR', updatedAt: '2026-06-01T00:00:00.000Z' });
+  const en = post({
+    id: '1',
+    locale: 'en',
+    translationKey: 'k1',
+    title: 'EN',
+    updatedAt: '2026-06-02T00:00:00.000Z',
+  });
+  const ar = post({
+    id: '2',
+    locale: 'ar',
+    translationKey: 'k1',
+    title: 'AR',
+    updatedAt: '2026-06-01T00:00:00.000Z',
+  });
   const stories = groupByStory([ar, en]);
   assert.equal(stories.length, 1);
   assert.equal(stories[0].key, 'k1');
@@ -55,10 +67,19 @@ function post(over: Partial<Post> = {}): Post {
 // 4) buildTranslationDraft carries link + shared fields, seeds text, drafts
 {
   const src = post({
-    id: '1', slug: 'my-slug', locale: 'en', translationKey: 'k1', title: 'Hello',
-    category: 'Press Release', date: '2026-06-02T00:00:00.000Z', excerpt: 'ex', body: 'bd',
-    coverImageUrl: '/blog/x/c.jpg', gallery: [{ url: '/blog/x/g1.jpg', caption: 'cap' }],
-    hashtags: ['#a'], authorName: 'ICHR',
+    id: '1',
+    slug: 'my-slug',
+    locale: 'en',
+    translationKey: 'k1',
+    title: 'Hello',
+    category: 'Press Release',
+    date: '2026-06-02T00:00:00.000Z',
+    excerpt: 'ex',
+    body: 'bd',
+    coverImageUrl: '/blog/x/c.jpg',
+    gallery: [{ url: '/blog/x/g1.jpg', caption: 'cap' }],
+    hashtags: ['#a'],
+    authorName: 'ICHR',
   });
   const d = buildTranslationDraft(src, 'fr');
   assert.equal(d.slug, 'my-slug');

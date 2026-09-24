@@ -342,7 +342,8 @@ const VIDEOS: Video[] = [
       },
       fr: {
         title: 'Le travail de l’ICHR : justice, éducation et dignité',
-        speaker: 'Abdelrahim Grein Sadam · fondateur de la Coalition internationale pour les droits de l’homme',
+        speaker:
+          'Abdelrahim Grein Sadam · fondateur de la Coalition internationale pour les droits de l’homme',
         summary:
           'Un court portrait du travail d’Abdelrahim Grein Sadam, fondateur de la Coalition internationale pour les droits de l’homme — de la défense de la justice au Soudan à la protection des communautés vulnérables, et un appel à la paix, à l’éducation et à la dignité.',
       },

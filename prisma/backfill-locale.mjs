@@ -5,14 +5,18 @@ import { PrismaClient } from '@prisma/client';
 
 const DB_URL = process.env.DATABASE_URL || '';
 if (!DB_URL || /localhost|127\.0\.0\.1|placeholder/i.test(DB_URL) || !/neon\.tech/i.test(DB_URL)) {
-  console.error('ABORT: DATABASE_URL is not the Neon production database.\n  Run: node --env-file=.env.local prisma/backfill-locale.mjs');
+  console.error(
+    'ABORT: DATABASE_URL is not the Neon production database.\n  Run: node --env-file=.env.local prisma/backfill-locale.mjs',
+  );
   process.exit(1);
 }
 
 const prisma = new PrismaClient();
 
 async function main() {
-  const posts = await prisma.post.findMany({ select: { id: true, slug: true, locale: true, translationKey: true } });
+  const posts = await prisma.post.findMany({
+    select: { id: true, slug: true, locale: true, translationKey: true },
+  });
   let updated = 0;
   for (const p of posts) {
     const data = {};

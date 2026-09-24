@@ -68,7 +68,12 @@ export function organizationJsonLd() {
         logo: { '@type': 'ImageObject', url: ORG.logo },
         sameAs: SAME_AS,
         contactPoint: [
-          { '@type': 'ContactPoint', contactType: 'media & general enquiries', email: ORG.email, telephone: WHATSAPP.display },
+          {
+            '@type': 'ContactPoint',
+            contactType: 'media & general enquiries',
+            email: ORG.email,
+            telephone: WHATSAPP.display,
+          },
         ],
       },
       {

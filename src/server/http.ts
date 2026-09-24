@@ -19,10 +19,7 @@ export function errorResponse(err: unknown, context: string): Response {
 
   if (kind === 'not-found') return json({ error: 'Not found' }, 404);
 
-  const res = json(
-    { error: 'The database is temporarily unavailable. Please try again in a moment.' },
-    503,
-  );
+  const res = json({ error: 'The database is temporarily unavailable. Please try again in a moment.' }, 503);
   res.headers.set('Retry-After', '5');
   return res;
 }

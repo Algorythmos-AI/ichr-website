@@ -157,10 +157,10 @@ Rollback drafts every locale at once:
 
 ### Correcting a story that is already published
 
-| Run | What it does |
-|---|---|
-| plain | **Writes the text.** The only thing that ever does. Preserves the stored status. |
-| `PUBLISH=1` | **Flips draft → published. Never writes content.** |
+| Run         | What it does                                                                     |
+| ----------- | -------------------------------------------------------------------------------- |
+| plain       | **Writes the text.** The only thing that ever does. Preserves the stored status. |
+| `PUBLISH=1` | **Flips draft → published. Never writes content.**                               |
 
 Every content change needs a plain run. `PUBLISH=1` on a live article reports success and
 changes nothing. Verify corrections by grepping the live page for a string that must no longer

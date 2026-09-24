@@ -41,14 +41,14 @@ flowchart LR
   edge --> assets[/Static assets<br/>/blog · /media/]
 ```
 
-| Layer | Technology |
-|---|---|
-| Framework | [Astro 5](https://astro.build) (SSR, `@astrojs/vercel`) · TypeScript · Tailwind CSS v4 |
-| Interactive islands | React 19 — admin dashboard, Leaflet world map |
-| Data | PostgreSQL on Neon, via Prisma 5 |
-| Content | Markdown — `marked` + `sanitize-html` on the server, `DOMPurify` in the admin preview |
-| Media | Vercel Blob for uploads; pre-generated responsive JPEGs for article artwork |
-| Hosting | Vercel |
+| Layer               | Technology                                                                             |
+| ------------------- | -------------------------------------------------------------------------------------- |
+| Framework           | [Astro 5](https://astro.build) (SSR, `@astrojs/vercel`) · TypeScript · Tailwind CSS v4 |
+| Interactive islands | React 19 — admin dashboard, Leaflet world map                                          |
+| Data                | PostgreSQL on Neon, via Prisma 5                                                       |
+| Content             | Markdown — `marked` + `sanitize-html` on the server, `DOMPurify` in the admin preview  |
+| Media               | Vercel Blob for uploads; pre-generated responsive JPEGs for article artwork            |
+| Hosting             | Vercel                                                                                 |
 
 ## Getting started
 
@@ -72,17 +72,17 @@ seeded articles use static images and work without it.
 
 ## Scripts
 
-| Command | What it does |
-|---|---|
-| `npm run dev` | Astro dev server (pages + API) |
-| `npm run build` | `prisma generate` + production build |
-| `npm run check` | `astro check` |
-| `npm test` | unit tests (Node's built-in runner) |
-| `npm run db:push` | apply `schema.prisma` |
-| `npm run db:seed` | create the admin user (create-only, guarded) |
+| Command                                        | What it does                                            |
+| ---------------------------------------------- | ------------------------------------------------------- |
+| `npm run dev`                                  | Astro dev server (pages + API)                          |
+| `npm run build`                                | `prisma generate` + production build                    |
+| `npm run check`                                | `astro check`                                           |
+| `npm test`                                     | unit tests (Node's built-in runner)                     |
+| `npm run db:push`                              | apply `schema.prisma`                                   |
+| `npm run db:seed`                              | create the admin user (create-only, guarded)            |
 | `node scripts/gen-press-cover.mjs <statement>` | render branded, overflow-checked cover cards (EN/AR/FR) |
-| `node scripts/gen-image-variants.mjs [slug]` | write responsive image variants and the srcset manifest |
-| `node scripts/add-video.mjs <url> [slug]` | add a YouTube video to `/media` |
+| `node scripts/gen-image-variants.mjs [slug]`   | write responsive image variants and the srcset manifest |
+| `node scripts/add-video.mjs <url> [slug]`      | add a YouTube video to `/media`                         |
 
 ## Project layout
 
@@ -107,23 +107,23 @@ docs/                     handbook, runbooks, press log
 
 ## How changes reach production
 
-| Branch | Role |
-|---|---|
+| Branch        | Role                                                                                                  |
+| ------------- | ----------------------------------------------------------------------------------------------------- |
 | `integration` | Default branch and trunk. Every change arrives by pull request, squash-merged, after the checks pass. |
-| `main` | Production. Receives `integration` only, through a release pull request merged with a merge commit. |
+| `main`        | Production. Receives `integration` only, through a release pull request merged with a merge commit.   |
 
 Vercel deploys `main` to <https://www.ichr-international.org> and every other branch to a
-preview URL. Article *text* is not deployed at all — it lives in the database and is live as
+preview URL. Article _text_ is not deployed at all — it lives in the database and is live as
 soon as it is published. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Documentation
 
-| Document | For |
-|---|---|
+| Document                                             | For                                                            |
+| ---------------------------------------------------- | -------------------------------------------------------------- |
 | [Engineering handbook](docs/engineering/handbook.md) | architecture, the database workflow, i18n, security invariants |
-| [Publishing runbook](docs/runbooks/publishing.md) | publishing a press statement in three languages |
-| [Press log](docs/press-log-2026.md) | the record of every published statement |
-| [Contributing](CONTRIBUTING.md) | branches, commits and pull requests |
+| [Publishing runbook](docs/runbooks/publishing.md)    | publishing a press statement in three languages                |
+| [Press log](docs/press-log-2026.md)                  | the record of every published statement                        |
+| [Contributing](CONTRIBUTING.md)                      | branches, commits and pull requests                            |
 
 ## Security
 

@@ -96,7 +96,11 @@ test('every locale exposes the download-card strings on article, not somewhere a
         `${name}: ${k} leaked into a11y — wrong block`,
       );
     }
-    for (const s of [dict.article.documentTitle, dict.article.documentDownload, dict.article.documentMegabytes]) {
+    for (const s of [
+      dict.article.documentTitle,
+      dict.article.documentDownload,
+      dict.article.documentMegabytes,
+    ]) {
       assert.equal(typeof s, 'string');
       assert.ok(s.length > 0, `${name}: empty label`);
     }

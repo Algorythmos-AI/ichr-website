@@ -1,0 +1,27 @@
+# Build output and dependencies
+dist/
+.astro/
+.vercel/
+node_modules/
+package-lock.json
+
+# Generated manifests — written by scripts, never by hand
+src/generated/
+
+# Static assets
+public/
+
+# Astro components are not auto-formatted: reformatting can change the inline whitespace that
+# renders between words and links, in English and in Arabic alike.
+*.astro
+
+# Statement seeds are the record of what was executed against production — never reflowed.
+prisma/seed-*.mjs
+
+# Hand-aligned publication record
+docs/press-log-2026.md
+
+# Client source material and private documents (never committed)
+press/
+algorythmos/
+_to_delete/

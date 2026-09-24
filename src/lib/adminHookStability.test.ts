@@ -33,7 +33,11 @@ test('useToasts returns memoized actions, not a fresh object literal', () => {
       'them a new identity every render, which makes every dependent callback and effect ' +
       'rebuild — the refresh effect then re-runs on every render (measured: ~5,600 req/s).',
   );
-  assert.match(hook, /return \{ toasts, notify \}/, 'keep the changing list separate from the stable actions');
+  assert.match(
+    hook,
+    /return \{ toasts, notify \}/,
+    'keep the changing list separate from the stable actions',
+  );
 });
 
 test('nothing depends on the whole toast object', () => {

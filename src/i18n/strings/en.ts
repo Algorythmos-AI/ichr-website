@@ -68,7 +68,8 @@ export const en = {
     filterVideos: 'Filter videos by series',
     playVideo: 'Play video: {title}', // {title}
     pagination: 'Pagination',
-    tags: 'Tags',  },
+    tags: 'Tags',
+  },
 
   footer: {
     blurb:
@@ -160,7 +161,13 @@ export const en = {
       },
     ],
     principlesTitle: 'Guiding Principles',
-    principles: ['Neutrality', 'Independence', 'Accountability', 'Transparency', 'Respect for International Law'],
+    principles: [
+      'Neutrality',
+      'Independence',
+      'Accountability',
+      'Transparency',
+      'Respect for International Law',
+    ],
   },
 
   contact: {
@@ -351,7 +358,8 @@ export const en = {
     offices: {
       '1': {
         title: 'Geneva (International HQ)',
-        description: 'Our central hub for international legal advocacy, policy coordination, and UN liaison efforts.',
+        description:
+          'Our central hub for international legal advocacy, policy coordination, and UN liaison efforts.',
       },
       '7': {
         title: 'Paris (Administrative HQ)',
@@ -359,11 +367,13 @@ export const en = {
       },
       '3': {
         title: 'Kyiv, Ukraine',
-        description: 'Distributing medical supplies to frontline hospitals and providing winter shelter support.',
+        description:
+          'Distributing medical supplies to frontline hospitals and providing winter shelter support.',
       },
       '5': {
         title: 'Bogotá, Colombia',
-        description: 'Legal support for indigenous land rights and protection programs for community leaders.',
+        description:
+          'Legal support for indigenous land rights and protection programs for community leaders.',
       },
       '2': {
         title: 'Juba, South Sudan',

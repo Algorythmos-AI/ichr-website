@@ -49,15 +49,15 @@ const cls =
       setTimeout(function () { btn.classList.remove('!bg-green-600', '!text-white'); }, 1300);
     }
     document.addEventListener('click', function (e) {
-      var btn = e.target.closest && e.target.closest('.share-copy');
+      const btn = e.target.closest && e.target.closest('.share-copy');
       if (!btn) return;
-      var url = btn.getAttribute('data-url');
+      const url = btn.getAttribute('data-url');
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(function () { flash(btn); }).catch(function () {});
       } else {
-        var ta = document.createElement('textarea');
+        const ta = document.createElement('textarea');
         ta.value = url; document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); } catch (err) {}
+        try { document.execCommand('copy'); } catch { /* legacy copy unsupported: nothing more to try */ }
         document.body.removeChild(ta); flash(btn);
       }
     });

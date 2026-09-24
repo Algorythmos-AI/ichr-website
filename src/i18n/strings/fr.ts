@@ -5,7 +5,7 @@ export const fr: Dict = {
   meta: {
     home: {
       title: "La Coalition internationale pour les droits de l'homme (ICHR)",
-      desc: "Une organisation non gouvernementale internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier. Dont le siège est à Genève.",
+      desc: 'Une organisation non gouvernementale internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier. Dont le siège est à Genève.',
     },
     about: {
       title: "À propos de l'ICHR — Coalition internationale pour les droits de l'homme",
@@ -17,7 +17,7 @@ export const fr: Dict = {
     },
     donate: {
       title: "Soutenir notre action — Faire un don à l'ICHR",
-      desc: "Votre contribution nous permet de continuer à protéger les droits humains et à fournir une aide humanitaire.",
+      desc: 'Votre contribution nous permet de continuer à protéger les droits humains et à fournir une aide humanitaire.',
     },
     volunteer: {
       title: "Devenir bénévole de l'ICHR",
@@ -25,7 +25,7 @@ export const fr: Dict = {
     },
     locations: {
       title: "Présence mondiale — Implantations de l'ICHR",
-      desc: "Coordination des efforts humanitaires et du plaidoyer juridique à travers notre réseau de bureaux et de missions de terrain dans le monde entier.",
+      desc: 'Coordination des efforts humanitaires et du plaidoyer juridique à travers notre réseau de bureaux et de missions de terrain dans le monde entier.',
     },
     news: {
       title: "Communiqués et déclarations — Salle de presse de l'ICHR",
@@ -35,7 +35,7 @@ export const fr: Dict = {
       title: 'Vidéos — Médias de l’ICHR',
       desc: 'Discours, panels et images de terrain de la Coalition internationale pour les droits de l’homme.',
     },
-    notFound: { title: "Page introuvable — ICHR" },
+    notFound: { title: 'Page introuvable — ICHR' },
   },
 
   notFound: {
@@ -66,7 +66,8 @@ export const fr: Dict = {
     filterVideos: 'Filtrer les vidéos par série',
     playVideo: 'Lire la vidéo : {title}', // {title}
     pagination: 'Pagination',
-    tags: 'Étiquettes',  },
+    tags: 'Étiquettes',
+  },
 
   footer: {
     blurb:
@@ -83,7 +84,7 @@ export const fr: Dict = {
     eyebrow: 'Organisation non gouvernementale internationale',
     title: "La Coalition internationale pour les droits de l'homme",
     subtitle:
-      "Coordonner les efforts de la société civile, documenter les violations et apporter une réponse humanitaire pour protéger la dignité humaine dans le monde entier.",
+      'Coordonner les efforts de la société civile, documenter les violations et apporter une réponse humanitaire pour protéger la dignité humaine dans le monde entier.',
     ctaMandate: 'Notre mandat',
     ctaPresence: 'Présence mondiale',
   },
@@ -95,15 +96,15 @@ export const fr: Dict = {
     readMore: "En savoir plus sur l'ICHR",
     whatWeDoTitle: 'Notre action',
     whatWeDoIntro:
-      "Nos opérations reposent sur trois piliers fondamentaux destinés à protéger les droits humains et à apporter des secours.",
+      'Nos opérations reposent sur trois piliers fondamentaux destinés à protéger les droits humains et à apporter des secours.',
     pillars: [
       {
         title: 'Plaidoyer pour les droits humains',
-        body: "Dialoguer avec les instances internationales, les gouvernements et le public afin de faire évoluer les politiques et de faire respecter le droit international.",
+        body: 'Dialoguer avec les instances internationales, les gouvernements et le public afin de faire évoluer les politiques et de faire respecter le droit international.',
       },
       {
         title: 'Documentation et signalement',
-        body: "Surveiller, vérifier et signaler systématiquement les violations des droits humains afin de garantir une responsabilité fondée sur les faits.",
+        body: 'Surveiller, vérifier et signaler systématiquement les violations des droits humains afin de garantir une responsabilité fondée sur les faits.',
       },
       {
         title: 'Coordination humanitaire',
@@ -112,11 +113,11 @@ export const fr: Dict = {
     ],
     presenceTitle: 'Présence mondiale',
     presenceBody:
-      "Avec un siège à Genève et des bureaux administratifs à Paris, nous menons des missions de terrain sur plusieurs continents.",
+      'Avec un siège à Genève et des bureaux administratifs à Paris, nous menons des missions de terrain sur plusieurs continents.',
     viewAll: 'Voir toutes les implantations',
     supportTitle: 'Soutenir notre action',
     supportBody:
-      "Votre contribution nous permet de continuer à protéger les droits humains et à apporter une aide humanitaire à ceux qui en ont besoin.",
+      'Votre contribution nous permet de continuer à protéger les droits humains et à apporter une aide humanitaire à ceux qui en ont besoin.',
     donate: 'Faire un don',
     volunteer: 'Devenir bénévole',
   },
@@ -135,7 +136,7 @@ export const fr: Dict = {
       "Coordonner les efforts de la société civile, documenter les violations et apporter une réponse humanitaire immédiate. Nous nous efforçons d'inscrire les valeurs humaines universelles au cœur de la gouvernance mondiale, en garantissant la responsabilité, la justice et la protection des populations vulnérables.",
     visionTitle: 'Vision',
     visionBody:
-      "Un monde où les droits humains universels sont respectés, protégés et réalisés pour chaque individu, sans distinction de race, de religion ou de nationalité. Une société civile mondiale solide, capable de demander des comptes aux pouvoirs et de faire advenir la justice.",
+      'Un monde où les droits humains universels sont respectés, protégés et réalisés pour chaque individu, sans distinction de race, de religion ou de nationalité. Une société civile mondiale solide, capable de demander des comptes aux pouvoirs et de faire advenir la justice.',
     objectivesTitle: 'Objectifs stratégiques',
     objectives: [
       "Coordination humanitaire et déploiement d'une réponse rapide",
@@ -149,16 +150,22 @@ export const fr: Dict = {
       {
         city: 'Genève, Suisse',
         role: 'Siège international',
-        text: "Idéalement placé pour dialoguer directement avec les mécanismes des Nations unies, les agences internationales et les missions diplomatiques.",
+        text: 'Idéalement placé pour dialoguer directement avec les mécanismes des Nations unies, les agences internationales et les missions diplomatiques.',
       },
       {
         city: 'Paris, France',
         role: 'Bureau administratif',
-        text: "Coordination des opérations européennes, des partenariats stratégiques et de la supervision administrative.",
+        text: 'Coordination des opérations européennes, des partenariats stratégiques et de la supervision administrative.',
       },
     ],
     principlesTitle: 'Principes directeurs',
-    principles: ['Neutralité', 'Indépendance', 'Responsabilité', 'Transparence', 'Respect du droit international'],
+    principles: [
+      'Neutralité',
+      'Indépendance',
+      'Responsabilité',
+      'Transparence',
+      'Respect du droit international',
+    ],
   },
 
   contact: {
@@ -171,7 +178,7 @@ export const fr: Dict = {
       { city: 'Paris, France', role: 'Bureau administratif' },
     ],
     channelsTitle: 'Canaux de contact',
-    general: "Général / Urgence",
+    general: 'Général / Urgence',
     email: 'E-mail',
     whatsapp: 'WhatsApp',
     followTitle: 'Nous suivre',
@@ -181,7 +188,13 @@ export const fr: Dict = {
     org: 'Organisation (facultatif)',
     emailAddress: 'Adresse e-mail',
     subject: 'Objet',
-    subjects: ['Demande générale', 'Presse / Médias', 'Partenariat', 'Signaler une violation', 'Soutien aux dons'],
+    subjects: [
+      'Demande générale',
+      'Presse / Médias',
+      'Partenariat',
+      'Signaler une violation',
+      'Soutien aux dons',
+    ],
     message: 'Message',
     privacy: "Vos données sont protégées. L'ICHR applique des protocoles de confidentialité stricts.",
     send: 'Envoyer le message',
@@ -190,7 +203,7 @@ export const fr: Dict = {
   donate: {
     title: 'Soutenir notre action',
     subtitle:
-      "Votre contribution nous permet de continuer à protéger les droits humains et à fournir une aide humanitaire.",
+      'Votre contribution nous permet de continuer à protéger les droits humains et à fournir une aide humanitaire.',
     once: 'Don unique',
     monthly: 'Mensuel',
     otherAmount: 'Autre montant',
@@ -208,7 +221,7 @@ export const fr: Dict = {
       'Capacité de déploiement immédiat',
     ],
     quote:
-      "« Les contributions de soutiens comme vous permettent à nos équipes de réagir rapidement aux crises humanitaires et de défendre celles et ceux qui ne peuvent parler en leur propre nom. »",
+      '« Les contributions de soutiens comme vous permettent à nos équipes de réagir rapidement aux crises humanitaires et de défendre celles et ceux qui ne peuvent parler en leur propre nom. »',
     quoteAttr: "— Opérations de terrain de l'ICHR",
   },
 
@@ -217,7 +230,7 @@ export const fr: Dict = {
     subtitle:
       "Rejoignez notre équipe internationale de professionnels qui œuvrent à la protection des droits humains et à l'aide humanitaire.",
     formTitle: 'Formulaire de candidature',
-    formIntro: 'Nous examinons les candidatures au fil de l\'eau et contactons les candidats retenus.',
+    formIntro: "Nous examinons les candidatures au fil de l'eau et contactons les candidats retenus.",
     firstName: 'Prénom',
     lastName: 'Nom',
     emailAddress: 'Adresse e-mail',
@@ -235,17 +248,18 @@ export const fr: Dict = {
     expLabel: 'Expérience pertinente',
     expPlaceholder: 'Décrivez brièvement vos compétences et votre expérience pertinentes…',
     disclaimer:
-      "En soumettant cette candidature, vous acceptez notre code de conduite des bénévoles et reconnaissez que toute affectation est soumise aux disponibilités et aux exigences de vérification.",
+      'En soumettant cette candidature, vous acceptez notre code de conduite des bénévoles et reconnaissez que toute affectation est soumise aux disponibilités et aux exigences de vérification.',
     submit: 'Envoyer la candidature',
   },
 
   locations: {
     title: 'Présence mondiale',
     subtitle:
-      "Coordination des efforts humanitaires et du plaidoyer juridique à travers notre réseau de bureaux et de missions de terrain dans le monde entier.",
+      'Coordination des efforts humanitaires et du plaidoyer juridique à travers notre réseau de bureaux et de missions de terrain dans le monde entier.',
     headOffices: 'Sièges',
     regionalTitle: 'Présence régionale',
-    regionalIntro: 'Découvrez nos missions de terrain et nos bureaux régionaux répartis sur plusieurs continents.',
+    regionalIntro:
+      'Découvrez nos missions de terrain et nos bureaux régionaux répartis sur plusieurs continents.',
     stats: {
       offices: 'Bureaux',
       countries: 'Pays',
@@ -255,11 +269,12 @@ export const fr: Dict = {
       field: 'Missions de terrain',
     },
     skipMap: "Passer la carte — accéder à l'annuaire des bureaux",
-    noscript: "La carte interactive nécessite JavaScript. Tous les bureaux et missions sont répertoriés ci-dessous.",
+    noscript:
+      'La carte interactive nécessite JavaScript. Tous les bureaux et missions sont répertoriés ci-dessous.',
     fieldTitle: 'Bureaux et missions de terrain',
     partnerTitle: 'Devenir partenaire',
     partnerBody:
-      "Vous êtes une ONG locale ou une organisation de la société civile ? Nous renforçons les capacités et soutenons les partenaires partageant notre mission.",
+      'Vous êtes une ONG locale ou une organisation de la société civile ? Nous renforçons les capacités et soutenons les partenaires partageant notre mission.',
     partnerCta: 'Devenir partenaire',
   },
 
@@ -317,7 +332,7 @@ export const fr: Dict = {
     availableIn: 'Lire en', // language-toggle label
     supportTitle: 'Soutenir notre action',
     supportBody:
-      "Votre contribution nous permet de continuer à protéger les droits humains et à apporter une aide humanitaire à ceux qui en ont besoin.",
+      'Votre contribution nous permet de continuer à protéger les droits humains et à apporter une aide humanitaire à ceux qui en ont besoin.',
     donate: 'Faire un don',
     volunteer: 'Devenir bénévole',
   },
@@ -348,19 +363,23 @@ export const fr: Dict = {
     offices: {
       '1': {
         title: 'Genève (siège international)',
-        description: "Notre pôle central pour le plaidoyer juridique international, la coordination des politiques et la liaison avec les Nations unies.",
+        description:
+          'Notre pôle central pour le plaidoyer juridique international, la coordination des politiques et la liaison avec les Nations unies.',
       },
       '7': {
         title: 'Paris (siège administratif)',
-        description: "Centre de coordination des opérations européennes, de la collecte de fonds et des partenariats stratégiques.",
+        description:
+          'Centre de coordination des opérations européennes, de la collecte de fonds et des partenariats stratégiques.',
       },
       '3': {
         title: 'Kiev, Ukraine',
-        description: "Distribution de fournitures médicales aux hôpitaux de première ligne et aide à l'hébergement hivernal.",
+        description:
+          "Distribution de fournitures médicales aux hôpitaux de première ligne et aide à l'hébergement hivernal.",
       },
       '5': {
         title: 'Bogota, Colombie',
-        description: "Soutien juridique aux droits fonciers des peuples autochtones et programmes de protection des responsables communautaires.",
+        description:
+          'Soutien juridique aux droits fonciers des peuples autochtones et programmes de protection des responsables communautaires.',
       },
       '2': {
         title: 'Djouba, Soudan du Sud',

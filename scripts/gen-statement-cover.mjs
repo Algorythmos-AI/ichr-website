@@ -59,7 +59,12 @@ const LOCALES = {
     font: LATIN,
     org: "COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME",
     eyebrow: 'DÉCLARATION IMPORTANTE',
-    headline: ['Sur la partialité procédurale', 'et le traitement sélectif des', "violations des droits de l'homme", 'au Soudan'],
+    headline: [
+      'Sur la partialité procédurale',
+      'et le traitement sélectif des',
+      "violations des droits de l'homme",
+      'au Soudan',
+    ],
     headSize: 54,
     headLh: 74,
     headTop: 452,
@@ -178,7 +183,9 @@ for (const loc of targets) {
   const c = LOCALES[loc];
   if (!c) throw new Error(`Unknown locale "${loc}" — expected one of ${Object.keys(LOCALES).join(', ')}`);
   const out = `${OUT_DIR}/${c.file}`;
-  await sharp(Buffer.from(buildSvg(c))).jpeg({ quality: 88, mozjpeg: true }).toFile(out);
+  await sharp(Buffer.from(buildSvg(c)))
+    .jpeg({ quality: 88, mozjpeg: true })
+    .toFile(out);
   const m = await sharp(out).metadata();
   console.log(`✅ [${loc}] ${out} — ${m.width}x${m.height} ${m.format}`);
 }

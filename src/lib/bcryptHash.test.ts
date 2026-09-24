@@ -14,7 +14,15 @@ test('reads the cost out of a bcrypt hash', () => {
 });
 
 test('rejects anything that is not a bcrypt hash', () => {
-  for (const junk of ['', 'not-a-hash', '$2a$10$tooshort', '$1$md5$xxxx', null, undefined, '$2a$xx$' + 'a'.repeat(53)]) {
+  for (const junk of [
+    '',
+    'not-a-hash',
+    '$2a$10$tooshort',
+    '$1$md5$xxxx',
+    null,
+    undefined,
+    '$2a$xx$' + 'a'.repeat(53),
+  ]) {
     assert.equal(parseBcryptCost(junk as string), null, JSON.stringify(junk));
   }
 });
