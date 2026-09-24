@@ -36,7 +36,7 @@
     "dompurify": "^3.4.10",
     "jsonwebtoken": "^9.0.2",
     "leaflet": "1.9.4",
-    "lucide-react": "^0.562.0",
+    "lucide-react": "^1.47.0",
     "marked": "^15.0.12",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
