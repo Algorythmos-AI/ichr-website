@@ -23,6 +23,15 @@ Types: `feat` `fix` `docs` `chore` `ci` `refactor` `perf` `test` `content` `buil
 
 The body says **what** changed, **why**, and **how it was verified**.
 
+## Tooling
+
+- **Node 22.6+** locally; production and CI's primary jobs run Node 24.
+- **npm 11** (`npm install -g npm@11`), the version bundled with Node 24. Lockfiles written by
+  npm 11 are rejected by npm 10's `npm ci`, so one npm version is used everywhere — including
+  by Dependabot.
+- Dependency install scripts are allowed per package and version in `allowScripts`
+  (`package.json`). After an update, `npm install-scripts ls` lists anything new to review.
+
 ## Before you open a pull request
 
 ```bash
