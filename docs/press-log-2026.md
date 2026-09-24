@@ -73,6 +73,23 @@ convention for attached documents — no inline markdown PDF links anywhere in t
 
 ---
 
+## September 2026
+
+| Date | Dateline | Category | Slug | Key | Src | Commit |
+|---|---|---|---|---|---|---|
+| 13 Sep | Geneva | Field Update | `hrc63-session-sudan-advocacy-geneva-september-2026` | `fe1ffa60…` | `SEP/1` | `aade854` |
+| 22 Sep | Geneva | Press Release | `eu-delegation-geneva-sudan-september-2026` | `6cc35ded…` | `SEP/2` | `0de46bd` |
+
+`eu-delegation-…-september-2026` is a **follow-up** to the 2 June meeting with the same
+official (`eu-delegation-geneva-sudan-june-2026`) and links to it from all three locales —
+the first article body to carry an internal link (relative href; `renderMarkdown` keeps it).
+The client's notes spell her "Tapiyo"; published as **Katarina Tapio** (كاتارينا تابيو), which
+is what both supplied cards and the June article read. English-only source; AR and FR are
+translations. The cards read "International coalition of Human Rights Organizations" — not
+retouched; see "Open at end of August" item 1.
+
+---
+
 ## Attached documents
 
 | Article | File | Bytes |
