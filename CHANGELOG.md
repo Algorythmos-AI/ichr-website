@@ -7,6 +7,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Security
+
+- `path-to-regexp` 6.1.0 → 6.3.0 under the Vercel adapter's route compiler (an `overrides` pin,
+  same major; the generated routing config is byte-identical). Production dependencies now have
+  no high or critical advisories, and the audit allowlist is empty.
+
 ### Changed
 
 - ESLint 9 → 10 (`@eslint/js` 10, `eslint-plugin-astro` 3). `eslint-plugin-jsx-a11y` runs on

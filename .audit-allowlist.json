@@ -1,13 +1,5 @@
 {
   "_comment": "Reviewed high/critical advisories accepted until an upstream fix exists. Every entry needs a reason. Remove entries as upgrades land; scripts/ci/audit-deps.mjs reports stale ones.",
   "reviewed": "2026-09-24",
-  "advisories": [
-    {
-      "id": "GHSA-9wv6-86v2-598j",
-      "package": "path-to-regexp",
-      "severity": "high",
-      "title": "path-to-regexp outputs backtracking regular expressions",
-      "reason": "Transitive via @astrojs/vercel -> @vercel/routing-utils, which compiles route configuration at BUILD time; it does not match live requests. No fixed release on the @astrojs/vercel 11 line yet (npm only suggests a downgrade). Re-check on each adapter release."
-    }
-  ]
+  "advisories": []
 }
