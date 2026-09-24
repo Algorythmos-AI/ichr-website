@@ -7,6 +7,16 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- ESLint 9 → 10 (`@eslint/js` 10, `eslint-plugin-astro` 3). `eslint-plugin-jsx-a11y` runs on
+  ESLint 10 through an `overrides` entry until it declares support; all its rules verified to fire.
+
+### Fixed
+
+- Smoke test: a network failure now keeps the original error as `cause`.
+- Draft stash: removed a dead initial assignment.
+
 ## [1.0.0] — 2026-09-24
 
 First versioned release, on moving the site to the Algorythmos-AI organisation with a gated
