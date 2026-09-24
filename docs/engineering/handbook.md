@@ -285,8 +285,10 @@ branch produced no Vercel deployment at all — no build, no error. The pushes o
 built within seconds; configuration was audited and ruled out; the conclusion was a transient
 dropped event.
 
-- **Never assume a push deployed.** Confirm production is serving the new commit before
-  anything depends on it (seeding an article that references new images, for example).
+- **Never assume a push deployed.** `GET /api/health` reports the commit production is
+  serving, and the `release` workflow waits for it after every merge to `main` — see
+  [`docs/runbooks/release.md`](../runbooks/release.md). Nothing that depends on a deploy
+  (seeding an article that references new images, for example) runs before it is green.
 - **Recovery:** an empty commit re-fires the event. Deployment appears within seconds.
 - **Never deploy with `vercel --prod` from a working tree.** It uploads the directory, not the
   git tree, and would ship untracked local source material.

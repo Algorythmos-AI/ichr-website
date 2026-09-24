@@ -118,12 +118,14 @@ soon as it is published. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Documentation
 
-| Document                                             | For                                                            |
-| ---------------------------------------------------- | -------------------------------------------------------------- |
-| [Engineering handbook](docs/engineering/handbook.md) | architecture, the database workflow, i18n, security invariants |
-| [Publishing runbook](docs/runbooks/publishing.md)    | publishing a press statement in three languages                |
-| [Press log](docs/press-log-2026.md)                  | the record of every published statement                        |
-| [Contributing](CONTRIBUTING.md)                      | branches, commits and pull requests                            |
+| Document                                             | For                                                             |
+| ---------------------------------------------------- | --------------------------------------------------------------- |
+| [Engineering handbook](docs/engineering/handbook.md) | architecture, the database workflow, i18n, security invariants  |
+| [Publishing runbook](docs/runbooks/publishing.md)    | publishing a press statement in three languages                 |
+| [Release runbook](docs/runbooks/release.md)          | shipping `integration` to production, and what each gate proves |
+| [Rollback runbook](docs/runbooks/rollback.md)        | undoing a bad article or a bad release                          |
+| [Press log](docs/press-log-2026.md)                  | the record of every published statement                         |
+| [Contributing](CONTRIBUTING.md)                      | branches, commits and pull requests                             |
 
 ## Security
 
