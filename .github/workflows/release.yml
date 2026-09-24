@@ -1,0 +1,157 @@
+name: release
+
+# Runs when a release pull request merges into main. Vercel deploys main on its own; this
+# workflow proves that deploy is correct, then tags the release:
+#
+#   gates → await-deploy → smoke → release        (any failure → incident issue)
+#
+# Nothing here deploys. Production is served by Vercel's Git integration; this is the
+# verification half, which catches a deploy that silently never happened (28 July 2026).
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  SITE: https://www.ichr-international.org
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      checks: read
+    steps:
+      - name: Required checks passed on this exact commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          # One required check name per line — names contain spaces ("test (22)").
+          REQUIRED: |
+            typecheck
+            astro-check
+            lint
+            test (22)
+            test (24)
+            build
+            secrets
+            codeql
+        run: |
+          names=()
+          while IFS= read -r n; do [ -n "$n" ] && names+=("$n"); done <<< "$REQUIRED"
+          for i in $(seq 1 55); do
+            runs=$(gh api "repos/$REPO/commits/$SHA/check-runs?per_page=100" \
+              --jq '.check_runs[] | [.name, .status, (.conclusion // "")] | @tsv')
+            pending=0; failed=0
+            for name in "${names[@]}"; do
+              line=$(printf '%s\n' "$runs" | awk -F'\t' -v n="$name" '$1==n' | tail -1)
+              status=$(printf '%s' "$line" | cut -f2); conclusion=$(printf '%s' "$line" | cut -f3)
+              if [ -z "$line" ] || [ "$status" != "completed" ]; then pending=1
+              elif [ "$conclusion" != "success" ]; then echo "::error::required check '$name' concluded '$conclusion'"; failed=1
+              fi
+            done
+            [ "$failed" = 1 ] && exit 1
+            [ "$pending" = 0 ] && { echo "All required checks passed on $SHA."; exit 0; }
+            echo "waiting for required checks ($i)…"; sleep 30
+          done
+          echo "::error::required checks did not complete on $SHA within the time limit"; exit 1
+
+  await-deploy:
+    needs: gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Production serves this commit (or a newer one)
+        env:
+          SHA: ${{ github.sha }}
+        run: |
+          for i in $(seq 1 60); do
+            commit=$(curl -fsS --max-time 15 -H 'cache-control: no-cache' "$SITE/api/health?r=$i" | jq -r '.commit // empty' || true)
+            if [ "$commit" = "$SHA" ]; then echo "Production is serving $SHA."; exit 0; fi
+            # A later release may already have overtaken this one — that also proves this commit shipped.
+            if [ -n "$commit" ] && git merge-base --is-ancestor "$SHA" "$commit" 2>/dev/null; then
+              echo "Production is serving $commit, which contains $SHA."; exit 0
+            fi
+            echo "production reports '${commit:-no answer}', waiting for $SHA ($i)…"; sleep 15
+          done
+          echo "::error::Production never reported $SHA. Vercel may have dropped the deploy event — see docs/runbooks/release.md ('A release never goes live')."
+          exit 1
+
+  smoke:
+    needs: await-deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+      - run: node scripts/ci/smoke.mjs "$SITE"
+
+  release:
+    needs: smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Tag and publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.sha }}
+        run: |
+          version=$(jq -r .version package.json)
+          tag="v$version"
+          if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+            echo "::notice::$tag already exists — an infrastructure-only release; nothing to tag."
+            exit 0
+          fi
+          # The CHANGELOG section for this version becomes the release notes.
+          awk -v v="$version" '
+            $0 ~ "^## \\[" v "\\]" { on = 1; next }
+            on && /^## \[/ { exit }
+            on { print }
+          ' CHANGELOG.md > notes.md
+          if ! grep -q '[^[:space:]]' notes.md; then
+            echo "::error::CHANGELOG.md has no '## [$version]' section."; exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git tag -a "$tag" -m "$tag" "$SHA"
+          git push origin "$tag"
+          gh release create "$tag" --title "$tag" --notes-file notes.md --verify-tag
+
+  incident:
+    needs: [gates, await-deploy, smoke, release]
+    if: failure()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update the release incident
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create incident --repo "$REPO" --color B60205 --description "Production problem" 2>/dev/null || true
+          title="Release verification failed for ${SHA:0:7}"
+          body=$(printf 'The release pipeline failed for commit %s.\n\n- Run: %s\n- Runbook: docs/runbooks/rollback.md\n' "$SHA" "$RUN")
+          existing=$(gh issue list --repo "$REPO" --label incident --state open --search "$title in:title" --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then gh issue comment "$existing" --repo "$REPO" --body "$body"
+          else gh issue create --repo "$REPO" --label incident --title "$title" --body "$body"; fi

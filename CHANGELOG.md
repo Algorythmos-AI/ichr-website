@@ -7,6 +7,11 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.0] — 2026-09-24
+
+First versioned release, on moving the site to the Algorythmos-AI organisation with a gated
+release process.
+
 ### Added
 
 - Continuous integration on every pull request: type-check, `astro check`, unit tests on
@@ -16,6 +21,16 @@ All notable changes to this project are documented here. The format follows
 - Pull request hygiene: Conventional Commit titles; production only accepts the trunk.
 - Dependabot for npm and GitHub Actions, targeting `integration`.
 - Repository policy: code owners, pull request and issue templates, security policy.
+- `GET /api/health`: liveness and the deployed commit, without touching the database.
+- `scripts/ci/smoke.mjs`: end-to-end production checks — every locale, the newest article and
+  all its language versions, real 404s, the sitemap, robots and the admin `noindex`.
+- Release pipeline (`release.yml`): after each merge to `main`, verifies the required checks,
+  waits for production to serve the merge commit, runs the smoke test, then tags the release.
+  Failures open an `incident` issue. Preview deployments are smoke-tested (`deploy-verify.yml`)
+  and production every 30 minutes (`uptime.yml`).
+- Branch and tag rulesets as code (`.github/rulesets/`, `scripts/ci/apply-rulesets.sh`) and a
+  release preflight (`scripts/release/preflight.sh`).
+- Runbooks for releasing and rolling back.
 - ESLint (TypeScript, Astro, React hooks, jsx-a11y) and Prettier, enforced in CI by a `lint`
   job; `npm run verify` runs the full CI set locally.
 

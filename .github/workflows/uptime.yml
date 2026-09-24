@@ -1,0 +1,50 @@
+name: uptime
+
+# Every 30 minutes, run the production smoke test. On failure, open (or update) one
+# `incident` issue so a broken site is noticed even when nobody is releasing.
+#
+# GitHub pauses scheduled workflows after 60 days without repository activity; re-enable it
+# from the Actions tab if that happens.
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uptime
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+      - run: node scripts/ci/smoke.mjs https://www.ichr-international.org
+
+  incident:
+    needs: smoke
+    if: failure()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update the uptime incident
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create incident --repo "$REPO" --color B60205 --description "Production problem" 2>/dev/null || true
+          title="Production smoke test failing"
+          existing=$(gh issue list --repo "$REPO" --label incident --state open --search "$title in:title" --json number --jq '.[0].number')
+          body="Smoke test failed: $RUN — see docs/runbooks/rollback.md"
+          if [ -n "$existing" ]; then gh issue comment "$existing" --repo "$REPO" --body "$body"
+          else gh issue create --repo "$REPO" --label incident --title "$title" --body "$body"; fi
