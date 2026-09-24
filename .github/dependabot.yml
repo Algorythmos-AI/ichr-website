@@ -29,6 +29,14 @@ updates:
       # The compiler major (TypeScript 7, the native port) needs Astro tooling support first.
       - dependency-name: typescript
         update-types: ['version-update:semver-major']
+      # ESLint majors move together (eslint, @eslint/js, typescript-eslint, plugins); take them as
+      # one deliberate upgrade, not piecemeal (#15 and #17 each failed alone).
+      - dependency-name: eslint
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@eslint/js'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'eslint-plugin-*'
+        update-types: ['version-update:semver-major']
       # Types must match the oldest Node the code runs on (22 locally, 24 in production);
       # newer majors would type-check APIs that do not exist at runtime.
       - dependency-name: '@types/node'
