@@ -1,0 +1,43 @@
+name: pr-hygiene
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  title:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Conventional-commit title
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          re='^(feat|fix|docs|chore|ci|refactor|perf|test|content|build|revert|release)(\([a-z0-9/-]+\))?!?: .+'
+          if [[ ! "$TITLE" =~ $re ]]; then
+            echo "::error::PR title must be Conventional Commits style, e.g. \"fix(news): …\" or \"content: …\". Got: \"$TITLE\""
+            exit 1
+          fi
+
+  # Production only ever receives the trunk. Anything else reaching main skips the gates
+  # that integration enforces.
+  main-source-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Pull requests into main must come from integration
+        env:
+          BASE: ${{ github.event.pull_request.base.ref }}
+          HEAD: ${{ github.event.pull_request.head.ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ "$BASE" != "main" ]; then echo "Base is $BASE — nothing to guard."; exit 0; fi
+          if [ "$HEAD" = "integration" ] && [ "$HEAD_REPO" = "$REPO" ]; then
+            echo "Release pull request from integration."; exit 0
+          fi
+          echo "::error::Pull requests into main must come from integration (got $HEAD_REPO:$HEAD)."
+          exit 1

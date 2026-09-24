@@ -26,7 +26,7 @@ The body says **what** changed, **why**, and **how it was verified**.
 ## Before you open a pull request
 
 ```bash
-npx astro sync && npx tsc --noEmit
+npm run typecheck
 npm run check
 npm test
 npm run build
