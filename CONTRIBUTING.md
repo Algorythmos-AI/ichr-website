@@ -33,6 +33,10 @@ The body says **what** changed, **why**, and **how it was verified**.
 - `overrides` lets `eslint-plugin-jsx-a11y` 6.10 run on ESLint 10: it works (every rule was
   verified to fire) but has not yet declared ESLint 10 in its peer range. Remove the override
   once it does — tracked in #26.
+- `overrides` pins `path-to-regexp` 6.3.0 under `@vercel/routing-utils` (the Vercel adapter's
+  build-time route compiler), which still depends on the vulnerable 6.1.0 (GHSA-9wv6-86v2-598j).
+  Same major; the generated `.vercel/output/config.json` is byte-identical. Remove it once
+  `@vercel/routing-utils` depends on a fixed release.
 - Dependency install scripts are allowed per package and version in `allowScripts`
   (`package.json`). After an update, `npm install-scripts ls` lists anything new to review.
 
