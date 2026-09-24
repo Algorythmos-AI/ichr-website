@@ -38,6 +38,9 @@ npm run build      # prisma generate && astro build
 npm run check      # astro check
 npm test           # node's built-in test runner over src/lib and prisma/lib
 npm run typecheck  # astro sync && tsc --noEmit
+npm run lint       # ESLint (correctness, hooks, accessibility)
+npm run format     # Prettier
+npm run verify     # everything CI runs, in order
 ```
 
 A fresh clone has no `.astro/` directory, and `import.meta.env` is typed by the files
@@ -131,7 +134,7 @@ redirects.
 **The exception: response control belongs to the route.** The three `news/[slug].astro`
 wrappers load the article themselves (`loadArticle` in `src/server/article.ts`) and set
 `Astro.response.status = 404` before rendering `<NotFoundPage>`. `Astro.rewrite()` /
-`Astro.response.status` from inside a *component* renders into an already-sent response, which
+`Astro.response.status` from inside a _component_ renders into an already-sent response, which
 Astro reports as `ResponseSentError` and the adapter serves as "Internal server error" **with
 HTTP 200**. That was a live bug on every missing slug and every draft.
 `src/lib/pageComponents.test.ts` fails the build if a page component starts controlling the
@@ -142,7 +145,7 @@ response again.
 
 - UI strings: `src/i18n/strings/{en,ar,fr}.ts`. `en` is canonical; `export type Dict = typeof en`
   forces `ar` and `fr` to match, so a missing key is a **compile error**. Array lengths are
-  *not* type-enforced — keep them equal by hand.
+  _not_ type-enforced — keep them equal by hand.
 - Helpers: `src/i18n/index.ts` — `stripLocale`, `localizedPath`, `localizeHref`,
   `localeAlternates`, `dir`, `ogLocale`.
 - RTL: use logical CSS utilities (`ms/me/ps/pe/start/end`, `padding-inline-start`,
@@ -160,11 +163,11 @@ document, a press card or an older article.
 The full name is **Abdelrahim Grein Sadam**; "Abdelrahim Grein" is the short form used in
 bylines and body text.
 
-| date | spelling | source |
-|---|---|---|
-| source RTF | `Abdel-Rahim Grein` | the supplied press-9 document, hyphenated |
-| 26 Aug 2026 | `Abderrahim Grein` | chosen as house spelling; two live articles normalised to it |
-| **31 Aug 2026** | **`Abdelrahim Grein`** | **confirmed by the subject — current and final** |
+| date            | spelling               | source                                                       |
+| --------------- | ---------------------- | ------------------------------------------------------------ |
+| source RTF      | `Abdel-Rahim Grein`    | the supplied press-9 document, hyphenated                    |
+| 26 Aug 2026     | `Abderrahim Grein`     | chosen as house spelling; two live articles normalised to it |
+| **31 Aug 2026** | **`Abdelrahim Grein`** | **confirmed by the subject — current and final**             |
 
 - **The Arabic is unaffected.** عبد الرحيم قرين transliterates to both Latin forms; the Arabic
   copy must not be "fixed" to match a Latin edit.
@@ -204,7 +207,7 @@ statement, is **[`docs/runbooks/publishing.md`](../runbooks/publishing.md)**. In
    files **and** `src/generated/blog-images.json`, which `src/lib/assets.ts` reads to build each
    `srcset`. `npm test` fails if a published image is missing from the manifest.
 4. **The images must be in production before the article references them.** Merge to
-   `integration`, release to `main`, confirm the deploy, *then* seed as draft and publish.
+   `integration`, release to `main`, confirm the deploy, _then_ seed as draft and publish.
 
 ---
 
@@ -250,15 +253,15 @@ Arabic script, French text identical to the English, or a playlist with no label
 
 ## Environment variables
 
-| var | purpose |
-|---|---|
-| `DATABASE_URL` | Neon **pooled** connection string (required) |
-| `DATABASE_URL_UNPOOLED` | Neon **direct** connection; `schema.prisma` `directUrl` |
-| `JWT_SECRET` | signs admin tokens (required at runtime; read lazily, so builds don't need it) |
-| `ADMIN_USERNAME` / `ADMIN_PASSWORD` | seeded admin credentials |
-| `PUBLIC_SITE_URL` | canonical/OG absolute base — **Production and Development only, deliberately not Preview** |
-| `PUBLIC_API_URL` | optional origin override for the admin client; empty = same-origin |
-| `BLOB_READ_WRITE_TOKEN` | Vercel Blob (admin uploads); auto-set on Vercel |
+| var                                 | purpose                                                                                    |
+| ----------------------------------- | ------------------------------------------------------------------------------------------ |
+| `DATABASE_URL`                      | Neon **pooled** connection string (required)                                               |
+| `DATABASE_URL_UNPOOLED`             | Neon **direct** connection; `schema.prisma` `directUrl`                                    |
+| `JWT_SECRET`                        | signs admin tokens (required at runtime; read lazily, so builds don't need it)             |
+| `ADMIN_USERNAME` / `ADMIN_PASSWORD` | seeded admin credentials                                                                   |
+| `PUBLIC_SITE_URL`                   | canonical/OG absolute base — **Production and Development only, deliberately not Preview** |
+| `PUBLIC_API_URL`                    | optional origin override for the admin client; empty = same-origin                         |
+| `BLOB_READ_WRITE_TOKEN`             | Vercel Blob (admin uploads); auto-set on Vercel                                            |
 
 `.env` and `.env.local` are gitignored and must never be committed.
 

@@ -2,12 +2,28 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import {
-  LayoutDashboard, LogOut, Plus, Pencil, Trash2, Eye, EyeOff, ChevronLeft,
-  UploadCloud, X, CheckCircle, AlertCircle,
+  LayoutDashboard,
+  LogOut,
+  Plus,
+  Pencil,
+  Trash2,
+  Eye,
+  EyeOff,
+  ChevronLeft,
+  UploadCloud,
+  X,
+  CheckCircle,
+  AlertCircle,
 } from 'lucide-react';
 import { api, getToken, clearToken, resolveAssetUrl, errMessage, ApiError } from './apiClient';
 import { POST_CATEGORIES, type Post, type PostInput, type PostCategory, type PostStatus } from '@/types';
-import { groupByStory, buildTranslationDraft, ADMIN_LOCALES, LOCALE_LABEL, type AdminLocale } from '@/lib/adminTranslations';
+import {
+  groupByStory,
+  buildTranslationDraft,
+  ADMIN_LOCALES,
+  LOCALE_LABEL,
+  type AdminLocale,
+} from '@/lib/adminTranslations';
 import { stashDraft, takeStashedDraft } from '@/lib/draftStash';
 
 marked.setOptions({ gfm: true, breaks: false });
@@ -53,7 +69,11 @@ const inputCls =
 // ---------------------------------------------------------------------------
 // Toasts
 // ---------------------------------------------------------------------------
-interface Toast { id: number; type: 'success' | 'error'; message: string; }
+interface Toast {
+  id: number;
+  type: 'success' | 'error';
+  message: string;
+}
 
 // Returns the toast LIST (changes every time a toast appears) separately from the
 // ACTIONS (`notify`), which must keep a stable identity across renders.
@@ -95,7 +115,11 @@ const ToastStack: React.FC<{ toasts: Toast[] }> = ({ toasts }) => (
           t.type === 'success' ? 'bg-[#1a4a68]' : 'bg-[#b91c1c]'
         }`}
       >
-        {t.type === 'success' ? <CheckCircle className="w-4 h-4 flex-shrink-0" /> : <AlertCircle className="w-4 h-4 flex-shrink-0" />}
+        {t.type === 'success' ? (
+          <CheckCircle className="w-4 h-4 flex-shrink-0" />
+        ) : (
+          <AlertCircle className="w-4 h-4 flex-shrink-0" />
+        )}
         <span>{t.message}</span>
       </div>
     ))}
@@ -144,22 +168,32 @@ const LoginScreen: React.FC<{ onAuthed: () => void }> = ({ onAuthed }) => {
         </div>
         <form onSubmit={submit} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2" htmlFor="login-user">Username</label>
+            <label className="block text-sm font-medium text-slate-700 mb-2" htmlFor="login-user">
+              Username
+            </label>
             <input
               id="login-user"
               value={username}
-              onChange={(e) => { setUsername(e.target.value); setError(false); }}
+              onChange={(e) => {
+                setUsername(e.target.value);
+                setError(false);
+              }}
               className={inputCls}
               autoComplete="username"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-slate-700 mb-2" htmlFor="login-pass">Password</label>
+            <label className="block text-sm font-medium text-slate-700 mb-2" htmlFor="login-pass">
+              Password
+            </label>
             <input
               id="login-pass"
               type="password"
               value={password}
-              onChange={(e) => { setPassword(e.target.value); setError(false); }}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setError(false);
+              }}
               className={`${inputCls} ${error ? 'border-red-500 focus:ring-red-400' : ''}`}
               autoComplete="current-password"
               placeholder="Password"
@@ -231,7 +265,11 @@ export const AdminDashboard: React.FC = () => {
   const handleError = useCallback(
     (e: unknown, fallback?: string) => {
       if (e instanceof ApiError && (e.status === 401 || e.status === 403)) {
-        stashDraft(typeof window === 'undefined' ? null : window.sessionStorage, draftRef.current, editingIdRef.current);
+        stashDraft(
+          typeof window === 'undefined' ? null : window.sessionStorage,
+          draftRef.current,
+          editingIdRef.current,
+        );
         setAuthed(false);
         notify.error('Your session expired. Sign in again — your work has been kept.');
         return;
@@ -488,8 +526,13 @@ export const AdminDashboard: React.FC = () => {
           </div>
         </nav>
         <div className="p-4 border-t border-white/10">
-          <a href="/news" className="block text-sm text-white/70 hover:text-white px-4 py-2">View live newsroom →</a>
-          <button onClick={logout} className="w-full flex items-center gap-2 text-white/70 hover:text-white px-4 py-2">
+          <a href="/news" className="block text-sm text-white/70 hover:text-white px-4 py-2">
+            View live newsroom →
+          </a>
+          <button
+            onClick={logout}
+            className="w-full flex items-center gap-2 text-white/70 hover:text-white px-4 py-2"
+          >
             <LogOut className="w-5 h-5" /> Logout
           </button>
         </div>
@@ -506,7 +549,8 @@ export const AdminDashboard: React.FC = () => {
                     silently truncated list used to hide older posts entirely. */}
                 <p className="text-sm text-slate-500">
                   {totalPosts} total
-                  {totalListPages > 1 && ` · showing ${posts.length} on page ${listPage} of ${totalListPages}`}
+                  {totalListPages > 1 &&
+                    ` · showing ${posts.length} on page ${listPage} of ${totalListPages}`}
                 </p>
               </div>
               <button
@@ -541,7 +585,9 @@ export const AdminDashboard: React.FC = () => {
                         />
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
-                            <span className="text-xs font-semibold uppercase text-[#1a4a68]">{rep.category}</span>
+                            <span className="text-xs font-semibold uppercase text-[#1a4a68]">
+                              {rep.category}
+                            </span>
                             <span className="text-xs text-slate-400">{rep.date.slice(0, 10)}</span>
                           </div>
                           <h3 className="font-bold text-slate-800 truncate">{story.title}</h3>
@@ -551,7 +597,9 @@ export const AdminDashboard: React.FC = () => {
                               if (p) {
                                 return (
                                   <div key={loc} className="flex items-center gap-2 text-sm">
-                                    <span className="w-7 text-[10px] font-bold uppercase tracking-wide text-slate-500">{loc}</span>
+                                    <span className="w-7 text-[10px] font-bold uppercase tracking-wide text-slate-500">
+                                      {loc}
+                                    </span>
                                     <StatusBadge status={p.status} />
                                     <span className="flex-1" />
                                     <button
@@ -559,12 +607,24 @@ export const AdminDashboard: React.FC = () => {
                                       title={p.status === 'published' ? 'Unpublish' : 'Publish'}
                                       className="p-1.5 rounded hover:bg-slate-100 text-slate-500"
                                     >
-                                      {p.status === 'published' ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                                      {p.status === 'published' ? (
+                                        <EyeOff className="w-4 h-4" />
+                                      ) : (
+                                        <Eye className="w-4 h-4" />
+                                      )}
                                     </button>
-                                    <button onClick={() => openEdit(p)} title="Edit" className="p-1.5 rounded hover:bg-slate-100 text-slate-500">
+                                    <button
+                                      onClick={() => openEdit(p)}
+                                      title="Edit"
+                                      className="p-1.5 rounded hover:bg-slate-100 text-slate-500"
+                                    >
                                       <Pencil className="w-4 h-4" />
                                     </button>
-                                    <button onClick={() => remove(p)} title="Delete" className="p-1.5 rounded hover:bg-red-50 text-[#b91c1c]">
+                                    <button
+                                      onClick={() => remove(p)}
+                                      title="Delete"
+                                      className="p-1.5 rounded hover:bg-red-50 text-[#b91c1c]"
+                                    >
                                       <Trash2 className="w-4 h-4" />
                                     </button>
                                   </div>
@@ -614,7 +674,10 @@ export const AdminDashboard: React.FC = () => {
         ) : (
           <section className="max-w-6xl">
             <div className="flex items-center justify-between mb-6">
-              <button onClick={() => setView('list')} className="text-slate-500 hover:text-slate-800 flex items-center gap-1">
+              <button
+                onClick={() => setView('list')}
+                className="text-slate-500 hover:text-slate-800 flex items-center gap-1"
+              >
                 <ChevronLeft className="w-4 h-4" /> Back to list
               </button>
               <div className="flex gap-2">
@@ -647,7 +710,11 @@ export const AdminDashboard: React.FC = () => {
               {/* Form */}
               <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
                 <Field label="Title" error={errors.title}>
-                  <input value={draft.title} onChange={(e) => setTitle(e.target.value)} className={inputCls} />
+                  <input
+                    value={draft.title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    className={inputCls}
+                  />
                 </Field>
                 <Field label="Slug" hint="URL: /news/<slug>" error={errors.slug}>
                   <input value={draft.slug} onChange={(e) => setSlug(e.target.value)} className={inputCls} />
@@ -659,11 +726,20 @@ export const AdminDashboard: React.FC = () => {
                       onChange={(e) => setDraft((d) => ({ ...d, category: e.target.value as PostCategory }))}
                       className={inputCls}
                     >
-                      {POST_CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
+                      {POST_CATEGORIES.map((c) => (
+                        <option key={c} value={c}>
+                          {c}
+                        </option>
+                      ))}
                     </select>
                   </Field>
                   <Field label="Date">
-                    <input type="date" value={draft.date} onChange={(e) => setDraft((d) => ({ ...d, date: e.target.value }))} className={inputCls} />
+                    <input
+                      type="date"
+                      value={draft.date}
+                      onChange={(e) => setDraft((d) => ({ ...d, date: e.target.value }))}
+                      className={inputCls}
+                    />
                   </Field>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -673,13 +749,19 @@ export const AdminDashboard: React.FC = () => {
                       onChange={(e) => setDraft((d) => ({ ...d, locale: e.target.value }))}
                       className={inputCls}
                     >
-                      {LOCALE_OPTIONS.map((l) => <option key={l.value} value={l.value}>{l.label}</option>)}
+                      {LOCALE_OPTIONS.map((l) => (
+                        <option key={l.value} value={l.value}>
+                          {l.label}
+                        </option>
+                      ))}
                     </select>
                   </Field>
                   <Field label="Translation key" hint="links a story's languages">
                     <input
                       value={draft.translationKey ?? ''}
-                      onChange={(e) => setDraft((d) => ({ ...d, translationKey: e.target.value || undefined }))}
+                      onChange={(e) =>
+                        setDraft((d) => ({ ...d, translationKey: e.target.value || undefined }))
+                      }
                       className={inputCls}
                       placeholder="(auto for new stories)"
                     />
@@ -687,21 +769,45 @@ export const AdminDashboard: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <Field label="Location">
-                    <input value={draft.location} onChange={(e) => setDraft((d) => ({ ...d, location: e.target.value }))} className={inputCls} placeholder="Geneva" />
+                    <input
+                      value={draft.location}
+                      onChange={(e) => setDraft((d) => ({ ...d, location: e.target.value }))}
+                      className={inputCls}
+                      placeholder="Geneva"
+                    />
                   </Field>
                   <Field label="Author">
-                    <input value={draft.authorName ?? ''} onChange={(e) => setDraft((d) => ({ ...d, authorName: e.target.value }))} className={inputCls} />
+                    <input
+                      value={draft.authorName ?? ''}
+                      onChange={(e) => setDraft((d) => ({ ...d, authorName: e.target.value }))}
+                      className={inputCls}
+                    />
                   </Field>
                 </div>
                 <Field label="Excerpt" error={errors.excerpt}>
-                  <textarea rows={3} value={draft.excerpt} onChange={(e) => setDraft((d) => ({ ...d, excerpt: e.target.value }))} className={inputCls} />
+                  <textarea
+                    rows={3}
+                    value={draft.excerpt}
+                    onChange={(e) => setDraft((d) => ({ ...d, excerpt: e.target.value }))}
+                    className={inputCls}
+                  />
                 </Field>
                 <Field label="Hashtags" hint="comma-separated">
-                  <input value={hashtagText} onChange={(e) => setHashtags(e.target.value)} className={inputCls} placeholder="#human_rights, #sudan" />
+                  <input
+                    value={hashtagText}
+                    onChange={(e) => setHashtags(e.target.value)}
+                    className={inputCls}
+                    placeholder="#human_rights, #sudan"
+                  />
                   {draft.hashtags.length > 0 && (
                     <div className="flex flex-wrap gap-1 mt-2">
                       {draft.hashtags.map((t) => (
-                        <span key={t} className="text-xs text-[#1a4a68] bg-[#1a4a68]/10 px-2 py-0.5 rounded-full">#{t}</span>
+                        <span
+                          key={t}
+                          className="text-xs text-[#1a4a68] bg-[#1a4a68]/10 px-2 py-0.5 rounded-full"
+                        >
+                          #{t}
+                        </span>
                       ))}
                     </div>
                   )}
@@ -711,7 +817,11 @@ export const AdminDashboard: React.FC = () => {
                 <Field label="Cover image">
                   <div className="flex items-center gap-4">
                     {draft.coverImageUrl ? (
-                      <img src={resolveAssetUrl(draft.coverImageUrl)} alt="" className="w-24 h-16 object-cover rounded border border-slate-200" />
+                      <img
+                        src={resolveAssetUrl(draft.coverImageUrl)}
+                        alt=""
+                        className="w-24 h-16 object-cover rounded border border-slate-200"
+                      />
                     ) : (
                       <div className="w-24 h-16 rounded border border-dashed border-slate-300 flex items-center justify-center text-slate-300">
                         <UploadCloud className="w-6 h-6" />
@@ -723,7 +833,11 @@ export const AdminDashboard: React.FC = () => {
                         type="file"
                         accept="image/*"
                         className="hidden"
-                        onChange={(e) => { const f = e.target.files?.[0]; if (f) uploadCover(f); e.target.value = ''; }}
+                        onChange={(e) => {
+                          const f = e.target.files?.[0];
+                          if (f) uploadCover(f);
+                          e.target.value = '';
+                        }}
                       />
                     </label>
                   </div>
@@ -738,7 +852,10 @@ export const AdminDashboard: React.FC = () => {
                       accept="image/*"
                       multiple
                       className="hidden"
-                      onChange={(e) => { if (e.target.files?.length) uploadGallery(e.target.files); e.target.value = ''; }}
+                      onChange={(e) => {
+                        if (e.target.files?.length) uploadGallery(e.target.files);
+                        e.target.value = '';
+                      }}
                     />
                   </label>
                   {draft.gallery.length > 0 && (
@@ -746,7 +863,11 @@ export const AdminDashboard: React.FC = () => {
                       {draft.gallery.map((g, i) => (
                         <div key={i} className="border border-slate-200 rounded p-2">
                           <div className="relative">
-                            <img src={resolveAssetUrl(g.url)} alt="" className="w-full h-20 object-cover rounded" />
+                            <img
+                              src={resolveAssetUrl(g.url)}
+                              alt=""
+                              className="w-full h-20 object-cover rounded"
+                            />
                             <button
                               type="button"
                               onClick={() => removeGallery(i)}
@@ -784,7 +905,8 @@ export const AdminDashboard: React.FC = () => {
                 <article className="bg-white border border-slate-200 rounded-xl p-6 max-h-[80vh] overflow-y-auto">
                   <h1 className="text-2xl font-bold text-[#1a4a68] mb-2">{draft.title || 'Untitled'}</h1>
                   <p className="text-xs text-slate-400 mb-4">
-                    {draft.date}{draft.location ? ` · ${draft.location}` : ''}
+                    {draft.date}
+                    {draft.location ? ` · ${draft.location}` : ''}
                   </p>
                   <MarkdownPreview source={draft.body} />
                 </article>
@@ -800,11 +922,15 @@ export const AdminDashboard: React.FC = () => {
 };
 
 const Field: React.FC<{ label: string; hint?: string; error?: string; children: React.ReactNode }> = ({
-  label, hint, error, children,
+  label,
+  hint,
+  error,
+  children,
 }) => (
   <div>
     <label className="block text-sm font-semibold text-slate-700 mb-1.5">
-      {label}{hint && <span className="font-normal text-slate-400 ml-2">{hint}</span>}
+      {label}
+      {hint && <span className="font-normal text-slate-400 ml-2">{hint}</span>}
     </label>
     {children}
     {error && <p className="text-red-500 text-xs mt-1">{error}</p>}

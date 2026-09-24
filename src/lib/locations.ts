@@ -1,10 +1,7 @@
 export type LocationKind = 'hq' | 'regional' | 'field';
 
 export type LocationCategory =
-  | 'International Headquarters'
-  | 'Administrative Headquarters'
-  | 'Regional Office'
-  | 'Field Mission';
+  'International Headquarters' | 'Administrative Headquarters' | 'Regional Office' | 'Field Mission';
 
 export type Continent = 'Europe' | 'Africa' | 'Asia' | 'South America';
 
@@ -50,8 +47,7 @@ export const locations: Location[] = [
     id: 7,
     title: 'Paris (Administrative HQ)',
     coords: [48.8566, 2.3522],
-    description:
-      'Coordination center for European operations, fundraising, and strategic partnerships.',
+    description: 'Coordination center for European operations, fundraising, and strategic partnerships.',
     link: '#',
     category: 'Administrative Headquarters',
     kind: 'hq',
@@ -65,8 +61,7 @@ export const locations: Location[] = [
     id: 3,
     title: 'Kyiv, Ukraine',
     coords: [50.4501, 30.5234],
-    description:
-      'Distributing medical supplies to frontline hospitals and providing winter shelter support.',
+    description: 'Distributing medical supplies to frontline hospitals and providing winter shelter support.',
     link: '#',
     category: 'Regional Office',
     kind: 'regional',
@@ -81,8 +76,7 @@ export const locations: Location[] = [
     id: 5,
     title: 'Bogotá, Colombia',
     coords: [4.711, -74.0721],
-    description:
-      'Legal support for indigenous land rights and protection programs for community leaders.',
+    description: 'Legal support for indigenous land rights and protection programs for community leaders.',
     link: '#',
     category: 'Regional Office',
     kind: 'regional',

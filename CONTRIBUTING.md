@@ -26,11 +26,11 @@ The body says **what** changed, **why**, and **how it was verified**.
 ## Before you open a pull request
 
 ```bash
-npm run typecheck
-npm run check
-npm test
-npm run build
+npm run verify   # typecheck, astro check, lint, format check, tests, build — what CI runs
 ```
+
+`npm run format` applies Prettier. `.astro` files and statement seeds are deliberately excluded
+(see `.prettierignore`).
 
 Stage named paths only — never `git add -A`. The working tree can hold client source material
 and local environment files that must never be committed.

@@ -52,7 +52,9 @@ for (const loc of targets) {
 const byFile = new Map();
 for (const [loc, c] of Object.entries(COVERS)) {
   if (byFile.has(c.file)) {
-    console.error(`ABORT: locales "${byFile.get(c.file)}" and "${loc}" both emit ${c.file} — one would overwrite the other.`);
+    console.error(
+      `ABORT: locales "${byFile.get(c.file)}" and "${loc}" both emit ${c.file} — one would overwrite the other.`,
+    );
     process.exit(1);
   }
   byFile.set(c.file, loc);

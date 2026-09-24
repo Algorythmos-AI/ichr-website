@@ -72,7 +72,10 @@ export const GET: APIRoute = async ({ site, url }) => {
         lastmod: p.updatedAt.toISOString(),
         alternates: group
           .filter((g) => LOCALES.includes(g.locale as Locale))
-          .map((g) => ({ lang: g.locale as Locale, path: localizedPath(`/news/${g.slug}`, g.locale as Locale) })),
+          .map((g) => ({
+            lang: g.locale as Locale,
+            path: localizedPath(`/news/${g.slug}`, g.locale as Locale),
+          })),
       });
     }
   } catch (e) {

@@ -31,7 +31,8 @@ function authHeaders(): Record<string, string> {
   return t ? { Authorization: `Bearer ${t}` } : {};
 }
 
-async function handle(res: Response): Promise<any> {
+// The JSON boundary: each API method names the shape it expects from the server.
+async function handle<T>(res: Response): Promise<T> {
   if (res.status === 401 || res.status === 403) {
     clearToken();
     throw new ApiError(res.status, 'Your session has expired. Please sign in again.');
@@ -49,8 +50,8 @@ async function handle(res: Response): Promise<any> {
     }
     throw new ApiError(res.status, message, fieldErrors);
   }
-  if (res.status === 204) return null;
-  return res.json();
+  if (res.status === 204) return null as T;
+  return res.json() as Promise<T>;
 }
 
 /** Resolve a stored image path for <img src> in the admin UI. */
@@ -86,30 +87,37 @@ export const api = {
   getAllPosts(page = 1): Promise<PaginatedPosts> {
     return fetch(`${BASE}/api/content/admin/posts?pageSize=50&page=${page}`, {
       headers: authHeaders(),
-    }).then(handle);
+    }).then((res) => handle<PaginatedPosts>(res));
   },
   createPost(input: PostInput): Promise<Post> {
     return fetch(`${BASE}/api/content/posts`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', ...authHeaders() },
       body: JSON.stringify(input),
-    }).then(handle);
+    }).then((res) => handle<Post>(res));
   },
   updatePost(id: string, input: PostInput): Promise<Post> {
     return fetch(`${BASE}/api/content/posts/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', ...authHeaders() },
       body: JSON.stringify(input),
-    }).then(handle);
+    }).then((res) => handle<Post>(res));
   },
   deletePost(id: string): Promise<void> {
-    return fetch(`${BASE}/api/content/posts/${id}`, { method: 'DELETE', headers: authHeaders() }).then(handle);
+    return fetch(`${BASE}/api/content/posts/${id}`, { method: 'DELETE', headers: authHeaders() }).then(
+      (res) => handle<void>(res),
+    );
   },
   publish(id: string): Promise<Post> {
-    return fetch(`${BASE}/api/content/posts/${id}/publish`, { method: 'POST', headers: authHeaders() }).then(handle);
+    return fetch(`${BASE}/api/content/posts/${id}/publish`, { method: 'POST', headers: authHeaders() }).then(
+      (res) => handle<Post>(res),
+    );
   },
   unpublish(id: string): Promise<Post> {
-    return fetch(`${BASE}/api/content/posts/${id}/unpublish`, { method: 'POST', headers: authHeaders() }).then(handle);
+    return fetch(`${BASE}/api/content/posts/${id}/unpublish`, {
+      method: 'POST',
+      headers: authHeaders(),
+    }).then((res) => handle<Post>(res));
   },
   async uploadImage(file: File): Promise<{ url: string }> {
     const fd = new FormData();
@@ -118,7 +126,7 @@ export const api = {
       method: 'POST',
       headers: authHeaders(),
       body: fd,
-    }).then(handle);
+    }).then((res) => handle<{ url: string }>(res));
   },
 };
 

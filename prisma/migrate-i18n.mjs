@@ -6,7 +6,9 @@ import { PrismaClient } from '@prisma/client';
 
 const DB_URL = process.env.DATABASE_URL || '';
 if (!DB_URL || /localhost|127\.0\.0\.1|placeholder/i.test(DB_URL) || !/neon\.tech/i.test(DB_URL)) {
-  console.error('ABORT: DATABASE_URL is not the Neon production database.\n  Run: node --env-file=.env.local prisma/migrate-i18n.mjs');
+  console.error(
+    'ABORT: DATABASE_URL is not the Neon production database.\n  Run: node --env-file=.env.local prisma/migrate-i18n.mjs',
+  );
   process.exit(1);
 }
 
@@ -31,7 +33,10 @@ async function main() {
   }
   // Verify the new columns are readable and existing rows are intact.
   const count = await prisma.post.count();
-  const sample = await prisma.post.findMany({ select: { slug: true, locale: true, translationKey: true }, take: 5 });
+  const sample = await prisma.post.findMany({
+    select: { slug: true, locale: true, translationKey: true },
+    take: 5,
+  });
   console.log(`✅ Migration applied. Post rows intact: ${count}`);
   for (const r of sample) console.log(`   - ${r.slug} [${r.locale}] key=${r.translationKey ?? '(null)'}`);
 }

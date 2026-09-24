@@ -31,7 +31,8 @@ export const POST: APIRoute = async ({ request }) => {
 
     // One line, only the fields that identify what to allow — never the whole payload.
     console.warn('[csp]', {
-      directive: report['effective-directive'] ?? report['effectiveDirective'] ?? report['violated-directive'],
+      directive:
+        report['effective-directive'] ?? report['effectiveDirective'] ?? report['violated-directive'],
       blocked: report['blocked-uri'] ?? report['blockedURL'],
       document: report['document-uri'] ?? report['documentURL'],
       sample: String(report['script-sample'] ?? report['sample'] ?? '').slice(0, 120),

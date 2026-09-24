@@ -184,7 +184,10 @@ export async function listPublishedFromQuery(q: URLSearchParams): Promise<Paged>
   });
 }
 
-export async function getPublishedBySlug(slug: string, locale: string = DEFAULT_LOCALE): Promise<Post | null> {
+export async function getPublishedBySlug(
+  slug: string,
+  locale: string = DEFAULT_LOCALE,
+): Promise<Post | null> {
   const post = await prisma.post.findFirst({
     where: { slug, locale, status: 'published' },
     include: { gallery: true },
@@ -282,7 +285,7 @@ export async function updatePost(id: string, d: UpdateInput): Promise<Post | nul
   const locale = d.locale ?? existing.locale ?? DEFAULT_LOCALE;
   let slug = existing.slug;
   if (d.slug !== undefined || d.title !== undefined || d.locale !== undefined) {
-    const base = d.slug && d.slug.trim() ? d.slug : d.title ?? existing.title;
+    const base = d.slug && d.slug.trim() ? d.slug : (d.title ?? existing.title);
     slug = await uniqueSlug(base, locale, existing.id);
   }
 

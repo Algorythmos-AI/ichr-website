@@ -3,12 +3,14 @@
 import { listPublished, getPublishedBySlug, getTranslations } from '@/server/posts';
 import type { Post, PaginatedPosts, PostCategory } from '@/types';
 
-export async function getPublishedPosts(opts: {
-  page?: number;
-  pageSize?: number;
-  category?: PostCategory | 'All';
-  locale?: string;
-} = {}): Promise<PaginatedPosts> {
+export async function getPublishedPosts(
+  opts: {
+    page?: number;
+    pageSize?: number;
+    category?: PostCategory | 'All';
+    locale?: string;
+  } = {},
+): Promise<PaginatedPosts> {
   const page = opts.page ?? 1;
   const pageSize = opts.pageSize ?? 9;
   try {

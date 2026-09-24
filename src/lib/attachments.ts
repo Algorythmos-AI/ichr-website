@@ -22,7 +22,10 @@ export interface Attachment extends AttachmentMeta {
 }
 
 /** The attachment for an article slug, or undefined. Lowest sorted url when several. */
-export function attachmentFor(manifest: AttachmentManifest, slug: string | null | undefined): Attachment | undefined {
+export function attachmentFor(
+  manifest: AttachmentManifest,
+  slug: string | null | undefined,
+): Attachment | undefined {
   if (!slug) return undefined;
   const prefix = `/blog/${slug}/`;
   const url = Object.keys(manifest)

@@ -37,9 +37,4 @@ export interface PaginatedPosts {
   totalPages: number;
 }
 
-export const POST_CATEGORIES: PostCategory[] = [
-  'Press Release',
-  'Statement',
-  'Field Update',
-  'News',
-];
+export const POST_CATEGORIES: PostCategory[] = ['Press Release', 'Statement', 'Field Update', 'News'];

@@ -21,7 +21,10 @@ const PAGE_COMPONENTS = join(SRC, 'components', 'pages');
 const componentFiles = readdirSync(PAGE_COMPONENTS).filter((f) => f.endsWith('.astro'));
 
 test('page components exist to be checked', () => {
-  assert.ok(componentFiles.length >= 5, `expected several *Page.astro components, found ${componentFiles.length}`);
+  assert.ok(
+    componentFiles.length >= 5,
+    `expected several *Page.astro components, found ${componentFiles.length}`,
+  );
 });
 
 for (const file of componentFiles) {
@@ -59,7 +62,11 @@ test('every [slug] route owns its own 404 decision', () => {
   for (const { file, resolver } of routes) {
     const src = readFileSync(file, 'utf8');
     assert.match(src, resolver, `${file} should resolve its own content`);
-    assert.match(src, /Astro\.response\.status = 404/, `${file} should set a 404 status when the content is missing`);
+    assert.match(
+      src,
+      /Astro\.response\.status = 404/,
+      `${file} should set a 404 status when the content is missing`,
+    );
     assert.match(src, /NotFoundPage/, `${file} should render the localized not-found body`);
   }
 });
@@ -73,7 +80,8 @@ test('every dynamic route under src/pages is covered by the 404 test above', () 
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
       const full = join(dir, entry.name);
       if (entry.isDirectory()) walk(full);
-      else if (entry.name.startsWith('[') && entry.name.endsWith('.astro')) found.add(basename(dirname(full)));
+      else if (entry.name.startsWith('[') && entry.name.endsWith('.astro'))
+        found.add(basename(dirname(full)));
     }
   };
   walk(join(SRC, 'pages'));

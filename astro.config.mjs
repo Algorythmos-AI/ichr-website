@@ -29,9 +29,12 @@ export default defineConfig({
     // The subject confirmed it is "Abdelrahim", so the slugs were corrected the same day.
     // These keep the already-published URLs alive rather than 404ing anyone who saved or
     // shared one in the hours they were live. Cheap to keep; do not remove.
-    '/media/abderrahim-grein-icc-accountability-geneva-2026': '/media/abdelrahim-grein-icc-accountability-geneva-2026',
-    '/ar/media/abderrahim-grein-icc-accountability-geneva-2026': '/ar/media/abdelrahim-grein-icc-accountability-geneva-2026',
-    '/fr/media/abderrahim-grein-icc-accountability-geneva-2026': '/fr/media/abdelrahim-grein-icc-accountability-geneva-2026',
+    '/media/abderrahim-grein-icc-accountability-geneva-2026':
+      '/media/abdelrahim-grein-icc-accountability-geneva-2026',
+    '/ar/media/abderrahim-grein-icc-accountability-geneva-2026':
+      '/ar/media/abdelrahim-grein-icc-accountability-geneva-2026',
+    '/fr/media/abderrahim-grein-icc-accountability-geneva-2026':
+      '/fr/media/abdelrahim-grein-icc-accountability-geneva-2026',
     '/media/abderrahim-grein-human-rights-2025': '/media/abdelrahim-grein-human-rights-2025',
     '/ar/media/abderrahim-grein-human-rights-2025': '/ar/media/abdelrahim-grein-human-rights-2025',
     '/fr/media/abderrahim-grein-human-rights-2025': '/fr/media/abdelrahim-grein-human-rights-2025',

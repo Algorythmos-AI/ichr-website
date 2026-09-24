@@ -21,7 +21,7 @@ const NAVY_DARK = '#11364d';
 const GOLD = '#C9A227';
 
 const esc = (s: string) =>
-  s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] as string));
+  s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c] as string);
 const telHref = (p: string) => p.replace(/[^+\d]/g, '');
 const fill = (tpl: string, vars: Record<string, string>) =>
   tpl.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? `{${k}}`);
@@ -120,15 +120,15 @@ function detailHtml(loc: Location, variant: 'popup' | 'sheet', labels: WorldMapL
   const rows: string[] = [];
   if (loc.address)
     rows.push(
-      `<div class="flex items-start gap-2.5 text-sm text-slate-500 py-1">${PIN_SVG}<span>${esc(loc.address)}</span></div>`
+      `<div class="flex items-start gap-2.5 text-sm text-slate-500 py-1">${PIN_SVG}<span>${esc(loc.address)}</span></div>`,
     );
   if (loc.email)
     rows.push(
-      `<a href="mailto:${esc(loc.email)}" class="flex items-center gap-2.5 min-h-[44px] text-sm text-slate-600 hover:text-[#1a4a68] transition-colors">${MAIL_SVG}<span class="break-all">${esc(loc.email)}</span></a>`
+      `<a href="mailto:${esc(loc.email)}" class="flex items-center gap-2.5 min-h-[44px] text-sm text-slate-600 hover:text-[#1a4a68] transition-colors">${MAIL_SVG}<span class="break-all">${esc(loc.email)}</span></a>`,
     );
   if (loc.phone)
     rows.push(
-      `<a href="tel:${telHref(loc.phone)}" class="flex items-center gap-2.5 min-h-[44px] text-sm text-slate-600 hover:text-[#1a4a68] transition-colors">${PHONE_SVG}<span>${esc(loc.phone)}</span></a>`
+      `<a href="tel:${telHref(loc.phone)}" class="flex items-center gap-2.5 min-h-[44px] text-sm text-slate-600 hover:text-[#1a4a68] transition-colors">${PHONE_SVG}<span>${esc(loc.phone)}</span></a>`,
     );
   const contact = rows.length
     ? `<div class="mt-3 pt-3 border-t border-slate-100">${rows.join('')}</div>`
@@ -238,6 +238,8 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
     const el = containerRef.current;
+    // The marker registry is one Map for the component's lifetime; hold it for the cleanup.
+    const markers = markersRef.current;
 
     const map = L.map(el, {
       scrollWheelZoom: false,
@@ -278,7 +280,10 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
         m.setAttribute('tabindex', '0');
         m.setAttribute('role', 'button');
         const lab = labelsRef.current;
-        m.setAttribute('aria-label', `${lab.title[String(loc.id)] ?? loc.title}, ${lab.category[loc.category] ?? loc.category}`);
+        m.setAttribute(
+          'aria-label',
+          `${lab.title[String(loc.id)] ?? loc.title}, ${lab.category[loc.category] ?? loc.category}`,
+        );
         m.addEventListener('keydown', (e: KeyboardEvent) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -353,7 +358,7 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
       map.off();
       map.remove();
       mapRef.current = null;
-      markersRef.current.clear();
+      markers.clear();
     };
   }, [showHint]);
 
@@ -384,7 +389,7 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
       fill(lab.ui.showing, {
         title: lab.title[String(loc.id)] ?? loc.title,
         category: lab.category[loc.category] ?? loc.category,
-      })
+      }),
     );
     const z = loc.kind === 'hq' ? 4 : 5;
     const animate = !reduce;
@@ -460,7 +465,7 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
   const onSheetKeyDown = (e: React.KeyboardEvent) => {
     if (e.key !== 'Tab' || !sheetRef.current) return;
     const f = sheetRef.current.querySelectorAll<HTMLElement>(
-      'a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])'
+      'a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])',
     );
     if (!f.length) return;
     const first = f[0];
@@ -474,7 +479,7 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
     }
   };
 
-  const selectedLoc = selectedId == null ? null : locations.find((l) => l.id === selectedId) ?? null;
+  const selectedLoc = selectedId == null ? null : (locations.find((l) => l.id === selectedId) ?? null);
 
   /* index/rail rows grouped by region */
   const groups = REGION_ORDER.map((region) => ({
@@ -505,7 +510,9 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
       >
         <Swatch kind={loc.kind} />
         <span className="min-w-0">
-          <span className="block text-sm font-semibold text-slate-800 truncate">{titleLabel(loc.id) || loc.title}</span>
+          <span className="block text-sm font-semibold text-slate-800 truncate">
+            {titleLabel(loc.id) || loc.title}
+          </span>
           <span className="block text-xs text-slate-500 truncate">{catLabel(loc.category)}</span>
         </span>
       </button>
@@ -514,7 +521,9 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
 
   return (
     <div className="lg:grid lg:grid-cols-[minmax(280px,340px)_1fr] lg:gap-6 lg:items-start">
-      <div aria-live="polite" aria-atomic="true" className="sr-only">{announce}</div>
+      <div aria-live="polite" aria-atomic="true" className="sr-only">
+        {announce}
+      </div>
 
       {/* ── DESKTOP INDEX ── */}
       <div
@@ -599,6 +608,9 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
               onClick={() => select(null)}
               aria-hidden="true"
             />
+            {/* A modal dialog owns its keyboard handling (Escape to close, focus trap), which is
+                the WAI-ARIA dialog pattern — the rule treats role="dialog" as non-interactive. */}
+            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
             <div
               ref={sheetRef}
               role="dialog"
@@ -624,12 +636,23 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
                 aria-label={labels.ui.close}
                 className="absolute top-2 end-2 w-11 h-11 flex items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a4a68]"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
               </button>
               <div dangerouslySetInnerHTML={{ __html: detailHtml(selectedLoc, 'sheet', labels) }} />
             </div>
           </div>,
-          document.body
+          document.body,
         )}
     </div>
   );
