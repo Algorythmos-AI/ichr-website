@@ -1,0 +1,26 @@
+name: Content request
+description: Publish or correct an article, statement or video.
+labels: [content]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Request
+      options: [New article, Correction to a published article, New video, Other]
+    validations:
+      required: true
+  - type: input
+    id: slug
+    attributes:
+      label: Existing article URL (for corrections)
+  - type: input
+    id: dateline
+    attributes:
+      label: Dateline city and date, as printed on the statement
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Source material stays outside the repository — describe where it is, don't attach it here.
+    validations:
+      required: true

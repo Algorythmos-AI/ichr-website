@@ -37,11 +37,11 @@ npm run dev        # http://localhost:4321 — pages AND API on one origin
 npm run build      # prisma generate && astro build
 npm run check      # astro check
 npm test           # node's built-in test runner over src/lib and prisma/lib
-npx astro sync && npx tsc --noEmit   # type-check (a fresh clone needs the sync first)
+npm run typecheck  # astro sync && tsc --noEmit
 ```
 
 A fresh clone has no `.astro/` directory, and `import.meta.env` is typed by the files
-`astro sync` writes there — `tsc` without the sync fails with `Property 'env' does not
+`astro sync` writes there — which is why `typecheck` syncs first; a bare `tsc` fails with `Property 'env' does not
 exist on type 'ImportMeta'`.
 
 ---
