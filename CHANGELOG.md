@@ -7,6 +7,26 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.1] — 2026-09-24
+
+### Changed
+
+- Branch protection: organisation admins can bypass only by merging a pull request, never by
+  pushing directly to `main` or `integration`. Every pull request preview is now smoke-tested.
+- ESLint 9 → 10 (`@eslint/js` 10, `eslint-plugin-astro` 3). `eslint-plugin-jsx-a11y` runs on
+  ESLint 10 through an `overrides` entry until it declares support; all its rules verified to fire.
+
+### Fixed
+
+- Smoke test: a network failure now keeps the original error as `cause`.
+- Draft stash: removed a dead initial assignment.
+
+### Security
+
+- `path-to-regexp` 6.1.0 → 6.3.0 under the Vercel adapter's route compiler (an `overrides` pin,
+  same major; the generated routing config is byte-identical). Production dependencies now have
+  no high or critical advisories, and the audit allowlist is empty.
+
 ## [1.0.0] — 2026-09-24
 
 First versioned release, on moving the site to the Algorythmos-AI organisation with a gated

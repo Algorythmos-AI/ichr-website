@@ -30,7 +30,7 @@ async function get(path, { redirect = 'follow' } = {}) {
       const res = await fetch(url, { headers, redirect, signal: AbortSignal.timeout(20_000) });
       return { res, body: await res.text(), url };
     } catch (err) {
-      if (attempt >= 3) throw new Error(`${url}: ${err.message}`);
+      if (attempt >= 3) throw new Error(`${url}: ${err.message}`, { cause: err });
       await new Promise((r) => setTimeout(r, 2000 * attempt));
     }
   }

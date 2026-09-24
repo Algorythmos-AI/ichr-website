@@ -57,7 +57,7 @@ export function takeStashedDraft<T>(
   maxAgeMs: number = STASH_MAX_AGE_MS,
 ): StashedDraft<T> | null {
   if (!storage) return null;
-  let raw: string | null = null;
+  let raw: string | null;
   try {
     raw = storage.getItem(DRAFT_STASH_KEY);
   } catch {
