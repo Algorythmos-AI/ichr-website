@@ -4,6 +4,21 @@ Production is `main`. It changes only through a **release pull request** from `i
 merged with a **merge commit**. Vercel deploys `main`; the `release` workflow then proves the
 deploy and tags it.
 
+## Branch protection
+
+Rulesets live in [`.github/rulesets/`](../../.github/rulesets) and are applied with
+`bash scripts/ci/apply-rulesets.sh` (idempotent — edit the JSON and re-run).
+
+| Ruleset                     | Enforces                                                                       |
+| --------------------------- | ------------------------------------------------------------------------------ |
+| `protect-integration-trunk` | pull request required, squash only, required checks, no force-push or deletion |
+| `protect-main-production`   | the same, merge commit only, `main-source-guard`, conversation resolution      |
+| `protect-release-tags`      | `v*` tags cannot be moved or deleted                                           |
+
+Organisation admins may bypass **only when merging a pull request** (`gh pr merge --admin`),
+never by pushing directly — so nothing reaches `main` or `integration` except through a pull
+request that ran the checks.
+
 ## 1. Preflight
 
 ```bash
