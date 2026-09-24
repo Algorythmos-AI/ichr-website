@@ -26,6 +26,13 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@prisma/client'
         update-types: ['version-update:semver-major']
+      # The compiler major (TypeScript 7, the native port) needs Astro tooling support first.
+      - dependency-name: typescript
+        update-types: ['version-update:semver-major']
+      # Types must match the oldest Node the code runs on (22 locally, 24 in production);
+      # newer majors would type-check APIs that do not exist at runtime.
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
 
   - package-ecosystem: github-actions
     directory: /
