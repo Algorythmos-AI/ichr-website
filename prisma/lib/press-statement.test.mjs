@@ -12,7 +12,13 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-import { LIMITS, validateStatement, assertStatement, maskedHost, publishStatement } from './press-statement.mjs';
+import {
+  LIMITS,
+  validateStatement,
+  assertStatement,
+  maskedHost,
+  publishStatement,
+} from './press-statement.mjs';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 
@@ -33,7 +39,13 @@ const valid = () => ({
       coverImageUrl: '/blog/a-valid-slug-2026/cover.jpg',
       gallery: [{ url: '/blog/a-valid-slug-2026/card-1.jpg', caption: 'A caption.', order: 0 }],
     },
-    { locale: 'ar', title: 'عنوان', excerpt: 'مقتطف.', body: 'فقرة.', coverImageUrl: '/blog/a-valid-slug-2026/cover-ar.jpg' },
+    {
+      locale: 'ar',
+      title: 'عنوان',
+      excerpt: 'مقتطف.',
+      body: 'فقرة.',
+      coverImageUrl: '/blog/a-valid-slug-2026/cover-ar.jpg',
+    },
   ],
 });
 
@@ -127,11 +139,17 @@ test('assertStatement throws listing every problem at once', () => {
   const c = valid();
   c.category = 'Nope';
   c.slug = 'BAD';
-  assert.throws(() => assertStatement(c), (err) => /category/.test(err.message) && /slug/.test(err.message));
+  assert.throws(
+    () => assertStatement(c),
+    (err) => /category/.test(err.message) && /slug/.test(err.message),
+  );
 });
 
 test('maskedHost hides credentials and survives junk', () => {
-  assert.equal(maskedHost('postgresql://user:pw@ep-x.neon.tech/neondb'), 'postgresql://***@ep-x.neon.tech/neondb');
+  assert.equal(
+    maskedHost('postgresql://user:pw@ep-x.neon.tech/neondb'),
+    'postgresql://***@ep-x.neon.tech/neondb',
+  );
   assert.equal(maskedHost('not a url'), '(unparseable DATABASE_URL)');
 });
 
@@ -188,7 +206,10 @@ test('writes every row and gallery image in ONE transaction', async () => {
     cover: v.coverImageUrl,
     body_len: v.body.length,
   }));
-  sql.__counts = [{ locale: 'en', c: 1 }, { locale: 'ar', c: 0 }];
+  sql.__counts = [
+    { locale: 'en', c: 1 },
+    { locale: 'ar', c: 0 },
+  ];
 
   const res = await publishStatement(c, { sql });
   assert.equal(res.action, 'write');
@@ -205,10 +226,17 @@ test('the upsert writes drafts and never clobbers a stored status', async () => 
   const c = valid();
   const sql = fakeSql({ existingKeys: [] });
   sql.__rows = c.locales.map((v) => ({
-    locale: v.locale, status: 'draft', title: v.title, tkey: c.translationKey,
-    cover: v.coverImageUrl, body_len: v.body.length,
+    locale: v.locale,
+    status: 'draft',
+    title: v.title,
+    tkey: c.translationKey,
+    cover: v.coverImageUrl,
+    body_len: v.body.length,
   }));
-  sql.__counts = [{ locale: 'en', c: 1 }, { locale: 'ar', c: 0 }];
+  sql.__counts = [
+    { locale: 'en', c: 1 },
+    { locale: 'ar', c: 0 },
+  ];
   await publishStatement(c, { sql });
 
   const upsert = sql.__batch.map((p) => p.__text).find((t) => /INSERT INTO "Post"/.test(t));
@@ -221,10 +249,17 @@ test('hashtags reach the driver as a JSON string, not an array', async () => {
   const c = valid();
   const sql = fakeSql({ existingKeys: [] });
   sql.__rows = c.locales.map((v) => ({
-    locale: v.locale, status: 'draft', title: v.title, tkey: c.translationKey,
-    cover: v.coverImageUrl, body_len: v.body.length,
+    locale: v.locale,
+    status: 'draft',
+    title: v.title,
+    tkey: c.translationKey,
+    cover: v.coverImageUrl,
+    body_len: v.body.length,
   }));
-  sql.__counts = [{ locale: 'en', c: 1 }, { locale: 'ar', c: 0 }];
+  sql.__counts = [
+    { locale: 'en', c: 1 },
+    { locale: 'ar', c: 0 },
+  ];
   await publishStatement(c, { sql });
 
   const post = sql.calls.find((call) => /INSERT INTO "Post"/.test(call.text));
@@ -234,7 +269,10 @@ test('hashtags reach the driver as a JSON string, not an array', async () => {
 test('unpublish drafts the whole story, not one locale', async () => {
   const c = valid();
   const sql = fakeSql({ existingKeys: [c.translationKey] });
-  sql.__rows = [{ locale: 'ar', status: 'draft' }, { locale: 'en', status: 'draft' }];
+  sql.__rows = [
+    { locale: 'ar', status: 'draft' },
+    { locale: 'en', status: 'draft' },
+  ];
   await publishStatement(c, { unpublish: true, sql });
 
   const update = sql.calls.find((call) => /UPDATE "Post" SET status='draft'/.test(call.text));
@@ -245,7 +283,14 @@ test('read-back failure aborts loudly', async () => {
   const c = valid();
   const sql = fakeSql({ existingKeys: [] });
   sql.__rows = [
-    { locale: 'en', status: 'draft', title: c.locales[0].title, tkey: c.translationKey, cover: c.locales[0].coverImageUrl, body_len: c.locales[0].body.length },
+    {
+      locale: 'en',
+      status: 'draft',
+      title: c.locales[0].title,
+      tkey: c.translationKey,
+      cover: c.locales[0].coverImageUrl,
+      body_len: c.locales[0].body.length,
+    },
   ]; // the Arabic row never landed
   sql.__counts = [{ locale: 'en', c: 1 }];
   await assert.rejects(() => publishStatement(c, { sql }), /read-back verification failed/);
@@ -266,17 +311,36 @@ test('LIMITS still matches the zod schema in src/server/posts.ts', () => {
   ];
   for (const [mine, name, re] of expectations) {
     const m = src.match(re);
-    assert.ok(m, `could not find the ${name} rule in posts.ts — the schema moved, update this test and LIMITS`);
+    assert.ok(
+      m,
+      `could not find the ${name} rule in posts.ts — the schema moved, update this test and LIMITS`,
+    );
     assert.equal(Number(m[1]), mine, `${name} limit drifted: posts.ts says ${m[1]}, LIMITS says ${mine}`);
   }
 
   const cats = src.match(/export const CATEGORIES = \[([^\]]+)\]/);
   assert.ok(cats, 'CATEGORIES moved in posts.ts');
-  assert.deepEqual(cats[1].split(',').map((s) => s.trim().replace(/^'|'$/g, '')).filter(Boolean), LIMITS.categories);
+  assert.deepEqual(
+    cats[1]
+      .split(',')
+      .map((s) => s.trim().replace(/^'|'$/g, ''))
+      .filter(Boolean),
+    LIMITS.categories,
+  );
 
   const locs = src.match(/export const LOCALES = \[([^\]]+)\]/);
   assert.ok(locs, 'LOCALES moved in posts.ts');
-  assert.deepEqual(locs[1].split(',').map((s) => s.trim().replace(/^'|'$/g, '')).filter(Boolean), LIMITS.locales);
+  assert.deepEqual(
+    locs[1]
+      .split(',')
+      .map((s) => s.trim().replace(/^'|'$/g, ''))
+      .filter(Boolean),
+    LIMITS.locales,
+  );
 
-  assert.match(src, /ASSET_URL_RE = \/\^\(https\?:\\\/\\\/\|\\\/\(uploads\|blog\|images\)\\\/\)\//, 'ASSET_URL_RE changed — mirror it in press-statement.mjs');
+  assert.match(
+    src,
+    /ASSET_URL_RE = \/\^\(https\?:\\\/\\\/\|\\\/\(uploads\|blog\|images\)\\\/\)\//,
+    'ASSET_URL_RE changed — mirror it in press-statement.mjs',
+  );
 });

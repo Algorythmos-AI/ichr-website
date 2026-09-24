@@ -150,7 +150,9 @@ export async function measureInk(text, { size, font, rtl = false, weight = 700, 
     <text x="${x}" y="${Math.round(size * 1.6)}" ${flow} font-family="${font}" font-size="${size}" font-weight="${weight}" fill="#000000" ${ls}>${esc(text)}</text>
   </svg>`;
   try {
-    const { info } = await sharp(Buffer.from(svg)).trim({ threshold: 1 }).toBuffer({ resolveWithObject: true });
+    const { info } = await sharp(Buffer.from(svg))
+      .trim({ threshold: 1 })
+      .toBuffer({ resolveWithObject: true });
     return info.width;
   } catch {
     // sharp throws when trim finds a uniform image — i.e. nothing rendered at all.
@@ -170,7 +172,9 @@ export async function assertFits(locale, c) {
     const ink = await measureInk(line, { size: c.headSize, font: c.font, rtl: c.rtl });
     lines.push({ line, ink });
     if (ink > USABLE_W) {
-      problems.push(`headline line "${line}" is ${ink}px wide, over the ${USABLE_W}px column — re-break it or drop headSize`);
+      problems.push(
+        `headline line "${line}" is ${ink}px wide, over the ${USABLE_W}px column — re-break it or drop headSize`,
+      );
     }
     if (ink === 0) {
       problems.push(`headline line "${line}" rendered NOTHING — missing font, or an empty string`);
@@ -190,7 +194,8 @@ export async function assertFits(locale, c) {
         `lower headTop (${c.headTop}), headLh (${c.headLh}) or the line count (${c.headline.length})`,
     );
   }
-  if (lastBaseline + descender > STANDFIRST_Y) problems.push(`headline overlaps the standfirst at y=${STANDFIRST_Y}`);
+  if (lastBaseline + descender > STANDFIRST_Y)
+    problems.push(`headline overlaps the standfirst at y=${STANDFIRST_Y}`);
 
   if (problems.length) {
     throw new Error(`[${locale}] cover card does not fit:\n  - ${problems.join('\n  - ')}`);
@@ -200,7 +205,9 @@ export async function assertFits(locale, c) {
 
 /** Rasterize one locale's card. Callers own the overwrite policy. */
 export async function renderCard(c, outPath) {
-  await sharp(Buffer.from(buildSvg(c))).jpeg({ quality: 88, mozjpeg: true }).toFile(outPath);
+  await sharp(Buffer.from(buildSvg(c)))
+    .jpeg({ quality: 88, mozjpeg: true })
+    .toFile(outPath);
   return sharp(outPath).metadata();
 }
 

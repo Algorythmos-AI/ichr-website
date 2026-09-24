@@ -127,8 +127,10 @@ Render the three bodies through `src/lib/markdown.ts` and compare the structure 
 1. Commit **named paths only** — the seed, `public/blog/<slug>/`, the manifest. Never
    `git add -A`.
 2. Open a PR into `integration` titled `content: <summary>`. Wait for green; squash-merge.
-3. Open the release PR `integration → main`; merge with a **merge commit**.
-4. **Confirm production serves the images** before anything references them:
+3. Release it: `bash scripts/release/preflight.sh`, then a release PR `integration → main`
+   with a patch version bump, merged with a **merge commit** — see [release.md](release.md).
+4. Wait for the `release` workflow to go green: it proves production serves the merge commit.
+   Then **confirm the images themselves** before anything references them:
 
 ```bash
 for f in card-1.jpg card-2.jpg card-1-800.jpg; do curl -sS -o /dev/null -w "%{http_code} %{content_type} $f\n" "https://www.ichr-international.org/blog/<slug>/$f"; done
@@ -157,10 +159,10 @@ Rollback drafts every locale at once:
 
 ### Correcting a story that is already published
 
-| Run | What it does |
-|---|---|
-| plain | **Writes the text.** The only thing that ever does. Preserves the stored status. |
-| `PUBLISH=1` | **Flips draft → published. Never writes content.** |
+| Run         | What it does                                                                     |
+| ----------- | -------------------------------------------------------------------------------- |
+| plain       | **Writes the text.** The only thing that ever does. Preserves the stored status. |
+| `PUBLISH=1` | **Flips draft → published. Never writes content.**                               |
 
 Every content change needs a plain run. `PUBLISH=1` on a live article reports success and
 changes nothing. Verify corrections by grepping the live page for a string that must no longer

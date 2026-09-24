@@ -90,10 +90,16 @@ async function processDir(root, slug, manifest) {
         skipped++;
       } else {
         try {
-          await sharp(src).resize({ width: w, withoutEnlargement: true }).jpeg({ quality: 82, mozjpeg: true }).toFile(out);
+          await sharp(src)
+            .resize({ width: w, withoutEnlargement: true })
+            .jpeg({ quality: 82, mozjpeg: true })
+            .toFile(out);
           made++;
         } catch (e) {
-          unreadable.push({ file: `/${root}/${slug}/${file}`, reason: `${w}px: ${e.code ?? e.message?.slice(0, 40)}` });
+          unreadable.push({
+            file: `/${root}/${slug}/${file}`,
+            reason: `${w}px: ${e.code ?? e.message?.slice(0, 40)}`,
+          });
           continue;
         }
       }
@@ -136,7 +142,9 @@ for (const { root, slug } of found) {
 
 mkdirSync(dirname(MANIFEST), { recursive: true });
 writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
-console.log(`\n${totalMade} variant(s) written. Manifest: ${Object.keys(manifest).length} images → src/generated/blog-images.json`);
+console.log(
+  `\n${totalMade} variant(s) written. Manifest: ${Object.keys(manifest).length} images → src/generated/blog-images.json`,
+);
 console.log('Commit the manifest with the images — src/lib/assets.ts reads it to build every srcset.');
 
 if (unreadable.length) {

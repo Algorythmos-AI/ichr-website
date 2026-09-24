@@ -171,7 +171,9 @@ for (const loc of targets) {
   const c = LOCALES[loc];
   if (!c) throw new Error(`Unknown locale "${loc}" — expected one of ${Object.keys(LOCALES).join(', ')}`);
   const out = `${OUT_DIR}/${c.file}`;
-  await sharp(Buffer.from(buildSvg(c))).jpeg({ quality: 88, mozjpeg: true }).toFile(out);
+  await sharp(Buffer.from(buildSvg(c)))
+    .jpeg({ quality: 88, mozjpeg: true })
+    .toFile(out);
   const m = await sharp(out).metadata();
   console.log(`✅ [${loc}] ${out} — ${m.width}x${m.height} ${m.format}`);
 }

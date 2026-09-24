@@ -67,7 +67,9 @@ function markdownProblems(body, where) {
   lines.forEach((line, i) => {
     if (/^-{3,}\s*$/.test(line)) {
       if (i > 0 && lines[i - 1].trim() !== '') {
-        out.push(`${where}: "---" on line ${i + 1} has no blank line before it — the line above will render as an <h2>`);
+        out.push(
+          `${where}: "---" on line ${i + 1} has no blank line before it — the line above will render as an <h2>`,
+        );
       }
       if (i < lines.length - 1 && lines[i + 1].trim() !== '') {
         out.push(`${where}: "---" on line ${i + 1} has no blank line after it`);
@@ -83,7 +85,9 @@ function markdownProblems(body, where) {
   // A hyphen with no space is not a list item; it renders as body text.
   lines.forEach((line, i) => {
     if (/^-[^\s-]/.test(line)) {
-      out.push(`${where}: line ${i + 1} starts "-" with no space — this is NOT a bullet, it renders as a paragraph`);
+      out.push(
+        `${where}: line ${i + 1} starts "-" with no space — this is NOT a bullet, it renders as a paragraph`,
+      );
     }
   });
   return out;
@@ -108,7 +112,8 @@ export function validateStatement(config) {
   if (typeof slug !== 'string' || !slug) e.push('slug is required');
   else {
     if (slug.length > LIMITS.slug) e.push(`slug is ${slug.length} chars (max ${LIMITS.slug})`);
-    if (!SLUG_RE.test(slug)) e.push(`slug "${slug}" must match ${SLUG_RE} — lowercase letters, digits and hyphens only`);
+    if (!SLUG_RE.test(slug))
+      e.push(`slug "${slug}" must match ${SLUG_RE} — lowercase letters, digits and hyphens only`);
   }
 
   if (typeof translationKey !== 'string' || !translationKey) e.push('translationKey is required');
@@ -117,7 +122,9 @@ export function validateStatement(config) {
   }
 
   if (!LIMITS.categories.includes(category)) {
-    e.push(`category "${category}" is not one of ${LIMITS.categories.join(' | ')} — the /news filter would drop this post`);
+    e.push(
+      `category "${category}" is not one of ${LIMITS.categories.join(' | ')} — the /news filter would drop this post`,
+    );
   }
 
   // Must be a plain YYYY-MM-DD string: a JS Date is serialized with a timezone by the
@@ -131,7 +138,8 @@ export function validateStatement(config) {
     if (hashtags.length > LIMITS.hashtags) e.push(`${hashtags.length} hashtags (max ${LIMITS.hashtags})`);
     hashtags.forEach((h, i) => {
       if (typeof h !== 'string' || !h.trim()) e.push(`hashtags[${i}] is empty`);
-      else if (h.length > LIMITS.hashtagLen) e.push(`hashtags[${i}] is ${h.length} chars (max ${LIMITS.hashtagLen})`);
+      else if (h.length > LIMITS.hashtagLen)
+        e.push(`hashtags[${i}] is ${h.length} chars (max ${LIMITS.hashtagLen})`);
     });
   }
 
@@ -153,10 +161,12 @@ export function validateStatement(config) {
     seen.add(v?.locale);
 
     if (!v?.title?.trim()) e.push(`${where} title is required`);
-    else if (len(v.title) > LIMITS.title) e.push(`${where} title is ${len(v.title)} chars (max ${LIMITS.title})`);
+    else if (len(v.title) > LIMITS.title)
+      e.push(`${where} title is ${len(v.title)} chars (max ${LIMITS.title})`);
 
     if (!v?.excerpt?.trim()) e.push(`${where} excerpt is required`);
-    else if (len(v.excerpt) > LIMITS.excerpt) e.push(`${where} excerpt is ${len(v.excerpt)} chars (max ${LIMITS.excerpt})`);
+    else if (len(v.excerpt) > LIMITS.excerpt)
+      e.push(`${where} excerpt is ${len(v.excerpt)} chars (max ${LIMITS.excerpt})`);
 
     if (!v?.body?.trim()) e.push(`${where} body is required`);
     else e.push(...markdownProblems(v.body, where));
@@ -168,13 +178,16 @@ export function validateStatement(config) {
       e.push(`${where} authorName is ${len(v.authorName)} chars (max ${LIMITS.authorName})`);
     }
     if (v?.coverImageUrl != null && !ASSET_URL_RE.test(v.coverImageUrl)) {
-      e.push(`${where} coverImageUrl "${v.coverImageUrl}" fails ${ASSET_URL_RE} — it would silently fall back to /og-image.png`);
+      e.push(
+        `${where} coverImageUrl "${v.coverImageUrl}" fails ${ASSET_URL_RE} — it would silently fall back to /og-image.png`,
+      );
     }
 
     const gallery = v?.gallery ?? [];
     if (!Array.isArray(gallery)) e.push(`${where} gallery must be an array`);
     else {
-      if (gallery.length > LIMITS.gallery) e.push(`${where} ${gallery.length} gallery images (max ${LIMITS.gallery})`);
+      if (gallery.length > LIMITS.gallery)
+        e.push(`${where} ${gallery.length} gallery images (max ${LIMITS.gallery})`);
       gallery.forEach((g, i) => {
         if (!g?.url || !ASSET_URL_RE.test(g.url)) {
           e.push(`${where} gallery[${i}].url "${g?.url}" fails ${ASSET_URL_RE}`);
@@ -305,7 +318,16 @@ export async function publishStatement(config, opts = {}) {
     if (rows.length !== locales.length || bad.length) {
       throw new Error(`ABORT: expected ${locales.length} published rows, got ${rows.length - bad.length}.`);
     }
-    console.log(`\n✅ Live: /news/${slug}${locales.length > 1 ? `  (+ ${locales.filter((v) => v.locale !== 'en').map((v) => `/${v.locale}/news/${slug}`).join(', ')})` : ''}`);
+    console.log(
+      `\n✅ Live: /news/${slug}${
+        locales.length > 1
+          ? `  (+ ${locales
+              .filter((v) => v.locale !== 'en')
+              .map((v) => `/${v.locale}/news/${slug}`)
+              .join(', ')})`
+          : ''
+      }`,
+    );
     return { action: 'publish', rows, translationKey };
   }
 
@@ -339,7 +361,9 @@ export async function publishStatement(config, opts = {}) {
   }
   for (const v of locales) {
     (v.gallery ?? []).forEach((g, i) => {
-      batch.push(sql.query(GALLERY_INSERT, [randomUUID(), g.url, g.caption ?? null, g.order ?? i, slug, v.locale]));
+      batch.push(
+        sql.query(GALLERY_INSERT, [randomUUID(), g.url, g.caption ?? null, g.order ?? i, slug, v.locale]),
+      );
     });
   }
   await sql.transaction(batch);
@@ -381,7 +405,9 @@ export async function publishStatement(config, opts = {}) {
   if (distinctKeys.size !== 1) problems.push(`story is split across ${distinctKeys.size} translationKeys`);
 
   for (const r of rows) {
-    console.log(`  [${r.locale}] status=${r.status} cover=${r.cover} bodyLen=${r.body_len} gallery=${galleryByLocale[r.locale] ?? 0}`);
+    console.log(
+      `  [${r.locale}] status=${r.status} cover=${r.cover} bodyLen=${r.body_len} gallery=${galleryByLocale[r.locale] ?? 0}`,
+    );
   }
   if (problems.length) {
     throw new Error(`ABORT: read-back verification failed:\n  - ${problems.join('\n  - ')}`);

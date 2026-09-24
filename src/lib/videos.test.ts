@@ -119,15 +119,26 @@ test('no locale is silently showing another locale’s text', () => {
     assert.match(v.i18n.ar.title, /[؀-ۿ]/, `${v.slug}: the Arabic title has no Arabic script`);
     assert.match(v.i18n.ar.summary, /[؀-ۿ]/, `${v.slug}: the Arabic summary has no Arabic script`);
     assert.notEqual(v.i18n.fr.title, v.i18n.en.title, `${v.slug}: the French title is still the English one`);
-    assert.notEqual(v.i18n.fr.summary, v.i18n.en.summary, `${v.slug}: the French summary is still the English one`);
+    assert.notEqual(
+      v.i18n.fr.summary,
+      v.i18n.en.summary,
+      `${v.slug}: the French summary is still the English one`,
+    );
     // A dateline place is content too: leaving Latin "Geneva" in the Arabic copy printed
     // "GENEVA" into an Arabic dateline, where every existing article says جنيف.
     if (v.i18n.ar.location) {
-      assert.match(v.i18n.ar.location, /[؀-ۿ]/, `${v.slug}: the Arabic location "${v.i18n.ar.location}" is not in Arabic`);
+      assert.match(
+        v.i18n.ar.location,
+        /[؀-ۿ]/,
+        `${v.slug}: the Arabic location "${v.i18n.ar.location}" is not in Arabic`,
+      );
     }
     // Either every locale names the place or none does — a half-set dateline is a bug.
     const withPlace = LOCALES.filter((l) => !!v.i18n[l].location).length;
-    assert.ok(withPlace === 0 || withPlace === LOCALES.length, `${v.slug}: location is set in only ${withPlace}/3 locales`);
+    assert.ok(
+      withPlace === 0 || withPlace === LOCALES.length,
+      `${v.slug}: location is set in only ${withPlace}/3 locales`,
+    );
   }
 });
 

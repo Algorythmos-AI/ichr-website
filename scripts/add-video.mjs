@@ -55,7 +55,9 @@ export function extractId(input) {
   }
   const fromQuery = u.searchParams.get('v');
   if (fromQuery && /^[A-Za-z0-9_-]{11}$/.test(fromQuery)) return fromQuery;
-  const m = u.pathname.match(/\/(?:embed|shorts|v)\/([A-Za-z0-9_-]{11})/) ?? u.pathname.match(/^\/([A-Za-z0-9_-]{11})$/);
+  const m =
+    u.pathname.match(/\/(?:embed|shorts|v)\/([A-Za-z0-9_-]{11})/) ??
+    u.pathname.match(/^\/([A-Za-z0-9_-]{11})$/);
   return m ? m[1] : null;
 }
 
@@ -97,7 +99,8 @@ function scrape(html) {
     // only a FALLBACK. uploadDateUtc() below is the preferred source. Same class of
     // off-by-one that src/lib/dateline.ts formats in UTC to avoid.
     uploadDateLocal:
-      (html.match(/"uploadDate":"(\d{4}-\d{2}-\d{2})/) ?? html.match(/"publishDate":"(\d{4}-\d{2}-\d{2})/))?.[1] ?? null,
+      (html.match(/"uploadDate":"(\d{4}-\d{2}-\d{2})/) ??
+        html.match(/"publishDate":"(\d{4}-\d{2}-\d{2})/))?.[1] ?? null,
     isUnlisted: /"isUnlisted":true/.test(html),
     isPrivate: /"isPrivate":true/.test(html),
   };
@@ -167,7 +170,8 @@ async function main() {
   }
 
   if (meta.isPrivate) die('that video is private — it cannot be embedded.');
-  if (meta.isUnlisted) console.warn('⚠️  This video is UNLISTED. It will embed, but it is not on the channel page.');
+  if (meta.isUnlisted)
+    console.warn('⚠️  This video is UNLISTED. It will embed, but it is not on the channel page.');
   if (!meta.durationSeconds) die('could not read the duration — YouTube may have changed the page shape.');
   if (!meta.title) die('could not read the title.');
 
@@ -178,7 +182,9 @@ async function main() {
 
   console.log(`  title:    ${meta.title}`);
   console.log(`  duration: ${meta.durationSeconds}s`);
-  console.log(`  uploaded: ${meta.uploadDate ?? '(unknown — fill in by hand)'}${utc ? ' (UTC, from the channel feed)' : ''}`);
+  console.log(
+    `  uploaded: ${meta.uploadDate ?? '(unknown — fill in by hand)'}${utc ? ' (UTC, from the channel feed)' : ''}`,
+  );
   console.log(`  slug:     ${slug}`);
 
   if (DRY_RUN) {
@@ -196,7 +202,9 @@ async function main() {
     // Variants + manifest, via the one pipeline that already owns them. Without this the
     // poster ships full-size to phones and src/lib/videos.test.ts fails the build.
     console.log('\nGenerating responsive variants …');
-    execFileSync(process.execPath, [join(REPO, 'scripts', 'gen-image-variants.mjs'), slug], { stdio: 'inherit' });
+    execFileSync(process.execPath, [join(REPO, 'scripts', 'gen-image-variants.mjs'), slug], {
+      stdio: 'inherit',
+    });
   }
 
   const size = existsSync(poster) ? statSync(poster).size : 0;
