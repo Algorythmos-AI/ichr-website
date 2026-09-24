@@ -7,6 +7,17 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Astro 5 → 7, `@astrojs/vercel` 8 → 11, `@astrojs/react` 4 → 7. Prerendered pages are unchanged
+  in visible text, head tags and scripts; the shared stylesheet bundle is renamed.
+- bcryptjs 3, lucide-react 1, `@vercel/blob` 2 (upload URLs keep their random suffix explicitly).
+
+### Security
+
+- Clears the Astro, sharp and undici advisories; one build-time `path-to-regexp` advisory remains
+  allowlisted pending an adapter release.
+
 ## [1.0.0] — 2026-09-24
 
 First versioned release, on moving the site to the Algorythmos-AI organisation with a gated

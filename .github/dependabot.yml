@@ -13,7 +13,7 @@ updates:
       minor-and-patch:
         update-types: [minor, patch]
     ignore:
-      # Majors scheduled as their own upgrade (see .audit-allowlist.json).
+      # Framework majors are upgraded deliberately, with preview verification — not by bot.
       - dependency-name: astro
         update-types: ['version-update:semver-major']
       - dependency-name: '@astrojs/*'

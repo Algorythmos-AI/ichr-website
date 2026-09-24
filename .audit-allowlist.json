@@ -1,48 +1,13 @@
 {
-  "_comment": "Reviewed high/critical advisories that are accepted until the tracked major upgrade (astro 7, @astrojs/vercel 11, sharp 0.35, @vercel/blob 2). Every entry needs a reason. Remove entries as upgrades land; scripts/ci/audit-deps.mjs reports stale ones.",
+  "_comment": "Reviewed high/critical advisories accepted until an upstream fix exists. Every entry needs a reason. Remove entries as upgrades land; scripts/ci/audit-deps.mjs reports stale ones.",
   "reviewed": "2026-09-24",
   "advisories": [
-    {
-      "id": "GHSA-26w7-cxv4-gfx2",
-      "package": "astro",
-      "severity": "critical",
-      "title": "Astro: Remote code execution through AVIF image optimization",
-      "reason": "Fixed only in astro 7 (major). Advisories reviewed 2026-07: the vulnerable patterns (define:vars, spread props on elements, dynamic slot names) are not used in this codebase."
-    },
-    {
-      "id": "GHSA-2pvr-wf23-7pc7",
-      "package": "astro",
-      "severity": "high",
-      "title": "Astro: Host header SSRF in prerendered error page fetch",
-      "reason": "Fixed only in astro 7 (major). Advisories reviewed 2026-07: the vulnerable patterns (define:vars, spread props on elements, dynamic slot names) are not used in this codebase."
-    },
-    {
-      "id": "GHSA-8hv8-536x-4wqp",
-      "package": "astro",
-      "severity": "high",
-      "title": "Astro: Reflected XSS via unescaped slot name",
-      "reason": "Fixed only in astro 7 (major). Advisories reviewed 2026-07: the vulnerable patterns (define:vars, spread props on elements, dynamic slot names) are not used in this codebase."
-    },
     {
       "id": "GHSA-9wv6-86v2-598j",
       "package": "path-to-regexp",
       "severity": "high",
       "title": "path-to-regexp outputs backtracking regular expressions",
-      "reason": "Transitive via @astrojs/vercel -> @vercel/routing-utils; fixed only by @astrojs/vercel 11 (major)."
-    },
-    {
-      "id": "GHSA-f88m-g3jw-g9cj",
-      "package": "sharp",
-      "severity": "high",
-      "title": "sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591",
-      "reason": "Fixed in sharp 0.35 (major). sharp is only run by local build scripts on trusted, client-supplied images; never on user uploads."
-    },
-    {
-      "id": "GHSA-rgj7-g3m4-5g8c",
-      "package": "sharp",
-      "severity": "high",
-      "title": "sharp: Vulnerabilities in libheif: GHSA-g89c-p67h-r497 and GHSA-2jg2-4ch7-h545",
-      "reason": "Fixed in sharp 0.35 (major). sharp is only run by local build scripts on trusted, client-supplied images; never on user uploads."
+      "reason": "Transitive via @astrojs/vercel -> @vercel/routing-utils, which compiles route configuration at BUILD time; it does not match live requests. No fixed release on the @astrojs/vercel 11 line yet (npm only suggests a downgrade). Re-check on each adapter release."
     }
   ]
 }
