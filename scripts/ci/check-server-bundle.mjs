@@ -8,16 +8,20 @@
 // fix is `vite.ssr.noExternal` in astro.config.mjs; this check keeps it fixed and catches the
 // next dependency that goes ESM-only.
 //
-// HOW: for every package traced into the function's node_modules, and every bare require() the
-// bundle itself still makes, load it in a child process with --no-experimental-require-module —
-// the same constraint as the Vercel loader — and fail on ERR_REQUIRE_ESM.
+// HOW: copy each function to an isolated directory — as deployed to /var/task, with nothing
+// above it to fall back on (inside the repo, Node would silently resolve a missing package from
+// the project's own node_modules). Then load, with --no-experimental-require-module (the Vercel
+// constraint): every package traced into the function, failing on ERR_REQUIRE_ESM; and every
+// bare require() the bundle itself still makes, failing on ERR_REQUIRE_ESM *or* a missing
+// module — Vercel's tracer does not follow a bundler's runtime `__require`, so a package reached
+// only that way is never deployed.
 //
 //   npm run build && node scripts/ci/check-server-bundle.mjs
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { builtinModules } from 'node:module';
-import { mkdtempSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, writeFileSync, cpSync, rmSync, realpathSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 
 const FUNCTIONS = resolve('.vercel/output/functions');
@@ -102,26 +106,38 @@ for (const func of readdirSync(FUNCTIONS)) {
   const funcDir = join(FUNCTIONS, func);
   if (!statSync(funcDir).isDirectory()) continue;
 
-  const candidates = new Set(tracedPackages(funcDir).filter((n) => loadableAsCommonJS(funcDir, n)));
-  for (const file of bundleFiles(funcDir)) {
-    for (const [, spec] of readFileSync(file, 'utf8').matchAll(REQUIRE_RE)) {
-      const name = packageName(spec);
-      if (!spec.startsWith('node:') && !BUILTIN.has(name)) candidates.add(name);
+  const iso = realpathSync(mkdtempSync(join(tmpdir(), 'fn-')));
+  cpSync(funcDir, iso, { recursive: true, dereference: true });
+  try {
+    const traced = new Set(tracedPackages(iso).filter((n) => loadableAsCommonJS(iso, n)));
+    const required = new Set();
+    for (const file of bundleFiles(iso)) {
+      for (const [, spec] of readFileSync(file, 'utf8').matchAll(REQUIRE_RE)) {
+        const name = packageName(spec);
+        if (!spec.startsWith('node:') && !BUILTIN.has(name)) required.add(name);
+      }
     }
-  }
 
-  for (const name of candidates) {
-    checked++;
-    const r = spawnSync(process.execPath, [FLAG, '-e', `require(${JSON.stringify(name)})`], {
-      cwd: funcDir,
-      encoding: 'utf8',
-      timeout: 30_000,
-    });
-    const err = `${r.stderr ?? ''}`;
-    if (r.status !== 0 && err.includes('ERR_REQUIRE_ESM')) {
-      const detail = err.match(/require\(\) of ES Module (\S+)/)?.[1] ?? '';
-      problems.push(`${func}: require("${name}") fails — it requires an ES module ${detail}`);
+    for (const name of new Set([...traced, ...required])) {
+      checked++;
+      const r = spawnSync(process.execPath, [FLAG, '-e', `require(${JSON.stringify(name)})`], {
+        cwd: iso,
+        encoding: 'utf8',
+        timeout: 30_000,
+      });
+      const err = `${r.stderr ?? ''}`;
+      if (r.status === 0) continue;
+      if (err.includes('ERR_REQUIRE_ESM')) {
+        const detail = err.match(/require\(\) of ES Module (\S+)/)?.[1]?.replace(iso, '') ?? '';
+        problems.push(`${func}: require("${name}") fails — it requires an ES module ${detail}`);
+      } else if (required.has(name) && err.includes('MODULE_NOT_FOUND')) {
+        problems.push(
+          `${func}: the bundle require()s "${name}" at runtime, but it is not deployed with the function`,
+        );
+      }
     }
+  } finally {
+    rmSync(iso, { recursive: true, force: true });
   }
 }
 

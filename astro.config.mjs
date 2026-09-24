@@ -3,6 +3,24 @@ import vercel from '@astrojs/vercel';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import { resolveSiteUrl } from './src/lib/siteUrl.ts';
+import { readFileSync, existsSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// Every package `name` depends on, transitively, resolved the way Node would.
+function dependencyClosure(name, from = dirname(fileURLToPath(import.meta.url)), seen = new Set()) {
+  if (seen.has(name)) return seen;
+  for (let dir = from; ; dir = dirname(dir)) {
+    const pkgDir = join(dir, 'node_modules', name);
+    if (existsSync(join(pkgDir, 'package.json'))) {
+      seen.add(name);
+      const pkg = JSON.parse(readFileSync(join(pkgDir, 'package.json'), 'utf8'));
+      for (const dep of Object.keys(pkg.dependencies ?? {})) dependencyClosure(dep, pkgDir, seen);
+      return seen;
+    }
+    if (dirname(dir) === dir) return seen;
+  }
+}
 
 // Canonical absolute origin (no trailing slash) for canonical + OG URLs.
 // Same resolver the runtime uses, so `Astro.site` and SITE_URL can never
@@ -47,12 +65,17 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     ssr: {
-      // Bundle sanitize-html (and the htmlparser2 it requires) into the server build instead of loading it from node_modules at
-      // runtime. It is CommonJS and require()s htmlparser2 12, which is ESM-only; Vercel's
-      // function loader rejects require() of an ES module (ERR_REQUIRE_ESM), which took down
-      // every article page on the Astro 7 preview. Bundling converts it at build time, which
-      // is what Astro 5 did implicitly. scripts/ci/check-server-bundle.mjs (CI `build` job) guards this.
-      noExternal: ['sanitize-html', 'htmlparser2'],
+      // Bundle sanitize-html and its whole dependency tree into the server build.
+      //
+      // sanitize-html is CommonJS and require()s htmlparser2 12, which is ESM-only. Left in
+      // node_modules, Vercel's function loader rejects that (ERR_REQUIRE_ESM) — which took down
+      // every article page on the Astro 7 preview; local Node allows it, so nothing else caught
+      // it. Bundling only sanitize-html is not enough either: its remaining require()s become
+      // runtime `__require(...)` calls that Vercel's file tracer does not follow, so those
+      // packages are never deployed ("Cannot find module 'is-plain-object'"). Astro 5 bundled
+      // the tree implicitly. The closure is computed, not listed, so it cannot go stale.
+      // Guarded by scripts/ci/check-server-bundle.mjs in the CI `build` job.
+      noExternal: [...dependencyClosure('sanitize-html')],
     },
   },
 });
