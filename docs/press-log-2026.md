@@ -86,7 +86,9 @@ the first article body to carry an internal link (relative href; `renderMarkdown
 The client's notes spell her "Tapiyo"; published as **Katarina Tapio** (كاتارينا تابيو), which
 is what both supplied cards and the June article read. English-only source; AR and FR are
 translations. The cards read "International coalition of Human Rights Organizations" — not
-retouched; see "Open at end of August" item 1.
+retouched; see "Open at end of August" item 1. On 25 Sep it gained one paragraph, from the
+client's French (WhatsApp), on the Fact-Finding Mission mandate and a nationwide arms embargo;
+EN and AR are translations, and the client's conditional mood is kept in all three.
 
 ---
 
