@@ -79,6 +79,7 @@ convention for attached documents — no inline markdown PDF links anywhere in t
 |---|---|---|---|---|---|---|
 | 13 Sep | Geneva | Field Update | `hrc63-session-sudan-advocacy-geneva-september-2026` | `fe1ffa60…` | `SEP/1` | `79a1aa9` |
 | 22 Sep | Geneva | Press Release | `eu-delegation-geneva-sudan-september-2026` | `6cc35ded…` | `SEP/2` | `4ba9072` |
+| 30 Sep | **Brussels** | Press Release | `european-parliament-sudan-advocacy-brussels-september-2026` | `1c1eccff…` | `OCT/1` | — |
 
 `eu-delegation-…-september-2026` is a **follow-up** to the 2 June meeting with the same
 official (`eu-delegation-geneva-sudan-june-2026`) and links to it from all three locales —
