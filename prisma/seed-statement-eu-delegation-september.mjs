@@ -29,6 +29,10 @@
 //   * Copy-edit limited to capitalisation, spacing and the house name. The source's
 //     American spelling (centered, fueled) is kept. The source's third and fourth blocks
 //     are split into paragraphs at their existing sentence breaks.
+//   * ADDED 25 Sep 2026 (client, WhatsApp, French only): the "Coalition stressed that…"
+//     paragraph after the FFM paragraph. FR is the client's wording with the lead-in added;
+//     EN and AR are translations. Conditional mood kept — do not harden it into a statement
+//     of fact.
 //
 //   DRY_RUN=1   node --env-file=.env.local prisma/seed-statement-eu-delegation-september.mjs
 //               node --env-file=.env.local prisma/seed-statement-eu-delegation-september.mjs
@@ -51,6 +55,8 @@ The Coalition delegation briefed Mrs. Tapio on the escalating humanitarian crisi
 The meeting featured candid discussions regarding the critical necessity of halting external interventions which have directly fueled the conflict and diminished prospects for peace. To address the sharp deterioration of the humanitarian situation and rising indicators of famine, participants strongly emphasized the need to expand arms embargo mechanisms across all Sudanese territories to safeguard civilian lives.
 
 The dialogue further underscored the importance of empowering civil society mechanisms and activating their pivotal role in halting the war and building sustainable peace. In this regard, the Coalition commended the European Union for its steadfast support of accountability and justice through the extension of the mandate of the Independent International Fact-Finding Mission for the Sudan.
+
+The Coalition stressed that extending the mandate of the Fact-Finding Mission would allow it to continue its work, and that extending the arms embargo to the whole of the Sudanese territory would help put an end to external interference, thereby supporting the protection of the population, the cessation of the war and the return of displaced persons and refugees to their homes.
 
 Concluding the meeting's outcomes, the European official pledged to work toward expanding investigative mechanisms to encompass inquiries into allegations of chemical weapons use during the conflict.
 
@@ -77,6 +83,8 @@ const AR_BODY = `جنيف — عُقد في 22 سبتمبر 2026 اجتماع ا
 
 كما أكد الحوار أهمية تمكين آليات المجتمع المدني وتفعيل دورها المحوري في وقف الحرب وبناء سلام مستدام. وفي هذا الصدد، أشاد التحالف بالدعم الثابت الذي يقدمه الاتحاد الأوروبي للمساءلة والعدالة من خلال تمديد ولاية البعثة الدولية المستقلة لتقصي الحقائق بشأن السودان.
 
+وشدّد التحالف على أن تمديد ولاية بعثة تقصي الحقائق من شأنه أن يتيح لها مواصلة أعمالها، وأن توسيع حظر الأسلحة ليشمل كامل الأراضي السودانية سيسهم في وضع حدّ للتدخلات الخارجية، بما يعزز حماية السكان ووقف الحرب وعودة النازحين واللاجئين إلى ديارهم.
+
 وفي ختام الاجتماع، تعهّدت المسؤولة الأوروبية بالعمل على توسيع آليات التحقيق لتشمل التحقيق في ادعاءات استخدام الأسلحة الكيميائية خلال النزاع.
 
 ويأتي هذا الاجتماع في أعقاب [المباحثات التي أجراها التحالف مع السيدة تابيو في 2 يونيو 2026](/ar/news/${JUNE_SLUG}).
@@ -101,6 +109,8 @@ La délégation de la Coalition a informé Mme Tapio de l'aggravation de la cris
 La réunion a donné lieu à des échanges francs sur la nécessité impérieuse de mettre fin aux interventions extérieures, qui ont directement alimenté le conflit et réduit les perspectives de paix. Face à la forte détérioration de la situation humanitaire et à la multiplication des signes de famine, les participants ont fermement insisté sur la nécessité d'étendre les mécanismes d'embargo sur les armes à l'ensemble du territoire soudanais afin de protéger la vie des civils.
 
 Le dialogue a en outre souligné l'importance de renforcer les mécanismes de la société civile et d'activer leur rôle essentiel pour mettre fin à la guerre et bâtir une paix durable. À cet égard, la Coalition a salué le soutien constant de l'Union européenne à la responsabilité et à la justice, à travers la prorogation du mandat de la Mission internationale indépendante d'établissement des faits pour le Soudan.
+
+La Coalition a souligné que la prorogation du mandat de la Mission d'établissement des faits permettrait à celle-ci de poursuivre ses travaux, et que l'extension de l'embargo sur les armes à l'ensemble du territoire soudanais contribuerait à mettre fin aux ingérences extérieures, ce qui favoriserait la protection des populations, la cessation de la guerre ainsi que le retour des personnes déplacées et des réfugiés dans leurs foyers.
 
 En conclusion de la réunion, la responsable européenne s'est engagée à œuvrer à l'élargissement des mécanismes d'enquête afin qu'ils couvrent les allégations d'emploi d'armes chimiques au cours du conflit.
 
