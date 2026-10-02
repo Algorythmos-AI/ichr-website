@@ -7,6 +7,16 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.2] — 2026-10-02
+
+### Added
+
+- Newsroom artwork for the 30 September 2026 European Parliament press release (Brussels).
+
+### Changed
+
+- Dependency updates: minor and patch npm packages, and GitHub Actions.
+
 ## [1.0.1] — 2026-09-24
 
 ### Changed
