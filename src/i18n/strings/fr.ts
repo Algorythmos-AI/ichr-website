@@ -298,7 +298,11 @@ export const fr: Dict = {
     title: 'Vidéos',
     intro: 'Discours, interventions en panel et images de terrain de l’ICHR et de ses partenaires.',
     filterAll: 'Toutes',
-    playlists: { 'geneva-panel-2026': 'Panel de Genève 2026', 'advocacy-2025': 'Plaidoyer 2025' },
+    playlists: {
+      'statements-2026': 'Déclarations 2026',
+      'geneva-panel-2026': 'Panel de Genève 2026',
+      'advocacy-2025': 'Plaidoyer 2025',
+    },
     watchOnYouTube: 'Regarder sur YouTube',
     relatedStatement: 'Lire la déclaration associée',
     back: 'Retour aux médias',
