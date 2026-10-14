@@ -83,6 +83,46 @@ export interface Video {
 // responsive variants and manifest entries are all still here and still test-validated, so
 // re-listing a video is exactly one deleted line.
 const VIDEOS: Video[] = [
+  // Andy Vermaut's appeal on the North Wadi airstrike, a Short uploaded 14 October 2026. The
+  // recording date is not stated, so eventDate is the upload date. His title here is the one
+  // the client supplied for this video (member of the Coalition, Ambassador of the European
+  // Climate Pact); the Geneva-panel entries below keep the affiliation he gave there. The
+  // client's note says "Egyptian army" and the statement "Egyptian air force": the copy says
+  // "the Egyptian military", attributed to the Coalition. Arabic name آندي فيرمو, as on the
+  // Geneva entries. No location: the client gave none.
+  {
+    slug: 'andy-vermaut-north-wadi-petition-2026',
+    youtubeId: 'IIo3d_Cz5Y4',
+    uploadDate: '2026-10-14',
+    eventDate: '2026-10-14',
+    durationSeconds: 175,
+    playlist: 'statements-2026',
+    poster: '/media/andy-vermaut-north-wadi-petition-2026/poster.jpg',
+    relatedPostSlug: 'condemnation-airstrike-miners-north-wadi-october-2026',
+    vertical: true,
+    i18n: {
+      en: {
+        title: 'Andy Vermaut Calls for Justice for the Sudanese Miners Killed in North Wadi',
+        speaker:
+          'Andy Vermaut · Member, International Coalition for Human Rights; Ambassador of the European Climate Pact',
+        summary:
+          'Andy Vermaut speaks on the airstrike of 10 October 2026 that killed Sudanese miners in the North Wadi region, which the Coalition attributes to the Egyptian military. He calls on human rights organisations, African organisations in particular, to sign the Coalition’s joint petition for truth, justice and accountability for the civilian victims and their families.',
+      },
+      ar: {
+        title: 'آندي فيرمو يطالب بالعدالة للمعدّنين السودانيين الذين قُتلوا في وادي الشمال',
+        speaker: 'آندي فيرمو · عضو التحالف الدولي لحقوق الإنسان، وسفير الميثاق الأوروبي للمناخ',
+        summary:
+          'يتحدث آندي فيرمو عن الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026، والتي يحمّل التحالف الجيش المصري مسؤوليتها. ويدعو منظمات حقوق الإنسان، ولا سيما المنظمات الأفريقية، إلى التوقيع على العريضة المشتركة للتحالف من أجل الحقيقة والعدالة والمساءلة للضحايا المدنيين وأسرهم.',
+      },
+      fr: {
+        title: 'Andy Vermaut demande justice pour les mineurs soudanais tués à North Wadi',
+        speaker:
+          'Andy Vermaut · membre de la Coalition internationale pour les droits de l’homme ; ambassadeur du Pacte européen pour le climat',
+        summary:
+          'Andy Vermaut revient sur la frappe aérienne du 10 octobre 2026 qui a tué des mineurs soudanais dans la région de North Wadi, et que la Coalition attribue à l’armée égyptienne. Il appelle les organisations de défense des droits humains, en particulier africaines, à signer la pétition commune de la Coalition pour la vérité, la justice et l’établissement des responsabilités en faveur des victimes civiles et de leurs familles.',
+      },
+    },
+  },
   // Statement of condemnation, Brussels, 12 October 2026: the airstrike of 10 October on
   // Sudanese miners in the North Wadi region. A Short, so `vertical`. The filming date is not
   // known, so eventDate is the statement's date rather than the strike's. The attribution to
