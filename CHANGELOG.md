@@ -7,6 +7,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.5] — 2026-10-14
+
+### Added
+
+- Newsroom covers for the 12 October 2026 North Wadi airstrike statement (Brussels).
+
 ## [1.0.4] — 2026-10-14
 
 ### Added
