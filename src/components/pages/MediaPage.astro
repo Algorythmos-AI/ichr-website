@@ -20,23 +20,28 @@ const t = useTranslations(lang);
 
 // Same shape as the news category filter: validate against the declared list, and treat
 // anything else as 'All' rather than rendering an empty grid for a junk query string.
+// Only playlists with at least one LISTED video are offered — a declared playlist whose
+// videos are all unlisted would otherwise be a pill (or an old ?playlist= link) leading to
+// an empty grid with no filter row to get back out.
+const activePlaylists = PLAYLISTS.filter((p) => PUBLISHED_VIDEOS.some((v) => v.playlist === p));
 const playlistParam = Astro.url.searchParams.get('playlist') ?? 'All';
-const playlist = (PLAYLISTS.includes(playlistParam as PlaylistId) ? playlistParam : 'All') as PlaylistId | 'All';
+const playlist = (activePlaylists.includes(playlistParam as PlaylistId) ? playlistParam : 'All') as
+  | PlaylistId
+  | 'All';
 
 const videos = getVideos(lang, playlist);
 
 const mediaBase = localizeHref('/media', lang);
 const label = (p: PlaylistId | 'All') =>
   p === 'All' ? t.media.filterAll : (t.media.playlists as Record<string, string>)[p] ?? p;
-const filters: (PlaylistId | 'All')[] = ['All', ...PLAYLISTS];
+const filters: (PlaylistId | 'All')[] = ['All', ...activePlaylists];
 const filterHref = (p: string) => (p === 'All' ? mediaBase : `${mediaBase}?playlist=${encodeURIComponent(p)}`);
 
 const channel = SOCIAL_PROFILES.find((s) => s.name === 'YouTube')?.href;
-// Only worth a filter row when there is more than one thing to filter by — and only when
-// there is anything listed at all, or an empty page would show pills above no results.
-// Keyed off the whole listed set, not `videos`: a playlist that happens to be empty must
-// still leave the reader a way back to "All".
-const showFilters = PLAYLISTS.length > 1 && PUBLISHED_VIDEOS.length > 0;
+// Only worth a filter row when there is more than one non-empty playlist to filter by.
+// Keyed off the whole listed set, not `videos`, so a filtered view still leaves the reader
+// a way back to "All".
+const showFilters = activePlaylists.length > 1;
 ---
 
 <BaseLayout title={t.meta.media.title} description={t.meta.media.desc} lang={lang}>

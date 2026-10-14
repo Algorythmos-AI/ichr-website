@@ -30,6 +30,8 @@ interface Props {
   loading?: 'eager' | 'lazy';
   /** Wider `sizes` on a detail page than in a grid. */
   sizes?: string;
+  /** Portrait 9:16 player for a YouTube Short, capped and centred instead of full-width. */
+  vertical?: boolean;
   class?: string;
 }
 
@@ -40,7 +42,8 @@ const {
   durationSeconds,
   lang = 'en',
   loading = 'eager',
-  sizes = '(min-width: 1024px) 960px, 100vw',
+  vertical = false,
+  sizes = vertical ? '384px' : '(min-width: 1024px) 960px, 100vw',
   class: className = '',
 } = Astro.props;
 
@@ -53,7 +56,11 @@ const playLabel = t.a11y.playVideo.replace('{title}', title);
 ---
 
 <div
-  class:list={['relative w-full overflow-hidden rounded-xl bg-[#0f2f49] aspect-video', className]}
+  class:list={[
+    'relative w-full overflow-hidden rounded-xl bg-[#0f2f49]',
+    vertical ? 'aspect-[9/16] max-w-sm mx-auto' : 'aspect-video',
+    className,
+  ]}
   data-video-facade
   data-embed-src={embedSrc}
   data-embed-title={title}

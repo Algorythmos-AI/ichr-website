@@ -116,7 +116,8 @@ const channel = SOCIAL_PROFILES.find((s) => s.name === 'YouTube')?.href;
       durationSeconds={video.durationSeconds}
       lang={lang}
       loading="eager"
-      sizes="(min-width: 960px) 960px, 100vw"
+      vertical={video.vertical}
+      sizes={video.vertical ? '384px' : '(min-width: 960px) 960px, 100vw'}
     />
 
     <p class="mt-8 text-lg text-slate-700 leading-relaxed">{copy.summary}</p>
