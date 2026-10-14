@@ -95,7 +95,7 @@ EN and AR are translations, and the client's conditional mood is kept in all thr
 
 | Date | Dateline | Category | Slug | Key | Src | Commit |
 | ---- | -------- | -------- | ---- | --- | --- | ------ |
-| 12 Oct | **Brussels** | Statement | `condemnation-airstrike-miners-north-wadi-october-2026` | `5b6ad0cc…` | text + YouTube Short | — |
+| 12 Oct | **Brussels** | Statement | `condemnation-airstrike-miners-north-wadi-october-2026` | `5b6ad0cc…` | text + YouTube Short | `b90f23b` |
 
 The first statement to name a state force: it **attributes the strike to the Egyptian air
 force**, as the Coalition's own attribution, approved for publication by the client on
