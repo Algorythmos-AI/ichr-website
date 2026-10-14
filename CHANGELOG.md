@@ -7,6 +7,20 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.3] — 2026-10-14
+
+### Added
+
+- `/media`: the 12 October 2026 statement video on the North Wadi airstrike (EN/AR/FR), in a
+  new "Statements 2026" playlist.
+- Portrait (9:16) player for YouTube Shorts, via an optional `vertical` flag on a video;
+  the build fails if a vertical video's poster is not portrait.
+
+### Fixed
+
+- The `/media` filter row offers only playlists that have a listed video, so an unlisted
+  playlist no longer leads to an empty grid.
+
 ## [1.0.2] — 2026-10-02
 
 ### Added
