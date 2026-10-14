@@ -9,7 +9,15 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { ALL_VIDEOS, PUBLISHED_VIDEOS, PLAYLISTS, getVideo, getVideos, copyFor } from '../data/videos.ts';
+import {
+  ALL_VIDEOS,
+  PUBLISHED_VIDEOS,
+  PLAYLISTS,
+  getVideo,
+  getVideos,
+  copyFor,
+  type StatementBlock,
+} from '../data/videos.ts';
 import { toIso8601 } from './duration.ts';
 import { en } from '../i18n/strings/en.ts';
 import { ar } from '../i18n/strings/ar.ts';
@@ -150,6 +158,45 @@ test('no locale is silently showing another locale’s text', () => {
     assert.ok(
       withPlace === 0 || withPlace === LOCALES.length,
       `${v.slug}: location is set in only ${withPlace}/3 locales`,
+    );
+  }
+});
+
+test('a statement, when present, is complete and structurally identical in every locale', () => {
+  // A statement set in English only would render the summary in Arabic and French with no
+  // warning; a list block missing in one locale would silently drop the demands there.
+  const shape = (blocks: StatementBlock[]) =>
+    blocks.map((b) => (typeof b === 'string' ? 'p' : `list:${b.items.length}`)).join(',');
+  for (const v of ALL_VIDEOS) {
+    const present = LOCALES.filter((l) => v.i18n[l].statement !== undefined);
+    if (present.length === 0) {
+      for (const l of LOCALES)
+        assert.equal(v.i18n[l].signOff, undefined, `${v.slug}.${l}: signOff without a statement`);
+      continue;
+    }
+    assert.equal(
+      present.length,
+      LOCALES.length,
+      `${v.slug}: statement is set in only ${present.length}/3 locales`,
+    );
+    const en = shape(v.i18n.en.statement!);
+    for (const l of LOCALES) {
+      const blocks = v.i18n[l].statement!;
+      assert.ok(blocks.length > 0, `${v.slug}.${l}.statement is empty`);
+      assert.equal(shape(blocks), en, `${v.slug}.${l}.statement does not match the English structure`);
+      for (const b of blocks) {
+        const texts = typeof b === 'string' ? [b] : [b.lead, ...b.items];
+        for (const text of texts)
+          assert.ok(text.trim().length > 0, `${v.slug}.${l}.statement has an empty block`);
+        if (l === 'ar')
+          for (const text of texts)
+            assert.match(text, /[؀-ۿ]/, `${v.slug}: Arabic statement text with no Arabic script`);
+      }
+    }
+    assert.notEqual(
+      JSON.stringify(v.i18n.fr.statement),
+      JSON.stringify(v.i18n.en.statement),
+      `${v.slug}: the French statement is still the English one`,
     );
   }
 });
