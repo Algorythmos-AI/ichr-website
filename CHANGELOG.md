@@ -7,6 +7,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.7] — 2026-10-15
+
+### Added
+
+- `/media`: Andy Vermaut's appeal on the North Wadi airstrike (EN/AR/FR), linked to the
+  statement article.
+
 ## [1.0.6] — 2026-10-14
 
 ### Changed
