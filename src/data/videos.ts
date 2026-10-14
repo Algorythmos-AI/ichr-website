@@ -98,6 +98,7 @@ const VIDEOS: Video[] = [
     durationSeconds: 104,
     playlist: 'statements-2026',
     poster: '/media/sudan-miners-airstrike-north-wadi-2026/poster.jpg',
+    relatedPostSlug: 'condemnation-airstrike-miners-north-wadi-october-2026',
     vertical: true,
     i18n: {
       en: {
