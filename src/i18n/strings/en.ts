@@ -292,7 +292,11 @@ export const en = {
     intro: 'Speeches, panel interventions and field footage from ICHR and its partners.',
     filterAll: 'All',
     // Keyed by PlaylistId in src/data/videos.ts — videos.test.ts fails if one is missing.
-    playlists: { 'geneva-panel-2026': 'Geneva Panel 2026', 'advocacy-2025': 'Advocacy 2025' },
+    playlists: {
+      'statements-2026': 'Statements 2026',
+      'geneva-panel-2026': 'Geneva Panel 2026',
+      'advocacy-2025': 'Advocacy 2025',
+    },
     watchOnYouTube: 'Watch on YouTube',
     relatedStatement: 'Read the related statement',
     back: 'Back to Media',

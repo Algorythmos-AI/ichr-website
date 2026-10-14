@@ -88,6 +88,18 @@ test('every poster lives under its own slug AND has responsive variants', () => 
   }
 });
 
+test('a vertical video is flagged with a boolean and has a portrait poster', () => {
+  // A Short's stock YouTube thumbnails are letterboxed 4:3. Shipping one would put black
+  // bars inside the 9:16 player, so the poster itself must be portrait.
+  for (const v of ALL_VIDEOS) {
+    if (v.vertical === undefined) continue;
+    assert.equal(typeof v.vertical, 'boolean', `${v.slug}.vertical is not a boolean`);
+    if (!v.vertical) continue;
+    const info = manifest[v.poster];
+    assert.ok(info?.w && info.h && info.h > info.w, `${v.slug} is vertical but ${v.poster} is not portrait`);
+  }
+});
+
 test('every locale has complete, non-placeholder copy', () => {
   // The i18n dictionaries are type-enforced; this object is not, so it is checked here.
   for (const v of ALL_VIDEOS) {
