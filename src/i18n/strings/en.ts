@@ -305,6 +305,7 @@ export const en = {
     channelTitle: 'Latest from our channel',
     channelCta: 'See all videos',
     duration: 'Duration',
+    fullStatement: 'Full statement',
   },
 
   // Display labels for the DB-stored canonical English categories.
