@@ -91,6 +91,20 @@ retouched; see "Open at end of August" item 1. On 25 Sep it gained one paragraph
 client's French (WhatsApp), on the Fact-Finding Mission mandate and a nationwide arms embargo;
 EN and AR are translations, and the client's conditional mood is kept in all three.
 
+## October 2026
+
+| Date | Dateline | Category | Slug | Key | Src | Commit |
+| ---- | -------- | -------- | ---- | --- | --- | ------ |
+| 12 Oct | **Brussels** | Statement | `condemnation-airstrike-miners-north-wadi-october-2026` | `5b6ad0cc…` | text + YouTube Short | — |
+
+The first statement to name a state force: it **attributes the strike to the Egyptian air
+force**, as the Coalition's own attribution, approved for publication by the client on
+14 October. The death toll keeps its source ("according to information received by the
+Coalition"). At the client's choice the body is a light copy-edit, not verbatim, identical to
+the statement on its /media page (`sudan-miners-airstrike-north-wadi-2026`, `vertical` Short);
+the body links to that video in each locale. Generated covers, no gallery. Arabic place name
+وادي الشمال confirmed by the client.
+
 ---
 
 ## Attached documents
