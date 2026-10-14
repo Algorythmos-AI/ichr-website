@@ -292,6 +292,7 @@ export const ar: Dict = {
     channelTitle: 'أحدث ما في قناتنا',
     channelCta: 'مشاهدة كل المقاطع',
     duration: 'المدة',
+    fullStatement: 'نص البيان',
   },
 
   categories: {
