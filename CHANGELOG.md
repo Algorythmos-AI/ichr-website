@@ -7,6 +7,20 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.4] — 2026-10-14
+
+### Added
+
+- `/media`: the North Wadi statement video page now carries the full statement (EN/AR/FR),
+  with the Coalition's demands as a list and a sign-off. Videos can optionally carry a
+  `statement`; the build fails if it is missing in a locale or structured differently.
+
+### Changed
+
+- Dependency updates: astro 7.3.8, @astrojs/vercel 11.0.13, @astrojs/react 7.0.1,
+  sanitize-html 2.18.0, marked 18.1.0, @neondatabase/serverless 1.2.0, @vercel/blob 2.8.1,
+  lucide-react 1.54.0, and development tooling.
+
 ## [1.0.3] — 2026-10-14
 
 ### Added

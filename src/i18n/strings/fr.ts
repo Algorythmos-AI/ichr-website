@@ -311,6 +311,7 @@ export const fr: Dict = {
     channelTitle: 'Les dernières vidéos de notre chaîne',
     channelCta: 'Voir toutes les vidéos',
     duration: 'Durée',
+    fullStatement: 'Texte intégral de la déclaration',
   },
 
   categories: {
