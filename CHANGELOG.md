@@ -7,6 +7,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.6] — 2026-10-14
+
+### Changed
+
+- `/media`: the North Wadi video page links to its newsroom article in all three languages.
+
 ## [1.0.5] — 2026-10-14
 
 ### Added
