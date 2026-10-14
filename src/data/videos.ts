@@ -18,7 +18,7 @@ import type { Locale } from '@/i18n';
 
 /** Playlists double as the filter facet on /media. Labels live in the i18n dicts under
  *  `media.playlists`; videos.test.ts asserts every id has a label in all three. */
-export const PLAYLISTS = ['geneva-panel-2026', 'advocacy-2025'] as const;
+export const PLAYLISTS = ['statements-2026', 'geneva-panel-2026', 'advocacy-2025'] as const;
 export type PlaylistId = (typeof PLAYLISTS)[number];
 
 export interface VideoCopy {
@@ -57,6 +57,9 @@ export interface Video {
    *  validated by videos.test.ts — but hides it from /media, the homepage and the sitemap,
    *  and 404s its detail page. Delete the line to re-list it; nothing else is needed. */
   published?: boolean;
+  /** Portrait (9:16) source — a YouTube Short. The detail player renders 9:16 instead of
+   *  16:9, and videos.test.ts requires the poster to be portrait too. Omit for landscape. */
+  vertical?: boolean;
   i18n: Record<Locale, VideoCopy>;
 }
 
@@ -66,11 +69,52 @@ export interface Video {
 // Arabic articles (عبد الرحيم قرين, آندي فيرمو, رامون راهانغميتان, النادي السويسري
 // للصحافة) so the site never spells the same person two ways.
 //
-// ALL EIGHT ENTRIES ARE CURRENTLY UNLISTED (`published: false`), at the client's request on
+// THE EIGHT ENTRIES BELOW ARE CURRENTLY UNLISTED (`published: false`), at the client's request on
 // 31 August 2026, pending a new batch of videos. Nothing has been deleted: the copy, posters,
 // responsive variants and manifest entries are all still here and still test-validated, so
 // re-listing a video is exactly one deleted line.
 const VIDEOS: Video[] = [
+  // Statement of condemnation, Brussels, 12 October 2026: the airstrike of 10 October on
+  // Sudanese miners in the North Wadi region. A Short, so `vertical`. The filming date is not
+  // known, so eventDate is the statement's date rather than the strike's. The attribution to
+  // the Egyptian air force is the Coalition's own, worded as such, and was approved for
+  // publication by the client on 14 October 2026. The poster is YouTube's portrait `oar2`
+  // frame (the standard thumbnails for a Short are letterboxed 4:3), upscaled to 720px wide
+  // so the variant pipeline produces a srcset.
+  {
+    slug: 'sudan-miners-airstrike-north-wadi-2026',
+    youtubeId: 'nOMTA-D4szk',
+    uploadDate: '2026-10-14',
+    eventDate: '2026-10-12',
+    durationSeconds: 104,
+    playlist: 'statements-2026',
+    poster: '/media/sudan-miners-airstrike-north-wadi-2026/poster.jpg',
+    vertical: true,
+    i18n: {
+      en: {
+        title: 'ICHR Condemns the Airstrike on Sudanese Miners in North Wadi',
+        speaker: 'International Coalition for Human Rights (ICHR)',
+        location: 'Brussels',
+        summary:
+          'The International Coalition for Human Rights (ICHR) condemns the airstrike of 10 October 2026 on Sudanese miners in the North Wadi region, which according to information received by the Coalition killed more than one hundred civilians. The Coalition attributes the attack to the Egyptian air force and calls for an urgent, independent international investigation, accountability and justice for the victims’ families. Footage received by the Coalition.',
+      },
+      ar: {
+        title:
+          'التحالف الدولي لحقوق الإنسان يدين الغارة الجوية على المعدّنين السودانيين في منطقة وادي الشمال',
+        speaker: 'التحالف الدولي لحقوق الإنسان',
+        location: 'بروكسل',
+        summary:
+          'يدين التحالف الدولي لحقوق الإنسان الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026، والتي أودت، وفق المعلومات الواردة إلى التحالف، بحياة أكثر من مئة مدني. ويحمّل التحالف سلاح الجو المصري مسؤولية الهجوم، ويطالب بتحقيق دولي مستقل وعاجل، وبالمساءلة وإنصاف أسر الضحايا. لقطات وردت إلى التحالف.',
+      },
+      fr: {
+        title: 'L’ICHR condamne la frappe aérienne contre des mineurs soudanais dans la région de North Wadi',
+        speaker: 'Coalition internationale pour les droits de l’homme (ICHR)',
+        location: 'Bruxelles',
+        summary:
+          'La Coalition internationale pour les droits de l’homme (ICHR) condamne la frappe aérienne du 10 octobre 2026 contre des mineurs soudanais dans la région de North Wadi, qui, selon les informations reçues par la Coalition, a tué plus de cent civils. La Coalition attribue l’attaque à l’armée de l’air égyptienne et demande une enquête internationale indépendante et urgente, l’établissement des responsabilités et la justice pour les familles des victimes. Images reçues par la Coalition.',
+      },
+    },
+  },
   {
     slug: 'panel-final-statements-geneva-2026',
     youtubeId: 'KzzbAruFHWk',

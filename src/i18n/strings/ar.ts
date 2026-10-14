@@ -279,7 +279,11 @@ export const ar: Dict = {
     title: 'مقاطع الفيديو',
     intro: 'كلمات ومداخلات في ندوات ولقطات ميدانية من التحالف الدولي لحقوق الإنسان وشركائه.',
     filterAll: 'الكل',
-    playlists: { 'geneva-panel-2026': 'ندوة جنيف 2026', 'advocacy-2025': 'مناصرة 2025' },
+    playlists: {
+      'statements-2026': 'بيانات 2026',
+      'geneva-panel-2026': 'ندوة جنيف 2026',
+      'advocacy-2025': 'مناصرة 2025',
+    },
     watchOnYouTube: 'شاهد على يوتيوب',
     relatedStatement: 'اقرأ البيان ذا الصلة',
     back: 'العودة إلى الوسائط',
