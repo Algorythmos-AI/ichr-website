@@ -7,6 +7,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.8] — 2026-10-15
+
+### Changed
+
+- `/media`: Andy Vermaut's North Wadi video says "Egyptian army", as the client wrote.
+
 ## [1.0.7] — 2026-10-15
 
 ### Added
