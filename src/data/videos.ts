@@ -87,8 +87,8 @@ const VIDEOS: Video[] = [
   // recording date is not stated, so eventDate is the upload date. His title here is the one
   // the client supplied for this video (member of the Coalition, Ambassador of the European
   // Climate Pact); the Geneva-panel entries below keep the affiliation he gave there. The
-  // client's note says "Egyptian army" and the statement "Egyptian air force": the copy says
-  // "the Egyptian military", attributed to the Coalition. Arabic name آندي فيرمو, as on the
+  // client's note says "Egyptian army" and the copy follows it in all three languages (the
+  // statement article says "air force"), attributed to the Coalition. Arabic name آندي فيرمو, as on the
   // Geneva entries. No location: the client gave none.
   {
     slug: 'andy-vermaut-north-wadi-petition-2026',
@@ -106,7 +106,7 @@ const VIDEOS: Video[] = [
         speaker:
           'Andy Vermaut · Member, International Coalition for Human Rights; Ambassador of the European Climate Pact',
         summary:
-          'Andy Vermaut speaks on the airstrike of 10 October 2026 that killed Sudanese miners in the North Wadi region, which the Coalition attributes to the Egyptian military. He calls on human rights organisations, African organisations in particular, to sign the Coalition’s joint petition for truth, justice and accountability for the civilian victims and their families.',
+          'Andy Vermaut speaks on the airstrike of 10 October 2026 that killed Sudanese miners in the North Wadi region, which the Coalition attributes to the Egyptian army. He calls on human rights organisations, African organisations in particular, to sign the Coalition’s joint petition for truth, justice and accountability for the civilian victims and their families.',
       },
       ar: {
         title: 'آندي فيرمو يطالب بالعدالة للمعدّنين السودانيين الذين قُتلوا في وادي الشمال',
