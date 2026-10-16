@@ -7,6 +7,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.9] — 2026-10-16
+
+### Added
+
+- Newsroom artwork for the 13 October 2026 meeting with The Church of Jesus Christ of
+  Latter-day Saints (Brussels).
+
 ## [1.0.8] — 2026-10-15
 
 ### Changed
