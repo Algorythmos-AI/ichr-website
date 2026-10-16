@@ -96,6 +96,7 @@ EN and AR are translations, and the client's conditional mood is kept in all thr
 | Date | Dateline | Category | Slug | Key | Src | Commit |
 | ---- | -------- | -------- | ---- | --- | --- | ------ |
 | 12 Oct | **Brussels** | Statement | `condemnation-airstrike-miners-north-wadi-october-2026` | `5b6ad0cc…` | text + YouTube Short | `b90f23b` |
+| 13 Oct | **Brussels** | Press Release | `church-of-jesus-christ-meeting-brussels-october-2026` | `1ac5cac4…` | `OCT/2` | — |
 
 The first statement to name a state force: it **attributes the strike to the Egyptian air
 force**, as the Coalition's own attribution, approved for publication by the client on
@@ -104,6 +105,14 @@ Coalition"). At the client's choice the body is a light copy-edit, not verbatim,
 the statement on its /media page (`sudan-miners-airstrike-north-wadi-2026`, `vertical` Short);
 the body links to that video in each locale. Generated covers, no gallery. Arabic place name
 وادي الشمال confirmed by the client.
+
+`church-of-jesus-christ-…` (13 Oct): meeting with a delegation of The Church of Jesus Christ of
+Latter-day Saints headed by Francesco Di Lillo, Director of EU & International Affairs. The
+client's notes and cards say "The Church of Jesus Christ"; the article uses the full name on
+first mention, at the client's choice. English-only source; AR and FR are translations. The
+mention of the miners links to the 12 Oct statement (added text). A Dutch third-party article
+on the strikes (indegazette.be) was offered and deliberately not used. Supplied square cards:
+English card on en/fr, Arabic card on ar; no gallery.
 
 ---
 
