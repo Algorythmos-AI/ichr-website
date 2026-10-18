@@ -7,6 +7,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.10] — 2026-10-18
+
+### Added
+
+- Newsroom covers for the 16 October 2026 statement on the Nyala livestock market (Paris).
+
 ## [1.0.9] — 2026-10-16
 
 ### Added
