@@ -97,6 +97,7 @@ EN and AR are translations, and the client's conditional mood is kept in all thr
 | ---- | -------- | -------- | ---- | --- | --- | ------ |
 | 12 Oct | **Brussels** | Statement | `condemnation-airstrike-miners-north-wadi-october-2026` | `5b6ad0cc…` | text + YouTube Short | `b90f23b` |
 | 13 Oct | **Brussels** | Press Release | `church-of-jesus-christ-meeting-brussels-october-2026` | `1ac5cac4…` | `OCT/2` | — |
+| 16 Oct | **Paris** | Statement | `condemnation-nyala-livestock-market-october-2026` | `aa0a4ef9…` | text (chat) | — |
 
 The first statement to name a state force: it **attributes the strike to the Egyptian air
 force**, as the Coalition's own attribution, approved for publication by the client on
@@ -113,6 +114,13 @@ first mention, at the client's choice. English-only source; AR and FR are transl
 mention of the miners links to the 12 Oct statement (added text). A Dutch third-party article
 on the strikes (indegazette.be) was offered and deliberately not used. Supplied square cards:
 English card on en/fr, Arabic card on ar; no gallery.
+
+`condemnation-nyala-…` (16 Oct, Paris): drone attack on the Nyala livestock market. The
+statement **holds the Sudanese Armed Forces fully responsible** and calls it a "systematic
+crime"; published as written, approved by the client on 18 October. The toll (thirty civilians)
+keeps its source, "reports from local organisations contacted by the Coalition", in all three
+languages. Light copy-edit at the client's choice (house name; the FFM and HRC calls set as a
+list); house sign-off added. Generated covers, no gallery.
 
 ---
 
