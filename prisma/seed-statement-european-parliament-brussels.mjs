@@ -61,7 +61,7 @@ The meetings concluded with a mutual commitment to sustain coordination between 
 
 ---
 
-**THE INTERNATIONAL COALITION FOR HUMAN RIGHTS**
+**THE INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS**
 
 Advancing Human Rights • Peace • Justice
 
@@ -86,7 +86,7 @@ const AR_BODY = `بروكسل — شهدت أروقة البرلمان الأو�
 
 ---
 
-**التحالف الدولي لحقوق الإنسان**
+**التحالف الدولي لمنظمات حقوق الإنسان**
 
 النهوض بحقوق الإنسان • السلام • العدالة
 
@@ -111,7 +111,7 @@ Les réunions se sont conclues par un engagement mutuel à maintenir la coordina
 
 ---
 
-**LA COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME**
+**LA COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME**
 
 Promouvoir les droits de l'homme • La paix • La justice
 

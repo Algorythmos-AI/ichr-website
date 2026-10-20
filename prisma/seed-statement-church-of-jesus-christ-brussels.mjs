@@ -50,7 +50,7 @@ Both sides exchanged views on ways to strengthen cooperation on humanitarian iss
 
 ---
 
-**INTERNATIONAL COALITION FOR HUMAN RIGHTS**
+**INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS**
 
 Advancing Human Rights • Peace • Justice
 
@@ -69,7 +69,7 @@ const AR_BODY = `عقد التحالف الدولي لمنظمات حقوق ال
 
 ---
 
-**التحالف الدولي لحقوق الإنسان**
+**التحالف الدولي لمنظمات حقوق الإنسان**
 
 النهوض بحقوق الإنسان • السلام • العدالة
 
@@ -88,7 +88,7 @@ Les deux parties ont échangé leurs vues sur les moyens de renforcer leur coop�
 
 ---
 
-**COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME**
+**COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME**
 
 Promouvoir les droits de l'homme • La paix • La justice
 

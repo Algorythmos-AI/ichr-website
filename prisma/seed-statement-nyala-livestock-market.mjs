@@ -50,7 +50,7 @@ The blood of civilians in Nyala is not a statistic. Expressions of concern are n
 
 ---
 
-**INTERNATIONAL COALITION FOR HUMAN RIGHTS**
+**INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS**
 
 Advancing Human Rights • Peace • Justice
 
@@ -76,7 +76,7 @@ const AR_BODY = `يدين التحالف الدولي لمنظمات حقوق ا
 
 ---
 
-**التحالف الدولي لحقوق الإنسان**
+**التحالف الدولي لمنظمات حقوق الإنسان**
 
 النهوض بحقوق الإنسان • السلام • العدالة
 
@@ -102,7 +102,7 @@ Le sang des civils de Nyala n'est pas une statistique. Les expressions de préoc
 
 ---
 
-**COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME**
+**COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME**
 
 Promouvoir les droits de l'homme • La paix • La justice
 

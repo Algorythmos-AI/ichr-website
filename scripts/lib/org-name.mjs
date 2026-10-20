@@ -9,6 +9,16 @@
 // (@ICHRIntl, #international_coalition_for_h_rights), URL slugs, filenames, and the client's
 // logo artwork, which carries "ICHR" in its lettering and is not ours to redraw.
 export const ORG_RULES = [
+  // The client's own hybrid wording ("…for Human Rights Organizations") first, or the next rule
+  // would turn it into "…of Human Rights Organizations Organizations".
+  [
+    /International Coalition for Human Rights Organizations/g,
+    'International Coalition of Human Rights Organizations',
+  ],
+  [
+    /INTERNATIONAL COALITION FOR HUMAN RIGHTS ORGANIZATIONS/g,
+    'INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS',
+  ],
   [/International Coalition for Human Rights/g, 'International Coalition of Human Rights Organizations'],
   [/INTERNATIONAL COALITION FOR HUMAN RIGHTS/g, 'INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS'],
   [
@@ -30,10 +40,14 @@ export function renameOrg(text) {
   return ORG_RULES.reduce((s, [re, to]) => s.replace(re, to), text);
 }
 
-/** Source files: rename on every line except comments, which record history. */
+/** Source files: rename on every line except code comments, which record history. */
 export function renameOrgInSource(src) {
-  return src
-    .split('\n')
-    .map((line) => (/^\s*(\/\/|\*|\/\*|<!--)/.test(line) ? line : renameOrg(line)))
-    .join('\n');
+  return (
+    src
+      .split('\n')
+      // A JSDoc line is " * text" or " */" — NOT "**bold**", which is a markdown sign-off inside
+      // a template literal and must be renamed. (Getting this wrong skipped every bold sign-off.)
+      .map((line) => (/^\s*(\/\/|\*(\s|\/|$)|\/\*|<!--)/.test(line) ? line : renameOrg(line)))
+      .join('\n')
+  );
 }

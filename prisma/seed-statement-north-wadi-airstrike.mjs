@@ -55,7 +55,7 @@ The killing of civilians can never be justified, nor treated as a passing news i
 
 ---
 
-**INTERNATIONAL COALITION FOR HUMAN RIGHTS**
+**INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS**
 
 Advancing Human Rights • Peace • Justice
 
@@ -85,7 +85,7 @@ const AR_BODY = `يدين التحالف الدولي لمنظمات حقوق ا
 
 ---
 
-**التحالف الدولي لحقوق الإنسان**
+**التحالف الدولي لمنظمات حقوق الإنسان**
 
 النهوض بحقوق الإنسان • السلام • العدالة
 
@@ -115,7 +115,7 @@ Le meurtre de civils ne peut être ni justifié ni traité comme un simple fait 
 
 ---
 
-**COALITION INTERNATIONALE POUR LES DROITS DE L’HOMME**
+**COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L’HOMME**
 
 Promouvoir les droits de l'homme • La paix • La justice
 
