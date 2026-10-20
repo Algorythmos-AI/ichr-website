@@ -98,6 +98,7 @@ EN and AR are translations, and the client's conditional mood is kept in all thr
 | 12 Oct | **Brussels** | Statement | `condemnation-airstrike-miners-north-wadi-october-2026` | `5b6ad0cc…` | text + YouTube Short | `b90f23b` |
 | 13 Oct | **Brussels** | Press Release | `church-of-jesus-christ-meeting-brussels-october-2026` | `1ac5cac4…` | `OCT/2` | — |
 | 16 Oct | **Paris** | Statement | `condemnation-nyala-livestock-market-october-2026` | `aa0a4ef9…` | text (chat) | — |
+| 19 Oct | **Paris** | Statement | `condemnation-drone-strike-amiet-market-abyei-october-2026` | `fe150bab…` | `OCT/3` | — |
 
 The first statement to name a state force: it **attributes the strike to the Egyptian air
 force**, as the Coalition's own attribution, approved for publication by the client on
@@ -121,6 +122,12 @@ crime"; published as written, approved by the client on 18 October. The toll (th
 keeps its source, "reports from local organisations contacted by the Coalition", in all three
 languages. Light copy-edit at the client's choice (house name; the FFM and HRC calls set as a
 list); house sign-off added. Generated covers, no gallery.
+
+`condemnation-drone-strike-amiet-market-abyei-…` (19 Oct, Paris): drone strike on Amiet market,
+Abyei. The source's "Na'am market (Amit)" is published as **Amiet market** (AR سوق أميت), at the
+client's choice. The SAF attribution is **reported, not made**: "according to a statement by the
+Ministry of Foreign Affairs of South Sudan" — keep that hedge in any edit. `OCT/3` first held a
+byte-identical copy of `OCT/2`; caught before publishing, and replaced by the client.
 
 ---
 
