@@ -7,6 +7,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.15] — 2026-10-20
+
+### Changed
+
+- Newsroom: the Amiet market cover moves from azure to a new terracotta theme, so the featured
+  card on `/news` no longer blends into the site's navy.
+
 ## [1.0.14] — 2026-10-20
 
 ### Fixed
