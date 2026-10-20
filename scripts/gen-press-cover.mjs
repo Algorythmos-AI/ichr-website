@@ -34,7 +34,7 @@ if (!modulePath) {
 }
 
 const mod = await import(pathToFileURL(resolve(modulePath)).href);
-const { SLUG, COVERS } = mod;
+const { SLUG, COVERS, COVER_THEME } = mod; // COVER_THEME: one of THEMES, for every locale
 if (!SLUG || !COVERS) {
   console.error(`ABORT: ${modulePath} must export SLUG and COVERS.`);
   process.exit(1);
@@ -64,7 +64,7 @@ const OUT_DIR = join(REPO, 'public', 'blog', SLUG);
 mkdirSync(OUT_DIR, { recursive: true });
 
 for (const loc of targets) {
-  const c = COVERS[loc];
+  const c = { theme: COVER_THEME, ...COVERS[loc] }; // a locale may still override it
   const out = join(OUT_DIR, c.file);
 
   if (existsSync(out) && !FORCE) {

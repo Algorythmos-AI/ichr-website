@@ -234,6 +234,10 @@ export const STATEMENT = {
 // The A4 poster is the wrong shape for the cover slot, so all three covers are
 // generated. The chip keeps the site convention of city + dateline (23 August);
 // the EVENT date lives in the standfirst so the two are never confused.
+// Cover colour (scripts/lib/press-card.mjs THEMES). Each text-only cover has its own, so
+// they read as a set on /news without being identical. Re-render with FORCE=1.
+export const COVER_THEME = 'plum';
+
 export const COVERS = {
   en: {
     file: 'cover.jpg',

@@ -152,6 +152,10 @@ export const STATEMENT = {
 
 // No `en` entry: English uses the supplied photo card (U1 → cover.jpg). An `en` entry
 // here would emit the same filename and overwrite it.
+// Cover colour (scripts/lib/press-card.mjs THEMES). Each text-only cover has its own, so
+// they read as a set on /news without being identical. Re-render with FORCE=1.
+export const COVER_THEME = 'graphite';
+
 export const COVERS = {
   fr: {
     file: 'cover-fr.jpg',
