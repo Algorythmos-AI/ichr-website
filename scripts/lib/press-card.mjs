@@ -48,6 +48,7 @@ export const THEMES = {
   plum: { from: '#4e2a63', to: '#2a1639', accent: '#E0B866', ink: '#4e2a63' },
   graphite: { from: '#333f4b', to: '#161d24', accent: '#E8894A', ink: '#333f4b' },
   forest: { from: '#22533e', to: '#11301f', accent: '#D9B75E', ink: '#22533e' },
+  terracotta: { from: '#9a3a1e', to: '#521a0b', accent: '#F4C86A', ink: '#9a3a1e' },
 };
 
 function themeOf(c) {
