@@ -146,6 +146,10 @@ export const STATEMENT = {
   ],
 };
 
+// Cover colour (scripts/lib/press-card.mjs THEMES). Each text-only cover has its own, so
+// they read as a set on /news without being identical. Re-render with FORCE=1.
+export const COVER_THEME = 'azure';
+
 export const COVERS = {
   en: {
     file: 'cover.jpg',

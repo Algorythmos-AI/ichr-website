@@ -89,6 +89,19 @@ const emptyMsg =
             class="group grid md:grid-cols-2 gap-8 items-center bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 mb-12 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a4a68] focus-visible:ring-offset-2"
           >
             <div class="relative h-72 md:h-80 overflow-hidden bg-[#1a4a68]">
+              <!-- Fills the letterbox around a portrait or square cover with a soft, blurred copy of
+                   the cover itself, so the frame takes each card's own colour instead of a fixed navy.
+                   Decorative: empty alt, and `sizes` makes the browser fetch the smallest variant. -->
+              <img
+                src={resolveAssetUrl(featured.coverImageUrl)}
+                srcset={srcSetFor(featured.coverImageUrl)}
+                sizes="120px"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 w-full h-full object-cover scale-125 blur-2xl opacity-80"
+              />
               <img
                 src={resolveAssetUrl(featured.coverImageUrl)}
                 srcset={srcSetFor(featured.coverImageUrl)}
@@ -98,7 +111,7 @@ const emptyMsg =
                 alt={featured.title}
                 fetchpriority="high"
                 decoding="async"
-                class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none"
+                class="relative w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none"
               />
             </div>
             <div class="p-8">
