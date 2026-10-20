@@ -7,6 +7,17 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.13] — 2026-10-20
+
+### Changed
+
+- The organisation is renamed **International Coalition of Human Rights Organizations (ICHRO)**
+  across the site in all three languages, at the client's request: page text and titles,
+  structured data, the header and footer, video copy, generated press covers (re-rendered) and,
+  through a one-off script and the seeds, every newsroom article.
+- Dependency updates: astro 7.4.0, @astrojs/vercel 11.0.15, @astrojs/react 7.1.0, react 19.3.1,
+  sanitize-html 2.18.1, dompurify 3.4.17, zod 4.6.7, and tooling; GitHub Actions updates.
+
 ## [1.0.12] — 2026-10-20
 
 ### Changed

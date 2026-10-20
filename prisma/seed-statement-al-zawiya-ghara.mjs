@@ -196,7 +196,7 @@ export const STATEMENT = {
       excerpt: EN_EXCERPT,
       body: EN_BODY,
       location: 'Geneva',
-      authorName: 'ICHR Communications',
+      authorName: 'ICHRO Communications',
       coverImageUrl: `/blog/${SLUG}/cover.jpg`,
       // The designed cards carry English text, so they hang off the English row only.
       gallery: [
@@ -227,7 +227,7 @@ export const STATEMENT = {
       excerpt: AR_EXCERPT,
       body: AR_BODY,
       location: 'جنيف',
-      authorName: 'إعلام ICHR',
+      authorName: 'إعلام ICHRO',
       coverImageUrl: `/blog/${SLUG}/cover-ar.jpg`,
     },
     {
@@ -237,7 +237,7 @@ export const STATEMENT = {
       excerpt: FR_EXCERPT,
       body: FR_BODY,
       location: 'Genève',
-      authorName: 'Communication ICHR',
+      authorName: 'Communication ICHRO',
       coverImageUrl: `/blog/${SLUG}/cover-fr.jpg`,
     },
   ],

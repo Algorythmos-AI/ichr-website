@@ -33,7 +33,7 @@ export const SLUG = 'condemnation-nyala-livestock-market-october-2026';
 // Generated once, 18 October 2026. Never regenerate.
 export const TRANSLATION_KEY = 'aa0a4ef9-527d-40f9-9156-118f5775dbb3';
 
-const EN_BODY = `The International Coalition for Human Rights (ICHR) condemns in the strongest possible terms the drone attack carried out by the Sudanese Armed Forces on the livestock market in the city of Nyala on Friday, 16 October 2026.
+const EN_BODY = `The International Coalition of Human Rights Organizations (ICHRO) condemns in the strongest possible terms the drone attack carried out by the Sudanese Armed Forces on the livestock market in the city of Nyala on Friday, 16 October 2026.
 
 According to reports from local organisations contacted by the Coalition, the attack killed thirty civilians. It was a horrific assault on the lives of the population and on their primary source of livelihood.
 
@@ -57,9 +57,9 @@ Advancing Human Rights • Peace • Justice
 Paris, 16 October 2026`;
 
 const EN_EXCERPT =
-  'ICHR condemns in the strongest terms the drone attack by the Sudanese Armed Forces on the Nyala livestock market on 16 October 2026, which according to local organisations contacted by the Coalition killed thirty civilians, and calls on the UN Fact-Finding Mission and the Human Rights Council to act.';
+  'ICHRO condemns in the strongest terms the drone attack by the Sudanese Armed Forces on the Nyala livestock market on 16 October 2026, which according to local organisations contacted by the Coalition killed thirty civilians, and calls on the UN Fact-Finding Mission and the Human Rights Council to act.';
 
-const AR_BODY = `يدين التحالف الدولي لحقوق الإنسان بأشد العبارات الهجوم بالطائرات المسيّرة الذي نفّذته القوات المسلحة السودانية على سوق المواشي في مدينة نيالا يوم الجمعة 16 أكتوبر 2026.
+const AR_BODY = `يدين التحالف الدولي لمنظمات حقوق الإنسان بأشد العبارات الهجوم بالطائرات المسيّرة الذي نفّذته القوات المسلحة السودانية على سوق المواشي في مدينة نيالا يوم الجمعة 16 أكتوبر 2026.
 
 ووفق تقارير منظمات محلية تواصل معها التحالف، أسفر الهجوم عن مقتل ثلاثين مدنيًا، في اعتداء مروّع على أرواح السكان وعلى مصدر رزقهم الأساسي.
 
@@ -83,9 +83,9 @@ const AR_BODY = `يدين التحالف الدولي لحقوق الإنسان 
 باريس، 16 أكتوبر 2026`;
 
 const AR_EXCERPT =
-  'يدين التحالف الدولي لحقوق الإنسان بأشد العبارات الهجوم بالطائرات المسيّرة الذي نفّذته القوات المسلحة السودانية على سوق المواشي في نيالا في 16 أكتوبر 2026، والذي أسفر، وفق منظمات محلية تواصل معها التحالف، عن مقتل ثلاثين مدنيًا، ويدعو بعثة تقصي الحقائق ومجلس حقوق الإنسان إلى التحرك.';
+  'يدين التحالف الدولي لمنظمات حقوق الإنسان بأشد العبارات الهجوم بالطائرات المسيّرة الذي نفّذته القوات المسلحة السودانية على سوق المواشي في نيالا في 16 أكتوبر 2026، والذي أسفر، وفق منظمات محلية تواصل معها التحالف، عن مقتل ثلاثين مدنيًا، ويدعو بعثة تقصي الحقائق ومجلس حقوق الإنسان إلى التحرك.';
 
-const FR_BODY = `La Coalition internationale pour les droits de l'homme (ICHR) condamne avec la plus grande fermeté l'attaque de drone menée par les Forces armées soudanaises contre le marché aux bestiaux de la ville de Nyala, le vendredi 16 octobre 2026.
+const FR_BODY = `La Coalition internationale des organisations de défense des droits de l'homme (ICHRO) condamne avec la plus grande fermeté l'attaque de drone menée par les Forces armées soudanaises contre le marché aux bestiaux de la ville de Nyala, le vendredi 16 octobre 2026.
 
 Selon les informations d'organisations locales contactées par la Coalition, l'attaque a tué trente civils. Elle constitue une agression effroyable contre la vie de la population et contre sa principale source de subsistance.
 
@@ -109,7 +109,7 @@ Promouvoir les droits de l'homme • La paix • La justice
 Paris, 16 octobre 2026`;
 
 const FR_EXCERPT =
-  "L'ICHR condamne avec la plus grande fermeté l'attaque de drone des Forces armées soudanaises contre le marché aux bestiaux de Nyala, le 16 octobre 2026, qui selon des organisations locales contactées par la Coalition a tué trente civils, et appelle la Mission d'établissement des faits et le Conseil des droits de l'homme à agir.";
+  "L'ICHRO condamne avec la plus grande fermeté l'attaque de drone des Forces armées soudanaises contre le marché aux bestiaux de Nyala, le 16 octobre 2026, qui selon des organisations locales contactées par la Coalition a tué trente civils, et appelle la Mission d'établissement des faits et le Conseil des droits de l'homme à agir.";
 
 export const STATEMENT = {
   slug: SLUG,
@@ -124,7 +124,7 @@ export const STATEMENT = {
       excerpt: EN_EXCERPT,
       body: EN_BODY,
       location: 'Paris',
-      authorName: 'ICHR Communications',
+      authorName: 'ICHRO Communications',
       coverImageUrl: `/blog/${SLUG}/cover.jpg`,
     },
     {
@@ -133,7 +133,7 @@ export const STATEMENT = {
       excerpt: AR_EXCERPT,
       body: AR_BODY,
       location: 'باريس',
-      authorName: 'إعلام ICHR',
+      authorName: 'إعلام ICHRO',
       coverImageUrl: `/blog/${SLUG}/cover-ar.jpg`,
     },
     {
@@ -142,7 +142,7 @@ export const STATEMENT = {
       excerpt: FR_EXCERPT,
       body: FR_BODY,
       location: 'Paris',
-      authorName: 'Communication ICHR',
+      authorName: 'Communication ICHRO',
       coverImageUrl: `/blog/${SLUG}/cover-fr.jpg`,
     },
   ],
@@ -157,7 +157,7 @@ export const COVERS = {
     file: 'cover.jpg',
     rtl: false,
     font: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    org: 'INTERNATIONAL COALITION FOR HUMAN RIGHTS',
+    org: 'INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS',
     eyebrow: 'STATEMENT OF CONDEMNATION',
     headline: ['Drone Attack on the', 'Livestock Market', 'in Nyala'],
     headSize: 58,
@@ -172,7 +172,7 @@ export const COVERS = {
     file: 'cover-fr.jpg',
     rtl: false,
     font: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    org: "COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME",
+    org: "COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME",
     eyebrow: 'DÉCLARATION DE CONDAMNATION',
     headline: ['Attaque de drone contre', 'le marché aux bestiaux', 'de Nyala'],
     headSize: 54,
@@ -187,7 +187,7 @@ export const COVERS = {
     file: 'cover-ar.jpg',
     rtl: true,
     font: "'Geeza Pro', 'Al Bayan', sans-serif",
-    org: 'التحالف الدولي لحقوق الإنسان',
+    org: 'التحالف الدولي لمنظمات حقوق الإنسان',
     eyebrow: 'بيان إدانة',
     headline: ['الهجوم بالطائرات المسيّرة', 'على سوق المواشي', 'في نيالا'],
     headSize: 56,

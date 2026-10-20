@@ -177,9 +177,28 @@ bylines and body text.
 - Two `/media` slugs were published with the old spelling and corrected the same day;
   `astro.config.mjs` carries redirects from the old URLs. Keep them.
 
-**Organisation name.** Body text and sign-offs use the house brand "International Coalition
-for Human Rights (ICHR)". Some client-supplied artwork reads "International Coalition of Human
-Rights Organizations"; artwork is never retouched.
+**Organisation name — changed 20 October 2026, at the client's request.**
+
+| locale | name                                                                        | short   |
+| ------ | --------------------------------------------------------------------------- | ------- |
+| en     | International Coalition of Human Rights Organizations                       | `ICHRO` |
+| ar     | التحالف الدولي لمنظمات حقوق الإنسان                                         | `ICHRO` |
+| fr     | Coalition internationale des organisations de défense des droits de l'homme | `ICHRO` |
+
+It replaces the house brand "International Coalition for Human Rights (ICHR)" used from June
+to October. The rules live in one place, **`scripts/lib/org-name.mjs`**, used for the site
+source, the seeds and the database alike.
+
+- **Not renamed:** the domain `ichr-international.org`, the social handles (`@ICHRIntl`,
+  `#international_coalition_for_h_rights`), URL slugs, filenames, and the client's logo, whose
+  lettering reads "ICHR" — it is their artwork, not ours to redraw.
+- **Generated covers** carry the name in their masthead: re-render with
+  `FORCE=1 node scripts/gen-press-cover.mjs <seed>` and then `FORCE=1` on the variants script.
+- **Client artwork is never retouched — with one recorded exception:** the Shirshar AR/FR cards
+  were built by us from the client's English card, so their name bar was repainted.
+- The procedural-bias, cargo-trucks and four June articles were renamed in the database by
+  `prisma/rename-org-ichro.mjs`, not by re-seeding: their seeds are the record of what was
+  executed, and UPR-54's live text carries a PDF link its seed does not.
 
 ---
 

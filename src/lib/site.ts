@@ -44,8 +44,8 @@ export const WHATSAPP: IconLink & { display: string } = {
 };
 
 export const ORG = {
-  name: 'International Coalition for Human Rights',
-  alternateName: 'ICHR',
+  name: 'International Coalition of Human Rights Organizations',
+  alternateName: 'ICHRO',
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   email: 'info@ichr-international.org',
