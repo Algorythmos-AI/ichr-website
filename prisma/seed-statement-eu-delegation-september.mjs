@@ -64,7 +64,7 @@ The meeting follows [the Coalition's talks with Mrs. Tapio on 2 June 2026](/news
 
 ---
 
-**THE INTERNATIONAL COALITION FOR HUMAN RIGHTS**
+**THE INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS**
 
 Advancing Human Rights • Peace • Justice
 
@@ -91,7 +91,7 @@ const AR_BODY = `جنيف — عُقد في 22 سبتمبر 2026 اجتماع ا
 
 ---
 
-**التحالف الدولي لحقوق الإنسان**
+**التحالف الدولي لمنظمات حقوق الإنسان**
 
 النهوض بحقوق الإنسان • السلام • العدالة
 
@@ -118,7 +118,7 @@ Cette réunion fait suite aux [entretiens de la Coalition avec Mme Tapio le 2 ju
 
 ---
 
-**LA COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME**
+**LA COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME**
 
 Promouvoir les droits de l'homme • La paix • La justice
 

@@ -45,7 +45,7 @@ The people of Sudan deserve justice, protection, and lasting peace. The internat
 
 ---
 
-**THE INTERNATIONAL COALITION FOR HUMAN RIGHTS**
+**THE INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS**
 
 Advancing Human Rights • Peace • Justice
 
@@ -66,7 +66,7 @@ const AR_BODY = `يرحّب التحالف الدولي لمنظمات حقوق 
 
 ---
 
-**التحالف الدولي لحقوق الإنسان**
+**التحالف الدولي لمنظمات حقوق الإنسان**
 
 النهوض بحقوق الإنسان • السلام • العدالة
 
@@ -87,7 +87,7 @@ Le peuple soudanais mérite la justice, la protection et une paix durable. La co
 
 ---
 
-**LA COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME**
+**LA COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME**
 
 Promouvoir les droits de l'homme • La paix • La justice
 

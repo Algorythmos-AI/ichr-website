@@ -67,7 +67,7 @@ The protection of civilians, the prevention of atrocity crimes, and the pursuit 
 
 ---
 
-**THE INTERNATIONAL COALITION FOR HUMAN RIGHTS**
+**THE INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS**
 
 Advancing Human Rights • Peace • Justice
 
@@ -111,7 +111,7 @@ const AR_BODY = `يعرب التحالف الدولي لمنظمات حقوق ا
 
 ---
 
-**التحالف الدولي لحقوق الإنسان**
+**التحالف الدولي لمنظمات حقوق الإنسان**
 
 النهوض بحقوق الإنسان • السلام • العدالة
 
@@ -155,7 +155,7 @@ La protection des civils, la prévention des crimes d'atrocité et la poursuite 
 
 ---
 
-**LA COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME**
+**LA COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME**
 
 Promouvoir les droits de l'homme • La paix • La justice
 

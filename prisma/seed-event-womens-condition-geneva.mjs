@@ -73,7 +73,7 @@ The event was previewed by panellist and journalist Andy Vermaut in the Belgian 
 
 ---
 
-**THE INTERNATIONAL COALITION FOR HUMAN RIGHTS**
+**THE INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS**
 
 Advancing Human Rights • Peace • Justice
 
@@ -113,7 +113,7 @@ const AR_BODY = `يشارك **التحالف الدولي لمنظمات حقو�
 
 ---
 
-**التحالف الدولي لحقوق الإنسان**
+**التحالف الدولي لمنظمات حقوق الإنسان**
 
 النهوض بحقوق الإنسان • السلام • العدالة
 
@@ -153,7 +153,7 @@ L'événement a fait l'objet d'une présentation par le panéliste et journalist
 
 ---
 
-**LA COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME**
+**LA COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME**
 
 Promouvoir les droits de l'homme • La paix • La justice
 

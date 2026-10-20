@@ -44,7 +44,7 @@ export const SLUG = 'condemnation-shirshar-north-kordofan-july-2026';
 // Minted once for this story. NEVER regenerate.
 export const TRANSLATION_KEY = 'dd91a157-3b78-4d8d-8432-6c80c32fe110';
 
-const EN_BODY = `The International Coalition of Human Rights Organizations Organizations expresses its strongest condemnation and profound concern over the horrific aerial attack that targeted unarmed civilians in the Shirshar area, located within the West Bara locality of North Kordofan State.
+const EN_BODY = `The International Coalition of Human Rights Organizations expresses its strongest condemnation and profound concern over the horrific aerial attack that targeted unarmed civilians in the Shirshar area, located within the West Bara locality of North Kordofan State.
 
 This dangerous escalation represents a flagrant assault on the right to life and a grave violation of the principles and rules of international humanitarian law and international human rights law.
 
@@ -52,7 +52,7 @@ Based on consistent testimonies and documented information gathered and verified
 
 The strikes resulted in civilian casualties. Photographs and video footage reviewed in connection with the incident reportedly show deeply distressing and disturbing scenes of civilian victims, including women and children.
 
-**In light of these grave violations and attacks affecting civilian lives and populated areas, the International Coalition for Human Rights Organizations calls for the following urgent measures:**
+**In light of these grave violations and attacks affecting civilian lives and populated areas, the International Coalition of Human Rights Organizations calls for the following urgent measures:**
 
 - We categorically call upon the Independent Fact-Finding Mission to gain immediate and unhindered access to the sites of the attacks, collect and preserve relevant evidence, document the circumstances surrounding the incident and interview survivors and witnesses.
 - We stress the urgent need to establish legal and criminal responsibility for any violations committed against civilians, in accordance with applicable international law and to ensure that those responsible are held accountable and that impunity is not allowed to prevail.
@@ -62,11 +62,11 @@ The strikes resulted in civilian casualties. Photographs and video footage revie
 - The deliberate or indiscriminate targeting of civilians can never be justified on military or political grounds.
 - The protection of civilian life is an obligation under international law and violations must be subject to effective investigation and accountability.
 
-The International Coalition of Human Rights Organizations Organizations reaffirms its commitment to monitoring and documenting violations, following developments related to this incident and supporting efforts aimed at ensuring justice, accountability and effective remedies for the victims and their families.
+The International Coalition of Human Rights Organizations reaffirms its commitment to monitoring and documenting violations, following developments related to this incident and supporting efforts aimed at ensuring justice, accountability and effective remedies for the victims and their families.
 
 ---
 
-**THE INTERNATIONAL COALITION FOR HUMAN RIGHTS**
+**THE INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS**
 
 Advancing Human Rights • Peace • Justice
 
@@ -97,7 +97,7 @@ const AR_BODY = `يعرب التحالف الدولي لمنظمات حقوق ا
 
 ---
 
-**التحالف الدولي لحقوق الإنسان**
+**التحالف الدولي لمنظمات حقوق الإنسان**
 
 النهوض بحقوق الإنسان • السلام • العدالة
 
@@ -128,7 +128,7 @@ La Coalition internationale des organisations de défense des droits de l'homme 
 
 ---
 
-**LA COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME**
+**LA COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME**
 
 Promouvoir les droits de l'homme • La paix • La justice
 
