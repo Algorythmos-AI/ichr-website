@@ -106,6 +106,10 @@ node scripts/gen-image-variants.mjs <slug>
 git diff --stat src/generated/blog-images.json   # additions only
 ```
 
+**Re-rendering a cover that already has variants** (a correction, or a new `COVER_THEME`):
+the variants script skips files that exist, so run it with `FORCE=1 node scripts/gen-image-variants.mjs <slug>`.
+Without it the `-400`/`-800` files — what `/news` tiles and phones load — keep the old image.
+
 ### Supplied PDFs
 
 Client PDFs are usually flattened pictures. Check for a text layer first; rebuild picture pages

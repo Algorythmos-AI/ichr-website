@@ -196,6 +196,10 @@ export const STATEMENT = {
 
 // Read by scripts/gen-press-cover.mjs. Hand-broken headlines; the generator measures
 // each line's rendered ink against the 1024px column before writing anything.
+// Cover colour (scripts/lib/press-card.mjs THEMES). Each text-only cover has its own, so
+// they read as a set on /news without being identical. Re-render with FORCE=1.
+export const COVER_THEME = 'navy';
+
 export const COVERS = {
   en: {
     file: 'cover.jpg',

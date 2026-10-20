@@ -7,6 +7,21 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.12] — 2026-10-20
+
+### Changed
+
+- Newsroom: generated press covers now come in seven colour themes, one per statement, instead of a
+  single navy; the seven existing text-only covers are re-rendered in their own colours.
+- Newsroom: the letterbox around portrait and square covers (on `/news` and the article hero) is a
+  blurred copy of the cover, so the frame matches each card instead of a fixed navy fill.
+
+## [1.0.11] — 2026-10-20
+
+### Added
+
+- Newsroom covers for the 19 October 2026 statement on Amiet market, Abyei (Paris).
+
 ## [1.0.10] — 2026-10-18
 
 ### Added

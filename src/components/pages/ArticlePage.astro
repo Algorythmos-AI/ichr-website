@@ -119,7 +119,20 @@ const jsonLd = {
 
     {post.coverImageUrl && (
       <Section width="content" spacing="sm">
-        <div class="rounded-xl overflow-hidden border border-slate-200 bg-[#1a4a68] flex justify-center">
+        <div class="relative rounded-xl overflow-hidden border border-slate-200 bg-[#1a4a68] flex justify-center">
+          <!-- Fills the letterbox around a portrait or square cover with a soft, blurred copy of
+               the cover itself, so the frame takes each card's own colour instead of a fixed navy.
+               Decorative: empty alt, and `sizes` makes the browser fetch the smallest variant. -->
+          <img
+            src={resolveAssetUrl(post.coverImageUrl)}
+            srcset={srcSetFor(post.coverImageUrl)}
+            sizes="120px"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover scale-125 blur-2xl opacity-80"
+          />
           <img
             src={resolveAssetUrl(post.coverImageUrl)}
             srcset={srcSetFor(post.coverImageUrl)}
@@ -129,7 +142,7 @@ const jsonLd = {
             alt={post.title}
             fetchpriority="high"
             decoding="async"
-            class="max-h-[640px] w-auto object-contain"
+            class="relative max-h-[640px] w-auto object-contain"
           />
         </div>
       </Section>
