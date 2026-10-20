@@ -7,6 +7,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.11] — 2026-10-20
+
+### Added
+
+- Newsroom covers for the 19 October 2026 statement on Amiet market, Abyei (Paris).
+
 ## [1.0.10] — 2026-10-18
 
 ### Added
