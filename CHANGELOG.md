@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.14] — 2026-10-20
+
+### Fixed
+
+- Rename follow-up: the bold sign-offs in the seed files now carry the new organisation name, and
+  the Shirshar statement no longer reads "…Organizations Organizations". The live articles were
+  already corrected by re-seeding; this brings the source of record in line.
+
 ## [1.0.13] — 2026-10-20
 
 ### Changed
