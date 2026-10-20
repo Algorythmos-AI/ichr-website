@@ -22,6 +22,19 @@ const catLabel = t.categories[post.category] ?? post.category;
 >
   <article class="flex flex-col h-full">
     <div class="relative aspect-square overflow-hidden bg-[#1a4a68]">
+      <!-- Fills the letterbox around a portrait or square cover with a soft, blurred copy of
+           the cover itself, so the frame takes each card's own colour instead of a fixed navy.
+           Decorative: empty alt, and `sizes` makes the browser fetch the smallest variant. -->
+      <img
+        src={resolveAssetUrl(post.coverImageUrl)}
+        srcset={srcSetFor(post.coverImageUrl)}
+        sizes="120px"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        class="absolute inset-0 w-full h-full object-cover scale-125 blur-2xl opacity-80"
+      />
       <img
         src={resolveAssetUrl(post.coverImageUrl)}
         srcset={srcSetFor(post.coverImageUrl)}
@@ -31,7 +44,7 @@ const catLabel = t.categories[post.category] ?? post.category;
         alt={post.title}
         loading="lazy"
         decoding="async"
-        class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none"
+        class="relative w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none"
       />
       <div class="absolute top-3 start-3 bg-[#0f2f49] rounded px-3 py-1 shadow-md ring-1 ring-white/15">
         <Dateline date={post.date} location={post.location} lang={lang} tone="onDark" />

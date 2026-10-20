@@ -1,4 +1,5 @@
-// The branded typographic press card: a portrait 1200x1600 navy/gold statement cover,
+// The branded typographic press card: a portrait 1200x1600 statement cover (navy/gold by
+// default, or one of THEMES),
 // rendered as SVG and rasterized by sharp. Shared by every statement's cover generator.
 //
 // buildSvg() below was moved here VERBATIM from scripts/gen-statement-cover.mjs. Do not
@@ -34,9 +35,27 @@ export const USABLE_W = W - M * 2;
 const GOLD_RULE_Y = 800;
 const STANDFIRST_Y = 884;
 
-const NAVY = '#1a4a68';
-const NAVY_DARK = '#0f2f49';
-const GOLD = '#C9A227';
+// Colour themes. Each card is one deep gradient (from -> to) with a warm accent for the
+// eyebrow and the rule, so a row of text-only covers on /news reads as a set without being
+// identical. Every `from` keeps white text at WCAG AA or better (>= 4.5:1, most >= 7:1); the
+// accent is only ever used for the bold eyebrow and a rule. `ink` is the city name on the
+// white location chip. 'navy' is the house default and the original card.
+export const THEMES = {
+  navy: { from: '#1a4a68', to: '#0f2f49', accent: '#C9A227', ink: '#1a4a68' },
+  oxblood: { from: '#7a1f2b', to: '#45101a', accent: '#E3B861', ink: '#7a1f2b' },
+  azure: { from: '#16649e', to: '#0b3a62', accent: '#F2C55C', ink: '#16649e' },
+  teal: { from: '#0f5c5a', to: '#073735', accent: '#DDB75E', ink: '#0f5c5a' },
+  plum: { from: '#4e2a63', to: '#2a1639', accent: '#E0B866', ink: '#4e2a63' },
+  graphite: { from: '#333f4b', to: '#161d24', accent: '#E8894A', ink: '#333f4b' },
+  forest: { from: '#22533e', to: '#11301f', accent: '#D9B75E', ink: '#22533e' },
+};
+
+function themeOf(c) {
+  const name = c.theme ?? 'navy';
+  const t = THEMES[name];
+  if (!t) throw new Error(`unknown cover theme "${name}" — one of ${Object.keys(THEMES).join(', ')}`);
+  return t;
+}
 
 export const LATIN = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 // Noto Sans Arabic (the site's webfont) is not installed locally; Geeza Pro is the
@@ -49,6 +68,7 @@ const logoUri = `data:image/png;base64,${readFileSync(join(REPO, 'public', 'logo
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 function buildSvg(c) {
+  const { from: NAVY, to: NAVY_DARK, accent: GOLD, ink: INK } = themeOf(c);
   const ax = c.rtl ? W - M : M; // inline-start anchor
   // In RTL, text-anchor="start" resolves to the right edge; see the header note.
   const flow = c.rtl ? `direction="rtl" text-anchor="start"` : '';
@@ -124,7 +144,7 @@ function buildSvg(c) {
     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" fill="none" stroke="#d64541" stroke-width="2.2"/>
     <circle cx="12" cy="10" r="3" fill="none" stroke="#d64541" stroke-width="2.2"/>
   </g>
-  <text x="${cityX}" y="1092" ${flow} font-family="${c.font}" font-size="34" font-weight="700" fill="${NAVY}">${esc(c.city)}</text>
+  <text x="${cityX}" y="1092" ${flow} font-family="${c.font}" font-size="34" font-weight="700" fill="${INK}">${esc(c.city)}</text>
   <text ${dateAttrs} y="1092" font-family="${c.font}" font-size="26" font-weight="500" fill="#ffffff" opacity="0.72" ${ls(3.2)}>${esc(c.date)}</text>
 
   <!-- footer -->
