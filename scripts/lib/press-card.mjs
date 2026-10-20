@@ -122,7 +122,7 @@ function buildSvg(c) {
   <!-- masthead -->
   <rect x="${chipX}" y="92" width="120" height="118" rx="12" fill="#ffffff"/>
   <image href="${logoUri}" x="${chipX + 8}" y="100" width="104" height="102"/>
-  <text x="${markX}" y="152" ${flow} font-family="${LATIN}" font-size="44" font-weight="700" fill="#ffffff" letter-spacing="2">ICHR</text>
+  <text x="${markX}" y="152" ${flow} font-family="${LATIN}" font-size="44" font-weight="700" fill="#ffffff" letter-spacing="2">ICHRO</text>
   <text x="${markX}" y="185" ${flow} font-family="${c.font}" font-size="15" font-weight="500" fill="#ffffff" opacity="0.62" ${ls(2.6)}>${esc(c.org)}</text>
 
   <rect x="${M}" y="288" width="${W - M * 2}" height="1.5" fill="#ffffff" opacity="0.18"/>
@@ -200,6 +200,19 @@ export async function assertFits(locale, c) {
       problems.push(`headline line "${line}" rendered NOTHING — missing font, or an empty string`);
     }
   }
+
+  // The masthead org line sits beside the logo chip, from M + 148 to the far margin. The
+  // longer name (20 October 2026) made the French line a real overflow risk.
+  const orgW = W - M * 2 - 148;
+  const orgInk = await measureInk(c.org, {
+    size: 15,
+    font: c.font,
+    rtl: c.rtl,
+    weight: 500,
+    letterSpacing: 2.6,
+  });
+  if (orgInk > orgW)
+    problems.push(`masthead org line is ${orgInk}px wide, over the ${orgW}px beside the logo`);
 
   for (const line of c.standfirst ?? []) {
     const ink = await measureInk(line, { size: 31, font: c.font, rtl: c.rtl, weight: 400 });

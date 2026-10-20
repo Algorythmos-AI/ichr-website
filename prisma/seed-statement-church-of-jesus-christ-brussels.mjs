@@ -40,7 +40,7 @@ const MINERS = 'condemnation-airstrike-miners-north-wadi-october-2026';
 const CARD_EN = `/blog/${SLUG}/card-1.jpg`;
 const CARD_AR = `/blog/${SLUG}/card-2.jpg`;
 
-const EN_BODY = `The International Coalition for Human Rights (ICHR) held a meeting with a delegation of The Church of Jesus Christ of Latter-day Saints, headed by Mr. Francesco Di Lillo, Director of EU & International Affairs.
+const EN_BODY = `The International Coalition of Human Rights Organizations (ICHRO) held a meeting with a delegation of The Church of Jesus Christ of Latter-day Saints, headed by Mr. Francesco Di Lillo, Director of EU & International Affairs.
 
 The meeting addressed a number of humanitarian issues and the prospects for joint cooperation. The Coalition provided a briefing on the situation in Sudan, including the [attacks targeting Sudanese miners](/news/${MINERS}).
 
@@ -57,9 +57,9 @@ Advancing Human Rights • Peace • Justice
 Brussels, 13 October 2026`;
 
 const EN_EXCERPT =
-  'ICHR met a delegation of The Church of Jesus Christ of Latter-day Saints, headed by Mr. Francesco Di Lillo, Director of EU & International Affairs, to discuss the situation in Sudan, the protection of civilians and cooperation on humanitarian issues.';
+  'ICHRO met a delegation of The Church of Jesus Christ of Latter-day Saints, headed by Mr. Francesco Di Lillo, Director of EU & International Affairs, to discuss the situation in Sudan, the protection of civilians and cooperation on humanitarian issues.';
 
-const AR_BODY = `عقد التحالف الدولي لحقوق الإنسان اجتماعًا مع وفد من كنيسة يسوع المسيح لقديسي الأيام الأخيرة، برئاسة السيد فرانشيسكو دي ليلو، مدير الشؤون الأوروبية والدولية.
+const AR_BODY = `عقد التحالف الدولي لمنظمات حقوق الإنسان اجتماعًا مع وفد من كنيسة يسوع المسيح لقديسي الأيام الأخيرة، برئاسة السيد فرانشيسكو دي ليلو، مدير الشؤون الأوروبية والدولية.
 
 وتناول الاجتماع عددًا من القضايا الإنسانية وآفاق التعاون المشترك. وقدّم التحالف إحاطة حول الوضع في السودان، بما في ذلك [الهجمات التي استهدفت المعدّنين السودانيين](/ar/news/${MINERS}).
 
@@ -76,9 +76,9 @@ const AR_BODY = `عقد التحالف الدولي لحقوق الإنسان ا
 بروكسل، 13 أكتوبر 2026`;
 
 const AR_EXCERPT =
-  'التقى التحالف الدولي لحقوق الإنسان وفدًا من كنيسة يسوع المسيح لقديسي الأيام الأخيرة برئاسة السيد فرانشيسكو دي ليلو، مدير الشؤون الأوروبية والدولية، لبحث الوضع في السودان وحماية المدنيين والتعاون في القضايا الإنسانية.';
+  'التقى التحالف الدولي لمنظمات حقوق الإنسان وفدًا من كنيسة يسوع المسيح لقديسي الأيام الأخيرة برئاسة السيد فرانشيسكو دي ليلو، مدير الشؤون الأوروبية والدولية، لبحث الوضع في السودان وحماية المدنيين والتعاون في القضايا الإنسانية.';
 
-const FR_BODY = `La Coalition internationale pour les droits de l'homme (ICHR) a rencontré une délégation de l'Église de Jésus-Christ des Saints des Derniers Jours, conduite par M. Francesco Di Lillo, directeur des affaires européennes et internationales.
+const FR_BODY = `La Coalition internationale des organisations de défense des droits de l'homme (ICHRO) a rencontré une délégation de l'Église de Jésus-Christ des Saints des Derniers Jours, conduite par M. Francesco Di Lillo, directeur des affaires européennes et internationales.
 
 La réunion a porté sur plusieurs questions humanitaires et sur les perspectives de coopération. La Coalition a présenté un point sur la situation au Soudan, notamment les [attaques visant des mineurs soudanais](/fr/news/${MINERS}).
 
@@ -95,7 +95,7 @@ Promouvoir les droits de l'homme • La paix • La justice
 Bruxelles, 13 octobre 2026`;
 
 const FR_EXCERPT =
-  "L'ICHR a rencontré une délégation de l'Église de Jésus-Christ des Saints des Derniers Jours, conduite par M. Francesco Di Lillo, directeur des affaires européennes et internationales, pour évoquer la situation au Soudan, la protection des civils et la coopération humanitaire.";
+  "L'ICHRO a rencontré une délégation de l'Église de Jésus-Christ des Saints des Derniers Jours, conduite par M. Francesco Di Lillo, directeur des affaires européennes et internationales, pour évoquer la situation au Soudan, la protection des civils et la coopération humanitaire.";
 
 export const STATEMENT = {
   slug: SLUG,
@@ -106,29 +106,29 @@ export const STATEMENT = {
   locales: [
     {
       locale: 'en',
-      title: 'ICHR Meets The Church of Jesus Christ of Latter-day Saints in Brussels on Sudan and Humanitarian Cooperation',
+      title: 'ICHRO Meets The Church of Jesus Christ of Latter-day Saints in Brussels on Sudan and Humanitarian Cooperation',
       excerpt: EN_EXCERPT,
       body: EN_BODY,
       location: 'Brussels',
-      authorName: 'ICHR Communications',
+      authorName: 'ICHRO Communications',
       coverImageUrl: CARD_EN,
     },
     {
       locale: 'ar',
-      title: 'التحالف الدولي لحقوق الإنسان يلتقي وفدًا من كنيسة يسوع المسيح لقديسي الأيام الأخيرة في بروكسل لبحث الوضع في السودان والتعاون الإنساني',
+      title: 'التحالف الدولي لمنظمات حقوق الإنسان يلتقي وفدًا من كنيسة يسوع المسيح لقديسي الأيام الأخيرة في بروكسل لبحث الوضع في السودان والتعاون الإنساني',
       excerpt: AR_EXCERPT,
       body: AR_BODY,
       location: 'بروكسل',
-      authorName: 'إعلام ICHR',
+      authorName: 'إعلام ICHRO',
       coverImageUrl: CARD_AR,
     },
     {
       locale: 'fr',
-      title: "L'ICHR rencontre l'Église de Jésus-Christ des Saints des Derniers Jours à Bruxelles sur le Soudan et la coopération humanitaire",
+      title: "L'ICHRO rencontre l'Église de Jésus-Christ des Saints des Derniers Jours à Bruxelles sur le Soudan et la coopération humanitaire",
       excerpt: FR_EXCERPT,
       body: FR_BODY,
       location: 'Bruxelles',
-      authorName: 'Communication ICHR',
+      authorName: 'Communication ICHRO',
       coverImageUrl: CARD_EN,
     },
   ],

@@ -75,7 +75,7 @@ export const TRANSLATION_KEY = '0e88f954-80f2-4496-802c-4798184155ac';
 
 const EADM_FB = 'https://facebook.com/p/European-Association-for-The-Defense-of-Minorities-100068442871271';
 
-const EN_BODY = `*Issued jointly by the International Coalition for Human Rights (ICHR), the European Association for the Defence of Minorities (EADM), The Youth Future Alliance (TYFA) and Post Versa.*
+const EN_BODY = `*Issued jointly by the International Coalition of Human Rights Organizations (ICHRO), the European Association for the Defence of Minorities (EADM), The Youth Future Alliance (TYFA) and Post Versa.*
 
 GENEVA — Civil society leaders, human rights defenders and legal experts convened in Geneva on 25 August 2026 for an international panel titled "Women's Condition and Violence in Wartime: Focus on the Sudan Crisis."
 
@@ -86,8 +86,8 @@ The panel comprised:
 - **Ramon Rahangmetan** — Co-founder, Circle of Sustainable Europe
 - **Manel Msalmi** — President, EADM; Advisor on MENA Affairs, European Parliament
 - **Andy Vermaut** — Vice President, EADM; President, World Council for Public Diplomacy and Community Dialogue
-- **Abdelrahim Grein** — Representative, ICHR
-- **Dr. Mohamed Ali** — ICHR
+- **Abdelrahim Grein** — Representative, ICHRO
+- **Dr. Mohamed Ali** — ICHRO
 
 ## Core human rights findings presented
 
@@ -138,9 +138,9 @@ Advancing Human Rights • Peace • Justice
 Geneva, 25 August 2026`;
 
 const EN_EXCERPT =
-  'Civil society leaders, human rights defenders and legal experts convened in Geneva on 25 August 2026 for the panel "Women’s Condition and Violence in Wartime: Focus on the Sudan Crisis." Issued jointly by ICHR, EADM, TYFA and Post Versa, the statement urges an independent fact-finding mission with OPCW participation, ICC referral without immunity, and the meaningful participation of Sudanese women in all peace processes.';
+  'Civil society leaders, human rights defenders and legal experts convened in Geneva on 25 August 2026 for the panel "Women’s Condition and Violence in Wartime: Focus on the Sudan Crisis." Issued jointly by ICHRO, EADM, TYFA and Post Versa, the statement urges an independent fact-finding mission with OPCW participation, ICC referral without immunity, and the meaningful participation of Sudanese women in all peace processes.';
 
-const AR_BODY = `*صادر بصورة مشتركة عن التحالف الدولي لحقوق الإنسان (ICHR)، والرابطة الأوروبية للدفاع عن الأقليات (EADM)، وتحالف مستقبل الشباب (TYFA)، وPost Versa.*
+const AR_BODY = `*صادر بصورة مشتركة عن التحالف الدولي لمنظمات حقوق الإنسان (ICHRO)، والرابطة الأوروبية للدفاع عن الأقليات (EADM)، وتحالف مستقبل الشباب (TYFA)، وPost Versa.*
 
 جنيف — اجتمع قادة من المجتمع المدني ومدافعون عن حقوق الإنسان وخبراء قانونيون في جنيف يوم 25 أغسطس 2026 في حلقة نقاش دولية بعنوان «أوضاع النساء والعنف في زمن الحرب: تركيز على الأزمة السودانية».
 
@@ -151,8 +151,8 @@ const AR_BODY = `*صادر بصورة مشتركة عن التحالف الدو�
 - **رامون راهانغميتان** — شريك مؤسِّس، Circle of Sustainable Europe
 - **مانيل مسلمي** — رئيسة الرابطة الأوروبية للدفاع عن الأقليات؛ مستشارة لشؤون الشرق الأوسط وشمال أفريقيا في البرلمان الأوروبي
 - **آندي فيرمو** — نائب رئيس الرابطة الأوروبية للدفاع عن الأقليات؛ رئيس المجلس العالمي للدبلوماسية العامة والحوار المجتمعي
-- **عبد الرحيم قرين** — ممثل التحالف الدولي لحقوق الإنسان
-- **الدكتور محمد علي** — التحالف الدولي لحقوق الإنسان
+- **عبد الرحيم قرين** — ممثل التحالف الدولي لمنظمات حقوق الإنسان
+- **الدكتور محمد علي** — التحالف الدولي لمنظمات حقوق الإنسان
 
 ## أبرز النتائج المعروضة في مجال حقوق الإنسان
 
@@ -203,9 +203,9 @@ const AR_BODY = `*صادر بصورة مشتركة عن التحالف الدو�
 جنيف، 25 أغسطس 2026`;
 
 const AR_EXCERPT =
-  'اجتمع قادة من المجتمع المدني ومدافعون عن حقوق الإنسان وخبراء قانونيون في جنيف يوم 25 أغسطس 2026 في حلقة نقاش بعنوان «أوضاع النساء والعنف في زمن الحرب: تركيز على الأزمة السودانية». ويدعو البيان، الصادر بصورة مشتركة عن التحالف الدولي لحقوق الإنسان والرابطة الأوروبية للدفاع عن الأقليات وتحالف مستقبل الشباب وPost Versa، إلى بعثة مستقلة لتقصي الحقائق بمشاركة منظمة حظر الأسلحة الكيميائية، وإحالة إلى المحكمة الجنائية الدولية دون حصانة، ومشاركة فعلية للنساء السودانيات في جميع عمليات السلام.';
+  'اجتمع قادة من المجتمع المدني ومدافعون عن حقوق الإنسان وخبراء قانونيون في جنيف يوم 25 أغسطس 2026 في حلقة نقاش بعنوان «أوضاع النساء والعنف في زمن الحرب: تركيز على الأزمة السودانية». ويدعو البيان، الصادر بصورة مشتركة عن التحالف الدولي لمنظمات حقوق الإنسان والرابطة الأوروبية للدفاع عن الأقليات وتحالف مستقبل الشباب وPost Versa، إلى بعثة مستقلة لتقصي الحقائق بمشاركة منظمة حظر الأسلحة الكيميائية، وإحالة إلى المحكمة الجنائية الدولية دون حصانة، ومشاركة فعلية للنساء السودانيات في جميع عمليات السلام.';
 
-const FR_BODY = `*Publié conjointement par la Coalition internationale pour les droits de l'homme (ICHR), l'Association européenne pour la défense des minorités (EADM), The Youth Future Alliance (TYFA) et Post Versa.*
+const FR_BODY = `*Publié conjointement par la Coalition internationale des organisations de défense des droits de l'homme (ICHRO), l'Association européenne pour la défense des minorités (EADM), The Youth Future Alliance (TYFA) et Post Versa.*
 
 GENÈVE — Des responsables de la société civile, des défenseurs des droits humains et des experts juridiques se sont réunis à Genève le 25 août 2026 pour une table ronde internationale intitulée « Women's Condition and Violence in Wartime: Focus on the Sudan Crisis ».
 
@@ -216,8 +216,8 @@ La table ronde réunissait :
 - **Ramon Rahangmetan** — cofondateur, Circle of Sustainable Europe
 - **Manel Msalmi** — présidente de l'EADM ; conseillère pour les affaires MENA au Parlement européen
 - **Andy Vermaut** — vice-président de l'EADM ; président du World Council for Public Diplomacy and Community Dialogue
-- **Abdelrahim Grein** — représentant de l'ICHR
-- **Dr Mohamed Ali** — ICHR
+- **Abdelrahim Grein** — représentant de l'ICHRO
+- **Dr Mohamed Ali** — ICHRO
 
 ## Principaux constats présentés en matière de droits humains
 
@@ -268,7 +268,7 @@ Promouvoir les droits de l'homme • La paix • La justice
 Genève, le 25 août 2026`;
 
 const FR_EXCERPT =
-  "Des responsables de la société civile, des défenseurs des droits humains et des experts juridiques se sont réunis à Genève le 25 août 2026 pour la table ronde « Women's Condition and Violence in Wartime: Focus on the Sudan Crisis ». Publiée conjointement par l'ICHR, l'EADM, TYFA et Post Versa, la déclaration appelle à une mission indépendante d'établissement des faits avec participation de l'OIAC, à un renvoi devant la CPI sans immunité, et à la participation effective des femmes soudanaises à tous les processus de paix.";
+  "Des responsables de la société civile, des défenseurs des droits humains et des experts juridiques se sont réunis à Genève le 25 août 2026 pour la table ronde « Women's Condition and Violence in Wartime: Focus on the Sudan Crisis ». Publiée conjointement par l'ICHRO, l'EADM, TYFA et Post Versa, la déclaration appelle à une mission indépendante d'établissement des faits avec participation de l'OIAC, à un renvoi devant la CPI sans immunité, et à la participation effective des femmes soudanaises à tous les processus de paix.";
 
 // Designed statement cards supplied 27 August (press-9/polished-content, P1–P5, 2000x2000).
 // C1 is the hero: it already carries the ICHR seal, the dateline, the four co-issuers and a
@@ -294,14 +294,14 @@ export const STATEMENT = {
       excerpt: EN_EXCERPT,
       body: EN_BODY,
       location: 'Geneva',
-      authorName: 'ICHR Communications',
+      authorName: 'ICHRO Communications',
       coverImageUrl: C1,
       gallery: [
         { url: C2, caption: 'Statement card 1 of 4: the scope of the session, the five panellists, and the core findings on gender-based and sexual violence and on the chemical weapons allegations.', order: 0 },
         { url: C3, caption: 'Statement card 2 of 4: the militarisation of essential infrastructure, and the joint call to action on accountability and justice, civilian protection, humanitarian access and survivors’ support.', order: 1 },
         { url: C4, caption: 'Statement card 3 of 4: women, peace and security under UN Security Council Resolution 1325, and contextual data on forced displacement, acute food insecurity and continuing violence in Kordofan.', order: 2 },
-        { url: C5, caption: 'Statement card 4 of 4: media contacts for the International Coalition for Human Rights, the European Association for the Defence of Minorities and The Youth Future Alliance.', order: 3 },
-        { url: PANEL, caption: 'Abdelrahim Grein and Dr. Mohamed Ali representing the International Coalition for Human Rights at the Geneva panel, 25 August 2026.', order: 4 },
+        { url: C5, caption: 'Statement card 4 of 4: media contacts for the International Coalition of Human Rights Organizations, the European Association for the Defence of Minorities and The Youth Future Alliance.', order: 3 },
+        { url: PANEL, caption: 'Abdelrahim Grein and Dr. Mohamed Ali representing the International Coalition of Human Rights Organizations at the Geneva panel, 25 August 2026.', order: 4 },
       ],
     },
     {
@@ -311,14 +311,14 @@ export const STATEMENT = {
       excerpt: AR_EXCERPT,
       body: AR_BODY,
       location: 'جنيف',
-      authorName: 'إعلام ICHR',
+      authorName: 'إعلام ICHRO',
       coverImageUrl: C1,
       gallery: [
         { url: C2, caption: 'بطاقة البيان 1 من 4: نطاق الجلسة، والمتحدثون الخمسة، وأبرز النتائج بشأن العنف الجنسي والعنف القائم على النوع الاجتماعي وادعاءات استخدام الأسلحة الكيميائية. (البطاقة بالإنجليزية.)', order: 0 },
         { url: C3, caption: 'بطاقة البيان 2 من 4: عسكرة البنية التحتية الأساسية، والنداء المشترك للعمل بشأن المساءلة والعدالة وحماية المدنيين ووصول المساعدات الإنسانية ودعم الناجين. (البطاقة بالإنجليزية.)', order: 1 },
         { url: C4, caption: 'بطاقة البيان 3 من 4: المرأة والسلام والأمن عملًا بقرار مجلس الأمن 1325، وبيانات سياقية عن النزوح القسري وانعدام الأمن الغذائي الحاد واستمرار العنف في كردفان. (البطاقة بالإنجليزية.)', order: 2 },
         { url: C5, caption: 'بطاقة البيان 4 من 4: جهات الاتصال الإعلامية للتحالف الدولي لحقوق الإنسان والرابطة الأوروبية للدفاع عن الأقليات وتحالف مستقبل الشباب. (البطاقة بالإنجليزية.)', order: 3 },
-        { url: PANEL, caption: 'عبد الرحيم قرين والدكتور محمد علي ممثلَين التحالف الدولي لحقوق الإنسان في حلقة النقاش بجنيف، 25 أغسطس 2026.', order: 4 },
+        { url: PANEL, caption: 'عبد الرحيم قرين والدكتور محمد علي ممثلَين التحالف الدولي لمنظمات حقوق الإنسان في حلقة النقاش بجنيف، 25 أغسطس 2026.', order: 4 },
       ],
     },
     {
@@ -328,14 +328,14 @@ export const STATEMENT = {
       excerpt: FR_EXCERPT,
       body: FR_BODY,
       location: 'Genève',
-      authorName: 'Communication ICHR',
+      authorName: 'Communication ICHRO',
       coverImageUrl: C1,
       gallery: [
         { url: C2, caption: "Carte 1 sur 4 : le périmètre de la séance, les cinq intervenants, et les constats principaux sur les violences sexuelles et fondées sur le genre et sur les allégations d'emploi d'armes chimiques. (Carte en anglais.)", order: 0 },
         { url: C3, caption: "Carte 2 sur 4 : la militarisation des infrastructures essentielles, et l'appel commun à l'action sur la responsabilité et la justice, la protection des civils, l'accès humanitaire et le soutien aux survivantes. (Carte en anglais.)", order: 1 },
         { url: C4, caption: "Carte 3 sur 4 : femmes, paix et sécurité au titre de la résolution 1325 du Conseil de sécurité, et données de contexte sur les déplacements forcés, l'insécurité alimentaire aiguë et les violences persistantes au Kordofan. (Carte en anglais.)", order: 2 },
-        { url: C5, caption: "Carte 4 sur 4 : contacts presse de la Coalition internationale pour les droits de l'homme, de l'Association européenne pour la défense des minorités et de The Youth Future Alliance. (Carte en anglais.)", order: 3 },
-        { url: PANEL, caption: "Abdelrahim Grein et le Dr Mohamed Ali représentant la Coalition internationale pour les droits de l'homme lors de la table ronde de Genève, le 25 août 2026.", order: 4 },
+        { url: C5, caption: "Carte 4 sur 4 : contacts presse de la Coalition internationale des organisations de défense des droits de l'homme, de l'Association européenne pour la défense des minorités et de The Youth Future Alliance. (Carte en anglais.)", order: 3 },
+        { url: PANEL, caption: "Abdelrahim Grein et le Dr Mohamed Ali représentant la Coalition internationale des organisations de défense des droits de l'homme lors de la table ronde de Genève, le 25 août 2026.", order: 4 },
       ],
     },
   ],
