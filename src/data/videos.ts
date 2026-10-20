@@ -104,20 +104,20 @@ const VIDEOS: Video[] = [
       en: {
         title: 'Andy Vermaut Calls for Justice for the Sudanese Miners Killed in North Wadi',
         speaker:
-          'Andy Vermaut · Member, International Coalition for Human Rights; Ambassador of the European Climate Pact',
+          'Andy Vermaut · Member, International Coalition of Human Rights Organizations; Ambassador of the European Climate Pact',
         summary:
           'Andy Vermaut speaks on the airstrike of 10 October 2026 that killed Sudanese miners in the North Wadi region, which the Coalition attributes to the Egyptian army. He calls on human rights organisations, African organisations in particular, to sign the Coalition’s joint petition for truth, justice and accountability for the civilian victims and their families.',
       },
       ar: {
         title: 'آندي فيرمو يطالب بالعدالة للمعدّنين السودانيين الذين قُتلوا في وادي الشمال',
-        speaker: 'آندي فيرمو · عضو التحالف الدولي لحقوق الإنسان، وسفير الميثاق الأوروبي للمناخ',
+        speaker: 'آندي فيرمو · عضو التحالف الدولي لمنظمات حقوق الإنسان، وسفير الميثاق الأوروبي للمناخ',
         summary:
           'يتحدث آندي فيرمو عن الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026، والتي يحمّل التحالف الجيش المصري مسؤوليتها. ويدعو منظمات حقوق الإنسان، ولا سيما المنظمات الأفريقية، إلى التوقيع على العريضة المشتركة للتحالف من أجل الحقيقة والعدالة والمساءلة للضحايا المدنيين وأسرهم.',
       },
       fr: {
         title: 'Andy Vermaut demande justice pour les mineurs soudanais tués à North Wadi',
         speaker:
-          'Andy Vermaut · membre de la Coalition internationale pour les droits de l’homme ; ambassadeur du Pacte européen pour le climat',
+          'Andy Vermaut · membre de la Coalition internationale des organisations de défense des droits de l’homme ; ambassadeur du Pacte européen pour le climat',
         summary:
           'Andy Vermaut revient sur la frappe aérienne du 10 octobre 2026 qui a tué des mineurs soudanais dans la région de North Wadi, et que la Coalition attribue à l’armée égyptienne. Il appelle les organisations de défense des droits humains, en particulier africaines, à signer la pétition commune de la Coalition pour la vérité, la justice et l’établissement des responsabilités en faveur des victimes civiles et de leurs familles.',
       },
@@ -142,13 +142,13 @@ const VIDEOS: Video[] = [
     vertical: true,
     i18n: {
       en: {
-        title: 'ICHR Condemns the Airstrike on Sudanese Miners in North Wadi',
-        speaker: 'International Coalition for Human Rights (ICHR)',
+        title: 'ICHRO Condemns the Airstrike on Sudanese Miners in North Wadi',
+        speaker: 'International Coalition of Human Rights Organizations (ICHRO)',
         location: 'Brussels',
         summary:
-          'The International Coalition for Human Rights (ICHR) condemns the airstrike of 10 October 2026 on Sudanese miners in the North Wadi region, which according to information received by the Coalition killed more than one hundred civilians. The Coalition attributes the attack to the Egyptian air force and calls for an urgent, independent international investigation, accountability and justice for the victims’ families. Footage received by the Coalition.',
+          'The International Coalition of Human Rights Organizations (ICHRO) condemns the airstrike of 10 October 2026 on Sudanese miners in the North Wadi region, which according to information received by the Coalition killed more than one hundred civilians. The Coalition attributes the attack to the Egyptian air force and calls for an urgent, independent international investigation, accountability and justice for the victims’ families. Footage received by the Coalition.',
         statement: [
-          'The International Coalition for Human Rights (ICHR) strongly condemns the airstrike that targeted Sudanese miners in the North Wadi region on 10 October 2026.',
+          'The International Coalition of Human Rights Organizations (ICHRO) strongly condemns the airstrike that targeted Sudanese miners in the North Wadi region on 10 October 2026.',
           'According to information received by the Coalition, more than one hundred civilians were killed. They were working to earn a living. They leave behind bereaved families, and many of the injured are in urgent need of medical care.',
           'The Coalition attributes the attack to the Egyptian air force, which struck the site inside Sudanese territory. Targeting civilians is a grave violation of international humanitarian law. Allegations of mining or smuggling can never justify bombarding civilians or stripping them of the protection the law guarantees.',
           {
@@ -163,17 +163,17 @@ const VIDEOS: Video[] = [
           'The Coalition urges the United Nations, the African Union, the European Union and international human rights organisations to act without delay: to condemn the targeting of civilians, to press for an end to these attacks and to guarantee that they are not repeated. It invites human rights organisations to join a joint petition for truth, justice and accountability, and to carry the voices of the victims’ families to the international community.',
           'The killing of civilians can never be justified, nor treated as a passing news item. The victims and their families have a right to truth and redress, and the international community must act.',
         ],
-        signOff: 'International Coalition for Human Rights (ICHR)',
+        signOff: 'International Coalition of Human Rights Organizations (ICHRO)',
       },
       ar: {
         title:
-          'التحالف الدولي لحقوق الإنسان يدين الغارة الجوية على المعدّنين السودانيين في منطقة وادي الشمال',
-        speaker: 'التحالف الدولي لحقوق الإنسان',
+          'التحالف الدولي لمنظمات حقوق الإنسان يدين الغارة الجوية على المعدّنين السودانيين في منطقة وادي الشمال',
+        speaker: 'التحالف الدولي لمنظمات حقوق الإنسان',
         location: 'بروكسل',
         summary:
-          'يدين التحالف الدولي لحقوق الإنسان الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026، والتي أودت، وفق المعلومات الواردة إلى التحالف، بحياة أكثر من مئة مدني. ويحمّل التحالف سلاح الجو المصري مسؤولية الهجوم، ويطالب بتحقيق دولي مستقل وعاجل، وبالمساءلة وإنصاف أسر الضحايا. لقطات وردت إلى التحالف.',
+          'يدين التحالف الدولي لمنظمات حقوق الإنسان الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026، والتي أودت، وفق المعلومات الواردة إلى التحالف، بحياة أكثر من مئة مدني. ويحمّل التحالف سلاح الجو المصري مسؤولية الهجوم، ويطالب بتحقيق دولي مستقل وعاجل، وبالمساءلة وإنصاف أسر الضحايا. لقطات وردت إلى التحالف.',
         statement: [
-          'يدين التحالف الدولي لحقوق الإنسان بشدة الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026.',
+          'يدين التحالف الدولي لمنظمات حقوق الإنسان بشدة الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026.',
           'ووفق المعلومات الواردة إلى التحالف، تجاوز عدد القتلى مئة مدني كانوا يعملون لكسب أرزاقهم، وخلّفوا وراءهم أسرًا مكلومة وجرحى في حاجة ماسّة إلى الرعاية الطبية.',
           'ويحمّل التحالف سلاح الجو المصري مسؤولية الهجوم، إذ قصف الموقع داخل الأراضي السودانية. إن استهداف المدنيين انتهاك جسيم لقواعد القانون الدولي الإنساني، ولا يمكن لادعاءات التعدين أو التهريب أن تبرّر قصف المدنيين أو حرمانهم من الحماية التي يكفلها القانون.',
           {
@@ -188,16 +188,17 @@ const VIDEOS: Video[] = [
           'ويحثّ التحالف الأمم المتحدة والاتحاد الأفريقي والاتحاد الأوروبي والمنظمات الدولية لحقوق الإنسان على التحرك الفوري لإدانة استهداف المدنيين، والضغط لوقف هذه الهجمات، وضمان عدم تكرارها. كما يدعو منظمات حقوق الإنسان إلى الانضمام إلى عريضة مشتركة تطالب بالحقيقة والعدالة والمساءلة، وإلى إيصال أصوات أسر الضحايا إلى المجتمع الدولي.',
           'إن قتل المدنيين لا يمكن تبريره، ولا التعامل معه كخبر عابر. للضحايا وأسرهم الحق في الحقيقة والإنصاف، وعلى المجتمع الدولي أن يتحرك.',
         ],
-        signOff: 'التحالف الدولي لحقوق الإنسان',
+        signOff: 'التحالف الدولي لمنظمات حقوق الإنسان',
       },
       fr: {
-        title: 'L’ICHR condamne la frappe aérienne contre des mineurs soudanais dans la région de North Wadi',
-        speaker: 'Coalition internationale pour les droits de l’homme (ICHR)',
+        title:
+          'L’ICHRO condamne la frappe aérienne contre des mineurs soudanais dans la région de North Wadi',
+        speaker: 'Coalition internationale des organisations de défense des droits de l’homme (ICHRO)',
         location: 'Bruxelles',
         summary:
-          'La Coalition internationale pour les droits de l’homme (ICHR) condamne la frappe aérienne du 10 octobre 2026 contre des mineurs soudanais dans la région de North Wadi, qui, selon les informations reçues par la Coalition, a tué plus de cent civils. La Coalition attribue l’attaque à l’armée de l’air égyptienne et demande une enquête internationale indépendante et urgente, l’établissement des responsabilités et la justice pour les familles des victimes. Images reçues par la Coalition.',
+          'La Coalition internationale des organisations de défense des droits de l’homme (ICHRO) condamne la frappe aérienne du 10 octobre 2026 contre des mineurs soudanais dans la région de North Wadi, qui, selon les informations reçues par la Coalition, a tué plus de cent civils. La Coalition attribue l’attaque à l’armée de l’air égyptienne et demande une enquête internationale indépendante et urgente, l’établissement des responsabilités et la justice pour les familles des victimes. Images reçues par la Coalition.',
         statement: [
-          'La Coalition internationale pour les droits de l’homme (ICHR) condamne fermement la frappe aérienne qui a visé des mineurs soudanais dans la région de North Wadi le 10 octobre 2026.',
+          'La Coalition internationale des organisations de défense des droits de l’homme (ICHRO) condamne fermement la frappe aérienne qui a visé des mineurs soudanais dans la région de North Wadi le 10 octobre 2026.',
           'Selon les informations reçues par la Coalition, plus de cent civils ont été tués. Ils travaillaient pour gagner leur vie. Ils laissent derrière eux des familles endeuillées, et de nombreux blessés ont un besoin urgent de soins médicaux.',
           'La Coalition attribue l’attaque à l’armée de l’air égyptienne, qui a frappé le site en territoire soudanais. Prendre des civils pour cible constitue une violation grave du droit international humanitaire. Des allégations d’activité minière ou de contrebande ne sauraient en aucun cas justifier le bombardement de civils ni les priver de la protection que leur garantit le droit.',
           {
@@ -212,7 +213,7 @@ const VIDEOS: Video[] = [
           'La Coalition exhorte les Nations unies, l’Union africaine, l’Union européenne et les organisations internationales de défense des droits humains à agir sans délai : condamner les attaques contre les civils, obtenir leur arrêt et garantir qu’elles ne se reproduiront pas. Elle invite les organisations de défense des droits humains à se joindre à une pétition commune pour la vérité, la justice et l’établissement des responsabilités, et à porter la voix des familles des victimes auprès de la communauté internationale.',
           'Le meurtre de civils ne peut être ni justifié ni traité comme un simple fait divers. Les victimes et leurs familles ont droit à la vérité et à réparation, et la communauté internationale doit agir.',
         ],
-        signOff: 'Coalition internationale pour les droits de l’homme (ICHR)',
+        signOff: 'Coalition internationale des organisations de défense des droits de l’homme (ICHRO)',
       },
     },
   },
@@ -263,21 +264,22 @@ const VIDEOS: Video[] = [
     i18n: {
       en: {
         title: 'Violations Against Women and ICC Accountability in Sudan',
-        speaker: 'Abdelrahim Grein · International Coalition for Human Rights',
+        speaker: 'Abdelrahim Grein · International Coalition of Human Rights Organizations',
         location: 'Geneva',
         summary:
           'Evidence of systematic human rights abuses in Sudan, with a call for an independent OPCW investigation, an ICC referral without immunity, the protection of civilians, and the direct inclusion of Sudanese women in every peace process.',
       },
       ar: {
         title: 'الانتهاكات ضد النساء والمساءلة أمام المحكمة الجنائية الدولية في السودان',
-        speaker: 'عبد الرحيم قرين · التحالف الدولي لحقوق الإنسان',
+        speaker: 'عبد الرحيم قرين · التحالف الدولي لمنظمات حقوق الإنسان',
         location: 'جنيف',
         summary:
           'عرض لأدلة على انتهاكات منهجية لحقوق الإنسان في السودان، مع الدعوة إلى تحقيق مستقل تجريه منظمة حظر الأسلحة الكيميائية، وإحالة إلى المحكمة الجنائية الدولية دون حصانة، وحماية المدنيين، وإشراك النساء السودانيات إشراكًا مباشرًا في كل مسارات السلام.',
       },
       fr: {
         title: 'Violations contre les femmes et responsabilité devant la CPI au Soudan',
-        speaker: 'Abdelrahim Grein · Coalition internationale pour les droits de l’homme',
+        speaker:
+          'Abdelrahim Grein · Coalition internationale des organisations de défense des droits de l’homme',
         location: 'Genève',
         summary:
           'Présentation de preuves de violations systématiques des droits humains au Soudan, avec un appel à une enquête indépendante de l’OIAC, à une saisine de la CPI sans immunité, à la protection des civils et à l’inclusion directe des femmes soudanaises dans tous les processus de paix.',
@@ -297,21 +299,22 @@ const VIDEOS: Video[] = [
     i18n: {
       en: {
         title: 'The Impact of the Sudan Conflict on Women and Families',
-        speaker: 'Hiba Elwassilla · International Coalition for Human Rights',
+        speaker: 'Hiba Elwassilla · International Coalition of Human Rights Organizations',
         location: 'Geneva',
         summary:
           'The disproportionate toll of the conflict on Sudanese women and children — gender-based violence, the loss of healthcare and education, and widespread displacement — with a call for immediate international action and accountability before the ICC.',
       },
       ar: {
         title: 'أثر النزاع في السودان على النساء والأسر',
-        speaker: 'هبة الوصيلة · التحالف الدولي لحقوق الإنسان',
+        speaker: 'هبة الوصيلة · التحالف الدولي لمنظمات حقوق الإنسان',
         location: 'جنيف',
         summary:
           'الأثر غير المتناسب للنزاع على النساء والأطفال في السودان — من العنف القائم على النوع الاجتماعي، وفقدان الرعاية الصحية والتعليم، والنزوح الواسع — مع الدعوة إلى تحرك دولي فوري ومساءلة أمام المحكمة الجنائية الدولية.',
       },
       fr: {
         title: 'L’impact du conflit soudanais sur les femmes et les familles',
-        speaker: 'Hiba Elwassilla · Coalition internationale pour les droits de l’homme',
+        speaker:
+          'Hiba Elwassilla · Coalition internationale des organisations de défense des droits de l’homme',
         location: 'Genève',
         summary:
           'Le poids disproportionné du conflit sur les femmes et les enfants soudanais — violences fondées sur le genre, perte de l’accès aux soins et à l’éducation, déplacements massifs — avec un appel à une action internationale immédiate et à une responsabilité devant la CPI.',
@@ -399,21 +402,22 @@ const VIDEOS: Video[] = [
     i18n: {
       en: {
         title: 'Human Rights Violations and Civilian Protection in Sudan',
-        speaker: 'Dr. Mohamed Ali · International Coalition for Human Rights',
+        speaker: 'Dr. Mohamed Ali · International Coalition of Human Rights Organizations',
         location: 'Geneva',
         summary:
           'Key findings on human rights violations and the humanitarian deterioration in Sudan, with a call for an urgent ceasefire, the protection of civilians, and international accountability.',
       },
       ar: {
         title: 'انتهاكات حقوق الإنسان وحماية المدنيين في السودان',
-        speaker: 'الدكتور محمد علي · التحالف الدولي لحقوق الإنسان',
+        speaker: 'الدكتور محمد علي · التحالف الدولي لمنظمات حقوق الإنسان',
         location: 'جنيف',
         summary:
           'أبرز النتائج المتعلقة بانتهاكات حقوق الإنسان والتدهور الإنساني في السودان، مع الدعوة إلى وقف فوري لإطلاق النار، وحماية المدنيين، والمساءلة الدولية.',
       },
       fr: {
         title: 'Violations des droits humains et protection des civils au Soudan',
-        speaker: 'Dr Mohamed Ali · Coalition internationale pour les droits de l’homme',
+        speaker:
+          'Dr Mohamed Ali · Coalition internationale des organisations de défense des droits de l’homme',
         location: 'Genève',
         summary:
           'Les principaux constats sur les violations des droits humains et la dégradation humanitaire au Soudan, avec un appel à un cessez-le-feu immédiat, à la protection des civils et à la responsabilité internationale.',
@@ -474,23 +478,23 @@ const VIDEOS: Video[] = [
     published: false,
     i18n: {
       en: {
-        title: 'The Work of ICHR: Justice, Education and Dignity',
-        speaker: 'Abdelrahim Grein Sadam · Founder, International Coalition for Human Rights',
+        title: 'The Work of ICHRO: Justice, Education and Dignity',
+        speaker: 'Abdelrahim Grein Sadam · Founder, International Coalition of Human Rights Organizations',
         summary:
-          'A short profile of the human rights work of Abdelrahim Grein Sadam, founder of the International Coalition for Human Rights — from advocacy for justice in Sudan to the defence of vulnerable communities, and a call for peace, education and dignity.',
+          'A short profile of the human rights work of Abdelrahim Grein Sadam, founder of the International Coalition of Human Rights Organizations — from advocacy for justice in Sudan to the defence of vulnerable communities, and a call for peace, education and dignity.',
       },
       ar: {
-        title: 'عمل التحالف الدولي لحقوق الإنسان: العدالة والتعليم والكرامة',
-        speaker: 'عبد الرحيم قرين صدام · مؤسس التحالف الدولي لحقوق الإنسان',
+        title: 'عمل التحالف الدولي لمنظمات حقوق الإنسان: العدالة والتعليم والكرامة',
+        speaker: 'عبد الرحيم قرين صدام · مؤسس التحالف الدولي لمنظمات حقوق الإنسان',
         summary:
-          'لمحة قصيرة عن العمل الحقوقي لعبد الرحيم قرين صدام، مؤسس التحالف الدولي لحقوق الإنسان — من المناصرة من أجل العدالة في السودان إلى الدفاع عن المجتمعات الضعيفة، ودعوة إلى السلام والتعليم والكرامة.',
+          'لمحة قصيرة عن العمل الحقوقي لعبد الرحيم قرين صدام، مؤسس التحالف الدولي لمنظمات حقوق الإنسان — من المناصرة من أجل العدالة في السودان إلى الدفاع عن المجتمعات الضعيفة، ودعوة إلى السلام والتعليم والكرامة.',
       },
       fr: {
-        title: 'Le travail de l’ICHR : justice, éducation et dignité',
+        title: 'Le travail de l’ICHRO : justice, éducation et dignité',
         speaker:
-          'Abdelrahim Grein Sadam · fondateur de la Coalition internationale pour les droits de l’homme',
+          'Abdelrahim Grein Sadam · fondateur de la Coalition internationale des organisations de défense des droits de l’homme',
         summary:
-          'Un court portrait du travail d’Abdelrahim Grein Sadam, fondateur de la Coalition internationale pour les droits de l’homme — de la défense de la justice au Soudan à la protection des communautés vulnérables, et un appel à la paix, à l’éducation et à la dignité.',
+          'Un court portrait du travail d’Abdelrahim Grein Sadam, fondateur de la Coalition internationale des organisations de défense des droits de l’homme — de la défense de la justice au Soudan à la protection des communautés vulnérables, et un appel à la paix, à l’éducation et à la dignité.',
       },
     },
   },

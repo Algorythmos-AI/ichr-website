@@ -163,7 +163,7 @@ const LoginScreen: React.FC<{ onAuthed: () => void }> = ({ onAuthed }) => {
           <div className="w-16 h-16 bg-[#1a4a68] rounded-full flex items-center justify-center text-white mx-auto mb-4">
             <LayoutDashboard className="w-8 h-8" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-800">ICHR Newsroom CMS</h2>
+          <h2 className="text-2xl font-bold text-slate-800">ICHRO Newsroom CMS</h2>
           <p className="text-slate-500 mt-2">Secure admin login</p>
         </div>
         <form onSubmit={submit} className="space-y-5">
@@ -517,7 +517,7 @@ export const AdminDashboard: React.FC = () => {
       {/* Sidebar */}
       <aside className="w-full md:w-64 bg-[#1a4a68] text-white flex-shrink-0 md:min-h-screen flex flex-col">
         <div className="p-6 border-b border-white/10">
-          <h2 className="text-xl font-bold">ICHR Newsroom</h2>
+          <h2 className="text-xl font-bold">ICHRO Newsroom</h2>
           <p className="text-xs text-white/60 mt-1">Content management</p>
         </div>
         <nav className="p-4 flex-1">

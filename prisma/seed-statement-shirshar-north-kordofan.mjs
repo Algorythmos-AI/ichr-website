@@ -44,7 +44,7 @@ export const SLUG = 'condemnation-shirshar-north-kordofan-july-2026';
 // Minted once for this story. NEVER regenerate.
 export const TRANSLATION_KEY = 'dd91a157-3b78-4d8d-8432-6c80c32fe110';
 
-const EN_BODY = `The International Coalition for Human Rights Organizations expresses its strongest condemnation and profound concern over the horrific aerial attack that targeted unarmed civilians in the Shirshar area, located within the West Bara locality of North Kordofan State.
+const EN_BODY = `The International Coalition of Human Rights Organizations Organizations expresses its strongest condemnation and profound concern over the horrific aerial attack that targeted unarmed civilians in the Shirshar area, located within the West Bara locality of North Kordofan State.
 
 This dangerous escalation represents a flagrant assault on the right to life and a grave violation of the principles and rules of international humanitarian law and international human rights law.
 
@@ -62,7 +62,7 @@ The strikes resulted in civilian casualties. Photographs and video footage revie
 - The deliberate or indiscriminate targeting of civilians can never be justified on military or political grounds.
 - The protection of civilian life is an obligation under international law and violations must be subject to effective investigation and accountability.
 
-The International Coalition for Human Rights Organizations reaffirms its commitment to monitoring and documenting violations, following developments related to this incident and supporting efforts aimed at ensuring justice, accountability and effective remedies for the victims and their families.
+The International Coalition of Human Rights Organizations Organizations reaffirms its commitment to monitoring and documenting violations, following developments related to this incident and supporting efforts aimed at ensuring justice, accountability and effective remedies for the victims and their families.
 
 ---
 
@@ -151,7 +151,7 @@ export const STATEMENT = {
       excerpt: EN_EXCERPT,
       body: EN_BODY,
       location: 'Brussels',
-      authorName: 'ICHR Communications',
+      authorName: 'ICHRO Communications',
       coverImageUrl: `/blog/${SLUG}/cover.jpg`,
       // The designed cards carry English text, so they hang off the English row only.
       gallery: [
@@ -182,7 +182,7 @@ export const STATEMENT = {
       excerpt: AR_EXCERPT,
       body: AR_BODY,
       location: 'بروكسل',
-      authorName: 'إعلام ICHR',
+      authorName: 'إعلام ICHRO',
       coverImageUrl: `/blog/${SLUG}/cover-ar.jpg`,
     },
     {
@@ -192,7 +192,7 @@ export const STATEMENT = {
       excerpt: FR_EXCERPT,
       body: FR_BODY,
       location: 'Bruxelles',
-      authorName: 'Communication ICHR',
+      authorName: 'Communication ICHRO',
       coverImageUrl: `/blog/${SLUG}/cover-fr.jpg`,
     },
   ],

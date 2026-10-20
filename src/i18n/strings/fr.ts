@@ -4,38 +4,39 @@ export const fr: Dict = {
   // Titre <title> + méta-description par page.
   meta: {
     home: {
-      title: "La Coalition internationale pour les droits de l'homme (ICHR)",
+      title: "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO)",
       desc: 'Une organisation non gouvernementale internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier. Dont le siège est à Genève.',
     },
     about: {
-      title: "À propos de l'ICHR — Coalition internationale pour les droits de l'homme",
-      desc: "La Coalition internationale pour les droits de l'homme est une ONG internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier.",
+      title:
+        "À propos de l'ICHRO — Coalition internationale des organisations de défense des droits de l'homme",
+      desc: "La Coalition internationale des organisations de défense des droits de l'homme est une ONG internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier.",
     },
     contact: {
-      title: "Contacter l'ICHR",
-      desc: "Pour toute demande des médias, partenariat ou assistance d'urgence, contactez la Coalition internationale pour les droits de l'homme.",
+      title: "Contacter l'ICHRO",
+      desc: "Pour toute demande des médias, partenariat ou assistance d'urgence, contactez la Coalition internationale des organisations de défense des droits de l'homme.",
     },
     donate: {
-      title: "Soutenir notre action — Faire un don à l'ICHR",
+      title: "Soutenir notre action — Faire un don à l'ICHRO",
       desc: 'Votre contribution nous permet de continuer à protéger les droits humains et à fournir une aide humanitaire.',
     },
     volunteer: {
-      title: "Devenir bénévole de l'ICHR",
+      title: "Devenir bénévole de l'ICHRO",
       desc: "Rejoignez notre équipe internationale de professionnels qui œuvrent à la protection des droits humains et à l'aide humanitaire.",
     },
     locations: {
-      title: "Présence mondiale — Implantations de l'ICHR",
+      title: "Présence mondiale — Implantations de l'ICHRO",
       desc: 'Coordination des efforts humanitaires et du plaidoyer juridique à travers notre réseau de bureaux et de missions de terrain dans le monde entier.',
     },
     news: {
-      title: "Communiqués et déclarations — Salle de presse de l'ICHR",
-      desc: "Communiqués de presse, déclarations et actualités de terrain officiels de la Coalition internationale pour les droits de l'homme.",
+      title: "Communiqués et déclarations — Salle de presse de l'ICHRO",
+      desc: "Communiqués de presse, déclarations et actualités de terrain officiels de la Coalition internationale des organisations de défense des droits de l'homme.",
     },
     media: {
-      title: 'Vidéos — Médias de l’ICHR',
-      desc: 'Discours, panels et images de terrain de la Coalition internationale pour les droits de l’homme.',
+      title: 'Vidéos — Médias de l’ICHRO',
+      desc: 'Discours, panels et images de terrain de la Coalition internationale des organisations de défense des droits de l’homme.',
     },
-    notFound: { title: 'Page introuvable — ICHR' },
+    notFound: { title: 'Page introuvable — ICHRO' },
   },
 
   notFound: {
@@ -71,10 +72,10 @@ export const fr: Dict = {
 
   footer: {
     blurb:
-      "La Coalition internationale pour les droits de l'homme (ICHR) est une organisation non gouvernementale internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier.",
+      "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO) est une organisation non gouvernementale internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier.",
     headOffices: 'Sièges',
     contact: 'Contact',
-    orgName: "La Coalition internationale pour les droits de l'homme (ICHR)",
+    orgName: "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO)",
     rights: 'Tous droits réservés.',
     privacy: 'Politique de confidentialité',
     terms: "Conditions d'utilisation",
@@ -82,7 +83,7 @@ export const fr: Dict = {
 
   hero: {
     eyebrow: 'Organisation non gouvernementale internationale',
-    title: "La Coalition internationale pour les droits de l'homme",
+    title: "La Coalition internationale des organisations de défense des droits de l'homme",
     subtitle:
       'Coordonner les efforts de la société civile, documenter les violations et apporter une réponse humanitaire pour protéger la dignité humaine dans le monde entier.',
     ctaMandate: 'Notre mandat',
@@ -92,8 +93,8 @@ export const fr: Dict = {
   home: {
     mandateTitle: 'Notre mandat',
     mandateBody:
-      "La Coalition internationale pour les droits de l'homme (ICHR) est une organisation non gouvernementale internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier. Nous comblons le fossé entre les politiques internationales et la pratique sur le terrain grâce à une action coordonnée de la société civile.",
-    readMore: "En savoir plus sur l'ICHR",
+      "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO) est une organisation non gouvernementale internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier. Nous comblons le fossé entre les politiques internationales et la pratique sur le terrain grâce à une action coordonnée de la société civile.",
+    readMore: "En savoir plus sur l'ICHRO",
     whatWeDoTitle: 'Notre action',
     whatWeDoIntro:
       'Nos opérations reposent sur trois piliers fondamentaux destinés à protéger les droits humains et à apporter des secours.',
@@ -123,14 +124,14 @@ export const fr: Dict = {
   },
 
   about: {
-    title: "À propos de l'ICHR",
+    title: "À propos de l'ICHRO",
     subtitle:
-      "La Coalition internationale pour les droits de l'homme est une organisation non gouvernementale internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier.",
+      "La Coalition internationale des organisations de défense des droits de l'homme est une organisation non gouvernementale internationale dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier.",
     mandateTitle: 'Notre mandat',
     mandateP1:
-      "Fondée pour combler le fossé entre les politiques internationales et la pratique sur le terrain, l'ICHR agit comme une coalition internationale d'acteurs de la société civile, d'experts juridiques et de travailleurs humanitaires. Nous offrons une plateforme unifiée pour répondre aux violations systémiques des droits humains et coordonner des mécanismes de réponse efficaces par-delà les frontières.",
+      "Fondée pour combler le fossé entre les politiques internationales et la pratique sur le terrain, l'ICHRO agit comme une coalition internationale d'acteurs de la société civile, d'experts juridiques et de travailleurs humanitaires. Nous offrons une plateforme unifiée pour répondre aux violations systémiques des droits humains et coordonner des mécanismes de réponse efficaces par-delà les frontières.",
     mandateP2:
-      "Notre force réside dans notre structure singulière fondée sur la coalition, qui nous permet de mobiliser des expertises diverses et des connaissances locales tout en maintenant une stratégie internationale cohérente. De la documentation des violations à la fourniture d'une aide essentielle, l'ICHR constitue un pilier de soutien pour celles et ceux dont la voix est réduite au silence.",
+      "Notre force réside dans notre structure singulière fondée sur la coalition, qui nous permet de mobiliser des expertises diverses et des connaissances locales tout en maintenant une stratégie internationale cohérente. De la documentation des violations à la fourniture d'une aide essentielle, l'ICHRO constitue un pilier de soutien pour celles et ceux dont la voix est réduite au silence.",
     missionTitle: 'Mission',
     missionBody:
       "Coordonner les efforts de la société civile, documenter les violations et apporter une réponse humanitaire immédiate. Nous nous efforçons d'inscrire les valeurs humaines universelles au cœur de la gouvernance mondiale, en garantissant la responsabilité, la justice et la protection des populations vulnérables.",
@@ -196,7 +197,7 @@ export const fr: Dict = {
       'Soutien aux dons',
     ],
     message: 'Message',
-    privacy: "Vos données sont protégées. L'ICHR applique des protocoles de confidentialité stricts.",
+    privacy: "Vos données sont protégées. L'ICHRO applique des protocoles de confidentialité stricts.",
     send: 'Envoyer le message',
   },
 
@@ -222,7 +223,7 @@ export const fr: Dict = {
     ],
     quote:
       '« Les contributions de soutiens comme vous permettent à nos équipes de réagir rapidement aux crises humanitaires et de défendre celles et ceux qui ne peuvent parler en leur propre nom. »',
-    quoteAttr: "— Opérations de terrain de l'ICHR",
+    quoteAttr: "— Opérations de terrain de l'ICHRO",
   },
 
   volunteer: {
@@ -282,7 +283,7 @@ export const fr: Dict = {
     eyebrow: 'Salle de presse',
     title: 'Communiqués et déclarations',
     intro:
-      "Communications officielles, actualités de terrain et déclarations de la Coalition internationale pour les droits de l'homme.",
+      "Communications officielles, actualités de terrain et déclarations de la Coalition internationale des organisations de défense des droits de l'homme.",
     filterAll: 'Tous',
     emptyTitle: 'Aucune publication pour le moment',
     emptyAll: "Aucune publication n'est disponible pour le moment. Veuillez revenir bientôt.",
@@ -296,7 +297,7 @@ export const fr: Dict = {
   media: {
     eyebrow: 'Médias',
     title: 'Vidéos',
-    intro: 'Discours, interventions en panel et images de terrain de l’ICHR et de ses partenaires.',
+    intro: 'Discours, interventions en panel et images de terrain de l’ICHRO et de ses partenaires.',
     filterAll: 'Toutes',
     playlists: {
       'statements-2026': 'Déclarations 2026',

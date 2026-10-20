@@ -34,7 +34,7 @@ export const SLUG = 'condemnation-airstrike-miners-north-wadi-october-2026';
 // Generated once, 14 October 2026. Never regenerate.
 export const TRANSLATION_KEY = '5b6ad0cc-e04c-48f4-be45-3e32d97afaab';
 
-const EN_BODY = `The International Coalition for Human Rights (ICHR) strongly condemns the airstrike that targeted Sudanese miners in the North Wadi region on 10 October 2026.
+const EN_BODY = `The International Coalition of Human Rights Organizations (ICHRO) strongly condemns the airstrike that targeted Sudanese miners in the North Wadi region on 10 October 2026.
 
 According to information received by the Coalition, more than one hundred civilians were killed. They were working to earn a living. They leave behind bereaved families, and many of the injured are in urgent need of medical care.
 
@@ -62,9 +62,9 @@ Advancing Human Rights • Peace • Justice
 Brussels, 12 October 2026`;
 
 const EN_EXCERPT =
-  'ICHR strongly condemns the airstrike of 10 October 2026 on Sudanese miners in the North Wadi region, which according to information received by the Coalition killed more than one hundred civilians. The Coalition attributes the attack to the Egyptian air force and calls for an urgent, independent international investigation.';
+  'ICHRO strongly condemns the airstrike of 10 October 2026 on Sudanese miners in the North Wadi region, which according to information received by the Coalition killed more than one hundred civilians. The Coalition attributes the attack to the Egyptian air force and calls for an urgent, independent international investigation.';
 
-const AR_BODY = `يدين التحالف الدولي لحقوق الإنسان بشدة الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026.
+const AR_BODY = `يدين التحالف الدولي لمنظمات حقوق الإنسان بشدة الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026.
 
 ووفق المعلومات الواردة إلى التحالف، تجاوز عدد القتلى مئة مدني كانوا يعملون لكسب أرزاقهم، وخلّفوا وراءهم أسرًا مكلومة وجرحى في حاجة ماسّة إلى الرعاية الطبية.
 
@@ -92,9 +92,9 @@ const AR_BODY = `يدين التحالف الدولي لحقوق الإنسان 
 بروكسل، 12 أكتوبر 2026`;
 
 const AR_EXCERPT =
-  'يدين التحالف الدولي لحقوق الإنسان بشدة الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026، والتي أودت، وفق المعلومات الواردة إلى التحالف، بحياة أكثر من مئة مدني. ويحمّل التحالف سلاح الجو المصري مسؤولية الهجوم، ويطالب بتحقيق دولي مستقل وعاجل.';
+  'يدين التحالف الدولي لمنظمات حقوق الإنسان بشدة الغارة الجوية التي استهدفت المعدّنين السودانيين في منطقة وادي الشمال في 10 أكتوبر 2026، والتي أودت، وفق المعلومات الواردة إلى التحالف، بحياة أكثر من مئة مدني. ويحمّل التحالف سلاح الجو المصري مسؤولية الهجوم، ويطالب بتحقيق دولي مستقل وعاجل.';
 
-const FR_BODY = `La Coalition internationale pour les droits de l’homme (ICHR) condamne fermement la frappe aérienne qui a visé des mineurs soudanais dans la région de North Wadi le 10 octobre 2026.
+const FR_BODY = `La Coalition internationale des organisations de défense des droits de l’homme (ICHRO) condamne fermement la frappe aérienne qui a visé des mineurs soudanais dans la région de North Wadi le 10 octobre 2026.
 
 Selon les informations reçues par la Coalition, plus de cent civils ont été tués. Ils travaillaient pour gagner leur vie. Ils laissent derrière eux des familles endeuillées, et de nombreux blessés ont un besoin urgent de soins médicaux.
 
@@ -122,7 +122,7 @@ Promouvoir les droits de l'homme • La paix • La justice
 Bruxelles, 12 octobre 2026`;
 
 const FR_EXCERPT =
-  'L’ICHR condamne fermement la frappe aérienne du 10 octobre 2026 contre des mineurs soudanais dans la région de North Wadi, qui, selon les informations reçues par la Coalition, a tué plus de cent civils. La Coalition attribue l’attaque à l’armée de l’air égyptienne et demande une enquête internationale indépendante et urgente.';
+  'L’ICHRO condamne fermement la frappe aérienne du 10 octobre 2026 contre des mineurs soudanais dans la région de North Wadi, qui, selon les informations reçues par la Coalition, a tué plus de cent civils. La Coalition attribue l’attaque à l’armée de l’air égyptienne et demande une enquête internationale indépendante et urgente.';
 
 export const STATEMENT = {
   slug: SLUG,
@@ -137,7 +137,7 @@ export const STATEMENT = {
       excerpt: EN_EXCERPT,
       body: EN_BODY,
       location: 'Brussels',
-      authorName: 'ICHR Communications',
+      authorName: 'ICHRO Communications',
       coverImageUrl: `/blog/${SLUG}/cover.jpg`,
     },
     {
@@ -146,7 +146,7 @@ export const STATEMENT = {
       excerpt: AR_EXCERPT,
       body: AR_BODY,
       location: 'بروكسل',
-      authorName: 'إعلام ICHR',
+      authorName: 'إعلام ICHRO',
       coverImageUrl: `/blog/${SLUG}/cover-ar.jpg`,
     },
     {
@@ -155,7 +155,7 @@ export const STATEMENT = {
       excerpt: FR_EXCERPT,
       body: FR_BODY,
       location: 'Bruxelles',
-      authorName: 'Communication ICHR',
+      authorName: 'Communication ICHRO',
       coverImageUrl: `/blog/${SLUG}/cover-fr.jpg`,
     },
   ],
@@ -170,7 +170,7 @@ export const COVERS = {
     file: 'cover.jpg',
     rtl: false,
     font: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    org: 'INTERNATIONAL COALITION FOR HUMAN RIGHTS',
+    org: 'INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS',
     eyebrow: 'STATEMENT OF CONDEMNATION',
     headline: ['Airstrike Targeting', 'Sudanese Miners in', 'the North Wadi Region'],
     headSize: 58,
@@ -185,7 +185,7 @@ export const COVERS = {
     file: 'cover-fr.jpg',
     rtl: false,
     font: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    org: "COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME",
+    org: "COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME",
     eyebrow: 'DÉCLARATION DE CONDAMNATION',
     headline: ['Frappe aérienne contre', 'des mineurs soudanais', 'dans la région de North Wadi'],
     headSize: 54,
@@ -200,7 +200,7 @@ export const COVERS = {
     file: 'cover-ar.jpg',
     rtl: true,
     font: "'Geeza Pro', 'Al Bayan', sans-serif",
-    org: 'التحالف الدولي لحقوق الإنسان',
+    org: 'التحالف الدولي لمنظمات حقوق الإنسان',
     eyebrow: 'بيان إدانة',
     headline: ['الغارة الجوية على', 'المعدّنين السودانيين', 'في منطقة وادي الشمال'],
     headSize: 56,

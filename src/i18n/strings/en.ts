@@ -6,38 +6,38 @@ export const en = {
   // Per-page <title> + meta description.
   meta: {
     home: {
-      title: 'The International Coalition for Human Rights (ICHR)',
+      title: 'The International Coalition of Human Rights Organizations (ICHRO)',
       desc: 'A global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide. Headquartered in Geneva.',
     },
     about: {
-      title: 'About ICHR — International Coalition for Human Rights',
-      desc: 'The International Coalition for Human Rights is a global NGO dedicated to the protection of human dignity and the advancement of justice worldwide.',
+      title: 'About ICHRO — International Coalition of Human Rights Organizations',
+      desc: 'The International Coalition of Human Rights Organizations is a global NGO dedicated to the protection of human dignity and the advancement of justice worldwide.',
     },
     contact: {
-      title: 'Contact ICHR',
-      desc: 'For media inquiries, partnerships, or emergency assistance, reach the International Coalition for Human Rights.',
+      title: 'Contact ICHRO',
+      desc: 'For media inquiries, partnerships, or emergency assistance, reach the International Coalition of Human Rights Organizations.',
     },
     donate: {
-      title: 'Support Our Work — Donate to ICHR',
+      title: 'Support Our Work — Donate to ICHRO',
       desc: 'Your contribution enables us to continue protecting human rights and providing humanitarian assistance.',
     },
     volunteer: {
-      title: 'Volunteer With ICHR',
+      title: 'Volunteer With ICHRO',
       desc: 'Join our global team of professionals working to protect human rights and provide humanitarian assistance.',
     },
     locations: {
-      title: 'Global Presence — ICHR Locations',
+      title: 'Global Presence — ICHRO Locations',
       desc: 'Coordinating humanitarian efforts and legal advocacy through our network of offices and field missions worldwide.',
     },
     news: {
-      title: 'Press Releases & Statements — ICHR Newsroom',
-      desc: 'Official press releases, statements and field updates from the International Coalition for Human Rights.',
+      title: 'Press Releases & Statements — ICHRO Newsroom',
+      desc: 'Official press releases, statements and field updates from the International Coalition of Human Rights Organizations.',
     },
     media: {
-      title: 'Videos — ICHR Media',
-      desc: 'Speeches, panels and field footage from the International Coalition for Human Rights.',
+      title: 'Videos — ICHRO Media',
+      desc: 'Speeches, panels and field footage from the International Coalition of Human Rights Organizations.',
     },
-    notFound: { title: 'Page not found — ICHR' },
+    notFound: { title: 'Page not found — ICHRO' },
   },
 
   notFound: {
@@ -73,10 +73,10 @@ export const en = {
 
   footer: {
     blurb:
-      'The International Coalition for Human Rights (ICHR) is a global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide.',
+      'The International Coalition of Human Rights Organizations (ICHRO) is a global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide.',
     headOffices: 'Head Offices',
     contact: 'Contact',
-    orgName: 'The International Coalition for Human Rights (ICHR)',
+    orgName: 'The International Coalition of Human Rights Organizations (ICHRO)',
     rights: 'All rights reserved.',
     privacy: 'Privacy Policy',
     terms: 'Terms of Use',
@@ -84,7 +84,7 @@ export const en = {
 
   hero: {
     eyebrow: 'International Non-Governmental Organisation',
-    title: 'The International Coalition for Human Rights',
+    title: 'The International Coalition of Human Rights Organizations',
     subtitle:
       'Coordinating civil society efforts, documenting violations, and providing humanitarian response to protect human dignity worldwide.',
     ctaMandate: 'Our Mandate',
@@ -94,8 +94,8 @@ export const en = {
   home: {
     mandateTitle: 'Our Mandate',
     mandateBody:
-      'The International Coalition for Human Rights (ICHR) is a global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide. We bridge the gap between international policy and on-the-ground practice through coordinated civil society action.',
-    readMore: 'Read more about ICHR',
+      'The International Coalition of Human Rights Organizations (ICHRO) is a global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide. We bridge the gap between international policy and on-the-ground practice through coordinated civil society action.',
+    readMore: 'Read more about ICHRO',
     whatWeDoTitle: 'What We Do',
     whatWeDoIntro:
       'Our operations encompass three core pillars designed to protect human rights and provide relief.',
@@ -125,14 +125,14 @@ export const en = {
   },
 
   about: {
-    title: 'About ICHR',
+    title: 'About ICHRO',
     subtitle:
-      'The International Coalition for Human Rights is a global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide.',
+      'The International Coalition of Human Rights Organizations is a global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide.',
     mandateTitle: 'Our Mandate',
     mandateP1:
-      'Founded to bridge the gap between international policy and on-the-ground practice, ICHR operates as an international coalition of civil society actors, legal experts, and humanitarian workers. We provide a unified platform to address systemic human rights violations and coordinate effective response mechanisms across borders.',
+      'Founded to bridge the gap between international policy and on-the-ground practice, ICHRO operates as an international coalition of civil society actors, legal experts, and humanitarian workers. We provide a unified platform to address systemic human rights violations and coordinate effective response mechanisms across borders.',
     mandateP2:
-      'Our strength lies in our unique coalition-based structure, which allows us to leverage diverse expertise and local knowledge while maintaining a cohesive international strategy. From documenting violations to providing essential aid, ICHR stands as a pillar of support for those whose voices are silenced.',
+      'Our strength lies in our unique coalition-based structure, which allows us to leverage diverse expertise and local knowledge while maintaining a cohesive international strategy. From documenting violations to providing essential aid, ICHRO stands as a pillar of support for those whose voices are silenced.',
     missionTitle: 'Mission',
     missionBody:
       'To coordinate civil society efforts, document violations, and provide immediate humanitarian response. We strive to embed universal human values into the fabric of global governance, ensuring accountability, justice, and protection for vulnerable populations.',
@@ -192,7 +192,7 @@ export const en = {
     subject: 'Subject',
     subjects: ['General Inquiry', 'Press / Media', 'Partnership', 'Report a Violation', 'Donation Support'],
     message: 'Message',
-    privacy: 'Your data is protected. ICHR follows strict privacy protocols.',
+    privacy: 'Your data is protected. ICHRO follows strict privacy protocols.',
     send: 'Send Message',
   },
 
@@ -218,7 +218,7 @@ export const en = {
     ],
     quote:
       '"Contributions from supporters like you enable our teams to respond rapidly to humanitarian crises and advocate for those who cannot speak for themselves."',
-    quoteAttr: '— ICHR Field Operations',
+    quoteAttr: '— ICHRO Field Operations',
   },
 
   volunteer: {
@@ -276,7 +276,7 @@ export const en = {
     eyebrow: 'Newsroom',
     title: 'Press Releases & Statements',
     intro:
-      'Official communications, field updates, and statements from the International Coalition for Human Rights.',
+      'Official communications, field updates, and statements from the International Coalition of Human Rights Organizations.',
     filterAll: 'All',
     emptyTitle: 'No posts yet',
     emptyAll: 'There are no published posts at this time. Please check back soon.',
@@ -289,7 +289,7 @@ export const en = {
   media: {
     eyebrow: 'Media',
     title: 'Videos',
-    intro: 'Speeches, panel interventions and field footage from ICHR and its partners.',
+    intro: 'Speeches, panel interventions and field footage from ICHRO and its partners.',
     filterAll: 'All',
     // Keyed by PlaylistId in src/data/videos.ts — videos.test.ts fails if one is missing.
     playlists: {

@@ -45,7 +45,7 @@ import { publishStatement, envOpts } from './lib/press-statement.mjs';
 export const SLUG = 'european-parliament-sudan-advocacy-brussels-september-2026';
 export const TRANSLATION_KEY = '1c1eccff-840a-4eee-9c71-bc65e0eb753d';
 
-const EN_BODY = `BRUSSELS — The corridors of the European Parliament witnessed intense international human rights advocacy as a delegation from the International Coalition for Human Rights (ICHR) held a series of critical meetings with four Members of the European Parliament (MEPs).
+const EN_BODY = `BRUSSELS — The corridors of the European Parliament witnessed intense international human rights advocacy as a delegation from the International Coalition of Human Rights Organizations (ICHRO) held a series of critical meetings with four Members of the European Parliament (MEPs).
 
 These discussions aimed to shed light on the deteriorating humanitarian situation in Sudan and urge European decision-makers to uphold their responsibilities regarding the ongoing violations faced by civilians, drawing upon a comprehensive review of documented human rights and field reports.
 
@@ -68,9 +68,9 @@ Advancing Human Rights • Peace • Justice
 Brussels, 30 September 2026`;
 
 const EN_EXCERPT =
-  'A delegation of the International Coalition for Human Rights met four Members of the European Parliament in Brussels to press for a comprehensive arms embargo on Sudan, an expanded fact-finding mandate and a decisive European role in peace, while the Sudanese Rural Community Organization presented reports and testimonies on abuses against civilians in rural regions.';
+  'A delegation of the International Coalition of Human Rights Organizations met four Members of the European Parliament in Brussels to press for a comprehensive arms embargo on Sudan, an expanded fact-finding mandate and a decisive European role in peace, while the Sudanese Rural Community Organization presented reports and testimonies on abuses against civilians in rural regions.';
 
-const AR_BODY = `بروكسل — شهدت أروقة البرلمان الأوروبي حراكاً حقوقياً دولياً مكثفاً، حيث عقد وفد من التحالف الدولي لحقوق الإنسان (ICHR) سلسلة من اللقاءات المهمة مع أربعة من أعضاء البرلمان الأوروبي.
+const AR_BODY = `بروكسل — شهدت أروقة البرلمان الأوروبي حراكاً حقوقياً دولياً مكثفاً، حيث عقد وفد من التحالف الدولي لمنظمات حقوق الإنسان (ICHRO) سلسلة من اللقاءات المهمة مع أربعة من أعضاء البرلمان الأوروبي.
 
 وهدفت هذه المباحثات إلى تسليط الضوء على تدهور الوضع الإنساني في السودان، وحثّ صنّاع القرار الأوروبيين على تحمّل مسؤولياتهم إزاء الانتهاكات المستمرة التي يتعرض لها المدنيون، استناداً إلى استعراض شامل للتقارير الحقوقية والميدانية الموثقة.
 
@@ -93,9 +93,9 @@ const AR_BODY = `بروكسل — شهدت أروقة البرلمان الأو�
 بروكسل، 30 سبتمبر 2026`;
 
 const AR_EXCERPT =
-  'التقى وفد من التحالف الدولي لحقوق الإنسان أربعة من أعضاء البرلمان الأوروبي في بروكسل للمطالبة بحظر شامل للأسلحة في السودان وتوسيع ولاية تقصي الحقائق ودور أوروبي حاسم في السلام، فيما عرضت منظمة مجتمع الريف السوداني تقارير وشهادات عن الانتهاكات ضد المدنيين في المناطق الريفية.';
+  'التقى وفد من التحالف الدولي لمنظمات حقوق الإنسان أربعة من أعضاء البرلمان الأوروبي في بروكسل للمطالبة بحظر شامل للأسلحة في السودان وتوسيع ولاية تقصي الحقائق ودور أوروبي حاسم في السلام، فيما عرضت منظمة مجتمع الريف السوداني تقارير وشهادات عن الانتهاكات ضد المدنيين في المناطق الريفية.';
 
-const FR_BODY = `BRUXELLES — Les couloirs du Parlement européen ont été le théâtre d'un intense plaidoyer international en faveur des droits humains : une délégation de la Coalition internationale pour les droits de l'homme (ICHR) y a tenu une série de réunions décisives avec quatre députés au Parlement européen.
+const FR_BODY = `BRUXELLES — Les couloirs du Parlement européen ont été le théâtre d'un intense plaidoyer international en faveur des droits humains : une délégation de la Coalition internationale des organisations de défense des droits de l'homme (ICHRO) y a tenu une série de réunions décisives avec quatre députés au Parlement européen.
 
 Ces échanges visaient à mettre en lumière la détérioration de la situation humanitaire au Soudan et à exhorter les décideurs européens à assumer leurs responsabilités face aux violations que continuent de subir les civils, en s'appuyant sur un examen complet de rapports documentés relatifs aux droits humains et de rapports de terrain.
 
@@ -118,7 +118,7 @@ Promouvoir les droits de l'homme • La paix • La justice
 Bruxelles, le 30 septembre 2026`;
 
 const FR_EXCERPT =
-  "Une délégation de la Coalition internationale pour les droits de l'homme a rencontré quatre députés au Parlement européen à Bruxelles pour réclamer un embargo complet sur les armes au Soudan, un mandat d'établissement des faits élargi et un rôle européen décisif pour la paix, tandis que l'Organisation de la communauté rurale soudanaise présentait des rapports et des témoignages sur les exactions contre les civils dans les régions rurales.";
+  "Une délégation de la Coalition internationale des organisations de défense des droits de l'homme a rencontré quatre députés au Parlement européen à Bruxelles pour réclamer un embargo complet sur les armes au Soudan, un mandat d'établissement des faits élargi et un rôle européen décisif pour la paix, tandis que l'Organisation de la communauté rurale soudanaise présentait des rapports et des témoignages sur les exactions contre les civils dans les régions rurales.";
 
 const CARD1 = `/blog/${SLUG}/card-1.jpg`; // group photo, English headline
 const CARD2 = `/blog/${SLUG}/card-2.jpg`; // meeting room, English headline
@@ -134,11 +134,11 @@ export const STATEMENT = {
     {
       locale: 'en',
       title:
-        "ICHR Brings Sudan's Crisis to the European Parliament as the Sudanese Rural Community Organization Exposes Abuses Against Civilians",
+        "ICHRO Brings Sudan's Crisis to the European Parliament as the Sudanese Rural Community Organization Exposes Abuses Against Civilians",
       excerpt: EN_EXCERPT,
       body: EN_BODY,
       location: 'Brussels',
-      authorName: 'ICHR Communications',
+      authorName: 'ICHRO Communications',
       coverImageUrl: CARD1,
       gallery: [
         { url: CARD1, caption: 'From left: Osman Ibrahim, Treasurer of the Sudanese Rural Community Organization; Abdelrahim Grein; and Musab Yousif, Secretary General of the Sudanese Rural Community Organization, with fellow members of the delegation at the European Parliament in Brussels, 30 September 2026.', order: 0 },
@@ -147,11 +147,11 @@ export const STATEMENT = {
     },
     {
       locale: 'ar',
-      title: 'التحالف الدولي لحقوق الإنسان ينقل مأساة السودان إلى البرلمان الأوروبي ومنظمة مجتمع الريف السوداني تكشف تفاصيل الانتهاكات ضد المدنيين',
+      title: 'التحالف الدولي لمنظمات حقوق الإنسان ينقل مأساة السودان إلى البرلمان الأوروبي ومنظمة مجتمع الريف السوداني تكشف تفاصيل الانتهاكات ضد المدنيين',
       excerpt: AR_EXCERPT,
       body: AR_BODY,
       location: 'بروكسل',
-      authorName: 'إعلام ICHR',
+      authorName: 'إعلام ICHRO',
       coverImageUrl: CARD_AR,
       gallery: [
         { url: CARD1, caption: 'من اليسار: عثمان إبراهيم، أمين المال في منظمة مجتمع الريف السوداني؛ وعبد الرحيم قرين؛ ومصعب يوسف، الأمين العام لمنظمة مجتمع الريف السوداني، مع أعضاء آخرين في الوفد في البرلمان الأوروبي ببروكسل، 30 سبتمبر 2026.', order: 0 },
@@ -161,11 +161,11 @@ export const STATEMENT = {
     {
       locale: 'fr',
       title:
-        "L'ICHR porte la crise du Soudan devant le Parlement européen, tandis que l'Organisation de la communauté rurale soudanaise expose les exactions contre les civils",
+        "L'ICHRO porte la crise du Soudan devant le Parlement européen, tandis que l'Organisation de la communauté rurale soudanaise expose les exactions contre les civils",
       excerpt: FR_EXCERPT,
       body: FR_BODY,
       location: 'Bruxelles',
-      authorName: 'Communication ICHR',
+      authorName: 'Communication ICHRO',
       coverImageUrl: CARD1,
       gallery: [
         { url: CARD1, caption: "De gauche à droite : Osman Ibrahim, trésorier de l'Organisation de la communauté rurale soudanaise ; Abdelrahim Grein ; et Musab Yousif, secrétaire général de l'Organisation de la communauté rurale soudanaise, avec d'autres membres de la délégation au Parlement européen à Bruxelles, le 30 septembre 2026.", order: 0 },

@@ -34,7 +34,7 @@ export const SLUG = 'condemnation-drone-strike-amiet-market-abyei-october-2026';
 // Generated once, 20 October 2026. Never regenerate.
 export const TRANSLATION_KEY = 'fe150bab-30b2-4111-b604-48c3d54a6a3f';
 
-const EN_BODY = `The International Coalition for Human Rights (ICHR) condemns in the strongest terms the drone strike on Amiet market in the Abyei region which, according to available information, caused civilian casualties and damage to property.
+const EN_BODY = `The International Coalition of Human Rights Organizations (ICHRO) condemns in the strongest terms the drone strike on Amiet market in the Abyei region which, according to available information, caused civilian casualties and damage to property.
 
 According to a statement by the Ministry of Foreign Affairs of South Sudan, the attack was attributed to the Sudanese Armed Forces (SAF). This requires the accountability of the military leadership, and an investigation into the responsibility of both those who carried out the attack and those who ordered it.
 
@@ -57,9 +57,9 @@ Advancing Human Rights • Peace • Justice
 Paris, 19 October 2026`;
 
 const EN_EXCERPT =
-  'ICHR condemns in the strongest terms the drone strike on Amiet market in the Abyei region, which according to available information caused civilian casualties, and which the Ministry of Foreign Affairs of South Sudan attributed to the Sudanese Armed Forces. The Coalition calls for an investigation and accountability.';
+  'ICHRO condemns in the strongest terms the drone strike on Amiet market in the Abyei region, which according to available information caused civilian casualties, and which the Ministry of Foreign Affairs of South Sudan attributed to the Sudanese Armed Forces. The Coalition calls for an investigation and accountability.';
 
-const AR_BODY = `يدين التحالف الدولي لحقوق الإنسان بأشد العبارات الهجوم بالطائرات المسيّرة على سوق أميت في منطقة أبيي، والذي أسفر، وفق المعلومات المتاحة، عن سقوط ضحايا مدنيين وأضرار في الممتلكات.
+const AR_BODY = `يدين التحالف الدولي لمنظمات حقوق الإنسان بأشد العبارات الهجوم بالطائرات المسيّرة على سوق أميت في منطقة أبيي، والذي أسفر، وفق المعلومات المتاحة، عن سقوط ضحايا مدنيين وأضرار في الممتلكات.
 
 وبحسب بيان صادر عن وزارة الخارجية في جنوب السودان، نُسب الهجوم إلى القوات المسلحة السودانية، وهو ما يستوجب مساءلة القيادة العسكرية، والتحقيق في مسؤولية كلٍّ من المنفّذين ومن أصدروا الأوامر.
 
@@ -82,9 +82,9 @@ const AR_BODY = `يدين التحالف الدولي لحقوق الإنسان 
 باريس، 19 أكتوبر 2026`;
 
 const AR_EXCERPT =
-  'يدين التحالف الدولي لحقوق الإنسان بأشد العبارات الهجوم بالطائرات المسيّرة على سوق أميت في منطقة أبيي، والذي أسفر وفق المعلومات المتاحة عن سقوط ضحايا مدنيين، ونسبته وزارة الخارجية في جنوب السودان إلى القوات المسلحة السودانية، ويطالب بالتحقيق والمساءلة.';
+  'يدين التحالف الدولي لمنظمات حقوق الإنسان بأشد العبارات الهجوم بالطائرات المسيّرة على سوق أميت في منطقة أبيي، والذي أسفر وفق المعلومات المتاحة عن سقوط ضحايا مدنيين، ونسبته وزارة الخارجية في جنوب السودان إلى القوات المسلحة السودانية، ويطالب بالتحقيق والمساءلة.';
 
-const FR_BODY = `La Coalition internationale pour les droits de l'homme (ICHR) condamne avec la plus grande fermeté la frappe de drone contre le marché d'Amiet, dans la région d'Abyei, qui selon les informations disponibles a fait des victimes civiles et causé des dégâts matériels.
+const FR_BODY = `La Coalition internationale des organisations de défense des droits de l'homme (ICHRO) condamne avec la plus grande fermeté la frappe de drone contre le marché d'Amiet, dans la région d'Abyei, qui selon les informations disponibles a fait des victimes civiles et causé des dégâts matériels.
 
 Selon une déclaration du ministère des Affaires étrangères du Soudan du Sud, l'attaque a été attribuée aux Forces armées soudanaises (FAS). Cela exige que le commandement militaire rende des comptes, et qu'une enquête établisse la responsabilité des auteurs comme de ceux qui ont donné les ordres.
 
@@ -107,7 +107,7 @@ Promouvoir les droits de l'homme • La paix • La justice
 Paris, 19 octobre 2026`;
 
 const FR_EXCERPT =
-  "L'ICHR condamne avec la plus grande fermeté la frappe de drone contre le marché d'Amiet, dans la région d'Abyei, qui selon les informations disponibles a fait des victimes civiles, et que le ministère des Affaires étrangères du Soudan du Sud a attribuée aux Forces armées soudanaises. La Coalition demande une enquête et l'établissement des responsabilités.";
+  "L'ICHRO condamne avec la plus grande fermeté la frappe de drone contre le marché d'Amiet, dans la région d'Abyei, qui selon les informations disponibles a fait des victimes civiles, et que le ministère des Affaires étrangères du Soudan du Sud a attribuée aux Forces armées soudanaises. La Coalition demande une enquête et l'établissement des responsabilités.";
 
 export const STATEMENT = {
   slug: SLUG,
@@ -122,7 +122,7 @@ export const STATEMENT = {
       excerpt: EN_EXCERPT,
       body: EN_BODY,
       location: 'Paris',
-      authorName: 'ICHR Communications',
+      authorName: 'ICHRO Communications',
       coverImageUrl: `/blog/${SLUG}/cover.jpg`,
     },
     {
@@ -131,7 +131,7 @@ export const STATEMENT = {
       excerpt: AR_EXCERPT,
       body: AR_BODY,
       location: 'باريس',
-      authorName: 'إعلام ICHR',
+      authorName: 'إعلام ICHRO',
       coverImageUrl: `/blog/${SLUG}/cover-ar.jpg`,
     },
     {
@@ -140,7 +140,7 @@ export const STATEMENT = {
       excerpt: FR_EXCERPT,
       body: FR_BODY,
       location: 'Paris',
-      authorName: 'Communication ICHR',
+      authorName: 'Communication ICHRO',
       coverImageUrl: `/blog/${SLUG}/cover-fr.jpg`,
     },
   ],
@@ -155,7 +155,7 @@ export const COVERS = {
     file: 'cover.jpg',
     rtl: false,
     font: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    org: 'INTERNATIONAL COALITION FOR HUMAN RIGHTS',
+    org: 'INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS',
     eyebrow: 'STATEMENT OF CONDEMNATION',
     headline: ['Drone Strike on', 'Amiet Market in', 'the Abyei Region'],
     headSize: 58,
@@ -170,7 +170,7 @@ export const COVERS = {
     file: 'cover-fr.jpg',
     rtl: false,
     font: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    org: "COALITION INTERNATIONALE POUR LES DROITS DE L'HOMME",
+    org: "COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME",
     eyebrow: 'DÉCLARATION DE CONDAMNATION',
     headline: ['Frappe de drone contre', "le marché d'Amiet,", "région d'Abyei"],
     headSize: 54,
@@ -185,7 +185,7 @@ export const COVERS = {
     file: 'cover-ar.jpg',
     rtl: true,
     font: "'Geeza Pro', 'Al Bayan', sans-serif",
-    org: 'التحالف الدولي لحقوق الإنسان',
+    org: 'التحالف الدولي لمنظمات حقوق الإنسان',
     eyebrow: 'بيان إدانة',
     headline: ['الهجوم بالطائرات المسيّرة', 'على سوق أميت', 'في منطقة أبيي'],
     headSize: 56,

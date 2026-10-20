@@ -46,7 +46,7 @@ export const TRANSLATION_KEY = '6cc35ded-c10f-4591-97cd-a72b01f9efcf';
 
 const JUNE_SLUG = 'eu-delegation-geneva-sudan-june-2026';
 
-const EN_BODY = `GENEVA — A strategic and high-level meeting took place on 22 September 2026 between Mrs. Katarina Tapio, representative of the European Union Delegation to the United Nations in Geneva, and the International Coalition for Human Rights (ICHR).
+const EN_BODY = `GENEVA — A strategic and high-level meeting took place on 22 September 2026 between Mrs. Katarina Tapio, representative of the European Union Delegation to the United Nations in Geneva, and the International Coalition of Human Rights Organizations (ICHRO).
 
 The agenda centered primarily on the crisis in Sudan, prioritizing the urgent protection of civilians as an absolute imperative.
 
@@ -71,9 +71,9 @@ Advancing Human Rights • Peace • Justice
 Geneva, 22 September 2026`;
 
 const EN_EXCERPT =
-  'The International Coalition for Human Rights met Mrs. Katarina Tapio of the EU Delegation to the UN in Geneva to discuss the crisis in Sudan, placing the urgent protection of civilians first and calling for arms embargo mechanisms to be expanded across all Sudanese territories.';
+  'The International Coalition of Human Rights Organizations met Mrs. Katarina Tapio of the EU Delegation to the UN in Geneva to discuss the crisis in Sudan, placing the urgent protection of civilians first and calling for arms embargo mechanisms to be expanded across all Sudanese territories.';
 
-const AR_BODY = `جنيف — عُقد في 22 سبتمبر 2026 اجتماع استراتيجي رفيع المستوى بين السيدة كاتارينا تابيو، ممثلة بعثة الاتحاد الأوروبي لدى الأمم المتحدة في جنيف، والتحالف الدولي لحقوق الإنسان (ICHR).
+const AR_BODY = `جنيف — عُقد في 22 سبتمبر 2026 اجتماع استراتيجي رفيع المستوى بين السيدة كاتارينا تابيو، ممثلة بعثة الاتحاد الأوروبي لدى الأمم المتحدة في جنيف، والتحالف الدولي لمنظمات حقوق الإنسان (ICHRO).
 
 وتمحور جدول الأعمال أساساً حول الأزمة في السودان، مع إعطاء الأولوية للحماية العاجلة للمدنيين باعتبارها ضرورة مطلقة.
 
@@ -98,9 +98,9 @@ const AR_BODY = `جنيف — عُقد في 22 سبتمبر 2026 اجتماع ا
 جنيف، 22 سبتمبر 2026`;
 
 const AR_EXCERPT =
-  'التقى التحالف الدولي لحقوق الإنسان السيدة كاتارينا تابيو من بعثة الاتحاد الأوروبي لدى الأمم المتحدة في جنيف لبحث الأزمة في السودان، مع إعطاء الأولوية للحماية العاجلة للمدنيين والدعوة إلى توسيع آليات حظر الأسلحة لتشمل جميع الأراضي السودانية.';
+  'التقى التحالف الدولي لمنظمات حقوق الإنسان السيدة كاتارينا تابيو من بعثة الاتحاد الأوروبي لدى الأمم المتحدة في جنيف لبحث الأزمة في السودان، مع إعطاء الأولوية للحماية العاجلة للمدنيين والدعوة إلى توسيع آليات حظر الأسلحة لتشمل جميع الأراضي السودانية.';
 
-const FR_BODY = `GENÈVE — Une réunion stratégique de haut niveau s'est tenue le 22 septembre 2026 entre Mme Katarina Tapio, représentante de la délégation de l'Union européenne auprès des Nations Unies à Genève, et la Coalition internationale pour les droits de l'homme (ICHR).
+const FR_BODY = `GENÈVE — Une réunion stratégique de haut niveau s'est tenue le 22 septembre 2026 entre Mme Katarina Tapio, représentante de la délégation de l'Union européenne auprès des Nations Unies à Genève, et la Coalition internationale des organisations de défense des droits de l'homme (ICHRO).
 
 L'ordre du jour a porté principalement sur la crise au Soudan, la protection urgente des civils étant érigée en impératif absolu.
 
@@ -125,7 +125,7 @@ Promouvoir les droits de l'homme • La paix • La justice
 Genève, le 22 septembre 2026`;
 
 const FR_EXCERPT =
-  "La Coalition internationale pour les droits de l'homme a rencontré Mme Katarina Tapio, de la délégation de l'Union européenne auprès des Nations Unies à Genève, pour examiner la crise au Soudan, en plaçant la protection urgente des civils au premier plan et en appelant à étendre les mécanismes d'embargo sur les armes à l'ensemble du territoire soudanais.";
+  "La Coalition internationale des organisations de défense des droits de l'homme a rencontré Mme Katarina Tapio, de la délégation de l'Union européenne auprès des Nations Unies à Genève, pour examiner la crise au Soudan, en plaçant la protection urgente des civils au premier plan et en appelant à étendre les mécanismes d'embargo sur les armes à l'ensemble du territoire soudanais.";
 
 const CARD1 = `/blog/${SLUG}/card-1.jpg`; // cover: Geneva.jpg, landscape
 const CARD2 = `/blog/${SLUG}/card-2.jpg`; // gallery: Meeting.jpg, portrait
@@ -139,11 +139,11 @@ export const STATEMENT = {
   locales: [
     {
       locale: 'en',
-      title: 'ICHR Meets Mrs. Katarina Tapio of the EU Delegation in Geneva on the Protection of Civilians in Sudan',
+      title: 'ICHRO Meets Mrs. Katarina Tapio of the EU Delegation in Geneva on the Protection of Civilians in Sudan',
       excerpt: EN_EXCERPT,
       body: EN_BODY,
       location: 'Geneva',
-      authorName: 'ICHR Communications',
+      authorName: 'ICHRO Communications',
       coverImageUrl: CARD1,
       gallery: [
         { url: CARD2, caption: 'Coalition representatives with Mrs. Katarina Tapio at the Delegation of the European Union to the UN in Geneva, 22 September 2026.', order: 0 },
@@ -151,23 +151,23 @@ export const STATEMENT = {
     },
     {
       locale: 'ar',
-      title: 'التحالف الدولي لحقوق الإنسان يلتقي السيدة كاتارينا تابيو من بعثة الاتحاد الأوروبي في جنيف لبحث حماية المدنيين في السودان',
+      title: 'التحالف الدولي لمنظمات حقوق الإنسان يلتقي السيدة كاتارينا تابيو من بعثة الاتحاد الأوروبي في جنيف لبحث حماية المدنيين في السودان',
       excerpt: AR_EXCERPT,
       body: AR_BODY,
       location: 'جنيف',
-      authorName: 'إعلام ICHR',
+      authorName: 'إعلام ICHRO',
       coverImageUrl: CARD1,
       gallery: [
-        { url: CARD2, caption: 'ممثلو التحالف الدولي لحقوق الإنسان مع السيدة كاتارينا تابيو في بعثة الاتحاد الأوروبي لدى الأمم المتحدة في جنيف، 22 سبتمبر 2026.', order: 0 },
+        { url: CARD2, caption: 'ممثلو التحالف الدولي لمنظمات حقوق الإنسان مع السيدة كاتارينا تابيو في بعثة الاتحاد الأوروبي لدى الأمم المتحدة في جنيف، 22 سبتمبر 2026.', order: 0 },
       ],
     },
     {
       locale: 'fr',
-      title: "L'ICHR rencontre Mme Katarina Tapio, de la délégation de l'Union européenne à Genève, sur la protection des civils au Soudan",
+      title: "L'ICHRO rencontre Mme Katarina Tapio, de la délégation de l'Union européenne à Genève, sur la protection des civils au Soudan",
       excerpt: FR_EXCERPT,
       body: FR_BODY,
       location: 'Genève',
-      authorName: 'Communication ICHR',
+      authorName: 'Communication ICHRO',
       coverImageUrl: CARD1,
       gallery: [
         { url: CARD2, caption: "Des représentants de la Coalition avec Mme Katarina Tapio à la délégation de l'Union européenne auprès des Nations Unies à Genève, le 22 septembre 2026.", order: 0 },
