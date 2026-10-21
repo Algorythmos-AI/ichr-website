@@ -7,6 +7,19 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.16] — 2026-10-21
+
+### Added
+
+- The Amiet market statement now carries the client's designed cards: card 1 heads the article
+  in all three languages, card 2 is in the gallery, and the statement is downloadable as a
+  0.46 MB PDF (rebuilt from the supplied 9.4 MB file).
+
+### Security
+
+- Removed the nested vite 6.4.3 pulled in by @tailwindcss/vite (GHSA-587h-7wmj-h5pm,
+  dev server only); the project now uses a single vite 8.3.5.
+
 ## [1.0.15] — 2026-10-20
 
 ### Changed
