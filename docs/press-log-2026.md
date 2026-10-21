@@ -127,7 +127,12 @@ list); house sign-off added. Generated covers, no gallery.
 Abyei. The source's "Na'am market (Amit)" is published as **Amiet market** (AR سوق أميت), at the
 client's choice. The SAF attribution is **reported, not made**: "according to a statement by the
 Ministry of Foreign Affairs of South Sudan" — keep that hedge in any edit. `OCT/3` first held a
-byte-identical copy of `OCT/2`; caught before publishing, and replaced by the client.
+byte-identical copy of `OCT/2`; caught before publishing, and replaced by the client. On 21 Oct the client's
+designed cards arrived (`OCT/4`): card-1 now heads the article on all three locales (the
+terracotta covers retired), card-2 is the gallery image, and the 9.4 MB one-page PDF was rebuilt
+from the two cards as a 0.46 MB `statement.en.pdf`. The cards are not retouched and still read
+"…FOR Human Rights Organizations", "Na'am (Amit)" and "Denunciation:terms" — flagged to the
+client.
 
 ---
 

@@ -24,7 +24,17 @@
 //    Rights (ICHR)"; the calls to the HRC/OHCHR, the FFM and the military leadership set as a
 //    list; house sign-off added (the source ends with a contact block, which is dropped as on
 //    every statement — the site footer carries it). Substance unchanged.
-//  - No artwork supplied: covers are generated. No gallery.
+//  - ARTWORK (added 21 October 2026, press/OCT/4): the client's two designed square cards, in
+//    English. card-1.jpg (dateline + headline) is now the cover on ALL THREE locales, at the
+//    client's choice, replacing the generated covers (still on disk, and COVERS below can re-render
+//    them). card-2.jpg (body text) is the gallery image on all three. Same precedent as the
+//    Geneva civil-society panel article.
+//  - The cards are the client's artwork and are NOT retouched, though they differ from the
+//    published text: the name bar reads "International Coalition FOR Human Rights
+//    Organizations", the headline keeps "Na'am (Amit)" and runs "Denunciation:terms" together.
+//    Flagged to the client. The article text keeps the approved wording (Amiet, ICHRO).
+//  - statement.en.pdf: the supplied PDF (one tall Photoshop page, 9.4 MB) rebuilt as two pages
+//    from the same two cards, 0.46 MB — content identical, light enough for mobile data.
 //  - press/OCT/3 first held a byte-identical copy of press/OCT/2 (the 13 Oct Brussels
 //    meeting, already published); it was replaced by the client before this was written.
 import { pathToFileURL } from 'node:url';
@@ -123,7 +133,8 @@ export const STATEMENT = {
       body: EN_BODY,
       location: 'Paris',
       authorName: 'ICHRO Communications',
-      coverImageUrl: `/blog/${SLUG}/cover.jpg`,
+      coverImageUrl: `/blog/${SLUG}/card-1.jpg`,
+      gallery: [{ url: `/blog/${SLUG}/card-2.jpg`, caption: 'Statement card (English) issued by the Coalition, Paris, 19 October 2026.', order: 0 }],
     },
     {
       locale: 'ar',
@@ -132,7 +143,8 @@ export const STATEMENT = {
       body: AR_BODY,
       location: 'باريس',
       authorName: 'إعلام ICHRO',
-      coverImageUrl: `/blog/${SLUG}/cover-ar.jpg`,
+      coverImageUrl: `/blog/${SLUG}/card-1.jpg`,
+      gallery: [{ url: `/blog/${SLUG}/card-2.jpg`, caption: 'بطاقة البيان (بالإنجليزية) الصادرة عن التحالف، باريس، 19 أكتوبر 2026.', order: 0 }],
     },
     {
       locale: 'fr',
@@ -141,13 +153,16 @@ export const STATEMENT = {
       body: FR_BODY,
       location: 'Paris',
       authorName: 'Communication ICHRO',
-      coverImageUrl: `/blog/${SLUG}/cover-fr.jpg`,
+      coverImageUrl: `/blog/${SLUG}/card-1.jpg`,
+      gallery: [{ url: `/blog/${SLUG}/card-2.jpg`, caption: 'Carte de la déclaration (en anglais) publiée par la Coalition, Paris, 19 octobre 2026.', order: 0 }],
     },
   ],
 };
 
 // Cover colour (scripts/lib/press-card.mjs THEMES). Each text-only cover has its own, so
 // they read as a set on /news without being identical. Re-render with FORCE=1.
+// Retired as the live cover on 21 October 2026 (the client's card-1.jpg heads the article), but
+// kept so the generated covers can be re-rendered.
 export const COVER_THEME = 'terracotta';
 
 export const COVERS = {
