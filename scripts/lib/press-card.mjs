@@ -52,6 +52,10 @@ export const THEMES = {
   // A LIGHT theme: pale warm grey ("couture grey") with near-black type and an antique-gold
   // accent. text 14.1:1 / 11.4:1, accent 4.8:1. `text` flips every white text and rule to dark;
   // the white chips get a hairline so they hold against the pale ground.
+  // UN blue. The official #009EDB gives white text only 3.0:1, so the hue is deepened to
+  // #0077b6 → #004c87 (white 4.9:1 / 8.8:1); the accent is the emblem's pale sky blue, used
+  // only on the bold eyebrow and the rule (3.7:1, large text).
+  unblue: { from: '#0077b6', to: '#004c87', accent: '#bfe6f7', ink: '#0077b6' },
   pearl: { from: '#ece7e0', to: '#d8d0c5', accent: '#7d5f33', ink: '#1c1a18', text: '#1c1a18' },
 };
 
