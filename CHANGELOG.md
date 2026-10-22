@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.18] — 2026-10-22
+
+### Added
+
+- Newsroom covers for the 22 October 2026 joint petition on the airstrike on Sudanese miners,
+  in a new light 'pearl' theme (couture grey, near-black type, antique gold). The cover
+  generator now supports light themes.
+
 ## [1.0.17] — 2026-10-22
 
 ### Added

@@ -49,6 +49,10 @@ export const THEMES = {
   graphite: { from: '#333f4b', to: '#161d24', accent: '#E8894A', ink: '#333f4b' },
   forest: { from: '#22533e', to: '#11301f', accent: '#D9B75E', ink: '#22533e' },
   terracotta: { from: '#9a3a1e', to: '#521a0b', accent: '#F4C86A', ink: '#9a3a1e' },
+  // A LIGHT theme: pale warm grey ("couture grey") with near-black type and an antique-gold
+  // accent. text 14.1:1 / 11.4:1, accent 4.8:1. `text` flips every white text and rule to dark;
+  // the white chips get a hairline so they hold against the pale ground.
+  pearl: { from: '#ece7e0', to: '#d8d0c5', accent: '#7d5f33', ink: '#1c1a18', text: '#1c1a18' },
 };
 
 function themeOf(c) {
@@ -69,7 +73,9 @@ const logoUri = `data:image/png;base64,${readFileSync(join(REPO, 'public', 'logo
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 function buildSvg(c) {
-  const { from: NAVY, to: NAVY_DARK, accent: GOLD, ink: INK } = themeOf(c);
+  const { from: NAVY, to: NAVY_DARK, accent: GOLD, ink: INK, text: TEXT = '#ffffff' } = themeOf(c);
+  // Light themes keep the white chips but outline them, or they dissolve into the background.
+  const chipEdge = TEXT === '#ffffff' ? '' : `stroke="${TEXT}" stroke-opacity="0.18" stroke-width="2"`;
   const ax = c.rtl ? W - M : M; // inline-start anchor
   // In RTL, text-anchor="start" resolves to the right edge; see the header note.
   const flow = c.rtl ? `direction="rtl" text-anchor="start"` : '';
@@ -78,14 +84,14 @@ function buildSvg(c) {
   const headline = c.headline
     .map(
       (line, i) =>
-        `<text x="${ax}" y="${c.headTop + i * c.headLh}" ${flow} font-family="${c.font}" font-size="${c.headSize}" font-weight="700" fill="#ffffff">${esc(line)}</text>`,
+        `<text x="${ax}" y="${c.headTop + i * c.headLh}" ${flow} font-family="${c.font}" font-size="${c.headSize}" font-weight="700" fill="${TEXT}">${esc(line)}</text>`,
     )
     .join('\n  ');
 
   const standfirst = c.standfirst
     .map(
       (line, i) =>
-        `<text x="${ax}" y="${884 + i * 44}" ${flow} font-family="${c.font}" font-size="31" fill="#ffffff" opacity="0.86">${esc(line)}</text>`,
+        `<text x="${ax}" y="${884 + i * 44}" ${flow} font-family="${c.font}" font-size="31" fill="${TEXT}" opacity="0.86">${esc(line)}</text>`,
     )
     .join('\n  ');
 
@@ -121,12 +127,12 @@ function buildSvg(c) {
   </g>
 
   <!-- masthead -->
-  <rect x="${chipX}" y="92" width="120" height="118" rx="12" fill="#ffffff"/>
+  <rect x="${chipX}" y="92" width="120" height="118" rx="12" fill="#ffffff" ${chipEdge}/>
   <image href="${logoUri}" x="${chipX + 8}" y="100" width="104" height="102"/>
-  <text x="${markX}" y="152" ${flow} font-family="${LATIN}" font-size="44" font-weight="700" fill="#ffffff" letter-spacing="2">ICHRO</text>
-  <text x="${markX}" y="185" ${flow} font-family="${c.font}" font-size="15" font-weight="500" fill="#ffffff" opacity="0.62" ${ls(2.6)}>${esc(c.org)}</text>
+  <text x="${markX}" y="152" ${flow} font-family="${LATIN}" font-size="44" font-weight="700" fill="${TEXT}" letter-spacing="2">ICHRO</text>
+  <text x="${markX}" y="185" ${flow} font-family="${c.font}" font-size="15" font-weight="500" fill="${TEXT}" opacity="0.62" ${ls(2.6)}>${esc(c.org)}</text>
 
-  <rect x="${M}" y="288" width="${W - M * 2}" height="1.5" fill="#ffffff" opacity="0.18"/>
+  <rect x="${M}" y="288" width="${W - M * 2}" height="1.5" fill="${TEXT}" opacity="0.18"/>
 
   <!-- eyebrow -->
   <text x="${ax}" y="372" ${flow} font-family="${c.font}" font-size="25" font-weight="700" fill="${GOLD}" ${ls(6.5)}>${esc(c.eyebrow)}</text>
@@ -140,17 +146,17 @@ function buildSvg(c) {
   ${standfirst}
 
   <!-- location chip + date -->
-  <rect x="${locX}" y="1042" width="${c.chipW}" height="74" rx="10" fill="#ffffff"/>
+  <rect x="${locX}" y="1042" width="${c.chipW}" height="74" rx="10" fill="#ffffff" ${chipEdge}/>
   <g transform="translate(${pinX}, 1060) scale(1.6)">
     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" fill="none" stroke="#d64541" stroke-width="2.2"/>
     <circle cx="12" cy="10" r="3" fill="none" stroke="#d64541" stroke-width="2.2"/>
   </g>
   <text x="${cityX}" y="1092" ${flow} font-family="${c.font}" font-size="34" font-weight="700" fill="${INK}">${esc(c.city)}</text>
-  <text ${dateAttrs} y="1092" font-family="${c.font}" font-size="26" font-weight="500" fill="#ffffff" opacity="0.72" ${ls(3.2)}>${esc(c.date)}</text>
+  <text ${dateAttrs} y="1092" font-family="${c.font}" font-size="26" font-weight="500" fill="${TEXT}" opacity="0.72" ${ls(3.2)}>${esc(c.date)}</text>
 
   <!-- footer -->
-  <rect x="${M}" y="1430" width="${W - M * 2}" height="1.5" fill="#ffffff" opacity="0.18"/>
-  <text x="${W / 2}" y="1500" text-anchor="middle" font-family="${LATIN}" font-size="24" font-weight="500" fill="#ffffff" opacity="0.68" letter-spacing="4">ICHR-INTERNATIONAL.ORG</text>
+  <rect x="${M}" y="1430" width="${W - M * 2}" height="1.5" fill="${TEXT}" opacity="0.18"/>
+  <text x="${W / 2}" y="1500" text-anchor="middle" font-family="${LATIN}" font-size="24" font-weight="500" fill="${TEXT}" opacity="0.68" letter-spacing="4">ICHR-INTERNATIONAL.ORG</text>
 </svg>`;
 }
 
