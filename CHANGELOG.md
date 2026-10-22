@@ -7,6 +7,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.19] — 2026-10-22
+
+### Fixed
+
+- Article links inside a sentence stay inline again. A selector meant only for link-only
+  paragraphs also matched sentences with a single link, pushing the link onto its own line.
+
 ## [1.0.18] — 2026-10-22
 
 ### Added
