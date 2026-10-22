@@ -7,6 +7,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.17] — 2026-10-22
+
+### Added
+
+- Newsroom covers for the 22 October 2026 statement on the Geneva meeting for coordinating
+  peace efforts in Sudan.
+
 ## [1.0.16] — 2026-10-21
 
 ### Added
