@@ -99,6 +99,7 @@ EN and AR are translations, and the client's conditional mood is kept in all thr
 | 13 Oct | **Brussels** | Press Release | `church-of-jesus-christ-meeting-brussels-october-2026` | `1ac5cac4…` | `OCT/2` | — |
 | 16 Oct | **Paris** | Statement | `condemnation-nyala-livestock-market-october-2026` | `aa0a4ef9…` | text (chat) | — |
 | 19 Oct | **Paris** | Statement | `condemnation-drone-strike-amiet-market-abyei-october-2026` | `fe150bab…` | `OCT/3` | — |
+| 22 Oct | Geneva | Statement | `geneva-meeting-sudan-peace-coordination-october-2026` | `9ad5ea45…` | `OCT/5` | — |
 
 The first statement to name a state force: it **attributes the strike to the Egyptian air
 force**, as the Coalition's own attribution, approved for publication by the client on
@@ -133,6 +134,14 @@ terracotta covers retired), card-2 is the gallery image, and the 9.4 MB one-page
 from the two cards as a 0.46 MB `statement.en.pdf`. The cards are not retouched and still read
 "…FOR Human Rights Organizations", "Na'am (Amit)" and "Denunciation:terms" — flagged to the
 client.
+
+`geneva-meeting-sudan-peace-coordination-…` (22 Oct): the Coalition's response to the sixth
+consultative meeting on coordinating Sudan peace efforts (UN Geneva, 21 Oct). The source names no
+city; **Geneva** at the client's choice. Meeting facts (sixth meeting, 22 countries, co-hosted by
+Switzerland and the UN) are the client's account. "The record of violations committed by the
+Sudanese army" published as written (client-approved); the chemical-weapons line asks for an
+investigation and names no one — keep it so. Light copy-edit, three section headings added;
+generated azure covers.
 
 ---
 
