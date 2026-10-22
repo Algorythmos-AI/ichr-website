@@ -34,7 +34,18 @@ const SANITIZE_OPTIONS: sanitizeHtml.IOptions = {
   },
 };
 
+// A paragraph that holds ONE link and nothing else is a call to action ("Read the full
+// submission", "Watch the footage") and gets a 44px tap target in CSS (.cta-link). A link
+// inside a sentence must stay inline: CSS cannot tell the two apart (`p > a:only-child`
+// ignores the text around the link), which made in-sentence links jump onto their own line.
+// Runs AFTER the sanitizer and only adds a fixed class name, so it cannot widen what the
+// sanitizer allows.
+const STANDALONE_LINK = /<p>\s*<a ((?:(?!>)[\s\S])*)>((?:(?!<\/?a\b)[\s\S])*)<\/a>\s*<\/p>/g;
+
 export function renderMarkdown(md: string): string {
   const rawHtml = marked.parse(md ?? '', { async: false }) as string;
-  return sanitizeHtml(rawHtml, SANITIZE_OPTIONS);
+  return sanitizeHtml(rawHtml, SANITIZE_OPTIONS).replace(
+    STANDALONE_LINK,
+    '<p><a class="cta-link" $1>$2</a></p>',
+  );
 }
