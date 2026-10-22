@@ -100,6 +100,7 @@ EN and AR are translations, and the client's conditional mood is kept in all thr
 | 16 Oct | **Paris** | Statement | `condemnation-nyala-livestock-market-october-2026` | `aa0a4ef9…` | text (chat) | — |
 | 19 Oct | **Paris** | Statement | `condemnation-drone-strike-amiet-market-abyei-october-2026` | `fe150bab…` | `OCT/3` | — |
 | 22 Oct | Geneva | Statement | `geneva-meeting-sudan-peace-coordination-october-2026` | `9ad5ea45…` | `OCT/5` | — |
+| 22 Oct | Geneva | Press Release | `joint-petition-airstrike-sudanese-miners-october-2026` | `3f52b1af…` | `OCT/6` | — |
 
 The first statement to name a state force: it **attributes the strike to the Egyptian air
 force**, as the Coalition's own attribution, approved for publication by the client on
@@ -142,6 +143,14 @@ Switzerland and the UN) are the client's account. "The record of violations comm
 Sudanese army" published as written (client-approved); the chemical-weapons line asks for an
 investigation and names no one — keep it so. Light copy-edit, three section headings added;
 generated azure covers.
+
+`joint-petition-airstrike-sudanese-miners-…` (22 Oct): the joint petition (ten organisations, more
+than seven countries) to the HRC, the EU and human rights institutions on the strike on Sudanese
+miners. Source said only "Today": **Geneva, 22 Oct** at the client's choice. "The Egyptian
+airstrike" is published **as written, unhedged** — the client's explicit choice, unlike the
+12 Oct statement's attribution. The client's places (Jabal Al-Uwaidat, Al-Ansari market) are kept,
+with "(the North Wadi region)" linking the 12 Oct statement; "Al-Uwaidat" is unconfirmed
+(AR جبل العويدات). First cover in the light **pearl** theme (couture grey, the client's choice).
 
 ---
 
