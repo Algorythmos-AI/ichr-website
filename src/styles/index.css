@@ -451,8 +451,10 @@ body {
 
 /* A link alone in its own paragraph is a call to action, not prose — give it a real
    44px tap target. Links inside a sentence are deliberately left alone: stretching
-   those would break the line rhythm, and WCAG 2.5.8 exempts inline text links. */
-.prose-article p > a:only-child {
+   those would break the line rhythm, and WCAG 2.5.8 exempts inline text links.
+   The class is set by renderMarkdown (src/lib/markdown.ts): `p > a:only-child` cannot be
+   used, because it ignores the text around a link and caught in-sentence links too. */
+.prose-article a.cta-link {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
