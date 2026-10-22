@@ -1,4 +1,4 @@
-// Press release, Geneva, 22 October 2026 — the Coalition submits a joint petition to the UN
+// Press release, Geneva, 21 October 2026 — the Coalition submits a joint petition to the UN
 // Human Rights Council, the European Union and human rights institutions on the airstrike on
 // Sudanese artisanal miners. Source: press/OCT/6/notes.rtf (English only, no artwork).
 //
@@ -13,8 +13,10 @@
 // Covers: node scripts/gen-press-cover.mjs prisma/seed-statement-joint-petition-north-wadi.mjs
 //
 // EDITORIAL NOTES (decided with the client, 22 October 2026):
-//  - DATELINE: the source says only "Today". Published as GENEVA, 22 October 2026 (the day it
-//    was received), at the client's choice.
+//  - DATELINE: GENEVA, 21 October 2026. First published on 22 October as "22 October", because
+//    the first source (press/OCT/6) said only "Today"; the client's second copy (press/OCT/7, same
+//    text) dates it "Wednesday 21 October 2026", so the date was corrected the same day. Its
+//    headline's "International Justice 6th Bodies" is taken as a typo and not reproduced.
 //  - ATTRIBUTION: "the Egyptian airstrike" is published AS WRITTEN, stated as fact, at the
 //    client's explicit choice — unlike the 12 October statement, which worded it as the
 //    Coalition's attribution. Kept unhedged in AR (الغارة الجوية المصرية) and FR (la frappe
@@ -27,8 +29,8 @@
 //    submitted"). The facts (ten organisations, more than seven countries, ECOSOC-status members
 //    and African regional bodies) are the client's account. Contact block dropped; house
 //    sign-off added.
-//  - Category Press Release. Covers generated in the light 'pearl' theme (a couture-grey palette,
-//    chosen by the client). No gallery.
+//  - Category Press Release. Covers generated in the 'unblue' theme (UN blue, the client's choice
+//    on 22 October; first published in the light 'pearl' theme). No gallery.
 import { pathToFileURL } from 'node:url';
 import { publishStatement, envOpts } from './lib/press-statement.mjs';
 
@@ -52,7 +54,7 @@ The Coalition reaffirms its commitment to pursuing this petition and to advocati
 
 Advancing Human Rights • Peace • Justice
 
-Geneva, 22 October 2026`;
+Geneva, 21 October 2026`;
 
 const EN_EXCERPT =
   'ICHRO has submitted a joint petition, signed by ten organisations from more than seven countries, to the UN Human Rights Council, the European Union and human rights institutions on the Egyptian airstrike on Sudanese artisanal miners, seeking redress, an independent investigation and accountability.';
@@ -71,7 +73,7 @@ const AR_BODY = `قدّم التحالف الدولي لمنظمات حقوق ا
 
 النهوض بحقوق الإنسان • السلام • العدالة
 
-جنيف، 22 أكتوبر 2026`;
+جنيف، 21 أكتوبر 2026`;
 
 const AR_EXCERPT =
   'قدّم التحالف الدولي لمنظمات حقوق الإنسان عريضةً مشتركة، وقّعتها عشر منظمات من أكثر من سبع دول، إلى مجلس حقوق الإنسان والاتحاد الأوروبي والمؤسسات الحقوقية بشأن الغارة الجوية المصرية على المعدّنين السودانيين التقليديين، للمطالبة بالإنصاف وتحقيق مستقل ومحاسبة المسؤولين.';
@@ -90,7 +92,7 @@ La Coalition réaffirme sa détermination à poursuivre cette pétition et à pl
 
 Promouvoir les droits de l'homme • La paix • La justice
 
-Genève, 22 octobre 2026`;
+Genève, 21 octobre 2026`;
 
 const FR_EXCERPT =
   "L'ICHRO a présenté une pétition conjointe, signée par dix organisations de plus de sept pays, au Conseil des droits de l'homme, à l'Union européenne et aux institutions de défense des droits humains au sujet de la frappe aérienne égyptienne contre des orpailleurs soudanais, pour obtenir réparation, une enquête indépendante et l'établissement des responsabilités.";
@@ -99,7 +101,7 @@ export const STATEMENT = {
   slug: SLUG,
   translationKey: TRANSLATION_KEY,
   category: 'Press Release',
-  date: '2026-10-22',
+  date: '2026-10-21',
   hashtags: ['#international_coalition_for_h_rights', '#Sudan', '#Geneva'],
   locales: [
     {
@@ -132,8 +134,8 @@ export const STATEMENT = {
   ],
 };
 
-// Cover colour (scripts/lib/press-card.mjs THEMES): the light couture-grey palette.
-export const COVER_THEME = 'pearl';
+// Cover colour (scripts/lib/press-card.mjs THEMES): UN blue.
+export const COVER_THEME = 'unblue';
 
 export const COVERS = {
   en: {
@@ -148,7 +150,7 @@ export const COVERS = {
     headTop: 452,
     standfirst: ['Statement on the situation in Sudan'],
     city: 'Geneva',
-    date: '22 OCTOBER 2026',
+    date: '21 OCTOBER 2026',
     chipW: 248,
   },
   fr: {
@@ -163,7 +165,7 @@ export const COVERS = {
     headTop: 452,
     standfirst: ['Déclaration sur la situation au Soudan'],
     city: 'Genève',
-    date: '22 OCTOBRE 2026',
+    date: '21 OCTOBRE 2026',
     chipW: 248,
   },
   ar: {
@@ -178,7 +180,7 @@ export const COVERS = {
     headTop: 468,
     standfirst: ['بيان بشأن الوضع في السودان'],
     city: 'جنيف',
-    date: '22 أكتوبر 2026',
+    date: '21 أكتوبر 2026',
     chipW: 240,
   },
 };
