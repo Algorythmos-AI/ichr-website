@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.20] — 2026-10-22
+
+### Changed
+
+- Joint petition article: dated 21 October 2026 (the client's corrected date), and its covers
+  re-rendered in UN blue — a new 'unblue' cover theme, deepened from the official UN blue so
+  white text stays readable.
+
 ## [1.0.19] — 2026-10-22
 
 ### Fixed
