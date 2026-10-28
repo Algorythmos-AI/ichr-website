@@ -6,7 +6,8 @@ import { locations, REGION_ORDER, type Location, type LocationKind } from '@/lib
 
 /* ────────────────────────────────────────────────────────────────────────
    ICHR Global Presence map — Leaflet 1.9, rendered client:only (needs window).
-   - Labels-free Positron canvas so only our navy/gold pins carry colour.
+   - Labels-free Natural Earth land silhouette (bundled vector, no tile server)
+     so only our navy/gold pins carry colour.
    - Branded category pins (HQ gold teardrop / Regional navy teardrop / Field
      navy ring) built as inline-SVG divIcons with ≥44px transparent hit areas.
    - One `selectedId` (the stable, non-sequential loc.id) syncs the index/rail,
@@ -19,6 +20,8 @@ import { locations, REGION_ORDER, type Location, type LocationKind } from '@/lib
 const NAVY = '#1a4a68';
 const NAVY_DARK = '#11364d';
 const GOLD = '#C9A227';
+const LAND = '#e1e6eb';
+const LAND_EDGE = '#cbd3db';
 
 const esc = (s: string) =>
   s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c] as string);
@@ -246,6 +249,7 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
       attributionControl: false, // re-add below without the Leaflet 🇺🇦 flag prefix
       zoomControl: false,
       minZoom: 2,
+      maxZoom: 6, // the 1:50m land data's useful range; the map locates offices, not streets
       maxBounds: [
         [-60, -180],
         [78, 180],
@@ -257,11 +261,25 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
     L.control.attribution({ prefix: false }).addTo(map);
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-      subdomains: 'abcd',
-      maxZoom: 19,
-      attribution: '© OpenStreetMap © CARTO',
-    }).addTo(map);
+    // Basemap: Natural Earth land polygons drawn as vector, bundled with the site. No tile server,
+    // no API key, no third-party request. (CARTO's free tiles began demanding a key in Oct 2026.)
+    // Loaded as a separate chunk so the ~150 KB gzipped geometry does not delay the pins.
+    let disposed = false;
+    Promise.all([import('topojson-client'), import('world-atlas/land-50m.json')])
+      .then(([{ feature }, { default: topo }]) => {
+        if (disposed) return;
+        const atlas = topo as unknown as TopoJSON.Topology<{ land: TopoJSON.GeometryCollection }>;
+        L.geoJSON(feature(atlas, atlas.objects.land), {
+          interactive: false,
+          attribution: 'Natural Earth',
+          style: { fillColor: LAND, fillOpacity: 1, color: LAND_EDGE, weight: 0.6 },
+        })
+          .addTo(map)
+          .bringToBack();
+      })
+      .catch(() => {
+        /* pins, legend and index still work on the plain sea background */
+      });
 
     locations.forEach((loc, index) => {
       const marker = L.marker(loc.coords, { icon: buildIcon(loc.kind, index) }).addTo(map);
@@ -349,6 +367,7 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
     window.addEventListener('orientationchange', onOrient);
 
     return () => {
+      disposed = true;
       window.clearTimeout(rid);
       ro.disconnect();
       window.removeEventListener('orientationchange', onOrient);
@@ -556,7 +575,7 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
         <div className="relative">
           <div
             ref={containerRef}
-            className="w-full h-[58svh] min-h-[420px] lg:h-[600px] rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-[#eaeaea] isolate"
+            className="w-full h-[58svh] min-h-[420px] lg:h-[600px] rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-[#f7f9fb]! isolate"
           />
 
           {/* desktop legend (floating, clear of the bottom-right zoom control) */}
