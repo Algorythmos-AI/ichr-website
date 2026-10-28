@@ -7,6 +7,24 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.23] — 2026-10-28
+
+### Added
+
+- Client-style square photo card for text-only statements: red-toned image band (a supplied
+  photo of the event, or a map of Sudan with the place marked), the client's badge, red
+  headline, dateline and lead (`scripts/gen-photo-card.mjs`, `docs/runbooks/press/photo-card.md`).
+
+### Changed
+
+- The Dumaya market statement's covers (EN/AR/FR) re-rendered in the photo-card layout, with
+  a map band marking Nyala.
+
+### Fixed
+
+- `gen-photo-card.mjs` resolves the repository path correctly from a checkout whose path
+  contains a space.
+
 ## [1.0.22] — 2026-10-28
 
 ### Changed
