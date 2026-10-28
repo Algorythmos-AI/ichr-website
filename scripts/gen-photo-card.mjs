@@ -14,10 +14,11 @@
 // file is never overwritten without FORCE=1.
 import { mkdirSync, existsSync } from 'node:fs';
 import { resolve, dirname, join, isAbsolute } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { renderPhotoCard } from './lib/photo-card.mjs';
 
-const REPO = join(dirname(new URL(import.meta.url).pathname), '..');
+// fileURLToPath, not URL.pathname: the latter keeps %20 in a path with spaces.
+const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const FORCE = process.env.FORCE === '1';
 
 const [, , modulePath, onlyLocale] = process.argv;
