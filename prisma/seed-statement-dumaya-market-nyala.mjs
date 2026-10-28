@@ -30,7 +30,7 @@
 //    closing demands set as a list. Substance unchanged. House sign-off and tagline added.
 //  - ARABIC PLACE NAMES الدومايا (Dumaya) and محطة تنقوج (Tangoj Station) were our
 //    transliterations; confirmed by the client on 28 October 2026. Al-Burhan is the standard عبد الفتاح البرهان.
-//  - Covers generated, oxblood theme. No gallery.
+//  - Covers: client-style photo card with a map band (see PHOTO_CARDS below). No gallery.
 import { pathToFileURL } from 'node:url';
 import { publishStatement, envOpts } from './lib/press-statement.mjs';
 
@@ -185,54 +185,59 @@ export const STATEMENT = {
   ],
 };
 
-// Cover colour (scripts/lib/press-card.mjs THEMES).
-export const COVER_THEME = 'oxblood';
+// Covers: the client's square photo-card layout (scripts/lib/photo-card.mjs), matching their
+// own cards such as Al-Zawiya Ghara. No photo was supplied, so the band is a map of Sudan with
+// Nyala marked — the client's choice, 28 October 2026. First published with the typographic
+// oxblood card. The lead keeps the hedge "attributed to".
+//   node scripts/gen-photo-card.mjs prisma/seed-statement-dumaya-market-nyala.mjs
+export const PHOTO_CARD_BAND = { map: 'sudan', marker: { lon: 24.88, lat: 12.05 } };
 
-export const COVERS = {
+export const PHOTO_CARDS = {
   en: {
     file: 'cover.jpg',
-    rtl: false,
-    font: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    org: 'INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS',
-    eyebrow: 'STATEMENT OF CONDEMNATION',
-    headline: ['Airstrike on the', 'Civilian Dumaya', 'Market in Nyala'],
-    headSize: 58,
-    headLh: 78,
-    headTop: 452,
-    standfirst: ['Statement on the situation in Sudan'],
-    city: 'Geneva',
-    date: '27 OCTOBER 2026',
-    chipW: 248,
-  },
-  fr: {
-    file: 'cover-fr.jpg',
-    rtl: false,
-    font: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    org: "COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME",
-    eyebrow: 'DÉCLARATION DE CONDAMNATION',
-    headline: ['Frappe aérienne contre', 'le marché civil de', 'Dumaya, à Nyala'],
-    headSize: 54,
-    headLh: 74,
-    headTop: 452,
-    standfirst: ['Déclaration sur la situation au Soudan'],
-    city: 'Genève',
-    date: '27 OCTOBRE 2026',
-    chipW: 248,
+    label: 'STATEMENT',
+    org: 'The International Coalition of Human Rights Organizations',
+    headline: 'Strongly condemns the airstrike on the civilian Dumaya market in Nyala, South Darfur',
+    dateline: 'GENEVA',
+    date: 'Date: 27 October 2026',
+    lead: 'The International Coalition of Human Rights Organizations condemns in the strongest terms the airstrike, attributed to the Sudanese Air Force, on the "Tangoj Station" night market in the Dumaya area, west of Nyala, South Darfur, on the evening of 26 October 2026.',
+    mapLabels: {
+      country: 'SUDAN',
+      marker: 'NYALA',
+      markerSub: 'DUMAYA MARKET',
+      neighbours: { EGY: 'EGYPT', LBY: 'LIBYA', TCD: 'CHAD', SDS: 'SOUTH SUDAN', CAF: 'C.A.R.', ETH: 'ETHIOPIA', ERI: 'ERITREA' },
+    },
   },
   ar: {
     file: 'cover-ar.jpg',
     rtl: true,
-    font: "'Geeza Pro', 'Al Bayan', sans-serif",
+    label: 'بيان',
     org: 'التحالف الدولي لمنظمات حقوق الإنسان',
-    eyebrow: 'بيان إدانة',
-    headline: ['الغارة الجوية على', 'سوق الدومايا المدني', 'في نيالا'],
-    headSize: 56,
-    headLh: 88,
-    headTop: 468,
-    standfirst: ['بيان بشأن الوضع في السودان'],
-    city: 'جنيف',
-    date: '27 أكتوبر 2026',
-    chipW: 240,
+    headline: 'يدين بشدة الغارة الجوية على سوق الدومايا المدني في نيالا بولاية جنوب دارفور',
+    dateline: 'جنيف',
+    date: 'التاريخ: 27 أكتوبر 2026',
+    lead: 'يدين التحالف الدولي لمنظمات حقوق الإنسان بأشد العبارات الغارة الجوية، المنسوبة إلى سلاح الجو السوداني، على السوق الليلي في "محطة تنقوج" بمنطقة الدومايا غرب مدينة نيالا بولاية جنوب دارفور، مساء 26 أكتوبر 2026.',
+    mapLabels: {
+      country: 'السودان',
+      marker: 'نيالا',
+      markerSub: 'سوق الدومايا',
+      neighbours: { EGY: 'مصر', LBY: 'ليبيا', TCD: 'تشاد', SDS: 'جنوب السودان', CAF: 'أفريقيا الوسطى', ETH: 'إثيوبيا', ERI: 'إريتريا' },
+    },
+  },
+  fr: {
+    file: 'cover-fr.jpg',
+    label: 'DÉCLARATION',
+    org: "La Coalition internationale des organisations de défense des droits de l'homme",
+    headline: 'condamne fermement la frappe aérienne contre le marché civil de Dumaya, à Nyala (Darfour-Sud)',
+    dateline: 'GENÈVE',
+    date: 'Date : 27 octobre 2026',
+    lead: "La Coalition condamne avec la plus grande fermeté la frappe aérienne, attribuée à l'armée de l'air soudanaise, contre le marché de nuit de « Tangoj Station », dans le quartier de Dumaya, à l'ouest de Nyala (Darfour-Sud), le 26 octobre 2026 au soir.",
+    mapLabels: {
+      country: 'SOUDAN',
+      marker: 'NYALA',
+      markerSub: 'MARCHÉ DE DUMAYA',
+      neighbours: { EGY: 'ÉGYPTE', LBY: 'LIBYE', TCD: 'TCHAD', SDS: 'SOUDAN DU SUD', CAF: 'RCA', ETH: 'ÉTHIOPIE', ERI: 'ÉRYTHRÉE' },
+    },
   },
 };
 
