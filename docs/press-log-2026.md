@@ -101,6 +101,7 @@ EN and AR are translations, and the client's conditional mood is kept in all thr
 | 19 Oct | **Paris** | Statement | `condemnation-drone-strike-amiet-market-abyei-october-2026` | `fe150bab…` | `OCT/3` | — |
 | 22 Oct | Geneva | Statement | `geneva-meeting-sudan-peace-coordination-october-2026` | `9ad5ea45…` | `OCT/5` | — |
 | 21 Oct | Geneva | Press Release | `joint-petition-airstrike-sudanese-miners-october-2026` | `3f52b1af…` | `OCT/6` | — |
+| 27 Oct | Geneva | Statement | `condemnation-airstrike-dumaya-market-nyala-october-2026` | `7cceea3b…` | `OCT/8` | — |
 
 The first statement to name a state force: it **attributes the strike to the Egyptian air
 force**, as the Coalition's own attribution, approved for publication by the client on
@@ -154,6 +155,15 @@ with "(the North Wadi region)" linking the 12 Oct statement; "Al-Uwaidat" is unc
 copy (`OCT/7`, identical text) dated it **Wednesday 21 October**: the date was corrected to 21 Oct and
 the cover switched to the **unblue** theme (UN colours, at the client's request) — an update to this
 article, not a second one. Its headline typo "International Justice 6th Bodies" is not reproduced.
+
+`condemnation-airstrike-dumaya-market-nyala-…` (27 Oct): the 26 Oct strike on the "Tangoj Station"
+night market, Dumaya area west of Nyala — **a different attack from the 16 Oct Nyala livestock-market
+statement**, which it links. No city in the source: **Geneva** at the client's choice. **Names a
+person**: "the SAF leadership, headed by Commander-in-Chief Abdel Fattah al-Burhan" is held
+responsible — published as written, client-approved. Hedges kept in all three languages: "attributed
+to the Sudanese Air Force"; the toll (200+ dead, 113+ injured) "not yet independently verified".
+Arabic place names الدومايا / محطة تنقوج are transliterations awaiting client confirmation. Oxblood
+covers.
 
 ---
 
