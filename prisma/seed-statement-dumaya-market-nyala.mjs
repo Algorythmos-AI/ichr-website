@@ -28,8 +28,8 @@
 //    at the client's choice. Nothing else added.
 //  - Light copy-edit: house name (ICHRO), paragraphs split at existing sentence breaks, the
 //    closing demands set as a list. Substance unchanged. House sign-off and tagline added.
-//  - ARABIC PLACE NAMES are transliterations to confirm with the client: الدومايا (Dumaya),
-//    محطة تنقوج (Tangoj Station). Al-Burhan is the standard عبد الفتاح البرهان.
+//  - ARABIC PLACE NAMES الدومايا (Dumaya) and محطة تنقوج (Tangoj Station) were our
+//    transliterations; confirmed by the client on 28 October 2026. Al-Burhan is the standard عبد الفتاح البرهان.
 //  - Covers generated, oxblood theme. No gallery.
 import { pathToFileURL } from 'node:url';
 import { publishStatement, envOpts } from './lib/press-statement.mjs';
