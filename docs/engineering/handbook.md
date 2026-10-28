@@ -20,7 +20,8 @@ Engineering and content operations are run by **Algorythmos**.
 - Markdown: `marked` + `sanitize-html` server-side; `DOMPurify` in the admin preview
 - Image uploads: Vercel Blob
 
-**Node 22.6+ locally; production runs Node 24** (Vercel project setting). The seed scripts use
+**Node 24 locally (`.nvmrc`), and production runs Node 24** (Vercel project setting). Node 22
+still works from **22.23.4** — Astro 7.4 refuses anything older. The seed scripts use
 `node --env-file`, and the tests use `--experimental-strip-types`; Node 20 runs neither.
 
 Marketing pages are `prerender = true` (static). The newsroom (`/news`, `/news/:slug`) is
