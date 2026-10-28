@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.25] — 2026-10-28
+
+### Fixed
+
+- Faint horizontal stripes across the Arctic on the Global Presence map: land shapes crossing
+  the 180° meridian were drawn with an edge spanning the whole world. They are now unwrapped
+  before drawing (`src/lib/antimeridian.ts`).
+
 ## [1.0.24] — 2026-10-28
 
 ### Fixed
