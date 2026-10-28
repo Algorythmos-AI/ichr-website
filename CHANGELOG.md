@@ -7,6 +7,25 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.21] — 2026-10-28
+
+### Added
+
+- Newsroom covers for the 27 October 2026 statement condemning the airstrike on the Dumaya
+  market in Nyala.
+
+### Security
+
+- zod and undici advisories patched (GHSA-mrhx-c7xc-m3w5; GHSA-xjj6-f33q-929c,
+  GHSA-2m5v-pch6-74hx, GHSA-qrxm-fqhp-jwvm). Vercel's packages pinned an old zod; a scoped
+  override puts every copy on 4.6.7.
+
+### Changed
+
+- Dependency updates: astro 7.4.2, @astrojs/vercel 11.0.16, @astrojs/react 7.1.1, lucide-react
+  1.63.0, @astrojs/check 0.9.12, typescript-eslint 8.72.1; CodeQL action 4.39.1. Astro 7.4
+  needs Node 22.23.4+ locally (production runs 24).
+
 ## [1.0.20] — 2026-10-22
 
 ### Changed
