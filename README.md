@@ -52,7 +52,7 @@ flowchart LR
 
 ## Getting started
 
-**Requirements:** Node.js **22.6+** (production runs Node 24) and a PostgreSQL database — a
+**Requirements:** Node.js **24** (`.nvmrc`, as in production; 22.23.4+ also works) and a PostgreSQL database — a
 free [Neon](https://neon.tech) project works.
 
 ```bash

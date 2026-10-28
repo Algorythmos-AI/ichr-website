@@ -26,7 +26,7 @@ The body says **what** changed, **why**, and **how it was verified**.
 ## Tooling
 
 - **Node 24** recommended locally (what production runs; `.nvmrc`). The minimum is Node
-  22.22.3 — the ESLint Astro plugin's floor; the app itself runs on 22.6+.
+  22.23.4 — Astro 7.4's floor, which is above the ESLint Astro plugin's (22.22.3).
 - **npm 11** (`npm install -g npm@11`), the version bundled with Node 24. Lockfiles written by
   npm 11 are rejected by npm 10's `npm ci`, so one npm version is used everywhere — including
   by Dependabot.
