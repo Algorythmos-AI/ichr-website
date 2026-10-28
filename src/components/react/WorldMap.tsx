@@ -2,7 +2,9 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import type { MultiPolygon, Polygon } from 'geojson';
 import { locations, REGION_ORDER, type Location, type LocationKind } from '@/lib/locations';
+import { unwrapAntimeridian } from '@/lib/antimeridian';
 
 /* ────────────────────────────────────────────────────────────────────────
    ICHR Global Presence map — Leaflet 1.9, rendered client:only (needs window).
@@ -269,7 +271,10 @@ export const WorldMap: React.FC<{ labels?: WorldMapLabels }> = ({ labels = DEFAU
       .then(([{ feature }, { default: topo }]) => {
         if (disposed) return;
         const atlas = topo as unknown as TopoJSON.Topology<{ land: TopoJSON.GeometryCollection }>;
-        L.geoJSON(feature(atlas, atlas.objects.land), {
+        const land = feature(atlas, atlas.objects.land).features.map((f) =>
+          unwrapAntimeridian(f.geometry as Polygon | MultiPolygon),
+        );
+        L.geoJSON(land, {
           interactive: false,
           attribution: 'Natural Earth',
           style: { fillColor: LAND, fillOpacity: 1, color: LAND_EDGE, weight: 0.6 },
