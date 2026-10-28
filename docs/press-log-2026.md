@@ -162,7 +162,7 @@ statement**, which it links. No city in the source: **Geneva** at the client's c
 person**: "the SAF leadership, headed by Commander-in-Chief Abdel Fattah al-Burhan" is held
 responsible — published as written, client-approved. Hedges kept in all three languages: "attributed
 to the Sudanese Air Force"; the toll (200+ dead, 113+ injured) "not yet independently verified".
-Arabic place names الدومايا / محطة تنقوج are transliterations awaiting client confirmation. Oxblood
+Arabic place names الدومايا / محطة تنقوج confirmed by the client on 28 Oct. Oxblood
 covers.
 
 ---
