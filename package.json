@@ -1,7 +1,7 @@
 {
   "name": "ichr-web",
   "private": true,
-  "version": "1.0.23",
+  "version": "1.0.24",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -41,6 +41,8 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "sanitize-html": "^2.18.1",
+    "topojson-client": "3.1.0",
+    "world-atlas": "2.0.2",
     "zod": "^4.6.7"
   },
   "devDependencies": {
@@ -53,6 +55,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@types/sanitize-html": "^2.16.2",
+    "@types/topojson-client": "3.1.5",
     "eslint": "^10.13.0",
     "eslint-plugin-astro": "^3.2.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
