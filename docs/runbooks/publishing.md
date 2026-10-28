@@ -89,6 +89,15 @@ It refuses to write an overflowing card and never overwrites without `FORCE=1`. 
 JPEG** — the gate only sees geometry. See [`press/cover-invariants.md`](press/cover-invariants.md).
 Generate covers on macOS; the Arabic font is not available on Linux.
 
+**Client-style photo card** (square, the client's own layout — image band, badge, red headline,
+lead): for a text-only statement about a specific event. The band is a photo of that event the
+client supplied, or a map with the place marked — ask which. Procedure:
+[`press/photo-card.md`](press/photo-card.md).
+
+```bash
+FORCE=1 node scripts/gen-photo-card.mjs prisma/seed-statement-<name>.mjs
+```
+
 **Supplied artwork** — re-encode it (`/blog/*` is served raw, with no image optimization):
 
 ```bash
