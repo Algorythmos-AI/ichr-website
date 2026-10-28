@@ -7,6 +7,15 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.22] — 2026-10-28
+
+### Changed
+
+- README and CONTRIBUTING give Node 22.23.4 as the minimum (Astro 7.4's floor); Node 24 is
+  recommended, as in production.
+- The Dumaya statement's editorial record notes the client's confirmation of the Arabic place
+  names. Published text unchanged.
+
 ## [1.0.21] — 2026-10-28
 
 ### Added
