@@ -7,6 +7,15 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.24] — 2026-10-28
+
+### Fixed
+
+- The Global Presence map showed "API KEY REQUIRED" tiles: CARTO's free basemap now requires
+  a key. The map now draws its own basemap from Natural Earth land data (public domain,
+  bundled with the site), with no tile server, no key and no third-party request. Maximum
+  zoom is 6.
+
 ## [1.0.23] — 2026-10-28
 
 ### Added
