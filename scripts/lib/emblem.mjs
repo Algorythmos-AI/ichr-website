@@ -15,7 +15,7 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import opentype from 'opentype.js';
-import { geoOrthographic, geoPath, geoBounds } from 'd3-geo';
+import { geoOrthographic, geoEquirectangular, geoPath, geoBounds } from 'd3-geo';
 import { feature, mesh } from 'topojson-client';
 import { ORG_NAME, ORG_ACRONYM } from './org-name.mjs';
 
@@ -35,8 +35,11 @@ export const C = {
   gold: '#c99a3b',
   goldDark: '#a67b25',
   goldLight: '#e2bf6a',
-  blue: '#2f86d6',
-  green: '#3a9e2a',
+  blue: '#1f6fc4',
+  green: '#2f8f22',
+  scales: '#1d4f9a',
+  navyBlade: '#1b2a78',
+  mapTint: '#d5e6f5',
   paper: '#ffffff',
   paperTint: '#eef4fa',
   ocean: '#2e7cc4',
@@ -242,32 +245,71 @@ function laurel() {
   return leaves.join('');
 }
 
-function scales() {
-  const n = C.navy;
+// The centre artwork is the client's own and is NOT redesigned here: the scales with their urn
+// finial, three-string pans and tapering post; the blue and green figures, each with one arm
+// raised and one reaching for the light between them; the torch of light; the two navy blades
+// at the foot. It is re-drawn as clean vectors from the printed emblem — only made symmetric
+// and level — on its own 960-unit grid (centre line x = 480), then placed by MOTIF.
+const MOTIF = { top: 282, bottom: 742, gridTop: 40, gridBottom: 1040, gridCx: 480 };
+
+function centreMotif() {
+  const k = (MOTIF.bottom - MOTIF.top) / (MOTIF.gridBottom - MOTIF.gridTop);
+  const tx = CX - MOTIF.gridCx * k;
+  const ty = MOTIF.top - MOTIF.gridTop * k;
+  const m = (x) => 960 - x; // mirror across the centre line, for the right-hand half
+  const scale = C.scales;
   const pan = (x) => `
-    <path d="M${x} 352L${x - 34} 440M${x} 352L${x + 34} 440" stroke="${n}" stroke-width="3.5" fill="none"/>
-    <path d="M${x - 44} 440H${x + 44}A44 20 0 0 1 ${x - 44} 440Z" fill="${n}"/>`;
+    <path d="M${x} 196L${x - 74} 386M${x} 196L${x} 386M${x} 196L${x + 74} 386" stroke="${scale}" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M${x - 80} 384H${x + 80}A80 54 0 0 1 ${x - 80} 384Z" fill="${scale}"/>
+    <circle cx="${x}" cy="196" r="15" fill="${scale}"/>`;
+  // Left figure; the right one is its mirror image.
+  const body = (f) =>
+    `M${f(180)} 468C${f(200)} 560 ${f(235)} 625 ${f(300)} 662C${f(350)} 690 ${f(395)} 702 ${f(434)} 714C${f(386)} 730 ${f(342)} 748 ${f(320)} 790C${f(300)} 830 ${f(302)} 900 ${f(306)} 966C${f(258)} 880 ${f(205)} 760 ${f(186)} 640C${f(180)} 590 ${f(176)} 520 ${f(180)} 468Z`;
+  const blade = (f) =>
+    `M${f(34)} 886C${f(70)} 820 ${f(120)} 768 ${f(182)} 730C${f(188)} 758 ${f(193)} 784 ${f(198)} 806C${f(140)} 820 ${f(86)} 850 ${f(34)} 886Z`;
+  const base = (f) =>
+    `M${f(128)} 938C${f(186)} 952 ${f(236)} 976 ${f(280)} 1022C${f(218)} 1028 ${f(164)} 996 ${f(128)} 938Z`;
+  const id = (x) => x;
   return `
-  <rect x="493" y="318" width="14" height="230" rx="4" fill="${n}"/>
-  <path d="M500 286L514 310L500 330L486 310Z" fill="${C.gold}"/>
-  <path d="M398 350Q500 330 602 350L602 358Q500 340 398 358Z" fill="${n}"/>
-  <circle cx="500" cy="346" r="11" fill="${n}"/>
-  <circle cx="500" cy="346" r="5" fill="${C.gold}"/>
-  ${pan(406)}${pan(594)}
-  <path d="M452 556Q500 536 548 556L556 572H444Z" fill="${n}"/>`;
+  <defs><radialGradient id="motif-light" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#fbf4dc" stop-opacity="0.95"/><stop offset="0.55" stop-color="#f4ead0" stop-opacity="0.6"/><stop offset="1" stop-color="#f4ead0" stop-opacity="0"/>
+  </radialGradient></defs>
+  <g transform="translate(${r2(tx)} ${r2(ty)}) scale(${r2(k * 1000) / 1000})">
+    <ellipse cx="480" cy="660" rx="120" ry="150" fill="url(#motif-light)"/>
+    <path d="M430 640Q480 590 530 640L490 1040H470Z" fill="#f1e8cc" opacity="0.6"/>
+    <path d="M471 860H489L486 1040H474Z" fill="${C.goldLight}" opacity="0.45"/>
+    <path d="${base(id)}" fill="${C.navyBlade}"/><path d="${base(m)}" fill="${C.navyBlade}"/>
+    <path d="${blade(id)}" fill="${C.blue}"/><path d="${body(id)}" fill="${C.blue}"/>
+    <circle cx="322" cy="582" r="52" fill="${C.blue}"/>
+    <path d="${blade(m)}" fill="${C.green}"/><path d="${body(m)}" fill="${C.green}"/>
+    <circle cx="${m(322)}" cy="582" r="52" fill="${C.green}"/>
+    <path d="M462 190L498 190L496 236C494 310 488 400 484 492H476C472 400 466 310 464 236Z" fill="${scale}"/>
+    <circle cx="480" cy="500" r="17" fill="${scale}"/>
+    <path d="M250 188Q480 168 710 188L710 205Q480 190 250 205Z" fill="${scale}"/>
+    ${pan(250)}${pan(710)}
+    <path d="M480 40C496 62 530 76 532 106C534 136 506 150 500 166L506 178H454L460 166C454 150 426 136 428 106C430 76 464 62 480 40Z" fill="${scale}"/>
+    <rect x="452" y="176" width="56" height="14" rx="6" fill="${scale}"/>
+  </g>`;
 }
 
-function figures() {
-  // Two people lifting the light between them: blue on the left, green on the right.
-  // Drawn for the left figure; s = +1 mirrors it to the right.
-  const person = (s, fill) => {
-    const m = (x) => r2(CX + s * (CX - x));
-    return `
-    <circle cx="${m(404)}" cy="488" r="26" fill="${fill}"/>
-    <path fill="${fill}" d="M${m(474)} 418C${m(462)} 470 ${m(436)} 512 ${m(410)} 548C${m(388)} 580 ${m(392)} 628 ${m(430)} 668C${m(416)} 622 ${m(420)} 590 ${m(444)} 560C${m(468)} 528 ${m(484)} 476 ${m(488)} 422Z"/>
-    <path fill="${fill}" d="M${m(412)} 552C${m(388)} 548 ${m(364)} 534 ${m(346)} 512C${m(366)} 524 ${m(388)} 530 ${m(414)} 532Z"/>`;
-  };
-  return `${person(-1, C.blue)}${person(1, C.green)}`;
+/** The faint world map behind the centre artwork, as on the original emblem. */
+function backdropMap() {
+  world ??= JSON.parse(req('node_modules/world-atlas/countries-110m.json'));
+  const r = INNER_R - 14;
+  const proj = geoEquirectangular()
+    .rotate([-20, 0])
+    .fitExtent(
+      [
+        [CX - r * 1.05, CY - r * 0.62],
+        [CX + r * 1.05, CY + r * 0.78],
+      ],
+      { type: 'Sphere' },
+    );
+  const d = geoPath(proj).digits(1)(feature(world, world.objects.land));
+  if (!d) throw new EmblemError('backdrop map: land path is empty');
+  return `
+  <defs><clipPath id="inner-disc"><circle cx="${CX}" cy="${CY}" r="${r}"/></clipPath></defs>
+  <path d="${d}" fill="${C.mapTint}" clip-path="url(#inner-disc)"/>`;
 }
 
 /** The full emblem: ring with the name once, acronym, scales, figures, laurel, globe. */
@@ -286,12 +328,12 @@ export function emblemSvg() {
   <circle cx="${CX}" cy="${CY}" r="${OUTER_R}" fill="${C.navy}" stroke="${C.gold}" stroke-width="5"/>
   <circle cx="${CX}" cy="${CY}" r="${INNER_R}" fill="${C.paper}" stroke="${C.gold}" stroke-width="5"/>
   <circle cx="${CX}" cy="${CY}" r="${INNER_R - 14}" fill="${C.paperTint}"/>
+  ${backdropMap()}
   ${ring.svg}
   ${star(s1x, s1y, 24, C.goldLight)}${star(s2x, s2y, 24, C.goldLight)}
   ${laurel()}
   ${word(ORG_ACRONYM, { y: 258, size: 88, maxWidth: 340, fill: C.navy })}
-  ${figures()}
-  ${scales()}
+  ${centreMotif()}
   ${globe(GLOBE)}
 </svg>
 `;
@@ -299,7 +341,8 @@ export function emblemSvg() {
 
 /**
  * The compact mark for 32–64px (the site header): the emblem's inner disc — laurel, scales,
- * figures, globe — without the ring lettering or the acronym, which turn to noise at that size.
+ * figures, globe — without the ring lettering, the acronym or the faint backdrop map, which turn
+ * to noise (and dead weight) at that size.
  */
 export function markSvg() {
   const r = INNER_R + 16;
@@ -308,8 +351,7 @@ export function markSvg() {
   <circle cx="${CX}" cy="${CY}" r="${r}" fill="${C.navy}"/>
   <circle cx="${CX}" cy="${CY}" r="${INNER_R - 4}" fill="${C.paper}" stroke="${C.gold}" stroke-width="8"/>
   ${laurel()}
-  ${figures()}
-  ${scales()}
+  ${centreMotif()}
   ${globe({ ...GLOBE, digits: 1 })}
 </svg>
 `;
