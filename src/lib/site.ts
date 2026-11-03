@@ -47,7 +47,7 @@ export const ORG = {
   name: 'International Coalition of Human Rights Organizations',
   alternateName: 'ICHRO',
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/brand/ichro-emblem-512.png`,
   email: 'info@ichr-international.org',
   phone: '+41 76 241 99 63',
 };

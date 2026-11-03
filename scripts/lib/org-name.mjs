@@ -6,8 +6,11 @@
 // can never disagree. Every rule is idempotent: running it twice changes nothing more.
 //
 // Deliberately NOT renamed: the domain (ichr-international.org), the social handles
-// (@ICHRIntl, #international_coalition_for_h_rights), URL slugs, filenames, and the client's
-// logo artwork, which carries "ICHR" in its lettering and is not ours to redraw.
+// (@ICHRIntl, #international_coalition_for_h_rights), URL slugs and filenames. The emblem was
+// redrawn with the new name in November 2026 at the client's request (scripts/gen-logo.mjs).
+export const ORG_NAME = 'International Coalition of Human Rights Organizations';
+export const ORG_ACRONYM = 'ICHRO';
+
 export const ORG_RULES = [
   // The client's own hybrid wording ("…for Human Rights Organizations") first, or the next rule
   // would turn it into "…of Human Rights Organizations Organizations".
