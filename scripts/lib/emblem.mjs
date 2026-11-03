@@ -247,8 +247,8 @@ function laurel() {
 
 // The centre artwork is the client's own and is NOT redesigned here: the scales with their urn
 // finial, three-string pans and tapering post; the blue and green figures, each with one arm
-// raised and one reaching for the light between them; the torch of light; the two navy blades
-// at the foot. It is re-drawn as clean vectors from the printed emblem — only made symmetric
+// raised and one reaching for the light between them; the torch of light. (The two navy blades
+// at the foot are drawn by navyBlades(), fitted to the laurel.) It is re-drawn as clean vectors from the printed emblem — only made symmetric
 // and level — on its own 960-unit grid (centre line x = 480), then placed by MOTIF.
 const MOTIF = { top: 282, bottom: 742, gridTop: 40, gridBottom: 1040, gridCx: 480 };
 
@@ -267,8 +267,6 @@ function centreMotif() {
     `M${f(180)} 468C${f(200)} 560 ${f(235)} 625 ${f(300)} 662C${f(350)} 690 ${f(395)} 702 ${f(434)} 714C${f(386)} 730 ${f(342)} 748 ${f(320)} 790C${f(300)} 830 ${f(302)} 900 ${f(306)} 966C${f(258)} 880 ${f(205)} 760 ${f(186)} 640C${f(180)} 590 ${f(176)} 520 ${f(180)} 468Z`;
   const blade = (f) =>
     `M${f(34)} 886C${f(70)} 820 ${f(120)} 768 ${f(182)} 730C${f(188)} 758 ${f(193)} 784 ${f(198)} 806C${f(140)} 820 ${f(86)} 850 ${f(34)} 886Z`;
-  const base = (f) =>
-    `M${f(128)} 938C${f(186)} 952 ${f(236)} 976 ${f(280)} 1022C${f(218)} 1028 ${f(164)} 996 ${f(128)} 938Z`;
   const id = (x) => x;
   return `
   <defs><radialGradient id="motif-light" cx="0.5" cy="0.5" r="0.5">
@@ -278,7 +276,6 @@ function centreMotif() {
     <ellipse cx="480" cy="660" rx="120" ry="150" fill="url(#motif-light)"/>
     <path d="M430 640Q480 590 530 640L490 1040H470Z" fill="#f1e8cc" opacity="0.6"/>
     <path d="M471 860H489L486 1040H474Z" fill="${C.goldLight}" opacity="0.45"/>
-    <path d="${base(id)}" fill="${C.navyBlade}"/><path d="${base(m)}" fill="${C.navyBlade}"/>
     <path d="${blade(id)}" fill="${C.blue}"/><path d="${body(id)}" fill="${C.blue}"/>
     <circle cx="322" cy="582" r="52" fill="${C.blue}"/>
     <path d="${blade(m)}" fill="${C.green}"/><path d="${body(m)}" fill="${C.green}"/>
@@ -291,6 +288,29 @@ function centreMotif() {
     <rect x="452" y="176" width="56" height="14" rx="6" fill="${scale}"/>
   </g>`;
 }
+
+/**
+ * The two navy blades at the foot of the artwork, as on the original. They lie in the band
+ * between the top of the laurel's lowest inner leaves and the figures' outer arms, following
+ * the line of the leaves, so they sit beside the wreath rather than on it. assertClearances()
+ * checks that nothing overlaps.
+ */
+function navyBlades() {
+  const left = (f) =>
+    `M${f(BLADE.tip[0])} ${BLADE.tip[1]}C${f(BLADE.c1[0])} ${BLADE.c1[1]} ${f(BLADE.c2[0])} ${BLADE.c2[1]} ${f(BLADE.end[0])} ${BLADE.end[1]}C${f(BLADE.c3[0])} ${BLADE.c3[1]} ${f(BLADE.c4[0])} ${BLADE.c4[1]} ${f(BLADE.tip[0])} ${BLADE.tip[1]}Z`;
+  const id = (x) => x;
+  const mirror = (x) => 2 * CX - x;
+  return `<path d="${left(id)}" fill="${C.navyBlade}"/><path d="${left(mirror)}" fill="${C.navyBlade}"/>`;
+}
+// Left blade, in emblem units: a pointed outer tip, a fuller inner end.
+const BLADE = {
+  tip: [336, 676],
+  c1: [360, 679],
+  c2: [384, 688],
+  end: [404, 701],
+  c3: [388, 707],
+  c4: [358, 693],
+};
 
 /** The faint world map behind the centre artwork, as on the original emblem. */
 function backdropMap() {
@@ -334,6 +354,7 @@ export function emblemSvg() {
   ${laurel()}
   ${word(ORG_ACRONYM, { y: 258, size: 88, maxWidth: 340, fill: C.navy })}
   ${centreMotif()}
+  ${navyBlades()}
   ${globe(GLOBE)}
 </svg>
 `;
@@ -352,6 +373,7 @@ export function markSvg() {
   <circle cx="${CX}" cy="${CY}" r="${INNER_R - 4}" fill="${C.paper}" stroke="${C.gold}" stroke-width="8"/>
   ${laurel()}
   ${centreMotif()}
+  ${navyBlades()}
   ${globe({ ...GLOBE, digits: 1 })}
 </svg>
 `;
@@ -365,4 +387,49 @@ export function faviconSvg() {
   ${globe({ ...GLOBE, x: CX, y: CY, r: 400, keyline: 30, borders: false, digits: 0 })}
 </svg>
 `;
+}
+
+/**
+ * Rasterises each layer on its own and fails if the navy blades touch the laurel, the figures or
+ * the globe — "beside the wreath, not on it" is the client's explicit requirement. A geometric
+ * check, so it holds whatever the blade or leaf coordinates become.
+ */
+export async function assertClearances(sharp) {
+  const PX = 2; // pixels per unit
+  const solo = (inner) =>
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${W}" width="${W * PX}" height="${W * PX}">${inner}</svg>`;
+  const alpha = async (inner) =>
+    (
+      await sharp(Buffer.from(solo(inner)))
+        .ensureAlpha()
+        .extractChannel(3)
+        .raw()
+        .toBuffer({ resolveWithObject: true })
+    ).data;
+  const blades = await alpha(navyBlades());
+  const others = {
+    laurel: await alpha(laurel()),
+    'centre artwork': await alpha(centreMotif()),
+    globe: await alpha(globe(GLOBE)),
+  };
+  const clearance = 3 * PX; // demand a visible gap, not just non-touching pixels
+  const near = new Uint8Array(blades.length);
+  const w = W * PX;
+  for (let i = 0; i < blades.length; i++) {
+    if (blades[i] < 128) continue;
+    const x = i % w;
+    const y = (i - x) / w;
+    for (let dy = -clearance; dy <= clearance; dy++)
+      for (let dx = -clearance; dx <= clearance; dx++) {
+        const xx = x + dx;
+        const yy = y + dy;
+        if (xx >= 0 && yy >= 0 && xx < w && yy < w) near[yy * w + xx] = 1;
+      }
+  }
+  for (const [name, a] of Object.entries(others)) {
+    let hits = 0;
+    for (let i = 0; i < a.length; i++) if (near[i] && a[i] >= 128) hits++;
+    if (hits)
+      throw new EmblemError(`navy blades come within ${clearance / PX} units of the ${name} (${hits} px)`);
+  }
 }

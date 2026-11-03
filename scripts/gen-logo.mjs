@@ -22,12 +22,13 @@ import { copyFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { emblemSvg, markSvg, faviconSvg } from './lib/emblem.mjs';
+import { emblemSvg, markSvg, faviconSvg, assertClearances } from './lib/emblem.mjs';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
 const FORCE = process.env.FORCE === '1';
 const at = (p) => join(REPO, p);
 
+await assertClearances(sharp); // the navy blades sit beside the laurel, never on it
 const emblem = emblemSvg();
 const mark = markSvg();
 const favicon = faviconSvg();
