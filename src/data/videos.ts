@@ -97,7 +97,8 @@ const VIDEOS: Video[] = [
   //  - The statement was drafted from the Coalition's YouTube description. The third and closing
   //    paragraphs and the four demands are added text, approved by the client on 4 November 2026.
   //    Geneva dateline at the client's choice.
-  //  - UNLISTED until the related article is live: the detail page always links to it.
+  //  - Shipped unlisted (1.0.26) and listed in 1.0.27, once the related article was live: the
+  //    detail page always links to it.
   {
     slug: 'sudanese-soldier-russian-forces-ukraine-2026',
     youtubeId: 'tAwyoJdM6c0',
@@ -107,7 +108,6 @@ const VIDEOS: Video[] = [
     playlist: 'statements-2026',
     poster: '/media/sudanese-soldier-russian-forces-ukraine-2026/poster.jpg',
     relatedPostSlug: 'statement-sudanese-soldier-russian-forces-ukraine-november-2026',
-    published: false,
     vertical: true,
     i18n: {
       en: {

@@ -7,6 +7,15 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.27] — 2026-11-04
+
+### Added
+
+- `/media` lists the 4 November video, footage that appears to show a Sudanese Armed Forces
+  soldier fighting alongside Russian forces in Ukraine, with the Coalition's statement in
+  English, Arabic and French. It shipped unlisted in 1.0.26 so that its link to the
+  related article never pointed at a missing page.
+
 ## [1.0.26] — 2026-11-04
 
 ### Changed
