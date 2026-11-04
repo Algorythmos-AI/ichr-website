@@ -7,6 +7,15 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.28] — 2026-11-05
+
+### Changed
+
+- The statement on the 4 November Ukraine video page carries a dated update (5 November) in
+  English, Arabic and French, matching the newsroom article: a message attributed to the man
+  in the video, reported as unverified, and a call for the investigation to cover any role of
+  Sudanese diplomatic staff in the recruitment.
+
 ## [1.0.27] — 2026-11-04
 
 ### Added
