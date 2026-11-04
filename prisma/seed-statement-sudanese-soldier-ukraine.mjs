@@ -11,7 +11,7 @@
 //   PUBLISH=1   node --env-file=.env.local prisma/seed-statement-sudanese-soldier-ukraine.mjs   # live
 //   UNPUBLISH=1 node --env-file=.env.local prisma/seed-statement-sudanese-soldier-ukraine.mjs
 //
-// Covers: node scripts/gen-press-cover.mjs prisma/seed-statement-sudanese-soldier-ukraine.mjs
+// Covers: node scripts/gen-photo-card.mjs prisma/seed-statement-sudanese-soldier-ukraine.mjs
 //
 // EDITORIAL NOTES (decided with the client, 4 November 2026):
 //  - DATELINE: GENEVA, 4 November 2026, the day the video was uploaded. The source names no city.
@@ -30,8 +30,9 @@
 //    in all three languages was approved by the client on 4 November 2026.
 //  - The same text is the `statement` of the video entry sudanese-soldier-russian-forces-ukraine-2026
 //    in src/data/videos.ts — change both together.
-//  - Category Statement. Covers generated in the 'unblue' theme, typographic only: no frame of
-//    the unverified individual in the OG image. No gallery.
+//  - Category Statement. No gallery. Covers: the client-style photo card since 5 November (map
+//    of Sudan, El Obeid marked; see PHOTO_CARDS); before that, a typographic 'unblue' card. Either
+//    way, no frame of the unverified individual in the OG image.
 //
 // UPDATE, 5 November 2026 (approved by the client):
 //  - The client forwarded a first-person message attributed to the man in the video, stating his
@@ -182,54 +183,57 @@ export const STATEMENT = {
   ],
 };
 
-// Cover colour (scripts/lib/press-card.mjs THEMES): UN blue.
-export const COVER_THEME = 'unblue';
+// Cover: client-style photo card (docs/runbooks/press/photo-card.md), replacing the typographic
+// card on 5 November 2026 at the client's request. The band is the map of Sudan with El Obeid
+// marked: the city only, not the unit, and no frame of the unverified individual.
+export const PHOTO_CARD_BAND = { map: 'sudan', marker: { lon: 30.22, lat: 13.18 } };
 
-export const COVERS = {
+export const PHOTO_CARDS = {
   en: {
     file: 'cover.jpg',
-    rtl: false,
-    font: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    org: 'INTERNATIONAL COALITION OF HUMAN RIGHTS ORGANIZATIONS',
-    eyebrow: 'STATEMENT',
-    headline: ['Call for an Independent', 'Investigation into', 'Sudanese Fighters', 'Reported in Ukraine'],
-    headSize: 58,
-    headLh: 78,
-    headTop: 452,
-    standfirst: ['Statement on the situation in Sudan'],
-    city: 'Geneva',
-    date: '4 NOVEMBER 2026',
-    chipW: 248,
-  },
-  fr: {
-    file: 'cover-fr.jpg',
-    rtl: false,
-    font: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    org: "COALITION INTERNATIONALE DES ORGANISATIONS DE DÉFENSE DES DROITS DE L'HOMME",
-    eyebrow: 'DÉCLARATION',
-    headline: ['Appel à une enquête', 'indépendante sur des', 'combattants soudanais', 'signalés en Ukraine'],
-    headSize: 54,
-    headLh: 74,
-    headTop: 452,
-    standfirst: ['Déclaration sur la situation au Soudan'],
-    city: 'Genève',
-    date: '4 NOVEMBRE 2026',
-    chipW: 248,
+    label: 'STATEMENT',
+    org: 'The International Coalition of Human Rights Organizations',
+    headline: 'Calls for an independent investigation into the reported recruitment of Sudanese fighters into the war in Ukraine',
+    dateline: 'GENEVA',
+    date: 'Date: 4 November 2026',
+    lead: 'The Coalition has received a video that appears to show a man identified as a soldier of the Sudanese Armed Forces, from the Hajanah unit in El Obeid, fighting alongside Russian forces in Ukraine. The Coalition has not independently verified the footage.',
+    mapLabels: {
+      country: 'SUDAN',
+      marker: 'EL OBEID',
+      markerSub: 'KORDOFAN',
+      neighbours: { EGY: 'EGYPT', LBY: 'LIBYA', TCD: 'CHAD', SDS: 'SOUTH SUDAN', CAF: 'C.A.R.', ETH: 'ETHIOPIA', ERI: 'ERITREA' },
+    },
   },
   ar: {
     file: 'cover-ar.jpg',
     rtl: true,
-    font: "'Geeza Pro', 'Al Bayan', sans-serif",
+    label: 'بيان',
     org: 'التحالف الدولي لمنظمات حقوق الإنسان',
-    eyebrow: 'بيان',
-    headline: ['مطالبة بتحقيق مستقل', 'في التقارير عن مقاتلين', 'سودانيين في أوكرانيا'],
-    headSize: 56,
-    headLh: 88,
-    headTop: 468,
-    standfirst: ['بيان بشأن الوضع في السودان'],
-    city: 'جنيف',
-    date: '4 نوفمبر 2026',
-    chipW: 240,
+    headline: 'يطالب بتحقيق مستقل في التقارير عن تجنيد مقاتلين سودانيين في الحرب في أوكرانيا',
+    dateline: 'جنيف',
+    date: 'التاريخ: 4 نوفمبر 2026',
+    lead: 'تلقّى التحالف مقطع فيديو يبدو أنه يُظهر رجلًا يُعرَّف بأنه جندي في القوات المسلحة السودانية من وحدة الهجانة في مدينة الأبيض، يقاتل إلى جانب القوات الروسية في أوكرانيا. ولم يتحقق التحالف بشكل مستقل من المقطع.',
+    mapLabels: {
+      country: 'السودان',
+      marker: 'الأبيض',
+      markerSub: 'كردفان',
+      neighbours: { EGY: 'مصر', LBY: 'ليبيا', TCD: 'تشاد', SDS: 'جنوب السودان', CAF: 'أفريقيا الوسطى', ETH: 'إثيوبيا', ERI: 'إريتريا' },
+    },
+  },
+  fr: {
+    file: 'cover-fr.jpg',
+    label: 'DÉCLARATION',
+    org: "La Coalition internationale des organisations de défense des droits de l'homme",
+    headline: 'demande une enquête indépendante sur le recrutement signalé de combattants soudanais dans la guerre en Ukraine',
+    dateline: 'GENÈVE',
+    date: 'Date : 4 novembre 2026',
+    lead: "La Coalition a reçu une vidéo qui semble montrer un homme présenté comme un soldat des Forces armées soudanaises, de l'unité Hajanah d'El-Obeid, combattant aux côtés des forces russes en Ukraine. La Coalition n'a pas vérifié ces images de manière indépendante.",
+    mapLabels: {
+      country: 'SOUDAN',
+      marker: 'EL-OBEID',
+      markerSub: 'KORDOFAN',
+      neighbours: { EGY: 'ÉGYPTE', LBY: 'LIBYE', TCD: 'TCHAD', SDS: 'SOUDAN DU SUD', CAF: 'RCA', ETH: 'ÉTHIOPIE', ERI: 'ÉRYTHRÉE' },
+    },
   },
 };
 
