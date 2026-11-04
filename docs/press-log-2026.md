@@ -189,6 +189,9 @@ which he states his unit and that staff of the Sudanese Embassy in Moscow helped
 the Russian forces. It is reported as his claim and marked unverified, and asks the investigation
 to cover any diplomatic role. His remarks on his salary were left out. Approved by the client.
 
+**Covers redrawn 5 Nov** (1.0.29) as the client-style photo card, at the client's request: map of
+Sudan with El Obeid marked (city only, labelled "Kordofan"), no frame of the individual.
+
 ---
 
 ## Attached documents

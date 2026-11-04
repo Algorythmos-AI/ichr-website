@@ -7,6 +7,15 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.29] — 2026-11-05
+
+### Changed
+
+- The 4 November Ukraine statement's covers are redrawn as the client-style photo card, like
+  the Dumaya market statement: a map of Sudan with El Obeid marked, the label, headline,
+  Geneva dateline and a lead that keeps the statement's hedges, in English, Arabic and French.
+  Same filenames, so the live article picks them up without a re-seed.
+
 ## [1.0.28] — 2026-11-05
 
 ### Changed
