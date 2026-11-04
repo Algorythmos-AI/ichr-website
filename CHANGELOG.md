@@ -7,6 +7,19 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.26] — 2026-11-04
+
+### Changed
+
+- New ICHRO emblem, approved by the client: the full name, "The International Coalition of
+  Human Rights Organizations", written once around the ring, "ICHRO" in the centre, a small
+  world-map globe at the foot of the laurel, and the original centre artwork (scales, figures,
+  light) redrawn as sharp vectors. Generated from code by `scripts/gen-logo.mjs`, with a
+  compact header mark, an SVG favicon and an apple-touch icon. The Organization logo in
+  structured data and `/logo.png` now serve the new emblem.
+- Dependency updates: astro 7.4.4, @astrojs/react 7.1.2, @astrojs/vercel 11.0.17,
+  lucide-react 1.64.0, marked 18.1.2.
+
 ## [1.0.25] — 2026-10-28
 
 ### Fixed
