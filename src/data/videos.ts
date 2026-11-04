@@ -99,6 +99,9 @@ const VIDEOS: Video[] = [
   //    Geneva dateline at the client's choice.
   //  - Shipped unlisted (1.0.26) and listed in 1.0.27, once the related article was live: the
   //    detail page always links to it.
+  //  - The dated update paragraph (5 November 2026) reports a message attributed to the man,
+  //    unverified, including his claim that Sudanese Embassy staff in Moscow helped recruit him.
+  //    It mirrors the article's update; see the seed's header for what was left out and why.
   {
     slug: 'sudanese-soldier-russian-forces-ukraine-2026',
     youtubeId: 'tAwyoJdM6c0',
@@ -131,6 +134,7 @@ const VIDEOS: Video[] = [
             ],
           },
           'The Coalition urges the United Nations, the African Union and the European Union to examine these reports without delay. Civilians, in Ukraine and in Sudan alike, must never be targeted.',
+          'Update, 5 November 2026. Following publication, the Coalition received a message attributed to the man shown in the video. In it, he states that he belongs to the Hajanah unit in El Obeid and that he was recruited into the Russian armed forces with the assistance of staff at the Embassy of Sudan in Moscow. The Coalition has not verified this message or its claims. The Coalition calls for the independent investigation to examine any role that Sudanese diplomatic personnel may have played in the recruitment of Sudanese nationals into foreign armed forces.',
         ],
         signOff: 'International Coalition of Human Rights Organizations (ICHRO)',
       },
@@ -155,6 +159,7 @@ const VIDEOS: Video[] = [
             ],
           },
           'ويحثّ التحالف الأمم المتحدة والاتحاد الأفريقي والاتحاد الأوروبي على النظر في هذه التقارير دون تأخير. ويجب ألّا يكون المدنيون هدفًا أبدًا، في أوكرانيا كما في السودان.',
+          'تحديث، 5 نوفمبر 2026. بعد النشر، تلقّى التحالف رسالة منسوبة إلى الرجل الظاهر في المقطع، يذكر فيها أنه ينتمي إلى وحدة الهجانة في مدينة الأبيض، وأنه جُنِّد في القوات المسلحة الروسية بمساعدة موظفين في سفارة السودان في موسكو. ولم يتحقق التحالف من هذه الرسالة أو مما ورد فيها. ويطالب التحالف بأن يشمل التحقيق المستقل أي دور قد يكون اضطلع به موظفون دبلوماسيون سودانيون في تجنيد مواطنين سودانيين في قوات مسلحة أجنبية.',
         ],
         signOff: 'التحالف الدولي لمنظمات حقوق الإنسان',
       },
@@ -179,6 +184,7 @@ const VIDEOS: Video[] = [
             ],
           },
           'La Coalition exhorte les Nations unies, l’Union africaine et l’Union européenne à examiner ces informations sans délai. Les civils, en Ukraine comme au Soudan, ne doivent jamais être pris pour cible.',
+          'Mise à jour, 5 novembre 2026. Après la publication, la Coalition a reçu un message attribué à l’homme filmé. Il y affirme appartenir à l’unité Hajanah d’El-Obeid et avoir été recruté dans les forces armées russes avec l’aide de membres du personnel de l’ambassade du Soudan à Moscou. La Coalition n’a pas vérifié ce message ni ses affirmations. Elle demande que l’enquête indépendante examine le rôle que des membres du personnel diplomatique soudanais auraient pu jouer dans le recrutement de ressortissants soudanais au sein de forces armées étrangères.',
         ],
         signOff: 'Coalition internationale des organisations de défense des droits de l’homme (ICHRO)',
       },
