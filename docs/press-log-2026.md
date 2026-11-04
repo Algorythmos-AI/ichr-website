@@ -183,6 +183,12 @@ Geneva at the client's choice. Identical to the statement on its /media page
 was listed in 1.0.27, after the article went live, because the detail page always links to it. Typographic unblue covers, so no frame of the
 unverified individual appears in the OG image; the body links to the YouTube video. No gallery.
 
+**Updated 5 Nov** (re-seeded in place, still published; the video page follows in 1.0.28): one
+dated paragraph reports a message the client forwarded, attributed to the man in the video, in
+which he states his unit and that staff of the Sudanese Embassy in Moscow helped recruit him into
+the Russian forces. It is reported as his claim and marked unverified, and asks the investigation
+to cover any diplomatic role. His remarks on his salary were left out. Approved by the client.
+
 ---
 
 ## Attached documents
