@@ -165,6 +165,24 @@ to the Sudanese Air Force"; the toll (200+ dead, 113+ injured) "not yet independ
 Arabic place names الدومايا / محطة تنقوج confirmed by the client on 28 Oct. Oxblood
 covers.
 
+## November 2026
+
+| Date | Dateline | Category | Slug | Key | Src | Commit |
+| ---- | -------- | -------- | ---- | --- | --- | ------ |
+| 04 Nov | Geneva | Statement | `statement-sudanese-soldier-russian-forces-ukraine-november-2026` | `a80cd557…` | YouTube description | — |
+
+`statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
+that appears to show a man identified as a Sudanese Armed Forces soldier (the Hajanah unit, El
+Obeid, as reported) fighting alongside Russian forces in Ukraine. **Nothing is stated as fact**:
+"appears to show", "identified as", "according to the information received" and "has not
+independently verified" are load-bearing in all three languages; no individual is named. The
+text was **drafted by us** from the Coalition's YouTube description — the legal-concern
+paragraph, the four demands and the closing appeal are added text, approved by the client.
+Geneva at the client's choice. Identical to the statement on its /media page
+(`sudanese-soldier-russian-forces-ukraine-2026`, portrait video, unlisted until this article was
+live because the detail page always links to it). Typographic unblue covers, so no frame of the
+unverified individual appears in the OG image; the body links to the YouTube video. No gallery.
+
 ---
 
 ## Attached documents

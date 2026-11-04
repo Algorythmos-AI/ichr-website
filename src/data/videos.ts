@@ -83,6 +83,107 @@ export interface Video {
 // responsive variants and manifest entries are all still here and still test-validated, so
 // re-listing a video is exactly one deleted line.
 const VIDEOS: Video[] = [
+  // Footage received by the Coalition that appears to show a Sudanese Armed Forces soldier
+  // fighting alongside Russian forces in Ukraine. Uploaded 4 November 2026; the filming date and
+  // place are unknown and unverified, so eventDate is the upload date. The source is portrait
+  // (360×640) but over three minutes, so YouTube files it as a video, not a Short, and generates
+  // only a letterboxed 4:3 hqdefault: the poster is that frame's sharp 9:16 centre strip,
+  // upscaled to 720px wide so the variant pipeline produces a srcset.
+  //  - HEDGES, load-bearing — keep them in any edit: "appears to show", "identified as",
+  //    "according to the information received", "has not independently verified". Carried into
+  //    AR (يبدو أنه يُظهر / يُعرَّف بأنه / وفق المعلومات الواردة / لم يتحقق التحالف بشكل مستقل) and FR
+  //    (semble montrer / présenté comme / selon les informations reçues / n’a pas vérifié de
+  //    manière indépendante). The Hajanah (Camel Corps) unit in El Obeid is named only as reported.
+  //  - The statement was drafted from the Coalition's YouTube description. The third and closing
+  //    paragraphs and the four demands are added text, approved by the client on 4 November 2026.
+  //    Geneva dateline at the client's choice.
+  //  - UNLISTED until the related article is live: the detail page always links to it.
+  {
+    slug: 'sudanese-soldier-russian-forces-ukraine-2026',
+    youtubeId: 'tAwyoJdM6c0',
+    uploadDate: '2026-11-04',
+    eventDate: '2026-11-04',
+    durationSeconds: 414,
+    playlist: 'statements-2026',
+    poster: '/media/sudanese-soldier-russian-forces-ukraine-2026/poster.jpg',
+    relatedPostSlug: 'statement-sudanese-soldier-russian-forces-ukraine-november-2026',
+    published: false,
+    vertical: true,
+    i18n: {
+      en: {
+        title:
+          'ICHRO Calls for an Independent Investigation into the Reported Recruitment of Sudanese Fighters into the War in Ukraine',
+        speaker: 'International Coalition of Human Rights Organizations (ICHRO)',
+        location: 'Geneva',
+        summary:
+          'A video received by the International Coalition of Human Rights Organizations (ICHRO) appears to show a man identified as a soldier of the Sudanese Armed Forces fighting alongside Russian military forces in Ukraine. The Coalition has not independently verified the identity of the person shown, his unit, or the date and place of filming, and calls for an independent investigation into the reported recruitment of Sudanese fighters into the war in Ukraine. Footage received by the Coalition.',
+        statement: [
+          'The International Coalition of Human Rights Organizations (ICHRO) has received a video that appears to show a man in military uniform, identified as a soldier of the Sudanese Armed Forces affiliated with the Hajanah (Camel Corps) unit in El Obeid, fighting alongside Russian military forces in Ukraine.',
+          'According to the information received by the Coalition, these operations target civilians in Ukraine. The Coalition has not independently verified the identity of the person shown, his unit, or the date and place of filming.',
+          'If confirmed, the involvement of Sudanese soldiers in a foreign armed conflict would raise serious concerns under international humanitarian law and international human rights law. It is all the more grave while Sudan’s own civilians endure a devastating war.',
+          {
+            lead: 'The Coalition calls for:',
+            items: [
+              'an independent investigation into the reported recruitment and deployment of Sudanese fighters to the war in Ukraine, including the channels and parties involved;',
+              'full transparency from the Sudanese authorities on whether any members of their armed forces are serving in a foreign conflict;',
+              'accountability for any violations committed against civilians, whoever the perpetrators;',
+              'protection for any Sudanese nationals who may have been recruited through deception or coercion.',
+            ],
+          },
+          'The Coalition urges the United Nations, the African Union and the European Union to examine these reports without delay. Civilians, in Ukraine and in Sudan alike, must never be targeted.',
+        ],
+        signOff: 'International Coalition of Human Rights Organizations (ICHRO)',
+      },
+      ar: {
+        title:
+          'التحالف الدولي لمنظمات حقوق الإنسان يطالب بتحقيق مستقل في التقارير عن تجنيد مقاتلين سودانيين في الحرب في أوكرانيا',
+        speaker: 'التحالف الدولي لمنظمات حقوق الإنسان',
+        location: 'جنيف',
+        summary:
+          'تلقّى التحالف الدولي لمنظمات حقوق الإنسان مقطع فيديو يبدو أنه يُظهر رجلًا يُعرَّف بأنه جندي في القوات المسلحة السودانية يقاتل إلى جانب القوات العسكرية الروسية في أوكرانيا. ولم يتحقق التحالف بشكل مستقل من هوية الشخص الظاهر في المقطع أو وحدته أو تاريخ التصوير ومكانه، ويطالب بإجراء تحقيق مستقل في التقارير عن تجنيد مقاتلين سودانيين في الحرب في أوكرانيا. لقطات وردت إلى التحالف.',
+        statement: [
+          'تلقّى التحالف الدولي لمنظمات حقوق الإنسان مقطع فيديو يبدو أنه يُظهر رجلًا بزي عسكري، يُعرَّف بأنه جندي في القوات المسلحة السودانية تابع لوحدة الهجانة في مدينة الأبيض، يقاتل إلى جانب القوات العسكرية الروسية في أوكرانيا.',
+          'ووفق المعلومات الواردة إلى التحالف، تستهدف هذه العمليات مدنيين في أوكرانيا. ولم يتحقق التحالف بشكل مستقل من هوية الشخص الظاهر في المقطع، أو من وحدته، أو من تاريخ التصوير ومكانه.',
+          'وإذا ثبتت مشاركة جنود سودانيين في نزاع مسلح خارجي، فإن ذلك يثير مخاوف جدية بموجب القانون الدولي الإنساني والقانون الدولي لحقوق الإنسان، ويزداد الأمر خطورة في وقت يعاني فيه المدنيون في السودان ويلات حرب مدمّرة.',
+          {
+            lead: 'ويطالب التحالف بما يلي:',
+            items: [
+              'إجراء تحقيق مستقل في التقارير عن تجنيد مقاتلين سودانيين ونشرهم في الحرب في أوكرانيا، بما في ذلك القنوات والأطراف المتورطة؛',
+              'الشفافية الكاملة من جانب السلطات السودانية بشأن ما إذا كان أيٌّ من أفراد قواتها المسلحة يقاتل في نزاع خارجي؛',
+              'محاسبة مرتكبي أي انتهاكات بحق المدنيين، أيًّا كانوا؛',
+              'حماية أي مواطنين سودانيين ربما جرى تجنيدهم عن طريق الخداع أو الإكراه.',
+            ],
+          },
+          'ويحثّ التحالف الأمم المتحدة والاتحاد الأفريقي والاتحاد الأوروبي على النظر في هذه التقارير دون تأخير. ويجب ألّا يكون المدنيون هدفًا أبدًا، في أوكرانيا كما في السودان.',
+        ],
+        signOff: 'التحالف الدولي لمنظمات حقوق الإنسان',
+      },
+      fr: {
+        title:
+          'L’ICHRO demande une enquête indépendante sur le recrutement signalé de combattants soudanais dans la guerre en Ukraine',
+        speaker: 'Coalition internationale des organisations de défense des droits de l’homme (ICHRO)',
+        location: 'Genève',
+        summary:
+          'La Coalition internationale des organisations de défense des droits de l’homme (ICHRO) a reçu une vidéo qui semble montrer un homme présenté comme un soldat des Forces armées soudanaises combattant aux côtés des forces militaires russes en Ukraine. La Coalition n’a pas vérifié de manière indépendante l’identité de la personne filmée, son unité, ni la date et le lieu du tournage, et demande une enquête indépendante sur le recrutement signalé de combattants soudanais dans la guerre en Ukraine. Images reçues par la Coalition.',
+        statement: [
+          'La Coalition internationale des organisations de défense des droits de l’homme (ICHRO) a reçu une vidéo qui semble montrer un homme en uniforme militaire, présenté comme un soldat des Forces armées soudanaises rattaché à l’unité Hajanah (corps des méharistes) d’El-Obeid, combattant aux côtés des forces militaires russes en Ukraine.',
+          'Selon les informations reçues par la Coalition, ces opérations visent des civils en Ukraine. La Coalition n’a pas vérifié de manière indépendante l’identité de la personne filmée, son unité, ni la date et le lieu du tournage.',
+          'Si elle était confirmée, la participation de soldats soudanais à un conflit armé étranger soulèverait de graves préoccupations au regard du droit international humanitaire et du droit international des droits de l’homme. Elle serait d’autant plus grave que les civils soudanais subissent eux-mêmes une guerre dévastatrice.',
+          {
+            lead: 'La Coalition demande :',
+            items: [
+              'une enquête indépendante sur le recrutement et le déploiement signalés de combattants soudanais dans la guerre en Ukraine, y compris sur les filières et les parties impliquées ;',
+              'une transparence totale des autorités soudanaises sur la présence éventuelle de membres de leurs forces armées dans un conflit étranger ;',
+              'l’établissement des responsabilités pour toute violation commise contre des civils, quels qu’en soient les auteurs ;',
+              'la protection de tout ressortissant soudanais qui aurait pu être recruté par la tromperie ou la contrainte.',
+            ],
+          },
+          'La Coalition exhorte les Nations unies, l’Union africaine et l’Union européenne à examiner ces informations sans délai. Les civils, en Ukraine comme au Soudan, ne doivent jamais être pris pour cible.',
+        ],
+        signOff: 'Coalition internationale des organisations de défense des droits de l’homme (ICHRO)',
+      },
+    },
+  },
   // Andy Vermaut's appeal on the North Wadi airstrike, a Short uploaded 14 October 2026. The
   // recording date is not stated, so eventDate is the upload date. His title here is the one
   // the client supplied for this video (member of the Coalition, Ambassador of the European
