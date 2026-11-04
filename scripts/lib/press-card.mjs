@@ -6,8 +6,9 @@
 // "tidy" it — it encodes rendering behaviour that is easy to break and whose breakage
 // sharp reports as success (exit 0, wrong pixels):
 //
-//  1. logo.png has an opaque navy backdrop (#1D5277), not transparency — hence the white
-//     chip behind the masthead mark and the circular clip on the watermark.
+//  1. logo.png had an opaque navy backdrop (#1D5277) until the November 2026 emblem refresh
+//     (scripts/gen-logo.mjs); it is now a transparent, square emblem. The white chip behind
+//     the masthead mark and the circular clip on the watermark are kept: they still frame it.
 //  2. Arabic must lay out right-to-left. librsvg/Pango shapes the glyphs correctly, but
 //     `text-anchor="end"` fights `direction="rtl"` and pushes lines off-canvas. The working
 //     combination is direction="rtl" + text-anchor="start" anchored at the RIGHT margin.
