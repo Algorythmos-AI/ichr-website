@@ -169,7 +169,7 @@ covers.
 
 | Date | Dateline | Category | Slug | Key | Src | Commit |
 | ---- | -------- | -------- | ---- | --- | --- | ------ |
-| 04 Nov | Geneva | Statement | `statement-sudanese-soldier-russian-forces-ukraine-november-2026` | `a80cd557…` | YouTube description | — |
+| 04 Nov | Geneva | Statement | `statement-sudanese-soldier-russian-forces-ukraine-november-2026` | `a80cd557…` | YouTube description | `9dc1ed5` |
 
 `statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
 that appears to show a man identified as a Sudanese Armed Forces soldier (the Hajanah unit, El
@@ -179,8 +179,8 @@ independently verified" are load-bearing in all three languages; no individual i
 text was **drafted by us** from the Coalition's YouTube description — the legal-concern
 paragraph, the four demands and the closing appeal are added text, approved by the client.
 Geneva at the client's choice. Identical to the statement on its /media page
-(`sudanese-soldier-russian-forces-ukraine-2026`, portrait video, unlisted until this article was
-live because the detail page always links to it). Typographic unblue covers, so no frame of the
+(`sudanese-soldier-russian-forces-ukraine-2026`, portrait video). It shipped unlisted in 1.0.26 and
+was listed in 1.0.27, after the article went live, because the detail page always links to it. Typographic unblue covers, so no frame of the
 unverified individual appears in the OG image; the body links to the YouTube video. No gallery.
 
 ---
