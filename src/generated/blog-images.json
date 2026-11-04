@@ -687,6 +687,30 @@
       800
     ]
   },
+  "/blog/statement-sudanese-soldier-russian-forces-ukraine-november-2026/cover-ar.jpg": {
+    "w": 1200,
+    "h": 1600,
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/blog/statement-sudanese-soldier-russian-forces-ukraine-november-2026/cover-fr.jpg": {
+    "w": 1200,
+    "h": 1600,
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/blog/statement-sudanese-soldier-russian-forces-ukraine-november-2026/cover.jpg": {
+    "w": 1200,
+    "h": 1600,
+    "widths": [
+      400,
+      800
+    ]
+  },
   "/blog/un-fact-finding-mission-sudan-geneva-june-2026/cover-1.jpeg": {
     "w": 940,
     "h": 788,
@@ -931,6 +955,13 @@
   "/media/sudan-miners-airstrike-north-wadi-2026/poster.jpg": {
     "w": 720,
     "h": 1282,
+    "widths": [
+      400
+    ]
+  },
+  "/media/sudanese-soldier-russian-forces-ukraine-2026/poster.jpg": {
+    "w": 720,
+    "h": 1296,
     "widths": [
       400
     ]
