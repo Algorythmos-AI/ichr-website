@@ -7,6 +7,20 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.30] — 2026-11-05
+
+### Added
+
+- The 5 November Mail Talks (Daily Mail) video on Sudan's gold, with the Coalition's statement
+  in English, Arabic and French, shipped **unlisted** until the related article is live; and the
+  article's photo-card covers.
+- `docs/runbooks/video-statement.md`: the procedure for a video with a statement, in two releases.
+
+### Fixed
+
+- `scripts/add-video.mjs` no longer aborts when the channel feed returns an HTTP error; it falls
+  back to the watch-page date, as its comment always said.
+
 ## [1.0.29] — 2026-11-05
 
 ### Changed

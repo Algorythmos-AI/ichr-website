@@ -83,6 +83,97 @@ export interface Video {
 // responsive variants and manifest entries are all still here and still test-validated, so
 // re-listing a video is exactly one deleted line.
 const VIDEOS: Video[] = [
+  // A Mail Talks (Daily Mail) report, shared by the Coalition on 5 November 2026 (uploaded
+  // 01:09 UTC), that gold from Sudan is helping fund the Sudanese military and Russia's war in
+  // Ukraine. Third-party footage, credited; every finding is attributed to the Daily Mail and
+  // marked unverified ("according to the report", "has not independently verified", "if
+  // confirmed"), in all three languages. Portrait Short: the poster is the 9:16 centre strip
+  // of YouTube's pillarboxed thumbnail. The statement is the article
+  // statement-sudan-gold-financing-war-november-2026 — change both together. Ships unlisted
+  // until that article is live, because the detail page always links to it.
+  {
+    slug: 'sudan-gold-russia-war-ukraine-2026',
+    youtubeId: 'AbYsmnHQPgA',
+    uploadDate: '2026-11-05',
+    eventDate: '2026-11-05',
+    durationSeconds: 82,
+    playlist: 'statements-2026',
+    poster: '/media/sudan-gold-russia-war-ukraine-2026/poster.jpg',
+    relatedPostSlug: 'statement-sudan-gold-financing-war-november-2026',
+    vertical: true,
+    published: false,
+    i18n: {
+      en: {
+        title: 'How Sudan’s Gold Is Reported to Fund the Sudanese Military and Russia’s War in Ukraine',
+        speaker: 'Mail Talks (Daily Mail)',
+        location: 'Geneva',
+        summary:
+          'A report by Mail Talks (Daily Mail) says gold from Sudan is helping fund the Sudanese military and Russia’s war in Ukraine: around 70 tonnes produced in 2025, of which only about 14 were officially recorded. The Coalition has not independently verified the findings, and calls for transparency on Sudan’s gold revenues and an independent investigation into the trade. Video: Mail Talks (Daily Mail).',
+        statement: [
+          'The International Coalition of Human Rights Organizations (ICHRO) has taken note of a report by Mail Talks (Daily Mail) on the trade in Sudan’s gold. According to the report, Sudan produced around 70 tonnes of gold in 2025, of which only around 14 tonnes were officially recorded, and gold from Sudan is helping to fund the Sudanese military and Russia’s war in Ukraine.',
+          'The Coalition has not independently verified these findings or figures. If confirmed, a gap of this scale would mean that most of the country’s gold leaves through unofficial channels, beyond any public oversight, while Sudan’s civilians endure one of the gravest humanitarian crises in the world.',
+          'Revenues from natural resources must serve the people of Sudan. When they are diverted to finance armed conflict, at home or abroad, they prolong wars in which civilians pay the highest price.',
+          {
+            lead: 'The Coalition calls for:',
+            items: [
+              'an independent investigation into the reported channels through which Sudan’s gold is exported, and into any role of this trade in financing armed conflict in Sudan and in Ukraine;',
+              'full transparency from the Sudanese authorities on gold production, exports and the use of the revenues;',
+              'rigorous due diligence by refiners, traders and importing states, so that gold financing armed conflict does not enter international markets;',
+              'accountability for any violations of international law, including applicable sanctions, by any party involved.',
+            ],
+          },
+          'The Coalition urges the United Nations, the African Union and the European Union to examine these reports, and reaffirms that the wealth of Sudan belongs to its people, not to the war.',
+        ],
+        signOff: 'International Coalition of Human Rights Organizations (ICHRO)',
+      },
+      ar: {
+        title: 'كيف يُقال إن ذهب السودان يموّل الجيش السوداني والحرب الروسية في أوكرانيا',
+        speaker: 'Mail Talks (ديلي ميل)',
+        location: 'جنيف',
+        summary:
+          'يفيد تقرير لمنصة Mail Talks التابعة لصحيفة ديلي ميل بأن الذهب السوداني يُسهم في تمويل الجيش السوداني والحرب الروسية في أوكرانيا، إذ أُنتج نحو 70 طنًا في عام 2025 لم يُسجَّل منها رسميًا سوى نحو 14 طنًا. ولم يتحقق التحالف بشكل مستقل من هذه النتائج، ويطالب بالشفافية بشأن عائدات الذهب السوداني وبتحقيق مستقل في هذه التجارة. الفيديو: Mail Talks (ديلي ميل).',
+        statement: [
+          'اطّلع التحالف الدولي لمنظمات حقوق الإنسان على تقرير نشرته منصة Mail Talks التابعة لصحيفة ديلي ميل بشأن تجارة الذهب السوداني. ووفق التقرير، أنتج السودان نحو 70 طنًا من الذهب في عام 2025، لم يُسجَّل منها رسميًا سوى نحو 14 طنًا، ويُسهم الذهب السوداني في تمويل الجيش السوداني والحرب الروسية في أوكرانيا.',
+          'ولم يتحقق التحالف بشكل مستقل من هذه النتائج أو الأرقام. وإذا ثبتت، فإن فجوة بهذا الحجم تعني أن معظم ذهب البلاد يغادرها عبر قنوات غير رسمية بعيدًا عن أي رقابة عامة، في وقت يعاني فيه المدنيون في السودان واحدة من أشد الأزمات الإنسانية في العالم.',
+          'إن عائدات الموارد الطبيعية يجب أن تخدم شعب السودان، وحين تُحوَّل إلى تمويل النزاعات المسلحة، في الداخل أو في الخارج، فإنها تُطيل أمد حروب يدفع المدنيون ثمنها الأكبر.',
+          {
+            lead: 'ويطالب التحالف بما يلي:',
+            items: [
+              'إجراء تحقيق مستقل في القنوات المُبلَّغ عنها لتصدير الذهب السوداني، وفي أي دور لهذه التجارة في تمويل النزاع المسلح في السودان وفي أوكرانيا؛',
+              'الشفافية الكاملة من جانب السلطات السودانية بشأن إنتاج الذهب وصادراته وأوجه إنفاق عائداته؛',
+              'بذل العناية الواجبة الصارمة من جانب المصافي والتجار والدول المستوردة، حتى لا يدخل الذهب الذي يموّل النزاعات المسلحة إلى الأسواق الدولية؛',
+              'محاسبة أي طرف متورط في انتهاكات للقانون الدولي، بما في ذلك العقوبات المعمول بها.',
+            ],
+          },
+          'ويحثّ التحالف الأمم المتحدة والاتحاد الأفريقي والاتحاد الأوروبي على النظر في هذه التقارير، ويؤكد أن ثروات السودان ملك لشعبه، لا للحرب.',
+        ],
+        signOff: 'التحالف الدولي لمنظمات حقوق الإنسان',
+      },
+      fr: {
+        title: 'Comment l’or soudanais financerait l’armée soudanaise et la guerre de la Russie en Ukraine',
+        speaker: 'Mail Talks (Daily Mail)',
+        location: 'Genève',
+        summary:
+          'Selon un reportage de Mail Talks (Daily Mail), l’or soudanais contribue à financer l’armée soudanaise et la guerre de la Russie en Ukraine : environ 70 tonnes produites en 2025, dont 14 seulement enregistrées officiellement. La Coalition n’a pas vérifié ces conclusions de manière indépendante et demande la transparence sur les revenus de l’or soudanais ainsi qu’une enquête indépendante sur ce commerce. Vidéo : Mail Talks (Daily Mail).',
+        statement: [
+          'La Coalition internationale des organisations de défense des droits de l’homme (ICHRO) a pris connaissance d’un reportage de Mail Talks (Daily Mail) sur le commerce de l’or soudanais. Selon ce reportage, le Soudan a produit environ 70 tonnes d’or en 2025, dont seulement 14 tonnes environ ont été officiellement enregistrées, et l’or soudanais contribue à financer l’armée soudanaise ainsi que la guerre de la Russie en Ukraine.',
+          'La Coalition n’a pas vérifié ces conclusions ni ces chiffres de manière indépendante. S’il était confirmé, un écart de cette ampleur signifierait que la majeure partie de l’or du pays le quitte par des circuits non officiels, hors de tout contrôle public, alors que les civils soudanais subissent l’une des crises humanitaires les plus graves au monde.',
+          'Les revenus des ressources naturelles doivent servir le peuple soudanais. Lorsqu’ils sont détournés pour financer des conflits armés, sur le territoire national ou à l’étranger, ils prolongent des guerres dont les civils paient le prix le plus lourd.',
+          {
+            lead: 'La Coalition demande :',
+            items: [
+              'une enquête indépendante sur les filières signalées d’exportation de l’or soudanais et sur tout rôle de ce commerce dans le financement des conflits armés au Soudan et en Ukraine ;',
+              'une transparence totale des autorités soudanaises sur la production d’or, les exportations et l’utilisation des revenus ;',
+              'un devoir de diligence rigoureux de la part des affineurs, des négociants et des États importateurs, afin que l’or qui finance des conflits armés n’entre pas sur les marchés internationaux ;',
+              'l’établissement des responsabilités pour toute violation du droit international, y compris des sanctions applicables, par toute partie impliquée.',
+            ],
+          },
+          'La Coalition exhorte les Nations unies, l’Union africaine et l’Union européenne à examiner ces informations, et réaffirme que les richesses du Soudan appartiennent à son peuple, et non à la guerre.',
+        ],
+        signOff: 'Coalition internationale des organisations de défense des droits de l’homme (ICHRO)',
+      },
+    },
+  },
   // Footage received by the Coalition that appears to show a Sudanese Armed Forces soldier
   // fighting alongside Russian forces in Ukraine. Uploaded 4 November 2026; the filming date and
   // place are unknown and unverified, so eventDate is the upload date. The source is portrait

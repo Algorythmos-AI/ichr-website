@@ -114,7 +114,12 @@ function scrape(html) {
  */
 async function uploadDateUtc(id) {
   try {
-    const xml = await fetchText(`https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`);
+    // Not fetchText: that exits on an HTTP error, so a feed 500 would skip this fallback.
+    const res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`, {
+      headers: { 'user-agent': UA, 'accept-language': 'en' },
+    });
+    if (!res.ok) return null;
+    const xml = await res.text();
     // Match within one <entry> so a videoId is never paired with a sibling's date.
     for (const entry of xml.split('<entry>').slice(1)) {
       if (!entry.includes(`<yt:videoId>${id}</yt:videoId>`)) continue;
