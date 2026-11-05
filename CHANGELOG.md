@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.31] — 2026-11-05
+
+### Added
+
+- `/media` lists the 5 November Mail Talks (Daily Mail) video on Sudan's gold, with the
+  Coalition's statement in English, Arabic and French. It shipped unlisted in 1.0.30 so that
+  its link to the related article never pointed at a missing page.
+
 ## [1.0.30] — 2026-11-05
 
 ### Added

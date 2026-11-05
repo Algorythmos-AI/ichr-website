@@ -170,7 +170,7 @@ covers.
 | Date | Dateline | Category | Slug | Key | Src | Commit |
 | ---- | -------- | -------- | ---- | --- | --- | ------ |
 | 04 Nov | Geneva | Statement | `statement-sudanese-soldier-russian-forces-ukraine-november-2026` | `a80cd557…` | YouTube description | `9dc1ed5` |
-| 05 Nov | Geneva | Statement | `statement-sudan-gold-financing-war-november-2026` | `4dd8002d…` | Mail Talks video | — |
+| 05 Nov | Geneva | Statement | `statement-sudan-gold-financing-war-november-2026` | `4dd8002d…` | Mail Talks video | `6fdca70` |
 
 `statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
 that appears to show a man identified as a Sudanese Armed Forces soldier (the Hajanah unit, El
@@ -198,7 +198,8 @@ the Coalition's channel, that Sudan's gold helps fund the Sudanese military and 
 Ukraine (~70 t produced in 2025, ~14 t recorded). **Every finding is the Daily Mail's** and marked
 unverified; the third paragraph, four demands and closing appeal are added text, drafted by us.
 Photo-card cover with a Reuters frame from the video (the client's choice), credited in the
-body. Its /media page (`sudan-gold-russia-war-ukraine-2026`) ships unlisted first.
+body. Its /media page (`sudan-gold-russia-war-ukraine-2026`) shipped unlisted in 1.0.30 and was
+listed in 1.0.31, after the article went live.
 
 ---
 

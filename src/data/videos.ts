@@ -89,8 +89,8 @@ const VIDEOS: Video[] = [
   // marked unverified ("according to the report", "has not independently verified", "if
   // confirmed"), in all three languages. Portrait Short: the poster is the 9:16 centre strip
   // of YouTube's pillarboxed thumbnail. The statement is the article
-  // statement-sudan-gold-financing-war-november-2026 — change both together. Ships unlisted
-  // until that article is live, because the detail page always links to it.
+  // statement-sudan-gold-financing-war-november-2026 — change both together. Shipped unlisted
+  // (1.0.30) and listed in 1.0.31, once that article was live: the detail page always links to it.
   {
     slug: 'sudan-gold-russia-war-ukraine-2026',
     youtubeId: 'AbYsmnHQPgA',
@@ -101,7 +101,6 @@ const VIDEOS: Video[] = [
     poster: '/media/sudan-gold-russia-war-ukraine-2026/poster.jpg',
     relatedPostSlug: 'statement-sudan-gold-financing-war-november-2026',
     vertical: true,
-    published: false,
     i18n: {
       en: {
         title: 'How Sudan’s Gold Is Reported to Fund the Sudanese Military and Russia’s War in Ukraine',
