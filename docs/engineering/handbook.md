@@ -233,6 +233,9 @@ statement, is **[`docs/runbooks/publishing.md`](../runbooks/publishing.md)**. In
 
 ## Adding a YouTube video to `/media`
 
+A video **with a statement** (a `/news` article and a photo-card cover) has its own runbook,
+[`docs/runbooks/video-statement.md`](../runbooks/video-statement.md): it ships in two releases.
+
 Videos are **not** in the database. They are rows in `src/data/videos.ts`, committed to git (see
 the header comment there for why). Revisit at ~20 videos, or when a non-developer needs to
 publish one without a deploy.
