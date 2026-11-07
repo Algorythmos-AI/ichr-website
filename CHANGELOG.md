@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.32] — 2026-11-07
+
+### Added
+
+- Photo-card covers (EN/AR/FR) for the "In the Press" summary of In de Gazette's 3 November
+  analysis of Sudan's Red Sea offer to Russia: a map of Sudan with Port Sudan marked. The
+  article itself is seeded after this release is live.
+
 ## [1.0.31] — 2026-11-05
 
 ### Added
