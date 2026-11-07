@@ -171,6 +171,7 @@ covers.
 | ---- | -------- | -------- | ---- | --- | --- | ------ |
 | 04 Nov | Geneva | Statement | `statement-sudanese-soldier-russian-forces-ukraine-november-2026` | `a80cd557…` | YouTube description | `9dc1ed5` |
 | 05 Nov | Geneva | Statement | `statement-sudan-gold-financing-war-november-2026` | `4dd8002d…` | Mail Talks video | `6fdca70` |
+| 07 Nov | Geneva | News | `in-the-press-sudan-russia-red-sea-november-2026` | `796eb03b…` | In de Gazette | `a86830d` |
 
 `statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
 that appears to show a man identified as a Sudanese Armed Forces soldier (the Hajanah unit, El
@@ -200,6 +201,15 @@ unverified; the third paragraph, four demands and closing appeal are added text,
 Photo-card cover with a Reuters frame from the video (the client's choice), credited in the
 body. Its /media page (`sudan-gold-russia-war-ukraine-2026`) shipped unlisted in 1.0.30 and was
 listed in 1.0.31, after the article went live.
+
+`in-the-press-sudan-russia-red-sea-…` (7 Nov): **not a statement** — an "In the Press" summary, in
+our own words, of Andy Vermaut's 3 Nov analysis in *In de Gazette* of al-Burhan's Red Sea offer to
+Putin (Kremlin, 30 Oct) and Sudan's military and intelligence ties with Russia. Every section of
+the source is covered and **every claim is attributed to the article**, with all its own caveats
+kept in all three languages; no allegation is tied to a named individual. Credited and linked at
+the foot, with Vermaut's August panel role disclosed. The source's AP lead photo is **not used**:
+photo-card covers with a map of Sudan, Port Sudan marked, labelled IN THE PRESS. Covers shipped in
+1.0.32; article seeded and published the same day.
 
 ---
 
