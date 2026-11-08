@@ -7,6 +7,8 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.33] — 2026-11-08
+
 ### Added
 
 - Vercel Web Analytics (`@vercel/analytics`) on every reader-facing page, through
