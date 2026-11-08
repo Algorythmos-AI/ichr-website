@@ -31,7 +31,11 @@ const SITE = resolveSiteUrl(process.env);
 export default defineConfig({
   site: SITE,
   output: 'server', // SSR by default; marketing pages opt into static via `export const prerender = true`
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   // English lives at the root (`/`); Arabic and French are served under `/ar` and `/fr`.
   // `prefixDefaultLocale: false` keeps every existing English URL unchanged.
   i18n: {
