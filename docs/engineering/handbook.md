@@ -19,6 +19,8 @@ Engineering and content operations are run by **Algorythmos**.
 - **Prisma 5** + **Neon Postgres**
 - Markdown: `marked` + `sanitize-html` server-side; `DOMPurify` in the admin preview
 - Image uploads: Vercel Blob
+- Visitor analytics: Vercel Web Analytics (`<Analytics />` in `BaseLayout.astro`, cookieless;
+  not on `/admin`). Enabled per project in the Vercel dashboard.
 
 **Node 24 locally (`.nvmrc`), and production runs Node 24** (Vercel project setting). Node 22
 still works from **22.23.4** — Astro 7.4 refuses anything older. The seed scripts use
