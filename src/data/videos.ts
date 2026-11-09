@@ -91,6 +91,8 @@ const VIDEOS: Video[] = [
   // of YouTube's pillarboxed thumbnail. The statement is the article
   // statement-sudan-gold-financing-war-november-2026 — change both together. Shipped unlisted
   // (1.0.30) and listed in 1.0.31, once that article was live: the detail page always links to it.
+  //  - UNLISTED again on 9 November 2026 at the client's request ("only via YouTube"): the video
+  //    stays on the channel, not on the site. The article is back to draft (UNPUBLISH=1).
   {
     slug: 'sudan-gold-russia-war-ukraine-2026',
     youtubeId: 'AbYsmnHQPgA',
@@ -101,6 +103,7 @@ const VIDEOS: Video[] = [
     poster: '/media/sudan-gold-russia-war-ukraine-2026/poster.jpg',
     relatedPostSlug: 'statement-sudan-gold-financing-war-november-2026',
     vertical: true,
+    published: false,
     i18n: {
       en: {
         title: 'How Sudan’s Gold Is Reported to Fund the Sudanese Military and Russia’s War in Ukraine',

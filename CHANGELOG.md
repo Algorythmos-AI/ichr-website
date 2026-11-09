@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.32] — 2026-11-09
+
+### Removed
+
+- The 5 November Mail Talks video on Sudan's gold is unlisted from `/media` at the client's
+  request: it stays on the Coalition's YouTube channel only. Its newsroom article was returned to
+  draft the same day. Nothing is deleted, so both can be restored.
+
 ## [1.0.33] — 2026-11-08
 
 ### Added
