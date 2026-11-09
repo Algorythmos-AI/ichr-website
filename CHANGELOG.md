@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.35] — 2026-11-09
+
+### Added
+
+- Covers for the 8 November statement on Ahmed Haroun's reappearance: the client's own card
+  (EN) and photo cards with the same portrait (AR/FR). The article is seeded after this release
+  is live.
+
 ## [1.0.34] — 2026-11-09
 
 ### Removed
