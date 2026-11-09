@@ -203,7 +203,7 @@ body. Its /media page (`sudan-gold-russia-war-ukraine-2026`) shipped unlisted in
 listed in 1.0.31, after the article went live.
 
 **Withdrawn 9 Nov** at the client's request ("only via YouTube"): the article returned to draft
-in all three languages (`UNPUBLISH=1`) and the video unlisted in 1.0.32. Covers, poster, seed and
+in all three languages (`UNPUBLISH=1`) and the video unlisted in 1.0.34. Covers, poster, seed and
 entry are kept, so re-publishing is `PUBLISH=1` plus deleting one line.
 
 `in-the-press-sudan-russia-red-sea-…` (7 Nov): **not a statement** — an "In the Press" summary, in
