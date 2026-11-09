@@ -202,6 +202,10 @@ Photo-card cover with a Reuters frame from the video (the client's choice), cred
 body. Its /media page (`sudan-gold-russia-war-ukraine-2026`) shipped unlisted in 1.0.30 and was
 listed in 1.0.31, after the article went live.
 
+**Withdrawn 9 Nov** at the client's request ("only via YouTube"): the article returned to draft
+in all three languages (`UNPUBLISH=1`) and the video unlisted in 1.0.34. Covers, poster, seed and
+entry are kept, so re-publishing is `PUBLISH=1` plus deleting one line.
+
 `in-the-press-sudan-russia-red-sea-…` (7 Nov): **not a statement** — an "In the Press" summary, in
 our own words, of Andy Vermaut's 3 Nov analysis in *In de Gazette* of al-Burhan's Red Sea offer to
 Putin (Kremlin, 30 Oct) and Sudan's military and intelligence ties with Russia. Every section of
