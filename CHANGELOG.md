@@ -7,7 +7,7 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
-## [1.0.32] — 2026-11-09
+## [1.0.34] — 2026-11-09
 
 ### Removed
 
