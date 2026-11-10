@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.36] — 2026-11-11
+
+### Added
+
+- Covers for the 10 November statement welcoming the Dutch motion to ban the Muslim Brotherhood:
+  photo cards with the client's photograph of the Binnenhof (EN/AR/FR). The article is seeded
+  after this release is live.
+
 ## [1.0.35] — 2026-11-09
 
 ### Added
