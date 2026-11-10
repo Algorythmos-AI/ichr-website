@@ -172,6 +172,8 @@ covers.
 | 04 Nov | Geneva | Statement | `statement-sudanese-soldier-russian-forces-ukraine-november-2026` | `a80cd557…` | YouTube description | `9dc1ed5` |
 | 05 Nov | Geneva | Statement | `statement-sudan-gold-financing-war-november-2026` | `4dd8002d…` | Mail Talks video | `6fdca70` |
 | 07 Nov | Geneva | News | `in-the-press-sudan-russia-red-sea-november-2026` | `796eb03b…` | In de Gazette | `a86830d` |
+| 08 Nov | Geneva | Statement | `statement-ahmed-haroun-reappearance-islamic-movement-november-2026` | `b8b3747d…` | `NOV/2` | `5741600` |
+| 10 Nov | Geneva | Statement | `statement-dutch-motion-ban-muslim-brotherhood-sudan-november-2026` | `67dff542…` | X post, `NOV/3` | this PR |
 
 `statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
 that appears to show a man identified as a Sudanese Armed Forces soldier (the Hajanah unit, El
@@ -214,6 +216,31 @@ kept in all three languages; no allegation is tied to a named individual. Credit
 the foot, with Vermaut's August panel role disclosed. The source's AP lead photo is **not used**:
 photo-card covers with a map of Sudan, Port Sudan marked, labelled IN THE PRESS. Covers shipped in
 1.0.32; article seeded and published the same day.
+
+`statement-ahmed-haroun-reappearance-…` (8 Nov): the Coalition's statement on the media
+reappearance of Ahmed Haroun, the National Congress Party leader wanted by the ICC, which it reads
+as an attempt to return former-regime figures to power. **The client's own text**, sent with the
+instruction "Please edit and publish along with the image. Leave the PDF file and the rest of the
+images." Edited by us: five typing errors corrected (`iests`, `nterformal`, `humanhts … rig`,
+`confrontingobstructed`, a dropped "obstructed") and a light copy-edit, all recorded in the seed's
+editorial notes. The letter header became a short "Addressed to" list (EU Parliament, Commission,
+EEAS, ICC, the UN fact-finding mission); the ICC street address and salutation were dropped. The
+hedges on the summary-execution reports and on "individuals accused of collaborating" are kept in
+all three languages. AR/FR translated in house and approved by the owner. **No gallery and no
+PDF**, at the client's request. Covers: the client's card (EN), published as supplied although its
+name line still reads "The International Coalition for Human Rights"; AR/FR are photo cards built
+from his portrait. Covers shipped in 1.0.35; article seeded and published 10 Nov.
+
+`statement-dutch-motion-ban-muslim-brotherhood-sudan-…` (10 Nov): the Coalition welcomes the
+Dutch House of Representatives' motion urging the government to ban the Muslim Brotherhood, and
+calls on the Netherlands and the EU to act on Sudan. **The client's text as posted on X**, with
+one correction: the corrupted "obstructing cDepartment specifically identifying" became
+"obstructing civilian rule, with the Department specifically identifying", matching the US
+Treasury's designation of the Al-Baraa ibn Malik Brigade (12 Sep 2025). The source has no title or
+dateline: the title is ours, and the dateline is Geneva, 10 Nov (the day it was posted), at the
+owner's choice. The motion itself was adopted on 17 March 2026; the statement is published as
+written, with the date only in the seed's notes. AR/FR translated in house. Photo-card covers in
+all three languages from the client's Binnenhof photograph (480 × 321, upscaled into the band).
 
 ---
 
