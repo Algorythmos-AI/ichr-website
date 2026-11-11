@@ -156,7 +156,9 @@ export const STATEMENT = {
 
 // Cover: client-style photo card (docs/runbooks/press/photo-card.md) in all three locales. The
 // band is the client's photograph of the Binnenhof; the source file stays in press/, uncommitted.
-export const PHOTO_CARD_BAND = { photo: 'press/NOV/3/binnenhof-band.jpg' };
+// Natural colour, not the red tone, at the client's request (11 November 2026: the red-toned
+// image "is not clear").
+export const PHOTO_CARD_BAND = { photo: 'press/NOV/3/binnenhof-band.jpg', tone: 'natural' };
 
 export const PHOTO_CARDS = {
   en: {

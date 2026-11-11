@@ -242,6 +242,10 @@ owner's choice. The motion itself was adopted on 17 March 2026; the statement is
 written, with the date only in the seed's notes. AR/FR translated in house. Photo-card covers in
 all three languages from the client's Binnenhof photograph (480 × 321, upscaled into the band).
 
+**Covers redrawn 11 Nov** (1.0.37) at the client's request ("the image is not clear"): the band
+shows the photograph in its own colours instead of the red tone (`tone: 'natural'`, a new
+photo-card option). Text unchanged.
+
 ---
 
 ## Attached documents

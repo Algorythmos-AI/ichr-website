@@ -5,7 +5,8 @@
 // layout for statements that arrive as text only, so the newsroom stays consistent.
 //
 // The image band is either
-//   - a PHOTO the client supplied (greyscaled and toned red, as the client does), or
+//   - a PHOTO the client supplied (greyscaled and toned red, as the client does; or in its
+//     own colours with `band.tone = 'natural'`), or
 //   - a MAP of Sudan with the place of the event marked (`band.map = 'sudan'`), drawn from
 //     Natural Earth (public domain) — used when there is no photo. Disputed areas (Hala'ib,
 //     Bir Tawil) are hatched and attributed to neither state, as on UN maps.
@@ -150,9 +151,16 @@ function mapSvg(band, labels, rtl, font) {
   </svg>`;
 }
 
-function photoSvg(photoFile) {
+function photoSvg(photoFile, tone) {
   const mime = photoFile.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg';
-  // Greyscale, then a red multiply — the client's treatment of their own photos.
+  // tone 'natural': the photo in its own colours, at the client's request for one statement.
+  if (tone === 'natural') {
+    return `
+  <svg class="band" viewBox="0 0 ${SIZE} ${SIZE}" xmlns="http://www.w3.org/2000/svg">
+    <image href="${dataUri(photoFile, mime)}" x="0" y="0" width="${SIZE}" height="${CUT_L + 40}" preserveAspectRatio="xMidYMid slice"/>
+  </svg>`;
+  }
+  // Default: greyscale, then a red multiply — the client's treatment of their own photos.
   return `
   <svg class="band" viewBox="0 0 ${SIZE} ${SIZE}" xmlns="http://www.w3.org/2000/svg">
     <defs><filter id="grey"><feColorMatrix type="saturate" values="0"/></filter></defs>
@@ -166,7 +174,9 @@ export function buildHtml(c) {
   const rtl = !!c.rtl;
   const font = rtl ? 'Cairo' : 'Poppins';
   const f = (name) => dataUri(join(ASSETS, 'fonts', name), 'font/ttf');
-  const band = c.band.photo ? photoSvg(c.band.photo) : mapSvg(c.band, c.mapLabels ?? {}, rtl, font);
+  const band = c.band.photo
+    ? photoSvg(c.band.photo, c.band.tone)
+    : mapSvg(c.band, c.mapLabels ?? {}, rtl, font);
 
   // Faint red slashes behind everything below the cut, as on the client's cards.
   const slash = (x, y, w, h, o) =>
