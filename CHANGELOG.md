@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.38] — 2026-11-11
+
+### Added
+
+- Covers for the 9 November statement condemning the drone attack on Al-Nuhud, West Kordofan:
+  photo cards in natural colour with the client's photograph of the town (EN/AR/FR). The
+  article is seeded after this release is live.
+
 ## [1.0.37] — 2026-11-11
 
 ### Changed
