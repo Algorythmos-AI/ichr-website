@@ -174,6 +174,7 @@ covers.
 | 07 Nov | Geneva | News | `in-the-press-sudan-russia-red-sea-november-2026` | `796eb03b…` | In de Gazette | `a86830d` |
 | 08 Nov | Geneva | Statement | `statement-ahmed-haroun-reappearance-islamic-movement-november-2026` | `b8b3747d…` | `NOV/2` | `5741600` |
 | 10 Nov | Geneva | Statement | `statement-dutch-motion-ban-muslim-brotherhood-sudan-november-2026` | `67dff542…` | X post, `NOV/3` | this PR |
+| 09 Nov | **Paris** | Statement | `condemnation-drone-attack-al-nuhud-west-kordofan-november-2026` | `d34be752…` | `NOV/4` | this PR |
 
 `statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
 that appears to show a man identified as a Sudanese Armed Forces soldier (the Hajanah unit, El
@@ -245,6 +246,15 @@ all three languages from the client's Binnenhof photograph (480 × 321, upscaled
 **Covers redrawn 11 Nov** (1.0.37) at the client's request ("the image is not clear"): the band
 shows the photograph in its own colours instead of the red tone (`tone: 'natural'`, a new
 photo-card option). Text unchanged.
+
+`condemnation-drone-attack-al-nuhud-west-kordofan-…` (9 Nov, **Paris**): the Coalition condemns a
+drone strike on Al-Nuhud, West Kordofan, which it attributes to the SAF (at least twenty civilians
+killed), and calls on the OHCHR and the Fact-Finding Mission to investigate. **Published verbatim**
+at the owner's choice: the attribution, "unlawful killing" and the Islamist-factions link are the
+Coalition's own unhedged position. **Date not independently confirmed**: on 11 Nov no report of a
+9 November strike was found, while OCHA reported one on Al-Nuhud on 9 October; published with the
+client's date at the owner's choice. Photo-card covers in natural colour from the client's
+photograph of the Al-Nuhud locality headquarters (a picture of the town, not of the strike).
 
 ---
 
