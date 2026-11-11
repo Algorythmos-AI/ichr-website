@@ -31,6 +31,7 @@ dateline and date · a short rule · the lead paragraph, justified · three red 
 ```js
 export const PHOTO_CARD_BAND = { map: 'sudan', marker: { lon: 24.88, lat: 12.05 } };
 // or: { photo: 'press/OCT/9/photo.jpg' }   (repo-relative; greyscaled and toned red)
+// or: { photo: '…', tone: 'natural' }    (the photo in its own colours, no red tone)
 
 export const PHOTO_CARDS = {
   en: {
