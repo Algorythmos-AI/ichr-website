@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.37] — 2026-11-11
+
+### Changed
+
+- The covers of the 10 November Dutch-motion statement show the Binnenhof photograph in its own
+  colours instead of the red tone, at the client's request. The photo card gains a
+  `tone: 'natural'` band option for this; every other card is unchanged.
+
 ## [1.0.36] — 2026-11-11
 
 ### Added
