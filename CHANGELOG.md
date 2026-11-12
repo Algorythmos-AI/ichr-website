@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.39] — 2026-11-13
+
+### Added
+
+- Images for the 12 November press release on ICHRO and the Sudanese Rural Community
+  Organization at the 89th Ordinary Session in Dakar: the client's four cards (cover and
+  gallery). The article is seeded after this release is live.
+
 ## [1.0.38] — 2026-11-11
 
 ### Added
