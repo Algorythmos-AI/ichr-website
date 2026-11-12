@@ -174,6 +174,7 @@ covers.
 | 07 Nov | Geneva | News | `in-the-press-sudan-russia-red-sea-november-2026` | `796eb03b…` | In de Gazette | `a86830d` |
 | 08 Nov | Geneva | Statement | `statement-ahmed-haroun-reappearance-islamic-movement-november-2026` | `b8b3747d…` | `NOV/2` | `5741600` |
 | 10 Nov | Geneva | Statement | `statement-dutch-motion-ban-muslim-brotherhood-sudan-november-2026` | `67dff542…` | X post, `NOV/3` | this PR |
+| 12 Nov | **Dakar** | Press Release | `ichro-srco-89th-session-african-committee-dakar-november-2026` | `ca6b6d01…` | `NOV/5` | this PR |
 | 09 Nov | **Paris** | Statement | `condemnation-drone-attack-al-nuhud-west-kordofan-november-2026` | `d34be752…` | `NOV/4` | this PR |
 
 `statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
@@ -255,6 +256,13 @@ Coalition's own unhedged position. **Date not independently confirmed**: on 11 N
 9 November strike was found, while OCHA reported one on Al-Nuhud on 9 October; published with the
 client's date at the owner's choice. Photo-card covers in natural colour from the client's
 photograph of the Al-Nuhud locality headquarters (a picture of the town, not of the strike).
+
+`ichro-srco-89th-session-african-committee-dakar-…` (12 Nov, **Dakar**): ICHRO and its member, the
+Sudanese Rural Community Organization, follow up on their participation in the 89th Ordinary
+Session in Dakar (12–21 Oct), with calls on the AU and the EU. **"African Committee" kept** at the
+owner's choice, so the text matches the client's four cards, although the body is the African
+Commission on Human and Peoples' Rights (as the session backdrop shows). Dated the day the client
+sent it. The client's cards are used as supplied: J4 the cover, J1–J3 the gallery, in every locale.
 
 ---
 
