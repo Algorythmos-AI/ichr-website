@@ -175,6 +175,7 @@ covers.
 | 08 Nov | Geneva | Statement | `statement-ahmed-haroun-reappearance-islamic-movement-november-2026` | `b8b3747d…` | `NOV/2` | `5741600` |
 | 10 Nov | Geneva | Statement | `statement-dutch-motion-ban-muslim-brotherhood-sudan-november-2026` | `67dff542…` | X post, `NOV/3` | this PR |
 | 12 Nov | **Dakar** | Press Release | `ichro-srco-89th-session-african-committee-dakar-november-2026` | `ca6b6d01…` | `NOV/5` | this PR |
+| 13 Oct* | **Brussels** | Press Release | `mou-european-parliament-sudan-south-asia-brussels-october-2026` | `a2072e57…` | `NOV/6` | this PR |
 | 09 Nov | **Paris** | Statement | `condemnation-drone-attack-al-nuhud-west-kordofan-november-2026` | `d34be752…` | `NOV/4` | this PR |
 
 `statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
@@ -263,6 +264,14 @@ Session in Dakar (12–21 Oct), with calls on the AU and the EU. **"African Comm
 owner's choice, so the text matches the client's four cards, although the body is the African
 Commission on Human and Peoples' Rights (as the session backdrop shows). Dated the day the client
 sent it. The client's cards are used as supplied: J4 the cover, J1–J3 the gallery, in every locale.
+
+`mou-european-parliament-sudan-south-asia-brussels-…` (*dated 13 Oct, published 16 Nov):
+signing of an international MoU at the European Parliament to support the human rights track and
+protect civilians in Sudan and South Asia. **The client sent a headline only; the short body is
+ours**, written from what the two cards show (place, date, purpose, the signatories' name plates)
+and nothing more. Zilani Golam is named as Secretary General; his organisation's name is illegible
+on the plate and left out. The client's EN card is the cover (EN/FR), the AR card the Arabic
+cover.
 
 ---
 
