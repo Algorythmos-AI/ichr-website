@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.40] — 2026-11-16
+
+### Added
+
+- Covers for the press release on the Memorandum of Understanding signed at the European
+  Parliament, Brussels, 13 October 2026: the client's English and Arabic cards. The article is
+  seeded after this release is live.
+
 ## [1.0.39] — 2026-11-13
 
 ### Added
