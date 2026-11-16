@@ -7,6 +7,15 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.41] — 2026-11-16
+
+### Changed
+
+- The site describes ICHRO as an alliance of non-governmental organisations — a group of
+  organisations, not a single organisation — at the client's request, in English, Arabic and
+  French: the home mandate (the client's definition), the hero label, the About subtitle, the
+  footer and the meta descriptions.
+
 ## [1.0.40] — 2026-11-16
 
 ### Added
