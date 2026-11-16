@@ -7,11 +7,11 @@ export const en = {
   meta: {
     home: {
       title: 'The International Coalition of Human Rights Organizations (ICHRO)',
-      desc: 'A global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide. Headquartered in Geneva.',
+      desc: 'A coalition of non-governmental organisations dedicated to the protection of human dignity and the advancement of justice worldwide. Headquartered in Geneva.',
     },
     about: {
       title: 'About ICHRO — International Coalition of Human Rights Organizations',
-      desc: 'The International Coalition of Human Rights Organizations is a global NGO dedicated to the protection of human dignity and the advancement of justice worldwide.',
+      desc: 'The International Coalition of Human Rights Organizations (ICHRO) is an alliance of non-governmental organisations dedicated to the protection of human dignity and the advancement of justice worldwide.',
     },
     contact: {
       title: 'Contact ICHRO',
@@ -73,7 +73,7 @@ export const en = {
 
   footer: {
     blurb:
-      'The International Coalition of Human Rights Organizations (ICHRO) is a global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide.',
+      'The International Coalition of Human Rights Organizations (ICHRO) is an alliance of non-governmental organisations — a group of organisations, not a single organisation — dedicated to the protection of human dignity and the advancement of justice worldwide.',
     headOffices: 'Head Offices',
     contact: 'Contact',
     orgName: 'The International Coalition of Human Rights Organizations (ICHRO)',
@@ -83,7 +83,7 @@ export const en = {
   },
 
   hero: {
-    eyebrow: 'International Non-Governmental Organisation',
+    eyebrow: 'International Coalition of NGOs',
     title: 'The International Coalition of Human Rights Organizations',
     subtitle:
       'Coordinating civil society efforts, documenting violations, and providing humanitarian response to protect human dignity worldwide.',
@@ -94,7 +94,7 @@ export const en = {
   home: {
     mandateTitle: 'Our Mandate',
     mandateBody:
-      'The International Coalition of Human Rights Organizations (ICHRO) is a global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide. We bridge the gap between international policy and on-the-ground practice through coordinated civil society action.',
+      'The International Coalition of Human Rights Organizations (ICHRO) is an alliance of non-governmental organisations — a group of organisations, not a single organisation. Together, its members unite to defend fundamental rights, document violations, advance advocacy and coordinate humanitarian initiatives. The Coalition is dedicated to the protection of human dignity and the advancement of justice worldwide. We bridge the gap between international policy and on-the-ground practice through coordinated civil society action.',
     readMore: 'Read more about ICHRO',
     whatWeDoTitle: 'What We Do',
     whatWeDoIntro:
@@ -127,7 +127,7 @@ export const en = {
   about: {
     title: 'About ICHRO',
     subtitle:
-      'The International Coalition of Human Rights Organizations is a global non-governmental organisation dedicated to the protection of human dignity and the advancement of justice worldwide.',
+      'The International Coalition of Human Rights Organizations is an alliance of non-governmental organisations — a group of organisations, not a single organisation — dedicated to the protection of human dignity and the advancement of justice worldwide.',
     mandateTitle: 'Our Mandate',
     mandateP1:
       'Founded to bridge the gap between international policy and on-the-ground practice, ICHRO operates as an international coalition of civil society actors, legal experts, and humanitarian workers. We provide a unified platform to address systemic human rights violations and coordinate effective response mechanisms across borders.',
