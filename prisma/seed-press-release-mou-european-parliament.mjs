@@ -25,6 +25,9 @@
 //    Coalition…" (house spelling, settled); "Zilani Golam, Secretary General". His organisation's
 //    name is illegible on the plate and is deliberately not given (owner's choice).
 //  - Dated 13 October 2026, the date on the cards, so it sorts with October on /news.
+//  - CLIENT CORRECTION (WhatsApp, 16 November 2026, after publication): Grein signed for
+//    "(ICHRO)/NGOs", as his name plate reads (the Coalition and other organisations). Applied
+//    with a plain re-run; status preserved.
 //  - Category Press Release. AR and FR are our translations; the AR card is the client's own.
 import { pathToFileURL } from 'node:url';
 import { publishStatement, envOpts } from './lib/press-statement.mjs';
@@ -35,7 +38,7 @@ export const TRANSLATION_KEY = 'a2072e57-4f50-46fd-b799-fe82b7c17520';
 
 const EN_BODY = `On 13 October 2026, at the European Parliament in Brussels, an international Memorandum of Understanding was signed to support the human rights track and the protection of civilians in Sudan and South Asia.
 
-Abdelrahim Grein signed on behalf of the International Coalition of Human Rights Organizations (ICHRO), alongside Zilani Golam, Secretary General, in the presence of fellow delegates.
+Abdelrahim Grein signed on behalf of the International Coalition of Human Rights Organizations (ICHRO)/NGOs, alongside Zilani Golam, Secretary General, in the presence of fellow delegates.
 
 The memorandum reflects the Coalition's commitment to working with international partners to keep the protection of civilians, accountability and the rights of victims at the centre of international attention.
 
@@ -52,7 +55,7 @@ const EN_EXCERPT =
 
 const AR_BODY = `في 13 أكتوبر 2026، وُقّعت داخل البرلمان الأوروبي في بروكسل مذكرة تفاهم دولية لدعم مسار حقوق الإنسان وحماية المدنيين في السودان وجنوب آسيا.
 
-ووقّع عبد الرحيم قرين باسم التحالف الدولي لمنظمات حقوق الإنسان (ICHRO)، إلى جانب زيلاني غولام، الأمين العام، بحضور عدد من المندوبين.
+ووقّع عبد الرحيم قرين باسم التحالف الدولي لمنظمات حقوق الإنسان (ICHRO)/المنظمات غير الحكومية، إلى جانب زيلاني غولام، الأمين العام، بحضور عدد من المندوبين.
 
 وتعكس المذكرة التزام التحالف بالعمل مع الشركاء الدوليين لإبقاء حماية المدنيين والمساءلة وحقوق الضحايا في صدارة الاهتمام الدولي.
 
@@ -69,7 +72,7 @@ const AR_EXCERPT =
 
 const FR_BODY = `Le 13 octobre 2026, au Parlement européen à Bruxelles, un protocole d'accord international a été signé pour soutenir le volet des droits de l'homme et la protection des civils au Soudan et en Asie du Sud.
 
-Abdelrahim Grein l'a signé au nom de la Coalition internationale des organisations de défense des droits de l'homme (ICHRO), aux côtés de Zilani Golam, secrétaire général, en présence d'autres délégués.
+Abdelrahim Grein l'a signé au nom de la Coalition internationale des organisations de défense des droits de l'homme (ICHRO)/ONG, aux côtés de Zilani Golam, secrétaire général, en présence d'autres délégués.
 
 Ce protocole traduit l'engagement de la Coalition à travailler avec ses partenaires internationaux pour maintenir la protection des civils, la reddition de comptes et les droits des victimes au cœur de l'attention internationale.
 
