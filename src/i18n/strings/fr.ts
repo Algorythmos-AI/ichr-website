@@ -72,7 +72,7 @@ export const fr: Dict = {
 
   footer: {
     blurb:
-      "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO) est une alliance d'organisations non gouvernementales — un groupe d'organisations, et non une organisation unique — dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier.",
+      "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO)/ONG s'unit pour défendre les droits fondamentaux, documenter les violations, faire progresser le plaidoyer et coordonner les initiatives humanitaires. Elle se consacre à la protection de la dignité humaine et à la promotion de la justice dans le monde entier. Nous comblons le fossé entre les politiques internationales et la pratique sur le terrain grâce à une action coordonnée de la société civile.",
     headOffices: 'Sièges',
     contact: 'Contact',
     orgName: "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO)",
@@ -93,7 +93,7 @@ export const fr: Dict = {
   home: {
     mandateTitle: 'Notre mandat',
     mandateBody:
-      "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO) est une alliance d'organisations non gouvernementales — un groupe d'organisations, et non une organisation unique. Ses membres s'unissent pour défendre les droits fondamentaux, documenter les violations, faire progresser le plaidoyer et coordonner les initiatives humanitaires. La Coalition est dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier. Nous comblons le fossé entre les politiques internationales et la pratique sur le terrain grâce à une action coordonnée de la société civile.",
+      "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO)/ONG s'unit pour défendre les droits fondamentaux, documenter les violations, faire progresser le plaidoyer et coordonner les initiatives humanitaires. Elle se consacre à la protection de la dignité humaine et à la promotion de la justice dans le monde entier. Nous comblons le fossé entre les politiques internationales et la pratique sur le terrain grâce à une action coordonnée de la société civile.",
     readMore: "En savoir plus sur l'ICHRO",
     whatWeDoTitle: 'Notre action',
     whatWeDoIntro:
@@ -126,7 +126,7 @@ export const fr: Dict = {
   about: {
     title: "À propos de l'ICHRO",
     subtitle:
-      "La Coalition internationale des organisations de défense des droits de l'homme est une alliance d'organisations non gouvernementales — un groupe d'organisations, et non une organisation unique — dédiée à la protection de la dignité humaine et à la promotion de la justice dans le monde entier.",
+      "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO)/ONG s'unit pour défendre les droits fondamentaux, documenter les violations, faire progresser le plaidoyer et coordonner les initiatives humanitaires. Elle se consacre à la protection de la dignité humaine et à la promotion de la justice dans le monde entier. Nous comblons le fossé entre les politiques internationales et la pratique sur le terrain grâce à une action coordonnée de la société civile.",
     mandateTitle: 'Notre mandat',
     mandateP1:
       "Fondée pour combler le fossé entre les politiques internationales et la pratique sur le terrain, l'ICHRO agit comme une coalition internationale d'acteurs de la société civile, d'experts juridiques et de travailleurs humanitaires. Nous offrons une plateforme unifiée pour répondre aux violations systémiques des droits humains et coordonner des mécanismes de réponse efficaces par-delà les frontières.",
