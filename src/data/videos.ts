@@ -88,7 +88,7 @@ const VIDEOS: Video[] = [
   // 18 November 2026 (UTC). The statement is the article condemnation-violations-women-al-saada-al-douma-kordofan-november-2026
   // (prisma/seed-statement-al-saada-al-douma-women.mjs, PARAS) — change both together. Hedges as
   // recorded in that seed. Poster: the English cover card on navy (portrait), not YouTube's frame.
-  // Ships unlisted; listed once the article is live (the detail page links to it).
+  // Shipped unlisted in 1.0.42; listed in 1.0.43 once the article was live.
   {
     slug: 'al-saada-al-douma-women-kordofan-2026',
     youtubeId: 'SzgaCAsPSm8',
@@ -99,7 +99,6 @@ const VIDEOS: Video[] = [
     poster: '/media/al-saada-al-douma-women-kordofan-2026/poster.jpg',
     relatedPostSlug: 'condemnation-violations-women-al-saada-al-douma-kordofan-november-2026',
     vertical: true,
-    published: false,
     i18n: {
       en: {
         title: 'The Coalition Condemns Reported Violations Against Women in Al-Saada Al-Douma, Kordofan',
