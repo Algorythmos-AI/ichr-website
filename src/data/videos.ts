@@ -83,6 +83,74 @@ export interface Video {
 // responsive variants and manifest entries are all still here and still test-validated, so
 // re-listing a video is exactly one deleted line.
 const VIDEOS: Video[] = [
+  // The Coalition's statement on the airstrike on civilians in Abu Qalb, Kordofan — Short
+  // 6DrASK2S4C0, uploaded 15 November 2026. The statement is the article airstrike-civilians-abu-qalb-kordofan-november-2026
+  // (prisma/seed-statement-abu-qalb-airstrike.mjs, PARAS) — change both together. Attribution as
+  // the client wrote it ("based on eyewitness testimonies"). Poster: the English cover card on navy.
+  // Shipped unlisted; listed once the article is live.
+  {
+    slug: 'abu-qalb-airstrike-kordofan-2026',
+    youtubeId: '6DrASK2S4C0',
+    uploadDate: '2026-11-15',
+    eventDate: '2026-11-15',
+    durationSeconds: 98,
+    playlist: 'statements-2026',
+    poster: '/media/abu-qalb-airstrike-kordofan-2026/poster.jpg',
+    relatedPostSlug: 'airstrike-civilians-abu-qalb-kordofan-november-2026',
+    vertical: true,
+    published: false,
+    i18n: {
+      en: {
+        title: 'ICHRO Condemns the Airstrike on Civilians in Abu Qalb, Kordofan, Sudan',
+        speaker: 'International Coalition of Human Rights Organizations (ICHRO)',
+        location: 'Paris',
+        summary:
+          'Citing eyewitness testimonies, the Coalition condemns the SAF airstrike on unarmed civilians in Abu Qalb, Kordofan, and appeals to the UN Fact-Finding Mission for the Sudan to investigate and establish criminal responsibility.',
+        statement: [
+          "The International Coalition of Human Rights Organizations (ICHRO) condemns in the strongest terms the massacre committed by the Sudanese Armed Forces (SAF) air force against unarmed civilians in the Abu Qalb area of the Kordofan region, based on eyewitness testimonies confirming the military's responsibility for the airstrike.",
+          'Video footage reveals fires, widespread destruction amid residential areas, and harrowing scenes reflecting the gravity of the atrocities suffered by the local population.',
+          'The Coalition and its member organizations express profound outrage over the deliberate targeting of civilians in rural villages and demand full accountability for the military leadership, led by Abdel Fattah al-Burhan, as well as a thorough investigation into the role of the Islamic Movement in these violations.',
+          'The Coalition issues an urgent appeal to the Independent International Fact-Finding Mission for the Sudan to investigate the Abu Qalb massacre, hear testimonies from survivors and witnesses and establish the criminal responsibility of both the direct perpetrators and those who issued the orders.',
+          'The Coalition will submit all available visual documentation and eyewitness accounts to the Mission to support the documentation of the crime, preserve evidence and ensure the prosecution of those responsible.',
+          'The Coalition calls upon the United Nations and international human rights bodies to take immediate action to protect civilians, halt attacks on villages and residential areas and guarantee unhindered humanitarian and medical access. The ongoing killing and terrorizing of civilians require decisive measures that go beyond mere expressions of concern; there can be no genuine protection without accountability, and the victims must not be abandoned in the face of such violence.',
+        ],
+        signOff: 'International Coalition of Human Rights Organizations (ICHRO)',
+      },
+      ar: {
+        title:
+          'التحالف الدولي لمنظمات حقوق الإنسان يدين الغارة الجوية على المدنيين في أبو قلب بكردفان، السودان',
+        speaker: 'التحالف الدولي لمنظمات حقوق الإنسان',
+        location: 'باريس',
+        summary:
+          'استنادًا إلى شهادات شهود عيان، يدين التحالف الغارة الجوية للقوات المسلحة السودانية على مدنيين عُزّل في أبو قلب بكردفان، ويناشد بعثة تقصي الحقائق بشأن السودان التحقيق وتحديد المسؤولية الجنائية.',
+        statement: [
+          'يدين التحالف الدولي لمنظمات حقوق الإنسان (ICHRO) بأشد العبارات المجزرة التي ارتكبها سلاح الجو التابع للقوات المسلحة السودانية بحق مدنيين عُزّل في منطقة أبو قلب بإقليم كردفان، استنادًا إلى شهادات شهود عيان تؤكد مسؤولية الجيش عن الغارة الجوية.',
+          'ويُظهر مقطع الفيديو حرائق ودمارًا واسعًا وسط المناطق السكنية، ومشاهد مروّعة تعكس فداحة الفظائع التي تعرّض لها السكان المحليون.',
+          'ويعرب التحالف والمنظمات الأعضاء فيه عن بالغ غضبهم إزاء الاستهداف المتعمّد للمدنيين في القرى الريفية، ويطالبون بالمساءلة الكاملة للقيادة العسكرية بقيادة عبد الفتاح البرهان، وبتحقيق شامل في دور الحركة الإسلامية في هذه الانتهاكات.',
+          'ويوجّه التحالف نداءً عاجلًا إلى البعثة الدولية المستقلة لتقصي الحقائق بشأن السودان للتحقيق في مجزرة أبو قلب، والاستماع إلى شهادات الناجين والشهود، وتحديد المسؤولية الجنائية لكلٍّ من الجناة المباشرين ومن أصدروا الأوامر.',
+          'وسيقدّم التحالف إلى البعثة جميع ما يتوفر من توثيق مصوّر وشهادات شهود العيان، دعمًا لتوثيق الجريمة وحفظ الأدلة وضمان ملاحقة المسؤولين عنها.',
+          'ويدعو التحالف الأمم المتحدة والهيئات الدولية لحقوق الإنسان إلى اتخاذ إجراءات فورية لحماية المدنيين، ووقف الهجمات على القرى والمناطق السكنية، وضمان وصول المساعدات الإنسانية والطبية دون عوائق. إن استمرار قتل المدنيين وترويعهم يستوجب تدابير حاسمة تتجاوز مجرد التعبير عن القلق؛ فلا حماية حقيقية دون مساءلة، ولا يجوز التخلي عن الضحايا في مواجهة هذا العنف.',
+        ],
+        signOff: 'التحالف الدولي لمنظمات حقوق الإنسان',
+      },
+      fr: {
+        title: "L'ICHRO condamne la frappe aérienne contre des civils à Abou Qalb, au Kordofan (Soudan)",
+        speaker: "Coalition internationale des organisations de défense des droits de l'homme (ICHRO)",
+        location: 'Paris',
+        summary:
+          "Sur la foi de témoignages oculaires, la Coalition condamne la frappe aérienne des FAS contre des civils non armés à Abou Qalb, au Kordofan, et appelle la Mission d'établissement des faits pour le Soudan à enquêter et à établir les responsabilités pénales.",
+        statement: [
+          "La Coalition internationale des organisations de défense des droits de l'homme (ICHRO) condamne dans les termes les plus fermes le massacre commis par l'armée de l'air des Forces armées soudanaises (FAS) contre des civils non armés dans la zone d'Abou Qalb, dans la région du Kordofan, sur la foi de témoignages oculaires confirmant la responsabilité de l'armée dans la frappe aérienne.",
+          "Les images vidéo montrent des incendies, des destructions étendues au milieu des zones d'habitation et des scènes déchirantes qui reflètent la gravité des atrocités subies par la population locale.",
+          "La Coalition et ses organisations membres expriment leur profonde indignation face au ciblage délibéré de civils dans des villages ruraux et exigent que la direction militaire, conduite par Abdel Fattah al-Burhan, réponde pleinement de ses actes, ainsi qu'une enquête approfondie sur le rôle du Mouvement islamique dans ces violations.",
+          "La Coalition lance un appel urgent à la Mission internationale indépendante d'établissement des faits pour le Soudan afin qu'elle enquête sur le massacre d'Abou Qalb, entende les témoignages des survivants et des témoins et établisse la responsabilité pénale tant des auteurs directs que de ceux qui ont donné les ordres.",
+          "La Coalition transmettra à la Mission l'ensemble de la documentation visuelle et des témoignages oculaires disponibles, afin de contribuer à documenter le crime, à préserver les preuves et à garantir la poursuite des responsables.",
+          "La Coalition appelle les Nations unies et les organes internationaux de défense des droits de l'homme à agir immédiatement pour protéger les civils, mettre fin aux attaques contre les villages et les zones d'habitation et garantir un accès humanitaire et médical sans entrave. La poursuite des meurtres et de la terreur infligée aux civils exige des mesures décisives qui aillent au-delà de simples expressions de préoccupation ; il ne peut y avoir de protection réelle sans reddition de comptes, et les victimes ne doivent pas être abandonnées face à une telle violence.",
+        ],
+        signOff: "Coalition internationale des organisations de défense des droits de l'homme (ICHRO)",
+      },
+    },
+  },
   // The Coalition's statement on reported violations against women in Al-Saada Al-Douma (Dar
   // Hamar, Kordofan) after the entry of the SAF-allied Joint Force — Short SzgaCAsPSm8, uploaded
   // 18 November 2026 (UTC). The statement is the article condemnation-violations-women-al-saada-al-douma-kordofan-november-2026

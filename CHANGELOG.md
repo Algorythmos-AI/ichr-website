@@ -7,6 +7,19 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.44] — 2026-11-18
+
+### Added
+
+- Covers for the 15 November statement on the airstrike on civilians in Abu Qalb, Kordofan
+  (EN/AR/FR), and its video on /media, shipped unlisted. The article is seeded after this release
+  is live; the video is listed in the next release.
+
+### Changed
+
+- The ICHRO definition in the footer, the home mandate and the About subtitle now uses the
+  client's wording ("ICHRO/NGOs unites to defend fundamental rights…"), in all three languages.
+
 ## [1.0.43] — 2026-11-18
 
 ### Added
