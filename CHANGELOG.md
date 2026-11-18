@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.42] — 2026-11-18
+
+### Added
+
+- Covers for the 17 November statement on reported violations against women in Al-Saada
+  Al-Douma, Kordofan (EN/AR/FR), and its video on /media, shipped unlisted. The article is seeded
+  after this release is live; the video is listed in the next release.
+
 ## [1.0.41] — 2026-11-16
 
 ### Changed

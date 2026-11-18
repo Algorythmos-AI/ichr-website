@@ -176,6 +176,7 @@ covers.
 | 10 Nov | Geneva | Statement | `statement-dutch-motion-ban-muslim-brotherhood-sudan-november-2026` | `67dff542…` | X post, `NOV/3` | this PR |
 | 12 Nov | **Dakar** | Press Release | `ichro-srco-89th-session-african-committee-dakar-november-2026` | `ca6b6d01…` | `NOV/5` | this PR |
 | 13 Oct* | **Brussels** | Press Release | `mou-european-parliament-sudan-south-asia-brussels-october-2026` | `a2072e57…` | `NOV/6` | this PR |
+| 17 Nov | **Brussels** | Statement | `condemnation-violations-women-al-saada-al-douma-kordofan-november-2026` | `5cf6f953…` | `NOV/7` + Short `SzgaCAsPSm8` | this PR |
 | 09 Nov | **Paris** | Statement | `condemnation-drone-attack-al-nuhud-west-kordofan-november-2026` | `d34be752…` | `NOV/4` | this PR |
 
 `statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
@@ -272,6 +273,14 @@ ours**, written from what the two cards show (place, date, purpose, the signator
 and nothing more. Zilani Golam is named as Secretary General; his organisation's name is illegible
 on the plate and left out. The client's EN card is the cover (EN/FR), the AR card the Arabic
 cover.
+
+`condemnation-violations-women-al-saada-al-douma-kordofan-…` (17 Nov, **Brussels**): condemnation
+of reported violations against women in Al-Saada Al-Douma (Dar Hamar, Kordofan) after the entry of
+the SAF-allied Joint Force; on /media as the Short `al-saada-al-douma-women-kordofan-2026`. The
+client's text verbatim in substance, its hedges kept in all three languages. **Images, owner's
+choice:** the cover band is the client's still, unblurred — it shows the faces of the women
+described as alleged victims; this was raised before publishing. The /media poster is the English
+cover card, not YouTube's frame. Two releases: covers + unlisted video, then the video listed.
 
 ---
 
