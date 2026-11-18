@@ -7,6 +7,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.43] — 2026-11-18
+
+### Added
+
+- The Al-Saada Al-Douma video is listed on /media (EN/AR/FR), now that its article is live.
+
 ## [1.0.42] — 2026-11-18
 
 ### Added
