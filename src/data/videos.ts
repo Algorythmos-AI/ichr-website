@@ -87,7 +87,7 @@ const VIDEOS: Video[] = [
   // 6DrASK2S4C0, uploaded 15 November 2026. The statement is the article airstrike-civilians-abu-qalb-kordofan-november-2026
   // (prisma/seed-statement-abu-qalb-airstrike.mjs, PARAS) — change both together. Attribution as
   // the client wrote it ("based on eyewitness testimonies"). Poster: the English cover card on navy.
-  // Shipped unlisted; listed once the article is live.
+  // Shipped unlisted in 1.0.44; listed in 1.0.45 once the article was live.
   {
     slug: 'abu-qalb-airstrike-kordofan-2026',
     youtubeId: '6DrASK2S4C0',
@@ -98,7 +98,6 @@ const VIDEOS: Video[] = [
     poster: '/media/abu-qalb-airstrike-kordofan-2026/poster.jpg',
     relatedPostSlug: 'airstrike-civilians-abu-qalb-kordofan-november-2026',
     vertical: true,
-    published: false,
     i18n: {
       en: {
         title: 'ICHRO Condemns the Airstrike on Civilians in Abu Qalb, Kordofan, Sudan',
