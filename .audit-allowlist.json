@@ -1,5 +1,12 @@
 {
   "_comment": "Reviewed high/critical advisories accepted until an upstream fix exists. Every entry needs a reason. Remove entries as upgrades land; scripts/ci/audit-deps.mjs reports stale ones.",
-  "reviewed": "2026-09-24",
-  "advisories": []
+  "reviewed": "2026-11-18",
+  "advisories": [
+    {
+      "id": "GHSA-fc5q-39xc-vjpf",
+      "package": "picomatch",
+      "added": "2026-11-18",
+      "reason": "ReDoS through single-branch repeated extglobs; affects every published version (<= 4.0.7) with no patched release yet. picomatch is reached only through build tooling and file globbing (astro, vite, @vercel/nft, tinyglobby, anymatch) on patterns written in this repo, never on request input, so the runtime site is not exposed. Remove this entry when a patched picomatch ships and the lockfile picks it up."
+    }
+  ]
 }
