@@ -178,7 +178,8 @@ covers.
 | 13 Oct* | **Brussels** | Press Release | `mou-european-parliament-sudan-south-asia-brussels-october-2026` | `a2072e57…` | `NOV/6` | this PR |
 | 15 Nov | **Paris** | Statement | `airstrike-civilians-abu-qalb-kordofan-november-2026` | `046e6b2b…` | `NOV/8` + Short `6DrASK2S4C0` | #182 |
 | 17 Nov | **Brussels** | Statement | `condemnation-violations-women-al-saada-al-douma-kordofan-november-2026` | `5cf6f953…` | `NOV/7` + Short `SzgaCAsPSm8` | #177 |
-| 18 Nov | Geneva | **News** | `us-sanctions-lebanese-relief-association-hezbollah-november-2026` | `2362febf…` | US State Dept (X post) | this PR |
+| 18 Nov | Geneva | **News** | `us-sanctions-lebanese-relief-association-hezbollah-november-2026` | `2362febf…` | US State Dept (X post) | #186 |
+| 18 Nov | Geneva | Statement | `condemnation-drone-strike-idp-shelter-ghubaysh-west-kordofan-november-2026` | `5b53032b…` | `NOV/9` | this PR |
 | 09 Nov | **Paris** | Statement | `condemnation-drone-attack-al-nuhud-west-kordofan-november-2026` | `d34be752…` | `NOV/4` | this PR |
 
 `statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
@@ -299,6 +300,15 @@ attributed brief at the owner's choice, every claim the State Department's, no C
 The forwarded card carries the Great Seal and is not used; navy house text covers. The State
 Department's own URL was not found and is cited by title and date; the Arabic name spellings are
 our transliterations.
+
+`condemnation-drone-strike-idp-shelter-ghubaysh-…` (18 Nov, Geneva): condemnation of the drone
+strike on the Musab bin Umair School, a shelter for displaced families in Ghubaysh, West Kordofan
+(17 killed, 13 injured, per field information documented by the SRCO and local testimonies; SAF
+attribution "local testimonies indicate"). **Verbatim in substance**, hedges kept; garbled source
+phrases repaired ("perpetrators", "impunity", "the displaced"). **Not independently confirmed**: no
+outside report of a November strike on a Ghubaysh school was found on 19 Nov (a May 2026 strike on
+the Ghubaysh market was reported). Geneva at the owner's choice. No image supplied: map photo cards
+with Ghubaysh marked.
 
 ---
 
