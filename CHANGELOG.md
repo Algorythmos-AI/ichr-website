@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.46] — 2026-11-19
+
+### Added
+
+- Covers for the 18 November News brief on the U.S. sanctions against a Lebanese relief
+  association it accuses of serving as a Hezbollah front (EN/AR/FR). The article is seeded after
+  this release is live.
+
 ## [1.0.45] — 2026-11-18
 
 ### Added

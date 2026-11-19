@@ -176,8 +176,9 @@ covers.
 | 10 Nov | Geneva | Statement | `statement-dutch-motion-ban-muslim-brotherhood-sudan-november-2026` | `67dff542…` | X post, `NOV/3` | this PR |
 | 12 Nov | **Dakar** | Press Release | `ichro-srco-89th-session-african-committee-dakar-november-2026` | `ca6b6d01…` | `NOV/5` | this PR |
 | 13 Oct* | **Brussels** | Press Release | `mou-european-parliament-sudan-south-asia-brussels-october-2026` | `a2072e57…` | `NOV/6` | this PR |
-| 15 Nov | **Paris** | Statement | `airstrike-civilians-abu-qalb-kordofan-november-2026` | `046e6b2b…` | `NOV/8` + Short `6DrASK2S4C0` | this PR |
+| 15 Nov | **Paris** | Statement | `airstrike-civilians-abu-qalb-kordofan-november-2026` | `046e6b2b…` | `NOV/8` + Short `6DrASK2S4C0` | #182 |
 | 17 Nov | **Brussels** | Statement | `condemnation-violations-women-al-saada-al-douma-kordofan-november-2026` | `5cf6f953…` | `NOV/7` + Short `SzgaCAsPSm8` | #177 |
+| 18 Nov | Geneva | **News** | `us-sanctions-lebanese-relief-association-hezbollah-november-2026` | `2362febf…` | US State Dept (X post) | this PR |
 | 09 Nov | **Paris** | Statement | `condemnation-drone-attack-al-nuhud-west-kordofan-november-2026` | `d34be752…` | `NOV/4` | this PR |
 
 `statement-sudanese-soldier-russian-forces-ukraine-…` (4 Nov): footage received by the Coalition
@@ -289,6 +290,15 @@ client's text verbatim in substance, its hedges kept in all three languages. **I
 choice:** the cover band is the client's still, unblurred — it shows the faces of the women
 described as alleged victims; this was raised before publishing. The /media poster is the English
 cover card, not YouTube's frame. Two releases: covers + unlisted video, then the video listed.
+
+`us-sanctions-lebanese-relief-association-hezbollah-…` (18 Nov, Geneva, **News**): the Coalition's
+summary of a U.S. State Department statement (and the Treasury release it cites) sanctioning
+Wa Ta'awanu, a Lebanese association it says posed as a relief group while serving Hezbollah, and a
+gold and cash network. **Not a statement:** the client forwarded the post with no instruction; an
+attributed brief at the owner's choice, every claim the State Department's, no Coalition position.
+The forwarded card carries the Great Seal and is not used; navy house text covers. The State
+Department's own URL was not found and is cited by title and date; the Arabic name spellings are
+our transliterations.
 
 ---
 
