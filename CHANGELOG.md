@@ -7,6 +7,14 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.47] — 2026-11-19
+
+### Added
+
+- Covers for the 18 November statement on the drone strike on a shelter for displaced families
+  in Ghubaysh, West Kordofan (EN/AR/FR): map cards with Ghubaysh marked. The article is seeded
+  after this release is live.
+
 ## [1.0.46] — 2026-11-19
 
 ### Added
