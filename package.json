@@ -32,13 +32,13 @@
     "@prisma/client": "^5.22.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.9.0",
-    "astro": "^7.4.12",
+    "astro": "^7.4.13",
     "bcryptjs": "^3.0.3",
     "dompurify": "^3.4.18",
     "jsonwebtoken": "^9.0.2",
     "leaflet": "1.9.4",
-    "lucide-react": "^1.73.0",
-    "marked": "^18.2.0",
+    "lucide-react": "^1.76.0",
+    "marked": "^18.2.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "sanitize-html": "^2.18.2",
@@ -69,7 +69,7 @@
     "sharp": "^0.35.4",
     "tailwindcss": "^4.1.18",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.72.2"
+    "typescript-eslint": "^8.73.0"
   },
   "allowScripts": {
     "prisma@5.22.0": true,
